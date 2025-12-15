@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surly — L'écosystème Recrutement & Freelance Bancassurance</title>
+    <meta name="description" content="La marketplace ultra-spécialisée qui réunit l'intégralité des talents et opportunités du secteur Banque & Assurance. +3300 experts certifiés.">
+    
+    <!-- Fonts - Inter Neo-Grotesque -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#hero" class="skip-link">Aller au contenu principal</a>
+    
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <svg viewBox="0 0 120 32" class="logo-svg">
+                    <text x="0" y="26" class="logo-text">SURLY</text>
+                </svg>
+            </a>
+            <div class="nav-links">
+                <a href="#constat" class="nav-link">Le Constat</a>
+                <a href="#mission" class="nav-link">Notre Mission</a>
+                <a href="#piliers" class="nav-link">Nos Piliers</a>
+                <a href="#promesse" class="nav-link">La Promesse</a>
+            </div>
+            <div class="nav-cta">
+                <a href="https://app.surly.fr/postulant" class="btn btn-ghost">Je suis Talent</a>
+                <a href="#contact" class="btn btn-primary">Je recrute</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="#constat" class="mobile-link">Le Constat</a>
+            <a href="#mission" class="mobile-link">Notre Mission</a>
+            <a href="#piliers" class="mobile-link">Nos Piliers</a>
+            <a href="#promesse" class="mobile-link">La Promesse</a>
+            <div class="mobile-cta">
+                <a href="https://app.surly.fr/postulant" class="btn btn-ghost">Je suis Talent</a>
+                <a href="#contact" class="btn btn-primary">Je recrute</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-image"></div>
+        <div class="container">
+            <div class="hero-grid-layout">
+                <!-- Left: Content -->
+                <div class="hero-content" data-animate="fade-right">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span>Plateforme Bancassurance</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        L'écosystème <span class="title-accent">Recrutement & Freelance</span> pour la Banque & l'Assurance
+                    </h1>
+                    
+                    <p class="hero-subtitle">
+                        La seule marketplace ultra-spécialisée qui réunit l'intégralité des talents et des opportunités du secteur Bancassurance.
+                    </p>
+                    
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-xl btn-primary">
+                            <span>Trouver un expert</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="https://app.surly.fr/postulant" class="btn btn-xl btn-accent">
+                            <span>Rejoindre le réseau</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="hero-trust">
+                        <span class="trust-label">Ils recrutent sur Surly</span>
+                        <div class="trust-logos">
+                            <span class="trust-logo">BNP Paribas</span>
+                            <span class="trust-logo">AXA</span>
+                            <span class="trust-logo">Société Générale</span>
+                            <span class="trust-logo">Allianz</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: Profile Stack Visual -->
+                <div class="hero-visual" data-animate="fade-left" data-delay="200">
+                    <div class="profiles-showcase">
+                        <!-- Floating profiles stack -->
+                        <div class="profile-stack">
+                            <div class="profile-card profile-1">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop&crop=face" alt="Expert Conformité" class="profile-img">
+                                <div class="profile-info">
+                                    <span class="profile-name">Marie D.</span>
+                                    <span class="profile-role">Expert Conformité</span>
+                                </div>
+                                <span class="profile-badge available">Disponible</span>
+                            </div>
+                            
+                            <div class="profile-card profile-2">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face" alt="Consultant IFRS" class="profile-img">
+                                <div class="profile-info">
+                                    <span class="profile-name">Thomas R.</span>
+                                    <span class="profile-role">Consultant IFRS 17</span>
+                                </div>
+                                <span class="profile-badge available">Disponible</span>
+                            </div>
+                            
+                            <div class="profile-card profile-3">
+                                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=120&h=120&fit=crop&crop=face" alt="Actuaire Senior" class="profile-img">
+                                <div class="profile-info">
+                                    <span class="profile-name">Sophie L.</span>
+                                    <span class="profile-role">Actuaire Senior</span>
+                                </div>
+                                <span class="profile-badge available">Disponible</span>
+                            </div>
+                            
+                            <div class="profile-card profile-4">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face" alt="Risk Manager" class="profile-img">
+                                <div class="profile-info">
+                                    <span class="profile-name">Jean-Pierre M.</span>
+                                    <span class="profile-role">Risk Manager</span>
+                                </div>
+                                <span class="profile-badge available">Disponible</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Counter badge -->
+                        <div class="experts-counter">
+                            <span class="counter-value">+<span data-count="3300">0</span></span>
+                            <span class="counter-text">experts maîtrisant les enjeux du secteur Bancassurance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Stats Bar -->
+        <div class="hero-bottom">
+            <div class="container">
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="72">0</span>
+                        <span class="stat-unit">h</span>
+                        <span class="stat-label">Matching moyen</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="15">0</span>
+                        <span class="stat-unit">%</span>
+                        <span class="stat-label">Commission fixe</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="100">0</span>
+                        <span class="stat-unit">%</span>
+                        <span class="stat-label">Profils vérifiés</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Clients Marquee -->
+    <section class="section-marquee">
+        <div class="marquee-wrapper">
+            <div class="marquee-track-logos">
+                <span class="client-logo">BNP Paribas</span>
+                <span class="client-logo">AXA France</span>
+                <span class="client-logo">Société Générale</span>
+                <span class="client-logo">Crédit Agricole</span>
+                <span class="client-logo">Allianz</span>
+                <span class="client-logo">Natixis</span>
+                <span class="client-logo">Groupama</span>
+                <span class="client-logo">BPCE</span>
+                <span class="client-logo">Generali</span>
+                <span class="client-logo">CNP Assurances</span>
+                <span class="client-logo">BNP Paribas</span>
+                <span class="client-logo">AXA France</span>
+                <span class="client-logo">Société Générale</span>
+                <span class="client-logo">Crédit Agricole</span>
+                <span class="client-logo">Allianz</span>
+                <span class="client-logo">Natixis</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Constat Section -->
+    <section class="section section-constat" id="constat">
+        <span class="section-number">01</span>
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <div class="accent-line"></div>
+                <span class="section-tag">Le Constat</span>
+                <h2 class="section-title">
+                    L'exigence ne tolère pas<br>
+                    <span class="text-gradient">le généralisme</span>
+                </h2>
+            </div>
+            
+            <div class="constat-grid">
+                <div class="constat-main" data-animate="fade-up" data-delay="100">
+                    <div class="constat-icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/>
+                            <path d="M20 32L28 40L44 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <p class="constat-text">
+                        La Banque et l'Assurance ne sont pas des secteurs ordinaires. 
+                        Ce sont des industries régies par des <strong>réglementations strictes</strong>, 
+                        des <strong>technologies complexes</strong> et des <strong>enjeux de sécurité critiques</strong>.
+                    </p>
+                </div>
+                
+                <div class="constat-cards">
+                    <div class="constat-card" data-animate="fade-up" data-delay="200">
+                        <div class="card-visual">
+                            <div class="noise-effect"></div>
+                            <span class="card-emoji">🎯</span>
+                        </div>
+                        <h3>Compétences noyées</h3>
+                        <p>Les plateformes "fourre-tout" noient les compétences pointues dans la masse.</p>
+                    </div>
+                    
+                    <div class="constat-card" data-animate="fade-up" data-delay="300">
+                        <div class="card-visual">
+                            <div class="noise-effect"></div>
+                            <span class="card-emoji">📢</span>
+                        </div>
+                        <h3>Bruit pour les recruteurs</h3>
+                        <p>Trop de CVs hors-sujet, pas assez d'experts qualifiés.</p>
+                    </div>
+                    
+                    <div class="constat-card" data-animate="fade-up" data-delay="400">
+                        <div class="card-visual">
+                            <div class="noise-effect"></div>
+                            <span class="card-emoji">😤</span>
+                        </div>
+                        <h3>Frustration des talents</h3>
+                        <p>Des experts traités comme des généralistes.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="expertise-showcase" data-animate="fade-up" data-delay="500">
+                <div class="expertise-label">Nos expertises</div>
+                <div class="expertise-marquee">
+                    <div class="marquee-track">
+                        <span class="expertise-tag">Bâle III</span>
+                        <span class="expertise-tag">IFRS 17</span>
+                        <span class="expertise-tag">Actuariat</span>
+                        <span class="expertise-tag">Cybersécurité financière</span>
+                        <span class="expertise-tag">KYC / AML</span>
+                        <span class="expertise-tag">LCB-FT</span>
+                        <span class="expertise-tag">Solvabilité II</span>
+                        <span class="expertise-tag">DORA</span>
+                        <span class="expertise-tag">RGPD Banque</span>
+                        <span class="expertise-tag">Core Banking</span>
+                        <span class="expertise-tag">Bâle III</span>
+                        <span class="expertise-tag">IFRS 17</span>
+                        <span class="expertise-tag">Actuariat</span>
+                        <span class="expertise-tag">Cybersécurité financière</span>
+                        <span class="expertise-tag">KYC / AML</span>
+                        <span class="expertise-tag">LCB-FT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comment ça marche Section -->
+    <section class="section section-process" id="process">
+        <div class="process-bg"></div>
+        <div class="container">
+            <div class="section-header centered" data-animate="fade-up">
+                <div class="accent-line"></div>
+                <span class="section-tag">Comment ça marche</span>
+                <h2 class="section-title">
+                    Trois étapes vers<br>
+                    <span class="text-gradient">l'excellence</span>
+                </h2>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step" data-animate="fade-up" data-delay="100">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="24" cy="20" r="8"/>
+                            <path d="M8 40c0-8.84 7.16-16 16-16s16 7.16 16 16"/>
+                            <path d="M32 16l4-4m0 0l4-4m-4 4l-4-4m4 4l4 4" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Inscrivez-vous</h3>
+                    <p class="step-desc">Créez votre profil en 2 minutes via LinkedIn ou manuellement. Nos algorithmes analysent vos compétences sectorielles.</p>
+                    <div class="step-feature">
+                        <span class="feature-dot"></span>
+                        <span>Connexion LinkedIn en 1 clic</span>
+                    </div>
+                </div>
+                
+                <div class="process-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-dot"></div>
+                </div>
+                
+                <div class="process-step" data-animate="fade-up" data-delay="200">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="8" y="8" width="32" height="32" rx="4"/>
+                            <path d="M16 24h16M24 16v16"/>
+                            <circle cx="36" cy="12" r="6" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Matching intelligent</h3>
+                    <p class="step-desc">Notre IA analyse les besoins et trouve les profils correspondants parmi +3 300 experts vérifiés.</p>
+                    <div class="step-feature">
+                        <span class="feature-dot"></span>
+                        <span>72h de délai moyen</span>
+                    </div>
+                </div>
+                
+                <div class="process-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-dot"></div>
+                </div>
+                
+                <div class="process-step" data-animate="fade-up" data-delay="300">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 24l8 8 16-16"/>
+                            <circle cx="24" cy="24" r="20"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Collaboration</h3>
+                    <p class="step-desc">Contractualisez en toute transparence avec notre commission fixe de 15%. Zéro surprise, zéro frais cachés.</p>
+                    <div class="step-feature">
+                        <span class="feature-dot"></span>
+                        <span>15% commission unique</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Chiffres Clés Section - Animated Counters -->
+    <section class="section section-stats" id="stats">
+        <div class="stats-bg-image"></div>
+        <div class="container">
+            <div class="stats-header" data-animate="fade-up">
+                <span class="section-tag section-tag-light">Nos Chiffres</span>
+                <h2 class="stats-title">L'impact Surly en chiffres</h2>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card" data-animate="fade-up" data-delay="100">
+                    <div class="stat-ticker">
+                        <span class="ticker-value" data-count="3300">0</span>
+                        <span class="ticker-suffix">+</span>
+                    </div>
+                    <span class="stat-card-label">Experts & Consultants</span>
+                    <p class="stat-card-desc">Profils vérifiés et certifiés Bancassurance</p>
+                </div>
+                
+                <div class="stat-card" data-animate="fade-up" data-delay="200">
+                    <div class="stat-ticker">
+                        <span class="ticker-value" data-count="72">0</span>
+                        <span class="ticker-suffix">h</span>
+                    </div>
+                    <span class="stat-card-label">Matching moyen</span>
+                    <p class="stat-card-desc">Du besoin exprimé à la shortlist qualifiée</p>
+                </div>
+                
+                <div class="stat-card" data-animate="fade-up" data-delay="300">
+                    <div class="stat-ticker">
+                        <span class="ticker-value" data-count="98">0</span>
+                        <span class="ticker-suffix">%</span>
+                    </div>
+                    <span class="stat-card-label">Satisfaction client</span>
+                    <p class="stat-card-desc">Taux de recommandation mesuré trimestriellement</p>
+                </div>
+                
+                <div class="stat-card" data-animate="fade-up" data-delay="400">
+                    <div class="stat-ticker">
+                        <span class="ticker-value" data-count="250">0</span>
+                        <span class="ticker-suffix">+</span>
+                    </div>
+                    <span class="stat-card-label">Missions réalisées</span>
+                    <p class="stat-card-desc">Projets livrés pour des acteurs majeurs</p>
+                </div>
+            </div>
+            
+            <div class="stats-ticker-bar">
+                <div class="ticker-track">
+                    <span class="ticker-item">Bâle III</span>
+                    <span class="ticker-item">IFRS 17</span>
+                    <span class="ticker-item">Solvabilité II</span>
+                    <span class="ticker-item">KYC/AML</span>
+                    <span class="ticker-item">LCB-FT</span>
+                    <span class="ticker-item">DORA</span>
+                    <span class="ticker-item">Actuariat</span>
+                    <span class="ticker-item">Risk Management</span>
+                    <span class="ticker-item">Core Banking</span>
+                    <span class="ticker-item">Cybersécurité</span>
+                    <span class="ticker-item">Bâle III</span>
+                    <span class="ticker-item">IFRS 17</span>
+                    <span class="ticker-item">Solvabilité II</span>
+                    <span class="ticker-item">KYC/AML</span>
+                    <span class="ticker-item">LCB-FT</span>
+                    <span class="ticker-item">DORA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section section-mission" id="mission">
+        <span class="section-number">02</span>
+        <div class="mission-bg">
+            <div class="mission-gradient"></div>
+        </div>
+        
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-text" data-animate="fade-right">
+                    <div class="accent-line"></div>
+                    <span class="section-tag">Notre Mission</span>
+                    <h2 class="mission-title">
+                        Reconnecter<br>
+                        <span class="text-gradient">l'expertise</span>
+                    </h2>
+                    <p class="mission-desc">
+                        Surly est née d'une conviction simple : <strong>la spécialisation est la clé de la performance</strong>.
+                    </p>
+                    <p class="mission-desc">
+                        Nous sommes la première marketplace <em>100% dédiée</em> aux métiers de la Banque et de l'Assurance. 
+                        Nous ne cherchons pas à tout faire. Nous cherchons à être les meilleurs là où ça compte.
+                    </p>
+                    <div class="mission-highlight">
+                        <div class="highlight-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <span>Mise en relation fluide, sécurisée et intelligente</span>
+                    </div>
+                </div>
+                
+                <div class="mission-visual" data-animate="fade-left">
+                    <div class="visual-card">
+                        <div class="visual-header">
+                            <div class="visual-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span class="visual-label">Matching Surly</span>
+                        </div>
+                        <div class="visual-content">
+                            <div class="matching-flow">
+                                <div class="flow-node flow-talent">
+                                    <div class="node-avatar">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <circle cx="12" cy="8" r="4"/>
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                        </svg>
+                                    </div>
+                                    <span>Expert IFRS 17</span>
+                                </div>
+                                <div class="flow-connector">
+                                    <div class="connector-line"></div>
+                                    <div class="connector-pulse"></div>
+                                    <span class="connector-label">72h</span>
+                                </div>
+                                <div class="flow-node flow-company">
+                                    <div class="node-avatar">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                            <path d="M9 3v18M15 3v18M3 9h18M3 15h18" stroke="var(--bg-primary)" stroke-width="1.5"/>
+                                        </svg>
+                                    </div>
+                                    <span>Assureur CAC 40</span>
+                                </div>
+                            </div>
+                            <div class="matching-stats">
+                                <div class="match-stat">
+                                    <span class="match-value">98%</span>
+                                    <span class="match-label">Compatibilité</span>
+                                </div>
+                                <div class="match-stat">
+                                    <span class="match-value">✓</span>
+                                    <span class="match-label">Vérifié</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Piliers Section -->
+    <section class="section section-piliers" id="piliers">
+        <span class="section-number">03</span>
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <div class="accent-line"></div>
+                <span class="section-tag">Nos 3 Piliers</span>
+                <h2 class="section-title">
+                    Les fondements de<br>
+                    <span class="text-gradient">notre excellence</span>
+                </h2>
+            </div>
+            
+            <div class="piliers-grid">
+                <!-- Pilier 1 -->
+                <div class="pilier-card" data-animate="fade-up" data-delay="100">
+                    <div class="pilier-number">01</div>
+                    <div class="pilier-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="24" cy="24" r="20"/>
+                            <path d="M24 14v10l6 6"/>
+                            <circle cx="24" cy="24" r="3" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="pilier-title">L'Hyper-Spécialisation<br>Sectorielle</h3>
+                    <p class="pilier-desc">
+                        Nous parlons votre langage. Nous comprenons la différence entre un 
+                        <strong>Analyste KYC</strong> et un <strong>Expert Conformité LCB-FT</strong>.
+                    </p>
+                    <div class="pilier-benefits">
+                        <div class="benefit">
+                            <span class="benefit-icon">🏢</span>
+                            <div class="benefit-content">
+                                <strong>Pour les Entreprises</strong>
+                                <p>Accédez à un vivier de talents qui connaissent déjà vos contraintes réglementaires.</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">👤</span>
+                            <div class="benefit-content">
+                                <strong>Pour les Talents</strong>
+                                <p>Vous êtes valorisé pour votre connaissance métier spécifique.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pilier 2 -->
+                <div class="pilier-card pilier-featured" data-animate="fade-up" data-delay="200">
+                    <div class="pilier-number">02</div>
+                    <div class="pilier-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M24 4L4 14v20l20 10 20-10V14L24 4z"/>
+                            <path d="M4 14l20 10 20-10"/>
+                            <path d="M24 44V24"/>
+                        </svg>
+                    </div>
+                    <h3 class="pilier-title">L'Innovation au Service<br>de l'Humain</h3>
+                    <p class="pilier-desc">
+                        La technologie ne doit pas remplacer le jugement, elle doit l'accélérer. 
+                        Surly fusionne le meilleur de l'IA avec la validation humaine.
+                    </p>
+                    <div class="pilier-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 2.75c1.24 0 2.25 1.01 2.25 2.25s-1.01 2.25-2.25 2.25S9.75 10.24 9.75 9 10.76 6.75 12 6.75zM17 17H7v-1.5c0-1.67 3.33-2.5 5-2.5s5 .83 5 2.5V17z"/>
+                                </svg>
+                            </div>
+                            <span>Inscription LinkedIn en 1 clic</span>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                                </svg>
+                            </div>
+                            <span>Générateur IA de fiches de poste</span>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 6c1.4 0 2.8 1.1 2.8 2.5V11c.6.2 1.2.9 1.2 1.5v3c0 .8-.7 1.5-1.5 1.5h-5c-.8 0-1.5-.7-1.5-1.5v-3c0-.7.5-1.3 1.2-1.5V9.5C9.2 8.1 10.6 7 12 7zm0 1.5c-.8 0-1.3.5-1.3 1v1.5h2.6V9.5c0-.5-.5-1-1.3-1z"/>
+                                </svg>
+                            </div>
+                            <span>Certification des profils</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pilier 3 -->
+                <div class="pilier-card" data-animate="fade-up" data-delay="300">
+                    <div class="pilier-number">03</div>
+                    <div class="pilier-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="6" y="14" width="36" height="24" rx="2"/>
+                            <path d="M6 22h36"/>
+                            <circle cx="14" cy="30" r="2" fill="currentColor"/>
+                            <path d="M20 30h14"/>
+                        </svg>
+                    </div>
+                    <h3 class="pilier-title">Une Transparence<br>Radicale</h3>
+                    <p class="pilier-desc">
+                        Nous brisons l'opacité des agences traditionnelles. 
+                        Surly instaure un nouveau standard de confiance.
+                    </p>
+                    <div class="transparency-grid">
+                        <div class="transparency-item">
+                            <div class="transparency-value">15%</div>
+                            <div class="transparency-label">Commission fixe<br><small>au succès uniquement</small></div>
+                        </div>
+                        <div class="transparency-item">
+                            <div class="transparency-value">0€</div>
+                            <div class="transparency-label">Frais d'entrée<br><small>ni abonnement caché</small></div>
+                        </div>
+                        <div class="transparency-item transparency-full">
+                            <div class="transparency-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <div class="transparency-text">
+                                <strong>TJM & SAB affichés</strong>
+                                <p>Le consultant sait ce qu'il gagne, le client sait ce qu'il paie.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Témoignages Section -->
+    <section class="section section-testimonials" id="testimonials">
+        <div class="testimonials-bg-image"></div>
+        <div class="container">
+            <div class="section-header centered" data-animate="fade-up">
+                <div class="accent-line"></div>
+                <span class="section-tag">Témoignages</span>
+                <h2 class="section-title">
+                    Ce qu'ils disent<br>
+                    <span class="text-gradient">de Surly</span>
+                </h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-animate="fade-up" data-delay="100">
+                    <div class="testimonial-quote">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="quote-icon">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                        </svg>
+                        <p>Surly a révolutionné notre façon de recruter. En 48h, nous avions 3 profils parfaitement qualifiés pour notre projet Solvabilité II. La spécialisation fait toute la différence.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="DRH" class="author-img">
+                        <div class="author-info">
+                            <span class="author-name">Laurent M.</span>
+                            <span class="author-role">DRH, Assureur CAC 40</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card featured" data-animate="fade-up" data-delay="200">
+                    <div class="testimonial-quote">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="quote-icon">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                        </svg>
+                        <p>Enfin une plateforme qui comprend notre métier ! Fini les dizaines de CV hors-sujet. Chaque profil proposé par Surly connaît déjà nos enjeux réglementaires.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=80&h=80&fit=crop&crop=face" alt="Directrice Conformité" class="author-img">
+                        <div class="author-info">
+                            <span class="author-name">Isabelle D.</span>
+                            <span class="author-role">Directrice Conformité, Grande Banque</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-animate="fade-up" data-delay="300">
+                    <div class="testimonial-quote">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="quote-icon">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                        </svg>
+                        <p>La transparence sur les TJM change tout. Je sais exactement ce que je facture et le client sait ce qu'il paie. Une relation saine dès le départ.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="Consultant IFRS" class="author-img">
+                        <div class="author-info">
+                            <span class="author-name">Philippe R.</span>
+                            <span class="author-role">Consultant IFRS 17, Indépendant</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Talents Vedettes Section -->
+    <section class="section section-talents" id="talents">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <div class="accent-line"></div>
+                <span class="section-tag section-tag-light">Talents Vedettes</span>
+                <h2 class="section-title section-title-light">
+                    Découvrez nos<br>
+                    <span class="text-gradient-accent">experts disponibles</span>
+                </h2>
+            </div>
+            
+            <div class="talents-grid">
+                <div class="talent-card" data-animate="fade-up" data-delay="100">
+                    <div class="talent-header">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop&crop=face" alt="Expert Conformité" class="talent-img">
+                        <span class="talent-status">Disponible immédiatement</span>
+                    </div>
+                    <div class="talent-body">
+                        <h3 class="talent-name">Expert Conformité Senior</h3>
+                        <p class="talent-experience">15 ans d'expérience</p>
+                        <div class="talent-skills">
+                            <span>KYC/AML</span>
+                            <span>LCB-FT</span>
+                            <span>RGPD</span>
+                        </div>
+                    </div>
+                    <div class="talent-footer">
+                        <span class="talent-rate">TJM indicatif</span>
+                        <a href="#contact" class="talent-cta">Voir le profil</a>
+                    </div>
+                </div>
+                
+                <div class="talent-card" data-animate="fade-up" data-delay="200">
+                    <div class="talent-header">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=120&h=120&fit=crop&crop=face" alt="Actuaire" class="talent-img">
+                        <span class="talent-status">Disponible immédiatement</span>
+                    </div>
+                    <div class="talent-body">
+                        <h3 class="talent-name">Actuaire IFRS 17</h3>
+                        <p class="talent-experience">12 ans d'expérience</p>
+                        <div class="talent-skills">
+                            <span>IFRS 17</span>
+                            <span>Solvabilité II</span>
+                            <span>Modélisation</span>
+                        </div>
+                    </div>
+                    <div class="talent-footer">
+                        <span class="talent-rate">TJM indicatif</span>
+                        <a href="#contact" class="talent-cta">Voir le profil</a>
+                    </div>
+                </div>
+                
+                <div class="talent-card" data-animate="fade-up" data-delay="300">
+                    <div class="talent-header">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face" alt="Risk Manager" class="talent-img">
+                        <span class="talent-status">Disponible sous 2 semaines</span>
+                    </div>
+                    <div class="talent-body">
+                        <h3 class="talent-name">Risk Manager Senior</h3>
+                        <p class="talent-experience">18 ans d'expérience</p>
+                        <div class="talent-skills">
+                            <span>Bâle III</span>
+                            <span>Stress Testing</span>
+                            <span>ICAAP</span>
+                        </div>
+                    </div>
+                    <div class="talent-footer">
+                        <span class="talent-rate">TJM indicatif</span>
+                        <a href="#contact" class="talent-cta">Voir le profil</a>
+                    </div>
+                </div>
+                
+                <div class="talent-card" data-animate="fade-up" data-delay="400">
+                    <div class="talent-header">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face" alt="Chef de projet" class="talent-img">
+                        <span class="talent-status">Disponible immédiatement</span>
+                    </div>
+                    <div class="talent-body">
+                        <h3 class="talent-name">Chef de Projet Core Banking</h3>
+                        <p class="talent-experience">10 ans d'expérience</p>
+                        <div class="talent-skills">
+                            <span>Temenos</span>
+                            <span>SAP Banking</span>
+                            <span>Migration</span>
+                        </div>
+                    </div>
+                    <div class="talent-footer">
+                        <span class="talent-rate">TJM indicatif</span>
+                        <a href="#contact" class="talent-cta">Voir le profil</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="talents-cta" data-animate="fade-up">
+                <a href="https://app.surly.fr" class="btn btn-large btn-outline-light">
+                    <span>Voir tous les profils</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promesse Section -->
+    <section class="section section-promesse" id="promesse">
+        <div class="promesse-bg">
+            <div class="promesse-gradient"></div>
+            <div class="promesse-pattern"></div>
+        </div>
+        
+        <div class="container">
+            <div class="promesse-content" data-animate="fade-up">
+                <span class="section-tag section-tag-light">La Promesse Surly</span>
+                <h2 class="promesse-title">
+                    Votre tiers de confiance<br>
+                    <span class="text-gradient-light">dans la Bancassurance</span>
+                </h2>
+                <p class="promesse-text">
+                    Que vous soyez une Direction Financière cherchant à sécuriser un projet critique 
+                    ou un Consultant Indépendant visant une mission à haute valeur ajoutée, 
+                    <strong>Surly est votre partenaire de confiance</strong>.
+                </p>
+                
+                <div class="promesse-cta">
+                    <a href="#contact" class="btn btn-large btn-white">
+                        <span>Commencer maintenant</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="promesse-logos">
+                    <span class="logos-label">Ils nous font confiance</span>
+                    <div class="logos-grid">
+                        <div class="logo-placeholder">Banque A</div>
+                        <div class="logo-placeholder">Assureur B</div>
+                        <div class="logo-placeholder">FinTech C</div>
+                        <div class="logo-placeholder">Cabinet D</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-contact" id="contact">
+        <span class="section-number">04</span>
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info" data-animate="fade-right">
+                    <div class="accent-line"></div>
+                    <span class="section-tag">Contact</span>
+                    <h2 class="contact-title">
+                        Prêt à transformer<br>
+                        <span class="text-gradient">votre recrutement ?</span>
+                    </h2>
+                    <p class="contact-desc">
+                        Discutons de vos besoins en talents Bancassurance. 
+                        Notre équipe vous répond sous 24h.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <a href="mailto:contact@surly.fr" class="contact-method">
+                            <div class="method-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div class="method-content">
+                                <span class="method-label">Email</span>
+                                <span class="method-value">contact@surly.fr</span>
+                            </div>
+                        </a>
+                        <a href="tel:+33123456789" class="contact-method">
+                            <div class="method-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </div>
+                            <div class="method-content">
+                                <span class="method-label">Téléphone</span>
+                                <span class="method-value">+33 1 23 45 67 89</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <form class="contact-form" data-animate="fade-left">
+                    <div class="form-group">
+                        <label for="type">Je suis</label>
+                        <select id="type" name="type" required>
+                            <option value="">Sélectionnez votre profil</option>
+                            <option value="entreprise">Une entreprise qui recrute</option>
+                            <option value="talent">Un expert / consultant</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Entreprise</label>
+                            <input type="text" id="company" name="company" placeholder="Votre entreprise">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email professionnel</label>
+                        <input type="email" id="email" name="email" placeholder="jean@entreprise.fr" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Votre besoin</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Décrivez votre besoin en recrutement ou votre expertise..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Envoyer ma demande</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <svg viewBox="0 0 120 32" class="footer-logo">
+                        <text x="0" y="26" class="logo-text">SURLY</text>
+                    </svg>
+                    <p class="footer-tagline">
+                        L'écosystème Recrutement & Freelance<br>pour la Banque & l'Assurance
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Plateforme</h4>
+                        <a href="https://app.surly.fr">Application</a>
+                        <a href="https://app.surly.fr/postulant">Espace Talent</a>
+                        <a href="#">Espace Recruteur</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Entreprise</h4>
+                        <a href="#">À propos</a>
+                        <a href="#">Carrières</a>
+                        <a href="#">Blog</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Légal</h4>
+                        <a href="#">Mentions légales</a>
+                        <a href="#">CGU</a>
+                        <a href="#">Confidentialité</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Surly. Tous droits réservés.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,136 @@
+"use client";
+
+import Image from "next/image";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Button, ArrowIcon } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
+
+const talents = [
+  {
+    name: "Sophie Martin",
+    role: "Expert Conformité Senior",
+    experience: "15 ans d'expérience",
+    skills: ["KYC/AML", "LCB-FT", "RGPD"],
+    status: "Disponible immédiatement",
+    image: "/avatars/profile_expert_1_1765802590256.png",
+  },
+  {
+    name: "Thomas Dubois",
+    role: "Actuaire IFRS 17",
+    experience: "12 ans d'expérience",
+    skills: ["IFRS 17", "Solvabilité II", "Modélisation"],
+    status: "Disponible immédiatement",
+    image: "/avatars/profile_expert_2_1765802613092.png",
+  },
+  {
+    name: "Marie Leroy",
+    role: "Risk Manager Senior",
+    experience: "18 ans d'expérience",
+    skills: ["Bâle III", "Stress Testing", "ICAAP"],
+    status: "Disponible sous 2 semaines",
+    image: "/avatars/profile_expert_3_1765802652999.png",
+  },
+  {
+    name: "Pierre Moreau",
+    role: "Architecte Cloud SecNumCloud",
+    experience: "12 ans d'expérience",
+    skills: ["AWS Financial Services", "Terraform", "Zero Trust"],
+    status: "Disponible sous 1 mois",
+    image: "/avatars/profile_expert_4_1765802699392.png",
+  },
+];
+
+export const Talents = () => {
+  return (
+    <section
+      id="talents"
+      className="relative py-24 lg:py-28 bg-white text-foreground overflow-hidden"
+    >
+      <div className="container relative z-[1]">
+        <SectionHeader
+          tag="Talents Vedettes"
+          title={
+            <>
+              Découvrez nos
+              <br />
+              <span className="text-primary">experts disponibles</span>
+            </>
+          }
+        />
+
+        {/* Talents Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {talents.map((talent, index) => (
+            <Reveal key={talent.name} delay={index * 100} duration={800}>
+              <div className="group p-5 border border-gray-200 bg-white rounded-lg shadow-sm hover:shadow-md hover:border-primary/20 transition-all h-full">
+                {/* Avatar */}
+                <div className="relative w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden ring-2 ring-gray-100 group-hover:ring-primary/20 transition-all">
+                  <Image
+                    src={talent.image}
+                    alt={talent.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* Name & Role */}
+                <div className="text-center mb-3">
+                  <h3 className="text-base font-semibold text-foreground mb-1">
+                    {talent.name}
+                  </h3>
+                  <p className="text-xs font-medium text-primary">
+                    {talent.role}
+                  </p>
+                </div>
+
+                {/* Experience */}
+                <p className="text-xs text-foreground-muted text-center mb-3">
+                  {talent.experience}
+                </p>
+
+                {/* Skills */}
+                <div className="flex flex-wrap gap-1.5 justify-center mb-3">
+                  {talent.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-2 py-0.5 bg-primary/5 border border-primary/10 text-[10px] font-medium text-primary rounded"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Status */}
+                <div className="pt-3 border-t border-gray-100">
+                  <div className="flex items-center justify-center gap-1.5">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                    <span className="text-[10px] font-medium text-foreground-muted">
+                      {talent.status}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <Reveal delay={400} duration={800}>
+          <div className="text-center">
+            <Button
+              as="a"
+              href="https://app.surly.fr"
+              variant="outline-light"
+              size="large"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Voir les 12 experts IFRS 17 disponibles</span>
+              <ArrowIcon />
+            </Button>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+};

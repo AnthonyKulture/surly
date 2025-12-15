@@ -1,0 +1,13 @@
+export { Hero } from "./Hero";
+export { MarketAnalysis } from "./MarketAnalysis";
+export { DashboardShowcase } from "./DashboardShowcase";
+export { FunctionsShowcase } from "./FunctionsShowcase";
+export { AIChat } from "./AIChat";
+export { Testimonials } from "./Testimonials";
+export { Process } from "./Process";
+export { Piliers } from "./Piliers";
+export { SuccessStories } from "./SuccessStories";
+export { Talents } from "./Talents";
+export { LeadMagnet } from "./LeadMagnet";
+export { Contact } from "./Contact";
+export { ClientsMarquee } from "./ClientsMarquee";

@@ -1,0 +1,330 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Base Styles === */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    @apply bg-accent text-foreground;
+  }
+}
+
+/* === Custom Components === */
+@layer components {
+  .container {
+    @apply w-full max-w-[1280px] mx-auto px-lg;
+  }
+
+  /* Force larger h2 sizes - Global Section Titles */
+  .text-section-title,
+  section h2.font-bold,
+  section h2.text-3xl,
+  section h2.text-4xl,
+  section h2.text-headline {
+    font-size: clamp(1.5rem, 3vw, 2.25rem) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.015em !important;
+  }
+
+  /* Section Number Decoration */
+  .section-number {
+    @apply absolute top-xl right-xl text-[clamp(6rem, 15vw, 12rem)] font-extrabold leading-none text-primary opacity-[0.04] pointer-events-none z-0;
+  }
+
+  .section-dark .section-number {
+    @apply text-background opacity-[0.06];
+  }
+
+  /* Accent Line */
+  .accent-line {
+    @apply w-10 h-[3px] bg-accent mb-md;
+  }
+
+  /* Border Utilities */
+  .border-hairline {
+    @apply border border-primary/[0.12];
+  }
+
+  .border-on-dark {
+    @apply border border-white/[0.15];
+  }
+
+  /* Modern Bento Grid Utilities */
+  .bento-grid {
+    @apply grid gap-6 lg:gap-8;
+  }
+
+  .bento-grid-asymmetric {
+    @apply grid gap-6 lg:gap-8;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  /* Typography Constraints for Readability */
+  .prose-constrained {
+    @apply max-w-[65ch];
+  }
+
+  .prose-wide {
+    @apply max-w-[75ch];
+  }
+}
+
+/* === Custom Utilities === */
+@layer utilities {
+
+  /* Text Gradient */
+  .text-gradient {
+    @apply font-light text-primary;
+  }
+
+  .text-gradient-light {
+    @apply font-light text-accent;
+  }
+
+  .text-gradient-accent {
+    @apply text-accent;
+  }
+
+  /* Green Gradient Text - Impactful */
+  .text-gradient-green {
+    background: linear-gradient(135deg, #00a693 0%, #005e53 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    @apply font-bold;
+  }
+
+  .text-gradient-green-vibrant {
+    background: linear-gradient(135deg, #00d4b8 0%, #00a693 50%, #005e53 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    @apply font-bold;
+  }
+
+  /* Animation States */
+  .animate-in {
+    @apply opacity-100 translate-y-0 translate-x-0;
+  }
+
+  .animate-out {
+    @apply opacity-0 translate-y-5;
+  }
+
+  .animate-out-left {
+    @apply opacity-0 -translate-x-5;
+  }
+
+  .animate-out-right {
+    @apply opacity-0 translate-x-5;
+  }
+
+  /* Micro-animations for Modern UX */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-glow:hover {
+    @apply shadow-accent-md;
+  }
+
+  /* Glassmorphism Cards */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .glass-card {
+    @apply bg-background/80 backdrop-blur-md border border-primary/10 shadow-lg;
+  }
+
+  .glass-card-dark {
+    @apply bg-primary/5 backdrop-blur-md border border-white/10 shadow-lg;
+  }
+
+  /* Floating Card Effect */
+  .floating-card {
+    @apply transition-all duration-300 ease-out;
+    animation: floatCard 6s ease-in-out infinite;
+  }
+
+  .floating-card:hover {
+    @apply shadow-primary-lg;
+    animation-play-state: paused;
+    transform: translateY(-12px) scale(1.02);
+  }
+
+  /* AI-Powered Badge */
+  .ai-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider;
+    @apply bg-gradient-to-r from-primary-gradient-start to-primary-gradient-end text-white;
+    @apply shadow-primary-sm;
+  }
+
+  .ai-badge-icon {
+    @apply w-3.5 h-3.5;
+    animation: glowPulse 3s ease-in-out infinite;
+  }
+
+  /* Form Styles */
+  .form-input {
+    @apply w-full py-3.5 px-4 bg-background border-hairline rounded-lg font-sans text-body text-primary transition-all duration-200;
+  }
+
+  .form-input::placeholder {
+    @apply text-primary/40;
+  }
+
+  .form-input:focus {
+    @apply outline-none border-primary ring-2 ring-primary/10;
+  }
+
+  /* Accessibility - Focus States */
+  .focus-visible-ring:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Pattern Backgrounds */
+  .pattern-grid {
+    background-image:
+      linear-gradient(rgba(0, 94, 83, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 94, 83, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .pattern-grid-large {
+    background-image:
+      linear-gradient(rgba(0, 94, 83, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 94, 83, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .pattern-grid-dark {
+    background-image:
+      linear-gradient(rgba(0, 94, 83, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 94, 83, 0.02) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  /* Gradient Backgrounds */
+  .bg-gradient-radial-accent {
+    background-image:
+      radial-gradient(circle at 90% 10%, rgba(236, 255, 115, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 10% 90%, rgba(0, 94, 83, 0.03) 0%, transparent 40%);
+  }
+
+  .bg-gradient-radial-dark {
+    background-image:
+      radial-gradient(circle at 10% 80%, rgba(236, 255, 115, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
+  }
+
+  .bg-gradient-radial-talents {
+    background-image:
+      radial-gradient(circle at 80% 20%, rgba(236, 255, 115, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
+  }
+}
+
+/* === Logo Text === */
+.logo-text {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  fill: #005e53;
+}
+
+.logo-text-light {
+  fill: #FFFFFF;
+}
+
+/* === Marquee Fade Edges === */
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #FAFBF9, transparent);
+}
+
+.marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #FAFBF9, transparent);
+}
+
+/* === Connector Pulse Animation === */
+.connector-pulse {
+  @apply absolute top-1/2 left-0 w-2 h-2 bg-primary -translate-y-1/2;
+  animation: pulseMove 3s linear infinite;
+}
+
+@keyframes pulseMove {
+  0% {
+    left: 0;
+    opacity: 1;
+  }
+
+  100% {
+    left: calc(100% - 8px);
+    opacity: 0;
+  }
+}
+
+/* === Select Dropdown Arrow === */
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23005e53' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+
+/* === Print Styles === */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+}
