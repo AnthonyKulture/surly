@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 
 const navLinks = [
-  { href: "#market-analysis", label: "Le Constat" },
-  { href: "#dashboard", label: "La Solution" },
-  { href: "#piliers", label: "Notre Approche" },
+  { href: "/#market-analysis", label: "Le Constat" },
+  { href: "/#dashboard", label: "La Solution" },
+  { href: "/#piliers", label: "Notre Approche" },
   { href: "/ai", label: "Surly AI", isExternal: true },
 ];
 
@@ -47,16 +47,25 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    e.preventDefault();
-    const targetId = href.replace("#", "");
-    const target = document.getElementById(targetId);
-    if (target) {
-      // Adjust offset for the taller header (Nav + Subheader) or just Nav
-      const navHeight = showAnnouncementBar ? 120 : 80;
-      const targetPosition =
-        target.getBoundingClientRect().top + window.scrollY - navHeight;
-      window.scrollTo({ top: targetPosition, behavior: "smooth" });
+    // Only do smooth scroll if we're on the homepage
+    const isHomePage = window.location.pathname === "/" || window.location.pathname === "";
+
+    // Extract the hash from href (e.g., "/#market-analysis" -> "#market-analysis")
+    const hash = href.includes("#") ? "#" + href.split("#")[1] : "";
+
+    if (isHomePage && hash) {
+      e.preventDefault();
+      const targetId = hash.replace("#", "");
+      const target = document.getElementById(targetId);
+      if (target) {
+        // Adjust offset for the taller header (Nav + Subheader) or just Nav
+        const navHeight = showAnnouncementBar ? 120 : 80;
+        const targetPosition =
+          target.getBoundingClientRect().top + window.scrollY - navHeight;
+        window.scrollTo({ top: targetPosition, behavior: "smooth" });
+      }
     }
+    // If not on homepage, let the link navigate normally to /#section
     handleCloseMenu();
   };
 
@@ -68,18 +77,18 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
           <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay" />
           <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
-          <div className="relative h-full flex items-center justify-center gap-3 px-4 text-center">
-            <div className="flex items-center gap-2 justify-center hidden sm:flex">
-              <span className="flex items-center justify-center w-4 h-4 rounded-full bg-white/10 text-accent ring-1 ring-white/20">
-                <svg viewBox="0 0 24 24" fill="none" className="w-2.5 h-2.5 text-accent">
+          <div className="relative h-full flex items-center justify-center gap-2 sm:gap-3 px-4 text-center">
+            <div className="flex items-center gap-1.5 sm:gap-2 justify-center">
+              <span className="flex items-center justify-center w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white/10 text-accent ring-1 ring-white/20">
+                <svg viewBox="0 0 24 24" fill="none" className="w-2 h-2 sm:w-2.5 sm:h-2.5 text-accent">
                   <path
                     d="M12 2L14.8 8.2L21 11L14.8 13.8L12 20L9.2 13.8L3 11L9.2 8.2L12 2Z"
                     fill="currentColor"
                   />
                 </svg>
               </span>
-              <span className="text-[10px] md:text-xs font-semibold tracking-wide text-white/90">
-                Trouvez un expert pour votre projet
+              <span className="text-[9px] sm:text-[10px] md:text-xs font-semibold tracking-wide text-white/90">
+                Trouvez un expert :
               </span>
             </div>
 

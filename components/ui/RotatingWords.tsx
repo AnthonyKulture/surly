@@ -34,7 +34,7 @@ export const RotatingWords = ({
 
     return (
         <div className={cn("inline-flex items-center", className)} aria-label={`Votre expertise en ${words[index]} mérite les meilleures opportunités`}>
-            <span className="mr-1.5 whitespace-nowrap">Votre expertise en</span>
+            <span className="mr-1 sm:mr-1.5 whitespace-nowrap text-[10px] sm:text-xs">Votre expertise en</span>
 
             {/* Animated container with dynamic width */}
             <div className="relative inline-flex h-[1.5em] overflow-hidden align-middle">
@@ -64,7 +64,7 @@ export const RotatingWords = ({
                 </motion.div>
             </div>
 
-            <span className="ml-1.5 whitespace-nowrap">mérite les meilleures opportunités</span>
+            <span className="ml-1 sm:ml-1.5 whitespace-nowrap text-[10px] sm:text-xs hidden sm:inline">mérite les meilleures opportunités</span>
         </div>
     );
 };

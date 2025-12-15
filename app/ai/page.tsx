@@ -36,16 +36,8 @@ export default function SurlyAIPage() {
     const [isRateLimited, setIsRateLimited] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
-    const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "auto" });
-    };
-
-    useEffect(() => {
-        // Only scroll when AI is typing, not on user send
-        if (isTyping) {
-            scrollToBottom();
-        }
-    }, [isTyping]);
+    // Removed automatic scrolling to prevent forcing scroll to bottom
+    // Users can manually scroll to see new messages if needed
 
     const handleSend = async () => {
         if (!input.trim()) return;
