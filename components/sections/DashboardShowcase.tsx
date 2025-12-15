@@ -9,6 +9,8 @@ import { FunctionBadge } from "@/components/ui/dashboard/FunctionBadge";
 import { FilterSelect } from "@/components/ui/dashboard/FilterSelect";
 import { NavItem } from "@/components/ui/dashboard/NavItem";
 import { RotatingKeywords } from "@/components/ui/dashboard/RotatingKeywords";
+import { Button, ArrowIcon } from "@/components/ui/Button";
+import { Logo } from "@/components/ui/Logo";
 
 type Mode = 'banque' | 'assurance';
 
@@ -53,18 +55,18 @@ export const DashboardShowcase = () => {
 
                 {/* Platform Stats */}
                 <Reveal delay={175} duration={800}>
-                    <div className="flex justify-center gap-12 mb-12 flex-wrap">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto w-full">
                         <div className="text-center">
                             <div className="text-3xl font-bold text-primary mb-1">3,300+</div>
                             <div className="text-xs text-gray-500 uppercase tracking-wide font-medium">Experts certifiés</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-primary mb-1">850+</div>
-                            <div className="text-xs text-gray-500 uppercase tracking-wide font-medium">Missions actives</div>
+                            <div className="text-3xl font-bold text-primary mb-1">100%</div>
+                            <div className="text-xs text-gray-500 uppercase tracking-wide font-medium">Banque & Assurance</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-primary mb-1">95%</div>
-                            <div className="text-xs text-gray-500 uppercase tracking-wide font-medium">Taux de satisfaction</div>
+                            <div className="text-3xl font-bold text-primary mb-1">48h</div>
+                            <div className="text-xs text-gray-500 uppercase tracking-wide font-medium">Délai moyen présentation</div>
                         </div>
                     </div>
                 </Reveal>
@@ -75,34 +77,40 @@ export const DashboardShowcase = () => {
                         <p className="text-xs text-gray-500 uppercase tracking-wider font-medium mb-4">
                             Explorez par secteur
                         </p>
-                        <div className="inline-flex items-center gap-1 p-1 bg-gray-50 rounded-xl border border-gray-200/60 shadow-sm">
-                            <button
-                                onClick={() => setMode('banque')}
-                                className={cn(
-                                    "relative px-8 py-3.5 rounded-lg font-semibold text-sm transition-all duration-300",
-                                    "flex items-center gap-2.5",
-                                    mode === 'banque'
-                                        ? "bg-white text-foreground shadow-sm border border-gray-200/40"
-                                        : "text-gray-500 hover:text-gray-700"
-                                )}
-                            >
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-                                <span>Banque</span>
-                            </button>
+                        <div className="relative">
+                            <div className="relative inline-flex items-center gap-1 p-1 rounded-xl overflow-hidden bg-transparent">
+                                <div className="absolute inset-[-100%] animate-spin-medium bg-[conic-gradient(from_90deg_at_50%_50%,#0000_75%,#005e53_100%)]" />
+                                <div className="absolute inset-[2px] bg-white rounded-lg z-0" />
+                                <div className="relative z-10 flex gap-1">
+                                    <button
+                                        onClick={() => setMode('banque')}
+                                        className={cn(
+                                            "relative px-8 py-3.5 rounded-lg font-semibold text-sm transition-all duration-300",
+                                            "flex items-center gap-2.5 hover:scale-105 active:scale-95",
+                                            mode === 'banque'
+                                                ? "bg-white text-foreground shadow-sm border border-gray-200/40"
+                                                : "text-gray-500 hover:text-gray-700 hover:bg-gray-50/50"
+                                        )}
+                                    >
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                                        <span>Banque</span>
+                                    </button>
 
-                            <button
-                                onClick={() => setMode('assurance')}
-                                className={cn(
-                                    "relative px-8 py-3.5 rounded-lg font-semibold text-sm transition-all duration-300",
-                                    "flex items-center gap-2.5",
-                                    mode === 'assurance'
-                                        ? "bg-white text-foreground shadow-sm border border-gray-200/40"
-                                        : "text-gray-500 hover:text-gray-700"
-                                )}
-                            >
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                                <span>Assurance</span>
-                            </button>
+                                    <button
+                                        onClick={() => setMode('assurance')}
+                                        className={cn(
+                                            "relative px-8 py-3.5 rounded-lg font-semibold text-sm transition-all duration-300",
+                                            "flex items-center gap-2.5 hover:scale-105 active:scale-95",
+                                            mode === 'assurance'
+                                                ? "bg-white text-foreground shadow-sm border border-gray-200/40"
+                                                : "text-gray-500 hover:text-gray-700 hover:bg-gray-50/50"
+                                        )}
+                                    >
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                                        <span>Assurance</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </Reveal>
@@ -120,7 +128,7 @@ export const DashboardShowcase = () => {
                             <div className="hidden md:flex flex-col w-[260px] border-r border-border/10 bg-white p-4">
                                 {/* Logo Area */}
                                 <div className="flex items-center gap-2 mb-10 px-2">
-                                    <div className="text-2xl font-bold font-serif">Surly<span className="text-primary text-4xl leading-3">.</span></div>
+                                    <Logo className="w-[100px]" variant="black" />
                                 </div>
 
                                 {/* Navigation */}
@@ -335,7 +343,34 @@ export const DashboardShowcase = () => {
                         </div>
                     </Reveal>
                 </div>
+
+                {/* Dual CTA - For both roles */}
+                <Reveal delay={400} duration={800}>
+                    <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <Button
+                            as="a"
+                            href="https://app.surly.fr/postulant"
+                            variant="outline"
+                            className="pointer-events-auto w-full sm:w-auto"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span>Je suis Expert</span>
+                            <ArrowIcon />
+                        </Button>
+                        <Button
+                            as="a"
+                            href="/ai"
+                            variant="primary"
+                            className="pointer-events-auto w-full sm:w-auto shadow-lg shadow-primary/20"
+                        >
+                            <span>Je recrute un Expert</span>
+                            <ArrowIcon />
+                        </Button>
+                    </div>
+                </Reveal>
             </div>
-        </section>
+
+        </section >
     );
 };

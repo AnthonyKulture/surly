@@ -144,6 +144,9 @@ const config: Config = {
         "float-card": "floatCard 6s ease-in-out infinite",
         "glow-pulse": "glowPulse 3s ease-in-out infinite",
         shimmer: "shimmer 2.5s linear infinite",
+        blob: "blob 7s infinite",
+        "spin-slow": "spin 3s linear infinite",
+        "spin-medium": "spin 2s linear infinite",
       },
       keyframes: {
         marquee: {
@@ -185,6 +188,12 @@ const config: Config = {
         shimmer: {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
+        },
+        blob: {
+          "0%": { transform: "translate(0px, 0px) scale(1)" },
+          "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+          "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+          "100%": { transform: "translate(0px, 0px) scale(1)" },
         },
       },
     },

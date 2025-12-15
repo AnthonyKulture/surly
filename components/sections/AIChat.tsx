@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
+import { Button, ArrowIcon } from "@/components/ui/Button";
 
 interface DemoMessage {
     role: "user" | "assistant";
@@ -376,13 +377,16 @@ export const AIChat = () => {
                         </div>
 
                         {/* CTA */}
-                        <div className="mt-6 text-center">
-                            <button className="inline-flex items-center gap-2 px-7 py-3 bg-primary text-background text-sm font-semibold rounded-lg hover:bg-primary-dark transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
-                                <span>Accéder à l'outil complet</span>
-                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
+                        <div className="mt-8 text-center pt-4">
+                            <Button
+                                as="a"
+                                href="/ai"
+                                variant="outline"
+                                className="pointer-events-auto"
+                            >
+                                <span>Essayer maintenant</span>
+                                <ArrowIcon />
+                            </Button>
                         </div>
                     </div>
                 </Reveal>

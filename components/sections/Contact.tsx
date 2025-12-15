@@ -161,7 +161,7 @@ const ContactForm = () => {
         size="full"
         disabled={isSubmitting}
         className={cn(
-          "hover:bg-accent hover:text-primary hover:border-accent",
+          "hover:bg-accent hover:text-primary hover:border-accent whitespace-nowrap flex-nowrap",
           isSubmitting && "opacity-70 cursor-not-allowed"
         )}
       >

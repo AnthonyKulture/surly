@@ -48,9 +48,9 @@ export const LeadMagnet = () => {
                         tag="Guide Gratuit"
                         title={
                             <>
-                                Les 7 Erreurs Fatales
+                                Les 7 erreurs fatales
                                 <br />
-                                <span className="text-accent">du Recrutement Banque & Assurance</span>
+                                <span className="text-accent">du recrutement Banque & Assurance</span>
                             </>
                         }
                         centered
@@ -88,7 +88,7 @@ export const LeadMagnet = () => {
                                     </div>
                                 )}
                             </div>
-                            <Button type="submit" variant="outline" size="large">
+                            <Button type="submit" variant="outline-light" size="large" className="whitespace-nowrap flex-nowrap">
                                 <span>Télécharger le guide</span>
                                 <ArrowIcon />
                             </Button>

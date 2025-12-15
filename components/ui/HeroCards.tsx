@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/Reveal";
+import { Logo } from "@/components/ui/Logo";
 
 export const HeroCards = () => {
     return (
@@ -17,7 +18,7 @@ export const HeroCards = () => {
                     <div className="hidden md:flex flex-col w-[260px] border-r border-border/10 bg-white p-4">
                         {/* Logo Area */}
                         <div className="flex items-center gap-2 mb-10 px-2">
-                            <div className="text-2xl font-bold font-serif">Surly<span className="text-primary text-4xl leading-3">.</span></div>
+                            <Logo className="w-[100px]" variant="black" />
                         </div>
 
                         {/* Navigation */}

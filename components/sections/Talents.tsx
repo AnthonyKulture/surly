@@ -5,6 +5,17 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button, ArrowIcon } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 
+// Utility function to censor last names
+const censorLastName = (fullName: string): string => {
+  const nameParts = fullName.trim().split(" ");
+  if (nameParts.length < 2) return fullName;
+
+  const firstName = nameParts[0];
+  const lastNameInitial = nameParts[nameParts.length - 1][0];
+
+  return `${firstName} ${lastNameInitial}***`;
+};
+
 const talents = [
   {
     name: "Sophie Martin",
@@ -76,7 +87,7 @@ export const Talents = () => {
                 {/* Name & Role */}
                 <div className="text-center mb-3">
                   <h3 className="text-base font-semibold text-foreground mb-1">
-                    {talent.name}
+                    {censorLastName(talent.name)}
                   </h3>
                   <p className="text-xs font-medium text-primary">
                     {talent.role}
@@ -116,16 +127,12 @@ export const Talents = () => {
 
         {/* CTA */}
         <Reveal delay={400} duration={800}>
-          <div className="text-center">
+          <div className="text-center relative z-10">
             <Button
-              as="a"
-              href="https://app.surly.fr"
-              variant="outline-light"
-              size="large"
-              target="_blank"
-              rel="noopener noreferrer"
+              variant="outline"
+              className="pointer-events-auto cursor-default"
             >
-              <span>Voir les 12 experts IFRS 17 disponibles</span>
+              <span>Découvrir tous nos experts disponibles</span>
               <ArrowIcon />
             </Button>
           </div>

@@ -3,6 +3,8 @@
 import { Button, ArrowIcon } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { RotatingWords } from "@/components/ui/RotatingWords";
+import { ScrollIndicator } from "@/components/ui/ScrollIndicator";
+import { HeroBackground } from "@/components/ui/HeroBackground";
 
 export const Hero = () => {
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -19,9 +21,10 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative pt-24 pb-12 lg:pt-28 lg:pb-20 overflow-hidden bg-white"
+      className="relative w-full min-h-[90vh] md:min-h-screen pt-28 pb-16 md:pt-48 md:pb-32 flex flex-col items-center justify-center overflow-hidden bg-white"
     >
-      <div className="container relative z-[2] flex flex-col items-center">
+      <HeroBackground />
+      <div className="container relative z-[2] flex flex-col items-center px-6 md:px-4">
 
         {/* Dynamic Badge */}
         <Reveal delay={0} duration={800} direction="down">
@@ -44,16 +47,16 @@ export const Hero = () => {
 
         {/* Title */}
         <Reveal delay={100} duration={1000}>
-          <h1 className="text-4xl lg:text-6xl font-bold text-foreground text-center mb-6 tracking-tight leading-[1.1] max-w-4xl mx-auto">
+          <h1 className="text-[2.5rem] leading-[1.15] lg:text-6xl font-bold text-foreground text-center mb-6 tracking-tight lg:leading-[1.1] max-w-4xl mx-auto">
             Recrutez les meilleurs experts <br className="hidden md:block" />
-            <span className="text-primary">Banque & Assurance.</span>
+            <span className="text-primary block mt-1 md:inline md:mt-0">Banque & Assurance.</span>
           </h1>
         </Reveal>
 
         {/* Subtitle */}
         <Reveal delay={200} duration={1000}>
-          <h2 className="text-xl text-foreground-muted text-center mb-10 max-w-3xl mx-auto font-normal leading-relaxed">
-            La seule marketplace <strong className="text-foreground font-semibold">ultra-spécialisée</strong> qui réunit l&apos;intégralité des experts et des opportunités et missions du secteur <strong className="text-foreground font-semibold">Bancassurance</strong>. <span className="text-foreground font-medium">Freelance, CDI, CDD...</span>
+          <h2 className="text-lg md:text-xl text-foreground-muted text-center mb-8 md:mb-10 max-w-3xl mx-auto font-normal leading-relaxed text-balance">
+            La seule marketplace <strong className="text-foreground font-semibold">ultra-spécialisée</strong> qui réunit l&apos;intégralité des experts et des opportunités du secteur <strong className="text-foreground font-semibold">Bancassurance</strong>.
           </h2>
         </Reveal>
 
@@ -86,6 +89,8 @@ export const Hero = () => {
         </Reveal>
 
       </div>
+
+      <ScrollIndicator />
     </section>
   );
 };

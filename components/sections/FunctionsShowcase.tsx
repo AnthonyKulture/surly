@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
+import { Button, ArrowIcon } from "@/components/ui/Button";
 
 type FunctionData = {
     id: string;
@@ -253,6 +254,16 @@ export const FunctionsShowcase = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Harmonized CTA */}
+                <Reveal delay={300} duration={800}>
+                    <div className="mt-12 text-center relative z-10">
+                        <Button variant="outline" className="pointer-events-auto cursor-default">
+                            <span>Explorer toutes les fonctions</span>
+                            <ArrowIcon />
+                        </Button>
+                    </div>
+                </Reveal>
             </div>
         </section>
     );

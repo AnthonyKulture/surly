@@ -86,7 +86,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
         suppressHydrationWarning={true}
         {...buttonProps}
       >
-        <span suppressHydrationWarning={true}>
+        <span suppressHydrationWarning={true} className="contents">
           {children}
         </span>
       </button>

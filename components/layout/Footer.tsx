@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "@/components/ui/Logo";
 
 const footerLinks = {
   platform: [
@@ -25,11 +26,9 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-[1.5fr_2fr] gap-2xl pb-xl border-b border-white/15 mb-lg">
           {/* Brand */}
           <div>
-            <svg viewBox="0 0 120 32" className="w-[90px] h-7 mb-md">
-              <text x="0" y="26" className="logo-text logo-text-light">
-                SURLY
-              </text>
-            </svg>
+            <div className="mb-md">
+              <Logo className="w-[120px]" variant="white" />
+            </div>
             <p className="text-small text-background/60 leading-relaxed">
               L&apos;écosystème Recrutement & Freelance
               <br />

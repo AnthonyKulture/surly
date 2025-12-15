@@ -2,6 +2,7 @@
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
+import { Button, ArrowIcon } from "@/components/ui/Button";
 
 export const MarketAnalysis = () => {
     return (
@@ -17,9 +18,9 @@ export const MarketAnalysis = () => {
                     tag="Réalité & diagnostic"
                     title={
                         <>
-                            Le recrutement Bancassurance
+                            Le recrutement en Banque & Assurance
                             <br />
-                            <span className="text-accent">est cassé.</span>
+                            <span className="text-accent">est à réinventer.</span>
                         </>
                     }
                     light
@@ -142,6 +143,16 @@ export const MarketAnalysis = () => {
                                 </span>
                             </div>
                         </div>
+                    </div>
+                </Reveal>
+
+                {/* Harmonized CTA */}
+                <Reveal delay={500} duration={1000}>
+                    <div className="mt-12 text-center">
+                        <Button variant="outline-light" className="pointer-events-auto cursor-default">
+                            <span>Comprendre notre diagnostic</span>
+                            <ArrowIcon />
+                        </Button>
                     </div>
                 </Reveal>
 

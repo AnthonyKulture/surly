@@ -2,7 +2,9 @@
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
+
 import { cn } from "@/lib/utils";
+import { Button, ArrowIcon } from "@/components/ui/Button";
 
 const stories = [
     {
@@ -69,6 +71,16 @@ export const SuccessStories = () => {
                         <StoryCard key={index} story={story} index={index} />
                     ))}
                 </div>
+
+                {/* Harmonized CTA */}
+                <Reveal delay={600} duration={800}>
+                    <div className="mt-12 text-center">
+                        <Button variant="outline-light" className="pointer-events-auto cursor-default">
+                            <span>Lire les études de cas</span>
+                            <ArrowIcon />
+                        </Button>
+                    </div>
+                </Reveal>
             </div>
         </section>
     );
