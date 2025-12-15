@@ -1,46 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { CandidateCard } from "@/components/ui/dashboard/CandidateCard";
+import { FunctionBadge } from "@/components/ui/dashboard/FunctionBadge";
+import { FilterSelect } from "@/components/ui/dashboard/FilterSelect";
+import { NavItem } from "@/components/ui/dashboard/NavItem";
+import { RotatingKeywords } from "@/components/ui/dashboard/RotatingKeywords";
 
 type Mode = 'banque' | 'assurance';
 
-// Industry-specific keywords
-const BANQUE_KEYWORDS = [
-    "Bâle III", "SEPA", "PSD2", "KYC/AML", "Crédit Corporate", "Banque Privée",
-    "Gestion d'Actifs", "Trading", "ALM", "Pillar 3", "ICAAP", "Monétique",
-    "Core Banking", "API Banking", "Open Banking", "Risque de Crédit",
-    "Conformité RGPD", "MiFID II", "EMIR", "Benchmark Regulation"
-];
-
-const ASSURANCE_KEYWORDS = [
-    "IFRS 17", "Solvabilité II", "Actuariat Vie", "Actuariat Non-Vie",
-    "Tarification", "Souscription", "Gestion Sinistres", "Réassurance",
-    "SCR", "ORSA", "QRT", "Pilier 3", "Best Estimate", "Risk Margin",
-    "InsurTech", "Distribution", "Product Management", "Underwriting",
-    "Claims Management", "Pricing"
-];
-
 export const DashboardShowcase = () => {
     const [mode, setMode] = useState<Mode>('banque');
-    const [currentKeywordIndex, setCurrentKeywordIndex] = useState(0);
-
-    const keywords = mode === 'banque' ? BANQUE_KEYWORDS : ASSURANCE_KEYWORDS;
-
-    // Rotate keywords every 2 seconds
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentKeywordIndex((prev) => (prev + 1) % keywords.length);
-        }, 2000);
-        return () => clearInterval(interval);
-    }, [keywords.length]);
-
-    // Reset keyword index when mode changes
-    useEffect(() => {
-        setCurrentKeywordIndex(0);
-    }, [mode]);
 
     return (
         <section
@@ -75,18 +48,8 @@ export const DashboardShowcase = () => {
                     </div>
                 </Reveal>
 
-                {/* Rotating Keywords */}
-                <Reveal delay={150} duration={800}>
-                    <div className="flex justify-center mb-10">
-                        <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-gray-50 rounded-full border border-gray-200/60">
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                            <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">Expertise</span>
-                            <span className="text-sm font-semibold text-foreground transition-all duration-300">
-                                {keywords[currentKeywordIndex]}
-                            </span>
-                        </div>
-                    </div>
-                </Reveal>
+                {/* Rotating Keywords - Isolated Component */}
+                <RotatingKeywords mode={mode} />
 
                 {/* Platform Stats */}
                 <Reveal delay={175} duration={800}>
@@ -375,183 +338,4 @@ export const DashboardShowcase = () => {
             </div>
         </section>
     );
-};
-
-// Function Badge Component
-const FunctionBadge = ({ label, color }: { label: string, color: string }) => {
-    const colorClasses = {
-        blue: "bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100 hover:border-blue-300 hover:shadow-blue-200/50",
-        purple: "bg-purple-50 text-purple-700 border-purple-200 hover:bg-purple-100 hover:border-purple-300 hover:shadow-purple-200/50",
-        cyan: "bg-cyan-50 text-cyan-700 border-cyan-200 hover:bg-cyan-100 hover:border-cyan-300 hover:shadow-cyan-200/50",
-        pink: "bg-pink-50 text-pink-700 border-pink-200 hover:bg-pink-100 hover:border-pink-300 hover:shadow-pink-200/50",
-        orange: "bg-orange-50 text-orange-700 border-orange-200 hover:bg-orange-100 hover:border-orange-300 hover:shadow-orange-200/50",
-        emerald: "bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100 hover:border-emerald-300 hover:shadow-emerald-200/50",
-        indigo: "bg-indigo-50 text-indigo-700 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-300 hover:shadow-indigo-200/50",
-    };
-
-    return (
-        <span className={cn(
-            "px-4 py-2 rounded-lg text-sm font-semibold border transition-all duration-300 cursor-default",
-            "hover:scale-105 hover:shadow-lg",
-            colorClasses[color as keyof typeof colorClasses]
-        )}>
-            {label}
-        </span>
-    );
-};
-
-// UI Components for the Mockup
-
-const NavItem = ({ icon, label, active = false, badge, notification, isNew }: { icon: string, label: string, active?: boolean, badge?: string, notification?: boolean, isNew?: boolean }) => {
-    return (
-        <div className={cn(
-            "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors cursor-default relative",
-            active
-                ? "bg-accent/20 text-foreground border-l-4 border-accent pl-2"
-                : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
-        )}>
-            {/* Simple SVG Icons based on name */}
-            <div className="w-5 h-5 opacity-70">
-                {getIcon(icon)}
-            </div>
-            <span className="flex-1">{label}</span>
-            {badge && (
-                <span className={cn(
-                    "text-[10px] font-bold px-1.5 py-0.5 rounded-full",
-                    notification ? "bg-red-500 text-white" : "bg-gray-200 text-gray-700"
-                )}>
-                    {badge}
-                </span>
-            )}
-            {isNew && (
-                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-primary text-white uppercase">
-                    New
-                </span>
-            )}
-        </div>
-    );
-};
-
-const FilterSelect = ({ label, count, active }: { label: string, count?: number, active?: boolean }) => (
-    <div className={cn(
-        "border rounded-md px-3 py-2 text-sm flex justify-between items-center transition-all cursor-default",
-        active
-            ? "bg-primary/5 border-primary/30 text-primary font-semibold"
-            : "bg-white border-gray-200 text-gray-500 hover:border-gray-300"
-    )}>
-        <span className="text-xs">{label}</span>
-        <div className="flex items-center gap-2">
-            {count && <span className="text-xs font-bold text-gray-400">{count}</span>}
-            <svg className="w-3 h-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-        </div>
-    </div>
-);
-
-const CandidateCard = ({
-    initials, color = "bg-gray-700", name, title, location, tags, exp, status, rate, isNew, online, image, skills, certifications, matchScore
-}: any) => {
-    return (
-        <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4 flex flex-col items-center hover:shadow-md transition-shadow relative group">
-            {/* Top indicators */}
-            <div className="absolute top-4 left-4 flex gap-2">
-                {isNew && (
-                    <span className="text-[9px] font-bold px-2 py-1 rounded-full bg-emerald-500 text-white uppercase">
-                        Nouveau
-                    </span>
-                )}
-                {matchScore && (
-                    <span className="text-[9px] font-bold px-2 py-1 rounded-full bg-primary/10 text-primary">
-                        Match {matchScore}%
-                    </span>
-                )}
-            </div>
-
-            <div className="absolute top-4 right-4 text-emerald-500 opacity-50">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-            </div>
-
-            <div className="relative mb-3 mt-4">
-                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-sm ring-2 ring-gray-100">
-                    <img src={image} alt={name} className="object-cover w-full h-full" />
-                </div>
-                {online && <div className="absolute bottom-1 right-1 w-3 h-3 bg-emerald-500 border-2 border-white rounded-full"></div>}
-            </div>
-
-            <div className="text-center w-full mb-3">
-                <h3 className="font-bold text-gray-900 text-base mb-0.5">{name}</h3>
-                <p className="text-[10px] font-bold text-emerald-800 mb-1 flex items-center justify-center leading-tight px-1">{title}</p>
-                <div className="flex items-center justify-center gap-1 text-[10px] text-gray-400">
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                    {location}
-                </div>
-            </div>
-
-            <div className="flex gap-1 mb-2">
-                {tags.map((tag: string) => (
-                    <span key={tag} className={cn(
-                        "px-2 py-0.5 rounded-full text-[9px] font-bold uppercase",
-                        tag === "Assurance" ? "bg-emerald-100/80 text-emerald-700" : "bg-blue-100/80 text-blue-700"
-                    )}>
-                        {tag}
-                    </span>
-                ))}
-            </div>
-
-            {/* Skills/Keywords */}
-            {skills && (
-                <div className="w-full mb-2">
-                    <div className="flex flex-wrap gap-1 justify-center">
-                        {skills.map((skill: string, idx: number) => (
-                            <span key={idx} className="text-[9px] px-1.5 py-0.5 rounded-md bg-gray-100 text-gray-600 font-medium">
-                                {skill}
-                            </span>
-                        ))}
-                    </div>
-                </div>
-            )}
-
-            {/* Certifications */}
-            {certifications && certifications.length > 0 && (
-                <div className="w-full mb-2 flex items-center justify-center gap-1">
-                    <svg className="w-3 h-3 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <span className="text-[9px] text-gray-500 font-semibold">{certifications.join(', ')}</span>
-                </div>
-            )}
-
-            <div className="w-full space-y-1.5 text-[10px] border-t border-gray-50 pt-2">
-                <div className="flex justify-between">
-                    <span className="text-gray-500">Expérience :</span>
-                    <span className="font-semibold text-emerald-700">{exp}</span>
-                </div>
-                <div className="flex justify-between">
-                    <span className="text-gray-500">Contrat :</span>
-                    <span className="font-semibold text-gray-700">{status}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                    <span className="text-gray-500">TJM <span className="text-[9px] bg-gray-100 rounded-full w-3 h-3 inline-flex items-center justify-center">?</span> :</span>
-                    <span className="font-bold text-emerald-700">{rate}</span>
-                </div>
-            </div>
-
-        </div>
-    );
-};
-
-// Icon Helper
-const getIcon = (name: string) => {
-    switch (name) {
-        case 'home': return <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>;
-        case 'search': return <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>;
-        case 'heart': return <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>;
-        case 'plus': return <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>;
-        case 'list': return <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>;
-        case 'inbox': return <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414a1 1 0 00-.707-.293H4" /></svg>;
-        case 'briefcase': return <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>;
-        case 'file-text': return <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>;
-        case 'sparkles': return <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>;
-        case 'check-circle': return <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>;
-        default: return null;
-    }
 };

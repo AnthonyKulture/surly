@@ -19,7 +19,8 @@ export const LeadMagnet = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         // TODO: Integrate with email service
-        console.log("Email submitted:", email);
+        // Form submission logic would go here
+
         setSubmitted(true);
     };
 
