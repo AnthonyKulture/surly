@@ -6,7 +6,15 @@
 import { Resend } from 'resend';
 import { LeadInfo } from './lead-extractor';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization to avoid build errors when env var is not set
+let resendInstance: Resend | null = null;
+
+function getResendClient(): Resend {
+    if (!resendInstance) {
+        resendInstance = new Resend(process.env.RESEND_API_KEY || '');
+    }
+    return resendInstance;
+}
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'contact@surly.fr';
 const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@surly.fr';
@@ -103,6 +111,7 @@ function formatLeadEmail(lead: LeadInfo): string {
  */
 export async function sendLeadNotification(lead: LeadInfo): Promise<boolean> {
     try {
+        const resend = getResendClient();
         const subject = `🎯 Nouveau lead - ${lead.role || 'Profil'} ${lead.sector || ''}`.trim();
 
         const { data, error } = await resend.emails.send({
