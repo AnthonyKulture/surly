@@ -191,16 +191,16 @@ export function extractLeadInfo(messages: any[]): LeadInfo | null {
 
     return {
         email,
-        name: extractName(messages),
-        phone: extractPhone(messages),
-        sector: extractSector(messages),
-        role: extractRole(messages),
-        seniority: null, // Can be enhanced
+        name: extractName(messages) ?? undefined,
+        phone: extractPhone(messages) ?? undefined,
+        sector: extractSector(messages) ?? undefined,
+        role: extractRole(messages) ?? undefined,
+        seniority: undefined,
         skills,
         tools,
-        duration: extractDuration(messages),
-        startDate: extractStartDate(messages),
-        type: null, // Can be enhanced
+        duration: extractDuration(messages) ?? undefined,
+        startDate: extractStartDate(messages) ?? undefined,
+        type: undefined,
         fullConversation,
     };
 }
