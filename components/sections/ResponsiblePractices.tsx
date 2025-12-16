@@ -10,7 +10,7 @@ export const ResponsiblePractices = () => {
             {/* Responsible Purchasing Section */}
             <section
                 id="responsible-purchasing"
-                className="relative py-24 lg:py-28 bg-primary/[0.02] border-b border-primary/10 overflow-hidden"
+                className="relative py-24 lg:py-28 bg-white border-b border-primary/10 overflow-hidden"
             >
                 <div className="container relative z-[1]">
                     <SectionHeader
@@ -47,35 +47,17 @@ export const ResponsiblePractices = () => {
                                     </p>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                    <PracticeItem
-                                        icon={
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>
-                                        }
-                                        title="Transparence totale"
-                                        description="des processus d'achat"
-                                    />
-                                    <PracticeItem
-                                        icon={
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>
-                                        }
-                                        title="Respect rigoureux"
-                                        description="des délais de paiement"
-                                    />
-                                    <PracticeItem
-                                        icon={
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                                            </svg>
-                                        }
-                                        title="Dialogue ouvert"
-                                        description="en cas de litige"
-                                    />
-                                </div>
+                                <ul className="space-y-3 text-center">
+                                    <li className="text-sm text-foreground-muted">
+                                        <span className="font-semibold text-foreground">Transparence totale</span> des processus d'achat
+                                    </li>
+                                    <li className="text-sm text-foreground-muted">
+                                        <span className="font-semibold text-foreground">Respect rigoureux</span> des délais de paiement
+                                    </li>
+                                    <li className="text-sm text-foreground-muted">
+                                        <span className="font-semibold text-foreground">Dialogue ouvert</span> en cas de litige
+                                    </li>
+                                </ul>
                             </div>
                         </Reveal>
                     </div>
@@ -121,11 +103,11 @@ export const ResponsiblePractices = () => {
                                     Surly s'engage à minimiser l'empreinte écologique du numérique en optimisant ses infrastructures technologiques. Nous adoptons des pratiques de sobriété numérique pour réduire notre consommation énergétique.
                                 </p>
 
-                                <div className="space-y-3">
-                                    <FeatureBadge text="Hébergement écoresponsable" />
-                                    <FeatureBadge text="Sensibilisation aux bonnes pratiques numériques" />
-                                    <FeatureBadge text="Promotion du télétravail et réunions virtuelles" />
-                                </div>
+                                <ul className="space-y-2 text-sm text-foreground-muted text-center">
+                                    <li>• Hébergement écoresponsable</li>
+                                    <li>• Sensibilisation aux bonnes pratiques numériques</li>
+                                    <li>• Promotion du télétravail et réunions virtuelles</li>
+                                </ul>
                             </div>
                         </Reveal>
 
@@ -152,11 +134,11 @@ export const ResponsiblePractices = () => {
                                     Chez Surly, la sécurité n'est pas une option, c'est un engagement. Nous protégeons les données personnelles, professionnelles et contractuelles de l'ensemble de nos utilisateurs avec les plus hauts standards de sécurité numérique.
                                 </p>
 
-                                <div className="space-y-3">
-                                    <FeatureBadge text="Confidentialité des informations" />
-                                    <FeatureBadge text="Intégrité des échanges" />
-                                    <FeatureBadge text="Résilience face aux cybermenaces" />
-                                </div>
+                                <ul className="space-y-2 text-sm text-foreground-muted text-center">
+                                    <li>• Confidentialité des informations</li>
+                                    <li>• Intégrité des échanges</li>
+                                    <li>• Résilience face aux cybermenaces</li>
+                                </ul>
                             </div>
                         </Reveal>
                     </div>
@@ -166,19 +148,13 @@ export const ResponsiblePractices = () => {
             {/* Ethics and Employee Well-being Section */}
             <section
                 id="ethics-wellbeing"
-                className="relative py-24 lg:py-28 bg-primary/[0.02] border-b border-primary/10 overflow-hidden"
+                className="relative py-24 lg:py-28 bg-white border-b border-primary/10 overflow-hidden"
             >
                 <div className="container relative z-[1]">
                     <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                         <Reveal delay={100} duration={800}>
                             <div className="bg-white rounded-xl p-8 shadow-sm border border-primary/10">
-                                <div className="w-14 h-14 p-3 bg-primary/5 text-primary rounded-xl mb-6 flex items-center justify-center">
-                                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-                                        <rect x="8" y="14" width="32" height="28" rx="2" strokeLinecap="round" strokeLinejoin="round" />
-                                        <path d="M16 14V10a8 8 0 0116 0v4" strokeLinecap="round" strokeLinejoin="round" />
-                                        <circle cx="24" cy="28" r="3" fill="currentColor" />
-                                    </svg>
-                                </div>
+
 
                                 <h3 className="text-xl font-bold text-foreground mb-3">
                                     Éthique et conformité
@@ -190,32 +166,26 @@ export const ResponsiblePractices = () => {
                                     L'intégrité guide chacune de nos actions. Surly respecte les plus hauts standards de sécurité grâce à son infrastructure Neon, certifiée SOC 2 Type II et ISO 27001.
                                 </p>
 
-                                <div className="space-y-3">
-                                    <SecurityFeature
-                                        title="Audit des partenaires"
-                                        description="Vérification systématique et continue"
-                                    />
-                                    <SecurityFeature
-                                        title="Protection maximale"
-                                        description="Chiffrement AES-256 et surveillance 24/7"
-                                    />
-                                    <SecurityFeature
-                                        title="Conformité totale"
-                                        description="GDPR, CCPA et standards internationaux"
-                                    />
-                                </div>
+                                <ul className="space-y-3 text-sm text-foreground-muted">
+                                    <li>
+                                        <span className="font-semibold text-foreground">Audit des partenaires</span><br />
+                                        Vérification systématique et continue
+                                    </li>
+                                    <li>
+                                        <span className="font-semibold text-foreground">Protection maximale</span><br />
+                                        Chiffrement AES-256 et surveillance 24/7
+                                    </li>
+                                    <li>
+                                        <span className="font-semibold text-foreground">Conformité totale</span><br />
+                                        GDPR, CCPA et standards internationaux
+                                    </li>
+                                </ul>
                             </div>
                         </Reveal>
 
                         <Reveal delay={200} duration={800}>
                             <div className="bg-white rounded-xl p-8 shadow-sm border border-primary/10">
-                                <div className="w-14 h-14 p-3 bg-primary/5 text-primary rounded-xl mb-6 flex items-center justify-center">
-                                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-                                        <circle cx="24" cy="16" r="8" />
-                                        <path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" strokeLinecap="round" />
-                                        <path d="M32 22l4 4 8-8" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </div>
+
 
                                 <h3 className="text-xl font-bold text-foreground mb-3">
                                     Bien-être des collaborateurs
@@ -224,11 +194,11 @@ export const ResponsiblePractices = () => {
                                     Nous cultivons un environnement de travail épanouissant et stimulant :
                                 </p>
 
-                                <div className="space-y-3">
-                                    <WellbeingItem text="Formation et développement personnel" />
-                                    <WellbeingItem text="Environnement inclusif et respectueux" />
-                                    <WellbeingItem text="Mesure régulière du climat interne" />
-                                </div>
+                                <ul className="space-y-2 text-sm text-foreground-muted">
+                                    <li>• Formation et développement personnel</li>
+                                    <li>• Environnement inclusif et respectueux</li>
+                                    <li>• Mesure régulière du climat interne</li>
+                                </ul>
                             </div>
                         </Reveal>
                     </div>
@@ -238,38 +208,4 @@ export const ResponsiblePractices = () => {
     );
 };
 
-// Helper Components
-const PracticeItem = ({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) => (
-    <div className="flex flex-col items-center text-center p-4 bg-primary/5 rounded-lg">
-        <div className="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-lg mb-3">
-            {icon}
-        </div>
-        <h4 className="text-sm font-bold text-foreground mb-1">{title}</h4>
-        <p className="text-xs text-foreground-muted">{description}</p>
-    </div>
-);
 
-const FeatureBadge = ({ text }: { text: string }) => (
-    <div className="flex items-center gap-2 p-2 bg-primary/5 rounded-lg border border-primary/10">
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-primary flex-shrink-0">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-        </svg>
-        <span className="text-xs font-medium text-foreground-muted">{text}</span>
-    </div>
-);
-
-const SecurityFeature = ({ title, description }: { title: string; description: string }) => (
-    <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
-        <h5 className="text-sm font-bold text-foreground mb-1">{title}</h5>
-        <p className="text-xs text-foreground-muted">{description}</p>
-    </div>
-);
-
-const WellbeingItem = ({ text }: { text: string }) => (
-    <div className="flex items-start gap-3 p-3 bg-primary/5 rounded-lg border border-primary/10">
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-primary flex-shrink-0 mt-0.5">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-        </svg>
-        <span className="text-sm text-foreground-muted">{text}</span>
-    </div>
-);

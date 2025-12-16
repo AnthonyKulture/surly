@@ -370,7 +370,7 @@ export default function SurlyAIPage() {
                             {
                                 number: "03",
                                 title: "Spécialisation exclusive",
-                                desc: "Contrairement aux cabinets généralistes, Surly se concentre à 100% sur la Banque et l'Assurance. Nos Talent Managers parlent le même langage technique que vous.",
+                                desc: "Contrairement aux cabinets généralistes, Surly se concentre à 100% sur la Banque et l'Assurance. Nos talent managers parlent le même langage technique que vous.",
                                 stat: "3000+ experts"
                             },
                             {
@@ -473,7 +473,7 @@ export default function SurlyAIPage() {
                         <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto leading-relaxed">
                             Utilisez notre assistant IA pour décrire votre besoin.
                             Nous vous proposons les meilleurs profils sous 48h maximum,
-                            avec validation technique par nos Talent Managers spécialisés.
+                            avec validation technique par nos talent managers spécialisés.
                         </p>
                         <button
                             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

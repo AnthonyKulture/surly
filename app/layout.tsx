@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Surly — L'écosystème Recrutement & Freelance Bancassurance",
   description:
-    "La marketplace ultra-spécialisée qui réunit l'intégralité des talents et opportunités du secteur Banque & Assurance. +3300 experts certifiés.",
+    "La marketplace ultra-spécialisée qui réunit l'intégralité des experts et opportunités du secteur Banque & Assurance. +3300 experts certifiés.",
   keywords: [
     "recrutement bancaire",
     "freelance assurance",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Surly — L'écosystème Recrutement & Freelance Bancassurance",
     description:
-      "La marketplace ultra-spécialisée qui réunit l'intégralité des talents et opportunités du secteur Banque & Assurance.",
+      "La marketplace ultra-spécialisée qui réunit l'intégralité des experts et opportunités du secteur Banque & Assurance.",
     type: "website",
   },
 };

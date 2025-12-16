@@ -124,7 +124,7 @@ export const FunctionsShowcase = () => {
                                     <span className="text-primary">Pour chaque expertise.</span>
                                 </>
                             }
-                            subtitle="Trouvez rapidement les talents spécialisés dont vous avez besoin dans tous les métiers de la banque et de l'assurance."
+                            subtitle="Trouvez rapidement les experts spécialisés dont vous avez besoin dans tous les métiers de la banque et de l'assurance."
                             className="mb-8"
                         />
 

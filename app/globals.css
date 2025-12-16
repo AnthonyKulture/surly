@@ -328,3 +328,110 @@ select {
     color: black;
   }
 }
+
+/* === Legal Content Enhanced Styles === */
+.legal-content-enhanced h2 {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
+  font-weight: 700;
+  color: #005e53;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.legal-content-enhanced h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(135deg, #ecff73 0%, #005e53 100%);
+  border-radius: 2px;
+}
+
+.legal-content-enhanced h3 {
+  position: relative;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgba(0, 94, 83, 0.9);
+  border-bottom: 1px solid rgba(0, 94, 83, 0.1);
+}
+
+.legal-content-enhanced p {
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1rem;
+}
+
+.legal-content-enhanced ul,
+.legal-content-enhanced ol {
+  margin: 1.5rem 0;
+  padding-left: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.legal-content-enhanced li {
+  position: relative;
+  padding-left: 0.5rem;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.legal-content-enhanced ul li::marker {
+  color: #005e53;
+  font-size: 0.875rem;
+}
+
+.legal-content-enhanced ol li::marker {
+  color: #005e53;
+  font-weight: 700;
+}
+
+.legal-content-enhanced strong {
+  color: #005e53;
+  font-weight: 600;
+}
+
+.legal-content-enhanced a {
+  color: #00a693;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: all 0.2s ease;
+}
+
+.legal-content-enhanced a:hover {
+  color: #005e53;
+  text-decoration-thickness: 2px;
+}
+
+.legal-content-enhanced code {
+  background: rgba(0, 94, 83, 0.05);
+  color: #005e53;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.legal-content-enhanced blockquote {
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  background: rgba(236, 255, 115, 0.05);
+  border-left: 4px solid rgba(236, 255, 115, 0.5);
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.7);
+}

@@ -7,7 +7,7 @@ import { FunctionsShowcase } from "@/components/sections/FunctionsShowcase";
 import { AIChat } from "@/components/sections/AIChat";
 import { Piliers } from "@/components/sections/Piliers";
 import { Process } from "@/components/sections/Process";
-import { Talents } from "@/components/sections/Talents";
+import { Experts } from "@/components/sections/Experts";
 import { SuccessStories } from "@/components/sections/SuccessStories";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { LeadMagnet } from "@/components/sections/LeadMagnet";
@@ -40,7 +40,7 @@ export default function Home() {
 
 
         {/* 8. TALENTS DISPONIBLES - Blanc */}
-        <Talents />
+        <Experts />
 
         {/* 9. SUCCESS STORIES - Blanc */}
         <SuccessStories />

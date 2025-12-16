@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useMemo, useCallback, memo } from "react";
+import { useEffect, useState, useMemo, useCallback, memo, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Configuration - Very subtle values for Swiss Design
@@ -118,7 +118,7 @@ const GridHighlightCell = memo(function GridHighlightCell({
 export const SwissGridBackground = memo(function SwissGridBackground() {
   const [highlights, setHighlights] = useState<GridHighlight[]>([]);
   const [dimensions, setDimensions] = useState({ cols: 0, rows: 0 });
-  const [highlightCounter, setHighlightCounter] = useState(0);
+  const highlightCounterRef = useRef(0);
   const [mounted, setMounted] = useState(false);
 
   // Set mounted state on client side only
@@ -155,7 +155,7 @@ export const SwissGridBackground = memo(function SwissGridBackground() {
   useEffect(() => {
     if (mounted && dimensions.cols > 0 && dimensions.rows > 0 && initialHighlightedCells.length === 0) {
       const newHighlightedCells: GridHighlight[] = Array.from({ length: 8 }, (_, index) => ({
-        id: index, // Use index for initial unique IDs
+        id: -(index + 1), // Use negative IDs for initial cells to avoid conflicts
         x: Math.floor(Math.random() * dimensions.cols),
         y: Math.floor(Math.random() * dimensions.rows),
         duration: 2 + Math.random() * 3,
@@ -169,13 +169,16 @@ export const SwissGridBackground = memo(function SwissGridBackground() {
   const generateHighlight = useCallback(() => {
     if (!mounted || dimensions.cols === 0 || dimensions.rows === 0) return;
 
+    // Get current counter value and increment atomically
+    const currentId = highlightCounterRef.current;
+    highlightCounterRef.current += 1;
+
     const newHighlight: GridHighlight = {
-      id: highlightCounter,
+      id: currentId,
       x: Math.floor(Math.random() * dimensions.cols),
       y: Math.floor(Math.random() * dimensions.rows),
     };
 
-    setHighlightCounter((prev) => prev + 1);
     setHighlights((prev) => {
       const updated = [...prev, newHighlight];
       if (updated.length > MAX_ACTIVE_HIGHLIGHTS) {
@@ -187,7 +190,7 @@ export const SwissGridBackground = memo(function SwissGridBackground() {
     setTimeout(() => {
       setHighlights((prev) => prev.filter((h) => h.id !== newHighlight.id));
     }, 3000);
-  }, [mounted, dimensions.cols, dimensions.rows, highlightCounter]);
+  }, [mounted, dimensions.cols, dimensions.rows]);
 
   useEffect(() => {
     if (!mounted || dimensions.cols === 0 || dimensions.rows === 0) return;

@@ -52,6 +52,7 @@ export const Footer = () => {
               </h4>
               <Link href="/pourquoi-surly" className="block text-small text-background/60 py-xs hover:text-background transition-colors">Pourquoi Surly ?</Link>
               <Link href="/rse" className="block text-small text-background/60 py-xs hover:text-background transition-colors">RSE</Link>
+              <Link href="/apport-affaires" className="block text-small text-background/60 py-xs hover:text-background transition-colors">Apport d'affaires</Link>
               <Link href="/#partenaires-avantages" className="block text-small text-background/60 py-xs hover:text-background transition-colors">Partenaires</Link>
             </div>
             <div>

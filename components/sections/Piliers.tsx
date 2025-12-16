@@ -25,7 +25,7 @@ const piliers = [
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
           </svg>
         ),
-        title: "Pertinence Immédiate",
+        title: "Pertinence immédiate",
         description:
           "Des candidats qui comprennent votre environnement et votre culture métier dès le premier jour.",
       },
@@ -35,16 +35,16 @@ const piliers = [
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         ),
-        title: "Gain de Temps",
+        title: "Gain de temps",
         description: "Ne perdez plus des heures à trier des profils qui ne correspondent pas.",
       },
     ],
   },
   {
     number: "02",
-    title: "Technologie & Humain",
+    title: "Technologie & humain",
     description:
-      "Notre plateforme élimine les tâches administratives pour permettre à nos Talent Managers de se concentrer sur ce qui compte vraiment : le fit humain et la compréhension fine du besoin.",
+      "Notre plateforme élimine les tâches administratives pour permettre à nos talent managers de se concentrer sur ce qui compte vraiment : le fit humain et la compréhension fine du besoin.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M24 4L4 14v20l20 10 20-10V14L24 4z" strokeLinecap="round" strokeLinejoin="round" />
@@ -61,9 +61,9 @@ const piliers = [
   },
   {
     number: "03",
-    title: "Une Transparence Radicale",
+    title: "Une transparence radicale",
     description:
-      "Nous brisons l'opacité des agences traditionnelles. Surly instaure un nouveau standard de confiance.",
+      "Nous brisons l'opacité des cabinets / ESN traditionnels. Surly instaure un nouveau standard de confiance.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="6" y="14" width="36" height="24" rx="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -74,7 +74,7 @@ const piliers = [
     ),
     transparency: {
       stats: [
-        { value: "15%", label: "Commission fixe", sublabel: "au succès uniquement" },
+        { value: "15%*", label: "Com. fixe", sublabel: "" },
         { value: "0€", label: "Frais d'entrée", sublabel: "ni abonnement caché" },
       ],
       highlight: {
@@ -188,7 +188,7 @@ const PilierCard = ({ pilier, index }: PilierCardProps) => {
                   {benefit.icon}
                 </div>
                 <div>
-                  <strong className="block text-xs font-bold text-foreground mb-0.5 uppercase tracking-wide">
+                  <strong className="block text-xs font-semibold text-foreground mb-0.5">
                     {benefit.title}
                   </strong>
                   <p className="text-[11px] text-foreground-muted leading-relaxed">
@@ -236,6 +236,9 @@ const PilierCard = ({ pilier, index }: PilierCardProps) => {
                 </div>
               ))}
             </div>
+            <p className="text-[9px] text-foreground-muted/60 italic mt-2 px-1">
+              *Commission client à la contractualisation, lors de l'utilisation autonome de la plateforme (l'expert reçoit 100% du taux/salaire négocié)
+            </p>
             <div className="flex items-center gap-3 p-3 bg-primary/5 border border-primary/10 rounded-lg">
               <div className="w-8 h-8 flex items-center justify-center bg-primary/10 text-primary flex-shrink-0 rounded-lg">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -243,7 +246,7 @@ const PilierCard = ({ pilier, index }: PilierCardProps) => {
                 </svg>
               </div>
               <div>
-                <strong className="block text-xs font-bold text-primary uppercase tracking-wide">
+                <strong className="block text-xs font-semibold text-primary">
                   {pilier.transparency.highlight.title}
                 </strong>
                 <p className="text-[10px] text-primary/70">

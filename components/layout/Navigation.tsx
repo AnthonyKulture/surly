@@ -10,7 +10,6 @@ const navLinks = [
   { href: "/pourquoi-surly", label: "Pourquoi Surly ?", isExternal: true },
   { href: "/rse", label: "Engagements RSE", isExternal: true },
   { href: "/#partenaires-avantages", label: "Partenaires & Avantages" },
-  { href: "/#programme-apport-affaires", label: "Apport d'affaires" },
   { href: "/ai", label: "Surly AI", isExternal: true, isSpecial: true },
 ];
 
@@ -136,7 +135,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
             </Link>
 
             {/* Desktop Navigation Links - Hidden on mobile */}
-            <div className="hidden md:flex items-center gap-6 flex-1 justify-center">
+            <div className="hidden md:flex items-center gap-8 flex-1 justify-center">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -179,7 +178,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Je suis Talent
+                Je suis expert
               </Button>
               <Button
                 as="a"
@@ -223,10 +222,9 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
         </div>
       </div>
 
-      {/* Mobile/Tablet Menu Overlay */}
       <div
         className={cn(
-          "fixed inset-0 bg-white/98 backdrop-blur-3xl z-[900] flex items-center justify-center transition-all duration-500",
+          "fixed inset-0 bg-white/70 backdrop-blur-2xl z-[900] flex items-center justify-center transition-all duration-500 supports-[backdrop-filter]:bg-white/60",
           isMobileMenuOpen
             ? "opacity-100 visible translate-y-0"
             : "opacity-0 invisible -translate-y-8"
@@ -254,7 +252,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Je suis Talent
+              Je suis expert
             </Button>
             <Button
               as="a"

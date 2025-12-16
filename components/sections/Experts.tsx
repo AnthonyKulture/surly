@@ -16,7 +16,7 @@ const censorLastName = (fullName: string): string => {
   return `${firstName} ${lastNameInitial}***`;
 };
 
-const talents = [
+const experts = [
   {
     name: "Sophie Martin",
     role: "Expert Conformité Senior",
@@ -51,15 +51,15 @@ const talents = [
   },
 ];
 
-export const Talents = () => {
+export const Experts = () => {
   return (
     <section
-      id="talents"
+      id="experts"
       className="relative py-24 lg:py-28 bg-white text-foreground overflow-hidden"
     >
       <div className="container relative z-[1]">
         <SectionHeader
-          tag="Talents Vedettes"
+          tag="Experts vedettes"
           title={
             <>
               Découvrez nos
@@ -69,16 +69,16 @@ export const Talents = () => {
           }
         />
 
-        {/* Talents Grid */}
+        {/* Experts Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {talents.map((talent, index) => (
-            <Reveal key={talent.name} delay={index * 100} duration={800}>
+          {experts.map((expert, index) => (
+            <Reveal key={expert.name} delay={index * 100} duration={800}>
               <div className="group p-5 border border-gray-200 bg-white rounded-lg shadow-sm hover:shadow-md hover:border-primary/20 transition-all h-full">
                 {/* Avatar */}
                 <div className="relative w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden ring-2 ring-gray-100 group-hover:ring-primary/20 transition-all">
                   <Image
-                    src={talent.image}
-                    alt={talent.name}
+                    src={expert.image}
+                    alt={expert.name}
                     fill
                     className="object-cover"
                   />
@@ -87,21 +87,21 @@ export const Talents = () => {
                 {/* Name & Role */}
                 <div className="text-center mb-3">
                   <h3 className="text-base font-semibold text-foreground mb-1">
-                    {censorLastName(talent.name)}
+                    {censorLastName(expert.name)}
                   </h3>
                   <p className="text-xs font-medium text-primary">
-                    {talent.role}
+                    {expert.role}
                   </p>
                 </div>
 
                 {/* Experience */}
                 <p className="text-xs text-foreground-muted text-center mb-3">
-                  {talent.experience}
+                  {expert.experience}
                 </p>
 
                 {/* Skills */}
                 <div className="flex flex-wrap gap-1.5 justify-center mb-3">
-                  {talent.skills.map((skill) => (
+                  {expert.skills.map((skill) => (
                     <span
                       key={skill}
                       className="px-2 py-0.5 bg-primary/5 border border-primary/10 text-[10px] font-medium text-primary rounded"
@@ -116,7 +116,7 @@ export const Talents = () => {
                   <div className="flex items-center justify-center gap-1.5">
                     <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
                     <span className="text-[10px] font-medium text-foreground-muted">
-                      {talent.status}
+                      {expert.status}
                     </span>
                   </div>
                 </div>

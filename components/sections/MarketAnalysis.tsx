@@ -29,7 +29,7 @@ export const MarketAnalysis = () => {
 
                 <Reveal delay={100} duration={1000}>
                     <p className="text-lg text-background/80 text-center max-w-3xl mx-auto mb-16 leading-relaxed">
-                        Pénurie de talents, exigences techniques pointues, urgence... le secteur fait face à une tempête parfaite.
+                        Pénurie d'experts, exigences techniques pointues, urgence... le secteur fait face à une tempête parfaite.
                         Et pourtant, <strong className="text-white">on continue d&apos;utiliser des outils généralistes conçus pour la masse</strong>, ignorant les spécificités critiques de notre industrie.
                     </p>
                 </Reveal>

@@ -211,7 +211,7 @@ export const Contact = () => {
               />
 
               <p className="text-lg text-foreground/70 leading-relaxed mb-8">
-                Discutons de vos besoins en talents Banque & Assurance. Notre équipe vous
+                Discutons de vos besoins en experts Banque & Assurance. Notre équipe vous
                 répond sous 24h.
               </p>
 

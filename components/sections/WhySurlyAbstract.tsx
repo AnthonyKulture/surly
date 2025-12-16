@@ -30,11 +30,11 @@ export const WhySurlyAbstract = () => {
 
                 {/* Two Column Layout */}
                 <div className="max-w-7xl mx-auto mt-16">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
 
                         {/* LEFT COLUMN - Image as background with text overlay */}
-                        <Reveal delay={100} duration={1000}>
-                            <div className="relative rounded-3xl overflow-hidden border border-white/10 min-h-[700px] flex flex-col justify-end">
+                        <Reveal delay={100} duration={1000} className="h-full">
+                            <div className="relative rounded-3xl overflow-hidden border border-white/10 h-full min-h-[700px] flex flex-col justify-end">
                                 {/* Background Image - Full height */}
                                 <div className="absolute inset-0 z-0">
                                     <img
@@ -59,7 +59,7 @@ export const WhySurlyAbstract = () => {
                                         <span className="text-accent">la donne.</span>
                                     </h3>
                                     <p className="text-base lg:text-lg text-white/90 leading-relaxed max-w-md mb-4 lg:mb-6">
-                                        Que vous soyez expert en recherche d'opportunités ou entreprise à la recherche de talents, Surly est la plateforme 100% dédiée à la bancassurance qui vous correspond.
+                                        Que vous soyez expert en recherche d'opportunités ou entreprise à la recherche d'experts, Surly est la plateforme 100% dédiée à la bancassurance qui vous correspond.
                                     </p>
 
                                     <Button
@@ -76,7 +76,7 @@ export const WhySurlyAbstract = () => {
                         </Reveal>
 
                         {/* RIGHT COLUMN - 2x2 Grid of Benefits - Equal Heights */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 auto-rows-fr">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 auto-rows-fr h-full min-h-[700px]">
 
                             {/* Benefit 1 */}
                             <Reveal delay={200} duration={1000}>
@@ -118,7 +118,7 @@ export const WhySurlyAbstract = () => {
                                     </div>
                                     <h4 className="text-xl font-bold text-white mb-3">Gain de temps</h4>
                                     <p className="text-background/70 text-sm leading-relaxed flex-grow">
-                                        Fini le tri de centaines de profils. Pour les talents, des offres ciblées. Pour les recruteurs, des candidats qualifiés.
+                                        Fini le tri de centaines de profils. Pour les experts, des offres ciblées. Pour les recruteurs, des candidats qualifiés.
                                     </p>
                                 </div>
                             </Reveal>
@@ -133,18 +133,21 @@ export const WhySurlyAbstract = () => {
                                     </div>
                                     <h4 className="text-xl font-bold text-white mb-3">Transparence totale</h4>
                                     <p className="text-background/70 text-sm leading-relaxed mb-4 flex-grow">
-                                        Transparence totale. Aucun frais caché, rémunération au succès uniquement.
+                                        Transparence totale. Aucun frais caché, commission fixe uniquement.
                                     </p>
                                     <div className="grid grid-cols-2 gap-3 mt-auto">
                                         <div className="bg-white/5 rounded-lg p-3 text-center">
-                                            <div className="text-2xl font-bold text-accent mb-1">15%</div>
-                                            <div className="text-xs text-white/70">Commission au succès</div>
+                                            <div className="text-2xl font-bold text-accent mb-1">15%*</div>
+                                            <div className="text-xs text-white/70">Com. fixe</div>
                                         </div>
                                         <div className="bg-white/5 rounded-lg p-3 text-center">
                                             <div className="text-2xl font-bold text-accent mb-1">0€</div>
                                             <div className="text-xs text-white/70">Frais d'entrée</div>
                                         </div>
                                     </div>
+                                    <p className="text-[9px] text-white/50 italic mt-2">
+                                        *Commission client à la contractualisation, lors de l'utilisation autonome de la plateforme (l'expert reçoit 100% du taux/salaire négocié)
+                                    </p>
                                 </div>
                             </Reveal>
 

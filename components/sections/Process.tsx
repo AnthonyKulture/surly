@@ -41,8 +41,8 @@ const steps = [
     number: "03",
     title: "Collaboration",
     description:
-      "Contractualisez en toute transparence avec notre commission fixe de 15%. Zéro surprise, zéro frais cachés.",
-    feature: "15% commission unique",
+      "Contractualisez en toute transparence avec notre commission fixe de 15%*. Zéro surprise, zéro frais cachés.",
+    feature: "15%* commission unique",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M14 24l8 8 16-16" />
@@ -83,6 +83,13 @@ export const Process = () => {
               isLast={index === steps.length - 1}
             />
           ))}
+        </div>
+
+        {/* Disclaimer */}
+        <div className="text-center mt-8">
+          <p className="text-xs text-foreground-muted/60 italic">
+            *Commission client à la contractualisation, lors de l'utilisation autonome de la plateforme (l'expert reçoit 100% du taux/salaire négocié)
+          </p>
         </div>
       </div>
     </section>
@@ -136,12 +143,14 @@ const ProcessStep = ({ step, index, isLast }: ProcessStepProps) => {
       </Reveal>
 
       {/* Connector */}
-      {!isLast && (
-        <div className="hidden lg:flex items-center px-2 self-center">
-          <div className="w-8 h-0.5 bg-primary/20" />
-          <div className="w-3 h-3 bg-accent rounded-full -ml-1" />
-        </div>
-      )}
+      {
+        !isLast && (
+          <div className="hidden lg:flex items-center px-2 self-center">
+            <div className="w-8 h-0.5 bg-primary/20" />
+            <div className="w-3 h-3 bg-accent rounded-full -ml-1" />
+          </div>
+        )
+      }
     </>
   );
 };

@@ -170,7 +170,7 @@ export const DashboardShowcase = () => {
                                             {/* Mobile Menu Icon */}
                                             <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
                                         </div>
-                                        <span className="font-semibold text-sm text-gray-700 hidden sm:block">Recherche de talents</span>
+                                        <span className="font-semibold text-sm text-gray-700 hidden sm:block">Recherche d'experts</span>
                                     </div>
                                     <div className="flex items-center gap-4">
                                         <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-600">
