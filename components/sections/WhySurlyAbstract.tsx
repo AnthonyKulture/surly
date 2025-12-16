@@ -52,13 +52,13 @@ export const WhySurlyAbstract = () => {
                                 <div className="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-accent/50 rounded-tl-3xl z-[2]" />
 
                                 {/* Content Layer - All at bottom */}
-                                <div className="relative z-10 p-8 lg:p-10">
-                                    <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight mb-4">
+                                <div className="relative z-10 p-6 lg:p-10">
+                                    <h3 className="text-2xl lg:text-4xl font-bold text-white leading-tight mb-2 lg:mb-4">
                                         Des experts qui changent
                                         <br />
                                         <span className="text-accent">la donne.</span>
                                     </h3>
-                                    <p className="text-lg text-white/90 leading-relaxed max-w-md mb-6">
+                                    <p className="text-base lg:text-lg text-white/90 leading-relaxed max-w-md mb-4 lg:mb-6">
                                         Que vous soyez expert en recherche d'opportunités ou entreprise à la recherche de talents, Surly est la plateforme 100% dédiée à la bancassurance qui vous correspond.
                                     </p>
 
