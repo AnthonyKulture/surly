@@ -1,4 +1,9 @@
 export { Hero } from "./Hero";
+export { WhySurlyHero } from "./WhySurlyHero";
+export { WhySurlyAbstract } from "./WhySurlyAbstract";
+export { RSEHero } from "./RSEHero";
+export { FundamentalCommitments } from "./FundamentalCommitments";
+export { ResponsiblePractices } from "./ResponsiblePractices";
 export { MarketAnalysis } from "./MarketAnalysis";
 export { DashboardShowcase } from "./DashboardShowcase";
 export { FunctionsShowcase } from "./FunctionsShowcase";

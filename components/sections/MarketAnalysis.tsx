@@ -149,8 +149,13 @@ export const MarketAnalysis = () => {
                 {/* Harmonized CTA */}
                 <Reveal delay={500} duration={1000}>
                     <div className="mt-12 text-center">
-                        <Button variant="outline-light" className="pointer-events-auto cursor-default">
-                            <span>Comprendre notre diagnostic</span>
+                        <Button
+                            as="a"
+                            href="/ai"
+                            variant="outline-light"
+                            size="large"
+                        >
+                            <span>Essayer notre IA</span>
                             <ArrowIcon />
                         </Button>
                     </div>

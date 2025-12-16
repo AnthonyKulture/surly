@@ -1,7 +1,7 @@
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { MarketAnalysis } from "@/components/sections/MarketAnalysis";
+import { WhySurlyAbstract } from "@/components/sections/WhySurlyAbstract";
 import { DashboardShowcase } from "@/components/sections/DashboardShowcase";
 import { FunctionsShowcase } from "@/components/sections/FunctionsShowcase";
 import { AIChat } from "@/components/sections/AIChat";
@@ -21,8 +21,8 @@ export default function Home() {
         {/* 1. HERO - Blanc */}
         <Hero />
 
-        {/* 2. MARCHÉ & DIAGNOSTIC - Vert 🟩 */}
-        <MarketAnalysis />
+        {/* 2. POURQUOI SURLY? - Abstract - Vert 🟩 (Full version on /pourquoi-surly) */}
+        <WhySurlyAbstract />
 
         {/* 3. LA SOLUTION - Dashboard - Blanc */}
         <DashboardShowcase />

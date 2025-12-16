@@ -84,7 +84,7 @@
 
   /* Text Gradient */
   .text-gradient {
-    @apply font-light text-primary;
+    @apply text-primary;
   }
 
   .text-gradient-light {

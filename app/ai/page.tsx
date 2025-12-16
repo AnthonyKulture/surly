@@ -145,10 +145,10 @@ export default function SurlyAIPage() {
                 </div>
 
                 {/* Framed Chat Container */}
-                <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 overflow-hidden min-h-[400px] sm:min-h-[500px] flex flex-col mb-6 sm:mb-8 relative">
+                <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-accent/20 overflow-hidden min-h-[300px] sm:min-h-[300px] flex flex-col mb-6 sm:mb-8 relative ring-1 ring-accent/10">
 
                     {/* Chat Area */}
-                    <div className="flex-1 p-3 sm:p-6 space-y-4 sm:space-y-6 overflow-y-auto max-h-[500px] sm:max-h-[600px]">
+                    <div className="flex-1 p-3 sm:p-6 space-y-4 sm:space-y-6 overflow-y-auto max-h-[350px] sm:max-h-[400px]">
                         {messages.map((msg, idx) => (
                             <div
                                 key={idx}
@@ -255,11 +255,11 @@ export default function SurlyAIPage() {
                             <button
                                 key={i}
                                 onClick={() => handlePromptClick(prompt)}
-                                className="w-full text-left p-3 sm:p-4 bg-white hover:bg-gray-50 border border-gray-100 hover:border-primary/20 rounded-lg sm:rounded-xl transition-all duration-200 group flex items-center justify-between shadow-sm hover:shadow-md"
+                                className="w-full text-left p-3 sm:p-4 bg-accent/10 hover:bg-accent/15 border border-accent/30 hover:border-accent/50 rounded-lg sm:rounded-xl transition-all duration-200 group flex items-center justify-between shadow-sm hover:shadow-md"
                             >
-                                <span className="text-sm sm:text-base text-gray-600 group-hover:text-primary transition-colors pr-2">{prompt}</span>
-                                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-50 group-hover:bg-primary/10 flex items-center justify-center transition-colors shrink-0">
-                                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-400 group-hover:text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <span className="text-sm sm:text-base text-gray-700 group-hover:text-primary transition-colors pr-2">{prompt}</span>
+                                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary group-hover:bg-primary-dark flex items-center justify-center transition-colors shrink-0">
+                                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                                     </svg>
                                 </div>

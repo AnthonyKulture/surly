@@ -2,9 +2,8 @@
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
-
-import { cn } from "@/lib/utils";
 import { Button, ArrowIcon } from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
 
 const piliers = [
   {
@@ -119,8 +118,15 @@ export const Piliers = () => {
         {/* Harmonized CTA */}
         <Reveal delay={600} duration={800}>
           <div className="mt-12 text-center">
-            <Button variant="outline" className="pointer-events-auto cursor-default">
-              <span>Découvrir notre méthodologie</span>
+            <Button
+              as="a"
+              href="https://app.surly.fr/postulant"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="ghost"
+              size="large"
+            >
+              <span>Rejoindre la plateforme</span>
               <ArrowIcon />
             </Button>
           </div>

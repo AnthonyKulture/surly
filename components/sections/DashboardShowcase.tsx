@@ -122,7 +122,7 @@ export const DashboardShowcase = () => {
 
                     {/* MAIN DASHBOARD UI */}
                     <Reveal delay={300} duration={1000} className="relative z-10 w-full">
-                        <div className="bg-[#FAFBF9] border border-border/10 rounded-xl shadow-2xl overflow-hidden flex h-[600px] md:h-[700px]">
+                        <div className="bg-[#FAFBF9] border border-border/10 rounded-xl shadow-2xl overflow-hidden flex h-[800px] md:h-[700px]">
 
                             {/* LEFT SIDEBAR (Desktop Only) */}
                             <div className="hidden md:flex flex-col w-[260px] border-r border-border/10 bg-white p-4">
@@ -362,7 +362,7 @@ export const DashboardShowcase = () => {
                             as="a"
                             href="/ai"
                             variant="primary"
-                            className="pointer-events-auto w-full sm:w-auto shadow-lg shadow-primary/20"
+                            className="pointer-events-auto w-full sm:w-auto"
                         >
                             <span>Je recrute un Expert</span>
                             <ArrowIcon />

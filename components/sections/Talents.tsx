@@ -130,9 +130,10 @@ export const Talents = () => {
           <div className="text-center relative z-10">
             <Button
               variant="outline"
-              className="pointer-events-auto cursor-default"
+              className="pointer-events-auto cursor-default w-full sm:w-auto"
             >
-              <span>Découvrir tous nos experts disponibles</span>
+              <span className="hidden sm:inline">Découvrir tous nos experts disponibles</span>
+              <span className="sm:hidden">Tous nos experts</span>
               <ArrowIcon />
             </Button>
           </div>

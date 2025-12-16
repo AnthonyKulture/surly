@@ -265,7 +265,7 @@ export const AIChat = () => {
                 <Reveal delay={100} duration={800}>
                     <div className="max-w-6xl mx-auto">
                         {/* Fixed height container - 35/65 split */}
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5" style={{ height: "520px" }}>
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 h-[800px] lg:h-[640px]">
 
                             {/* LEFT - Chat Conversation (35% = 4 cols) */}
                             <div className="lg:col-span-4 bg-gradient-to-br from-primary/5 to-primary/3 border-2 border-primary/15 rounded-lg shadow-md flex flex-col overflow-hidden">
@@ -282,7 +282,7 @@ export const AIChat = () => {
                                 </div>
 
                                 {/* Messages area - pre-allocated space, no overflow */}
-                                <div className="flex-1 p-3 flex flex-col justify-end overflow-hidden">
+                                <div className="flex-1 p-3 flex flex-col justify-start lg:justify-end overflow-hidden">
                                     {/* Reserve space for all 6 messages to prevent layout shift */}
                                     <div className="space-y-2" style={{ minHeight: "340px" }}>
                                         {/* Render all message slots, show only when visible */}
@@ -343,8 +343,8 @@ export const AIChat = () => {
 
                                 {/* Cards area - no scroll, pre-allocated */}
                                 <div className="flex-1 p-3 overflow-hidden">
-                                    {/* Reserve space for all 8 cards */}
-                                    <div className="space-y-2">
+                                    {/* Equal spacing between cards */}
+                                    <div className="space-y-2.5">
                                         {REASONING_CARDS.map((card, index) => {
                                             const isVisible = visibleCards.has(card.id);
                                             const prevCard = index > 0 ? REASONING_CARDS[index - 1] : null;
@@ -354,15 +354,15 @@ export const AIChat = () => {
                                                 <div key={card.id}>
                                                     {/* Connector - fixed size */}
                                                     {index > 0 && (
-                                                        <div className="flex justify-center" style={{ height: "6px" }}>
+                                                        <div className="flex justify-center" style={{ height: "4px" }}>
                                                             {showConnector && (
                                                                 <div className="w-px h-full bg-gradient-to-b from-primary/30 to-primary/10" />
                                                             )}
                                                         </div>
                                                     )}
 
-                                                    {/* Card with fixed min-height - reduced for 8 cards */}
-                                                    <div style={{ minHeight: "52px" }}>
+                                                    {/* Card with fixed height */}
+                                                    <div style={{ height: "58px" }}>
                                                         <ReasoningCardComponent
                                                             card={card}
                                                             isVisible={isVisible}
@@ -458,12 +458,12 @@ const ReasoningCardComponent = ({
 
     return (
         <div
-            className={`transition-all duration-500 ${isVisible
+            className={`transition-all duration-500 h-full w-full ${isVisible
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-4 pointer-events-none"
                 }`}
         >
-            <div className={`border rounded-lg p-3 shadow-sm ${getCardStyle()}`}>
+            <div className={`border rounded-lg p-2.5 shadow-sm h-full w-full flex items-center ${getCardStyle()}`}>
                 <div className="flex items-start gap-2.5">
                     {/* Icon - compact */}
                     <div className={`w-7 h-7 rounded-md flex items-center justify-center flex-shrink-0 ${getIconBg()}`}>

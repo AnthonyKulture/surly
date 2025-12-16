@@ -35,7 +35,7 @@ const variantStyles: Record<ButtonVariant, string> = {
   outline:
     "bg-transparent !text-primary border-primary hover:bg-primary/5 active:scale-[0.98]",
   white:
-    "bg-white !text-primary border-white hover:bg-background-off active:scale-[0.98]",
+    "bg-white !text-primary border-white hover:bg-accent hover:!text-primary active:scale-[0.98]",
   "outline-light":
     "bg-transparent !text-white border-white hover:bg-white hover:!text-primary active:scale-[0.98]",
 };
@@ -55,7 +55,8 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       "inline-flex items-center justify-center gap-2",
       "font-sans font-medium uppercase tracking-[0.05em]",
       "border cursor-pointer rounded-lg",
-      "transition-colors duration-150",
+      "transition-all duration-300",
+      "hover:shadow-lg",
       "whitespace-nowrap",
       "[&_svg]:w-4 [&_svg]:h-4 [&_svg]:transition-transform [&_svg]:duration-150 [&_svg]:flex-shrink-0",
       "hover:[&_svg]:translate-x-0.5",

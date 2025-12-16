@@ -68,7 +68,7 @@ export const Hero = () => {
               href="#contact"
               variant="primary"
               size="large"
-              className="bg-primary text-white hover:bg-primary-dark border-none font-bold px-8 shadow-primary-md hover:shadow-primary-lg transition-all duration-300 min-w-[200px]"
+              className="px-8 min-w-[200px]"
               onClick={(e) => handleSmoothScroll(e as React.MouseEvent<HTMLAnchorElement>, "#contact")}
             >
               <span>Trouver un Expert</span>
@@ -79,7 +79,7 @@ export const Hero = () => {
               href="https://app.surly.fr/postulant"
               variant="outline"
               size="large"
-              className="border-primary text-primary hover:bg-primary/5 font-semibold px-8 min-w-[200px]"
+              className="px-8 min-w-[200px]"
               target="_blank"
               rel="noopener noreferrer"
             >
