@@ -85,7 +85,7 @@ export const Hero = () => {
                 <Button
                   as="a"
                   href="/devenir-consultant"
-                  variant="outline"
+                  variant="primary"
                   size="large"
                   className="px-8 min-w-[200px]"
                 >

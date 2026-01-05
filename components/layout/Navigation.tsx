@@ -8,7 +8,8 @@ import { Logo } from "@/components/ui/Logo";
 import { MegaMenu } from "@/components/layout/MegaMenu";
 
 const navLinks = [
-  { href: "/partenaires-avantages", label: "Partenaires & Avantages" },
+  // "Partenaires & Avantages" retiré du header principal (reste accessible via Mega Menu pour consultants)
+  { href: "/pourquoi-surly", label: "Pourquoi Surly ?" },
   { href: "/ai", label: "Surly AI", isExternal: true, isSpecial: true },
 ];
 

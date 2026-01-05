@@ -129,11 +129,13 @@ export const Experts = () => {
         <Reveal delay={400} duration={800}>
           <div className="text-center relative z-10">
             <Button
-              variant="outline"
-              className="pointer-events-auto cursor-default w-full sm:w-auto"
+              as="a"
+              href="/ai"
+              variant="primary"
+              className="pointer-events-auto w-full sm:w-auto"
             >
-              <span className="hidden sm:inline">Découvrir tous nos experts disponibles</span>
-              <span className="sm:hidden">Tous nos experts</span>
+              <span className="hidden sm:inline">Trouvez votre expert idéal avec notre IA</span>
+              <span className="sm:hidden">Trouver un expert</span>
               <ArrowIcon />
             </Button>
           </div>

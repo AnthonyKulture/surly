@@ -146,18 +146,46 @@ export const MarketAnalysis = () => {
                     </div>
                 </Reveal>
 
-                {/* Harmonized CTA */}
+                {/* Dual CTAs - Équilibre 50/50 */}
                 <Reveal delay={500} duration={1000}>
-                    <div className="mt-12 text-center">
-                        <Button
-                            as="a"
-                            href="/ai"
-                            variant="outline-light"
-                            size="large"
-                        >
-                            <span>Essayer notre IA</span>
-                            <ArrowIcon />
-                        </Button>
+                    <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto">
+                        {/* CTA Client */}
+                        <div className="bg-white/10 border border-white/20 p-8 rounded-2xl text-center hover:bg-white/15 transition-all group">
+                            <h3 className="text-2xl font-bold text-white mb-3">
+                                Vous recrutez ?
+                            </h3>
+                            <p className="text-background/80 mb-6 leading-relaxed">
+                                Trouvez vos experts en 48h avec notre IA ou notre service Cabinet
+                            </p>
+                            <Button
+                                as="a"
+                                href="/sourcing-expert"
+                                variant="white"
+                                size="large"
+                            >
+                                <span>Découvrir nos solutions</span>
+                                <ArrowIcon />
+                            </Button>
+                        </div>
+
+                        {/* CTA Consultant */}
+                        <div className="bg-white/10 border border-white/20 p-8 rounded-2xl text-center hover:bg-white/15 transition-all group">
+                            <h3 className="text-2xl font-bold text-white mb-3">
+                                Vous cherchez une mission ?
+                            </h3>
+                            <p className="text-background/80 mb-6 leading-relaxed">
+                                Accédez aux meilleures opportunités du secteur bancassurance
+                            </p>
+                            <Button
+                                as="a"
+                                href="/devenir-consultant"
+                                variant="white"
+                                size="large"
+                            >
+                                <span>Voir les missions</span>
+                                <ArrowIcon />
+                            </Button>
+                        </div>
                     </div>
                 </Reveal>
 

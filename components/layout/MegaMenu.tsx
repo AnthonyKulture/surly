@@ -9,40 +9,30 @@ interface MegaMenuSection {
     href: string;
 }
 
-// Sections pour les clients / entreprises
+// Sections pour les clients / entreprises (FOCUS PRIORITAIRE)
 const clientSections: MegaMenuSection[] = [
     {
-        title: "Pourquoi Surly ?",
-        abstract: "Découvrez comment Surly révolutionne le sourcing d'experts",
-        href: "/pourquoi-surly",
-    },
-    {
         title: "Sourcing d'expert",
-        abstract: "Grands comptes et cabinets : découvrez nos solutions pour recruter vos talents",
+        abstract: "Grands comptes & cabinets : recrutez vos experts en 48h",
         href: "/sourcing-expert",
     },
     {
-        title: "Conformité, RSE et Sécurité",
-        abstract: "Nos engagements pour un recrutement responsable",
+        title: "Conformité & RSE",
+        abstract: "Un recrutement responsable",
         href: "/rse",
     },
 ];
 
-// Sections pour les consultants
+// Sections pour les consultants (SECONDAIRE)
 const consultantSections: MegaMenuSection[] = [
     {
-        title: "Trouver des missions et postes",
-        abstract: "Consultants et experts : accédez aux meilleures missions freelance et postes salariés du secteur bancassurance",
+        title: "Trouver une mission",
+        abstract: "Missions freelance & postes salariés",
         href: "/devenir-consultant",
     },
     {
-        title: "Programme apport d'affaires",
-        abstract: "Partagez les opportunités que vous ne pouvez réaliser et percevez une rémunération",
-        href: "/apport-affaires",
-    },
-    {
-        title: "Partenaires et Avantages",
-        abstract: "Découvrez nos partenaires et les avantages exclusifs réservés à nos membres",
+        title: "Avantages Membres",
+        abstract: "Partenaires et réductions exclusifs",
         href: "/partenaires-avantages",
     },
 ];
@@ -72,15 +62,19 @@ export const MegaMenu = ({ isOpen, onClose, showAnnouncementBar = true }: MegaMe
                 <div className="max-w-[1200px] mx-auto px-6 py-8">
                     {/* Two column layout: Clients | Consultants */}
                     <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-6">
+                        {/* Colonne CLIENTS - Mise en avant PRIORITAIRE */}
                         {/* Colonne Clients / Entreprises */}
-                        <div className="flex flex-col">
+                        <div className="flex flex-col xl:order-1">
                             <h3 className="text-xs font-bold uppercase tracking-wider text-primary mb-4 px-1 flex items-center gap-2">
-                                <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                </svg>
+                                <div className="w-6 h-6 rounded-lg bg-primary flex items-center justify-center">
+                                    <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                    </svg>
+                                </div>
                                 Pour les entreprises
                             </h3>
-                            <div className="grid grid-rows-3 gap-3 flex-1 auto-rows-fr">
+
+                            <div className="grid grid-rows-2 gap-3 flex-1 auto-rows-fr">
                                 {clientSections.map((section, index) => (
                                     <a
                                         key={section.href}
@@ -123,14 +117,16 @@ export const MegaMenu = ({ isOpen, onClose, showAnnouncementBar = true }: MegaMe
                         <div className="hidden xl:block absolute left-1/2 top-8 bottom-8 w-px bg-gradient-to-b from-transparent via-primary/10 to-transparent" />
 
                         {/* Colonne Consultants */}
-                        <div className="flex flex-col">
+                        <div className="flex flex-col xl:order-2">
                             <h3 className="text-xs font-bold uppercase tracking-wider text-primary mb-4 px-1 flex items-center gap-2">
-                                <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
+                                <div className="w-6 h-6 rounded-lg bg-primary flex items-center justify-center">
+                                    <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
                                 Pour les consultants
                             </h3>
-                            <div className="grid grid-rows-3 gap-3 flex-1 auto-rows-fr">
+                            <div className="grid grid-rows-2 gap-3 flex-1 auto-rows-fr">
                                 {consultantSections.map((section, index) => (
                                     <a
                                         key={section.href}
