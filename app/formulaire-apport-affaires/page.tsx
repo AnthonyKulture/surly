@@ -5,7 +5,7 @@ import { BusinessReferralForm } from "@/components/forms/BusinessReferralForm";
 export default function FormulaireApportAffaires() {
     return (
         <>
-            <Navigation showAnnouncementBar={false} />
+            <Navigation />
             <main className="min-h-screen bg-gradient-to-br from-primary/5 to-accent/5 py-24 sm:py-32 px-4">
                 <div className="container max-w-4xl mx-auto">
                     {/* Header */}

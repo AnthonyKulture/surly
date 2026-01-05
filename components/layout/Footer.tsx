@@ -23,7 +23,7 @@ export const Footer = () => {
   return (
     <footer className="bg-primary text-background py-2xl pb-lg">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-[1.5fr_2fr] gap-2xl pb-xl border-b border-white/15 mb-lg">
+        <div className="grid grid-cols-1 laptop:grid-cols-[1.5fr_2fr] gap-2xl pb-xl border-b border-white/15 mb-lg">
           {/* Brand */}
           <div>
             <div className="mb-md">
@@ -37,7 +37,7 @@ export const Footer = () => {
           </div>
 
           {/* Links */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-lg">
+          <div className="grid grid-cols-2 laptop:grid-cols-3 gap-lg">
             <div>
               <h4 className="text-micro font-bold uppercase tracking-[0.15em] text-background mb-md">
                 Plateforme
@@ -53,7 +53,8 @@ export const Footer = () => {
               <Link href="/pourquoi-surly" className="block text-small text-background/60 py-xs hover:text-background transition-colors">Pourquoi Surly ?</Link>
               <Link href="/rse" className="block text-small text-background/60 py-xs hover:text-background transition-colors">RSE</Link>
               <Link href="/apport-affaires" className="block text-small text-background/60 py-xs hover:text-background transition-colors">Apport d'affaires</Link>
-              <Link href="/#partenaires-avantages" className="block text-small text-background/60 py-xs hover:text-background transition-colors">Partenaires</Link>
+              <Link href="/partenaires-avantages" className="block text-small text-background/60 py-xs hover:text-background transition-colors">Partenaires</Link>
+              <Link href="/contact" className="block text-small text-background/60 py-xs hover:text-background transition-colors">Contact</Link>
             </div>
             <div>
               <h4 className="text-micro font-bold uppercase tracking-[0.15em] text-background mb-md">

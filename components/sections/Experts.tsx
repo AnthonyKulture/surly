@@ -70,7 +70,7 @@ export const Experts = () => {
         />
 
         {/* Experts Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 laptop:grid-cols-4 gap-6 mb-12">
           {experts.map((expert, index) => (
             <Reveal key={expert.name} delay={index * 100} duration={800}>
               <div className="group p-5 border border-gray-200 bg-white rounded-lg shadow-sm hover:shadow-md hover:border-primary/20 transition-all h-full">

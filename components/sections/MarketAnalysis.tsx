@@ -35,7 +35,7 @@ export const MarketAnalysis = () => {
                 </Reveal>
 
                 {/* The Comparison Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-20 items-stretch">
+                <div className="grid grid-cols-1 laptop:grid-cols-2 gap-8 lg:gap-12 mb-20 items-stretch">
                     {/* Left: The Reality */}
                     <Reveal delay={200} duration={1000} className="h-full">
                         <div className="h-full flex flex-col">

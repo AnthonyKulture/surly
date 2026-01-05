@@ -7,7 +7,7 @@ export const RSEHero = () => {
     return (
         <section
             id="hero"
-            className="relative w-full h-[60vh] min-h-[500px] max-h-[700px] pt-32 pb-16 md:pt-36 md:pb-20 flex flex-col items-center justify-center overflow-hidden bg-white"
+            className="relative w-full h-[60vh] min-h-[650px] max-h-[850px] pt-32 pb-16 md:pt-36 md:pb-20 flex flex-col items-center justify-center overflow-hidden bg-white"
         >
             <HeroBackground />
             <div className="container relative z-[2] flex flex-col items-center px-6 md:px-4">

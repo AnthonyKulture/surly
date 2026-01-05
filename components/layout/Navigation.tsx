@@ -5,11 +5,10 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
+import { MegaMenu } from "@/components/layout/MegaMenu";
 
 const navLinks = [
-  { href: "/pourquoi-surly", label: "Pourquoi Surly ?", isExternal: true },
-  { href: "/rse", label: "Engagements RSE", isExternal: true },
-  { href: "/#partenaires-avantages", label: "Partenaires & Avantages" },
+  { href: "/partenaires-avantages", label: "Partenaires & Avantages" },
   { href: "/ai", label: "Surly AI", isExternal: true, isSpecial: true },
 ];
 
@@ -20,6 +19,7 @@ interface NavigationProps {
 export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,8 +63,23 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
     handleCloseMenu();
   };
 
+  const handleMegaMenuToggle = useCallback(() => {
+    setIsMegaMenuOpen((prev) => !prev);
+  }, []);
+
+  const handleMegaMenuClose = useCallback(() => {
+    setIsMegaMenuOpen(false);
+  }, []);
+
   return (
     <>
+      {/* Mega Menu Component */}
+      <MegaMenu
+        isOpen={isMegaMenuOpen}
+        onClose={handleMegaMenuClose}
+        showAnnouncementBar={showAnnouncementBar}
+      />
+
       {/* Full Width Announcement Bar - Top of site */}
       {showAnnouncementBar && (
         <div className="fixed top-0 left-0 right-0 z-[1010] h-10 bg-primary text-white overflow-hidden">
@@ -117,10 +132,9 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
         className={cn(
           "fixed left-0 right-0 z-[1000] border-b transition-all duration-300",
           showAnnouncementBar ? "top-10" : "top-0",
-          "bg-white/95 backdrop-blur-xl supports-[backdrop-filter]:bg-white/80",
           isScrolled
-            ? "border-primary/10 shadow-md"
-            : "border-transparent"
+            ? "bg-white border-primary/10 shadow-lg"
+            : "bg-white border-transparent"
         )}
       >
         <div className="max-w-[1600px] mx-auto px-4 lg:px-8">
@@ -131,11 +145,31 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               className="flex items-center relative z-20 flex-shrink-0"
               aria-label="Surly Home"
             >
-              <Logo className="w-[100px] lg:w-[120px]" variant="black" />
+              <Logo className="w-[100px] laptop:w-[110px] xl:w-[120px]" variant="black" />
             </Link>
 
             {/* Desktop Navigation Links - Hidden on mobile */}
-            <div className="hidden md:flex items-center gap-8 flex-1 justify-center">
+            <div className="hidden laptop:flex items-center gap-6 laptop:gap-8 flex-1 justify-center">
+              {/* Nos solutions - Mega Menu Trigger */}
+              <button
+                onClick={handleMegaMenuToggle}
+                className="text-sm font-semibold uppercase tracking-wide transition-all whitespace-nowrap relative group text-foreground hover:text-primary"
+              >
+                Nos solutions
+                <svg
+                  className={cn(
+                    "inline-block w-4 h-4 ml-1 transition-transform duration-200",
+                    isMegaMenuOpen && "rotate-180"
+                  )}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+              </button>
+
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -168,7 +202,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
             </div>
 
             {/* Desktop CTA Buttons - Hidden on mobile */}
-            <div className="hidden md:flex items-center gap-3 flex-shrink-0">
+            <div className="hidden laptop:flex items-center gap-3 flex-shrink-0">
               <Button
                 as="a"
                 href="https://app.surly.fr/postulant"
@@ -189,11 +223,24 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               >
                 Je recherche un expert
               </Button>
+
+              {/* Separator */}
+              <div className="w-px h-6 bg-primary/10 mx-1" />
+
+              {/* Login Link - Discrete */}
+              <a
+                href="https://app.surly.fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] font-medium text-foreground-muted hover:text-primary transition-colors whitespace-nowrap"
+              >
+                Se connecter
+              </a>
             </div>
 
             {/* Burger Menu Toggle - Visible on mobile */}
             <button
-              className="md:hidden relative z-20 p-2 -mr-2 text-foreground"
+              className="laptop:hidden relative z-20 p-2 -mr-2 text-foreground"
               onClick={handleToggleMenu}
               aria-label="Toggle Menu"
             >
@@ -224,25 +271,147 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
 
       <div
         className={cn(
-          "fixed inset-0 bg-white/70 backdrop-blur-2xl z-[900] flex items-center justify-center transition-all duration-500 supports-[backdrop-filter]:bg-white/60",
+          "fixed inset-0 bg-white/70 backdrop-blur-2xl z-[1100] flex items-center justify-center transition-all duration-500 supports-[backdrop-filter]:bg-white/60",
           isMobileMenuOpen
             ? "opacity-100 visible translate-y-0"
             : "opacity-0 invisible -translate-y-8"
         )}
+        onClick={handleCloseMenu}
       >
-        <div className="flex flex-col items-center gap-6 md:gap-8 p-6 w-full max-w-2xl">
+        <div
+          className="flex flex-col items-start gap-6 p-6 w-full max-w-2xl overflow-y-auto max-h-[80vh]"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Nos solutions - Mobile - Two column structure */}
+          <div className="w-full space-y-6">
+            {/* Section Entreprises */}
+            <div className="w-full">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-primary mb-3 flex items-center gap-2">
+                <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+                Pour les entreprises
+              </h3>
+              <div className="flex flex-col gap-3 pl-6 border-l-2 border-primary/10">
+                <a
+                  href="/pourquoi-surly"
+                  onClick={handleCloseMenu}
+                  className="text-base font-medium text-foreground-muted hover:text-primary transition-colors flex items-start gap-2 group"
+                >
+                  <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  <span>Pourquoi Surly ?</span>
+                </a>
+                <a
+                  href="/sourcing-expert"
+                  onClick={handleCloseMenu}
+                  className="text-base font-medium text-foreground-muted hover:text-primary transition-colors flex items-start gap-2 group"
+                >
+                  <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  <span>Sourcing d'expert</span>
+                </a>
+                <a
+                  href="/rse"
+                  onClick={handleCloseMenu}
+                  className="text-base font-medium text-foreground-muted hover:text-primary transition-colors flex items-start gap-2 group"
+                >
+                  <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  <span>Conformité, RSE et Sécurité</span>
+                </a>
+                <a
+                  href="/contact"
+                  onClick={handleCloseMenu}
+                  className="text-base font-medium text-foreground-muted hover:text-primary transition-colors flex items-start gap-2 group"
+                >
+                  <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  <span>Contact</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Section Consultants */}
+            <div className="w-full">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-primary mb-3 flex items-center gap-2">
+                <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Pour les consultants
+              </h3>
+              <div className="flex flex-col gap-3 pl-6 border-l-2 border-accent/20">
+                <a
+                  href="/devenir-consultant"
+                  onClick={handleCloseMenu}
+                  className="text-base font-medium text-foreground-muted hover:text-primary transition-colors flex items-start gap-2 group"
+                >
+                  <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  <span>Trouver des missions et postes</span>
+                </a>
+                <a
+                  href="/apport-affaires"
+                  onClick={handleCloseMenu}
+                  className="text-base font-medium text-foreground-muted hover:text-primary transition-colors flex items-start gap-2 group"
+                >
+                  <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  <span>Programme apport d'affaires</span>
+                </a>
+                <a
+                  href="/partenaires-avantages"
+                  onClick={handleCloseMenu}
+                  className="text-base font-medium text-foreground-muted hover:text-primary transition-colors flex items-start gap-2 group"
+                >
+                  <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  <span>Partenaires et Avantages</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Séparateur */}
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
+
+          {/* Autres liens de navigation */}
           {navLinks.map((link, idx) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => !link.isExternal && handleSmoothScroll(e, link.href)}
-              className="text-xl md:text-2xl font-light text-foreground uppercase tracking-widest hover:text-primary transition-colors text-center"
+              className="text-lg font-medium text-foreground hover:text-primary transition-colors w-full flex items-center gap-2 group"
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
+              <svg className="w-4 h-4 text-primary/30 group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
               {link.label}
             </a>
           ))}
-          <div className="flex flex-col gap-4 mt-8 w-full max-w-sm">
+
+          {/* Séparateur */}
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col gap-3 w-full">
+            <Button
+              as="a"
+              href="/ai"
+              variant="primary"
+              size="large"
+              className="w-full justify-center"
+            >
+              Je recherche un expert
+            </Button>
             <Button
               as="a"
               href="https://app.surly.fr/postulant"
@@ -254,15 +423,16 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
             >
               Je suis expert
             </Button>
-            <Button
-              as="a"
-              href="/ai"
-              variant="primary"
-              size="large"
-              className="w-full justify-center"
+
+            {/* Login Link */}
+            <a
+              href="https://app.surly.fr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-center font-medium text-foreground-muted hover:text-primary transition-colors mt-2"
             >
-              Je recherche un expert
-            </Button>
+              Se connecter
+            </a>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ import { WhyParticipate } from "@/components/sections/WhyParticipate";
 export default function ApportAffaires() {
     return (
         <>
-            <Navigation showAnnouncementBar={false} />
+            <Navigation />
             <main>
                 {/* Section 1: Hero with 3% Commission */}
                 <BusinessReferralHero />

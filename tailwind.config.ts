@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'laptop': '1280px',
+      },
       colors: {
         // 60% - Neutral/Background colors (dominant)
         background: "#FFFFFF",
@@ -135,6 +138,7 @@ const config: Config = {
       animation: {
         marquee: "marquee 30s linear infinite",
         "marquee-fast": "marquee 25s linear infinite",
+        "scroll-infinite": "scroll-infinite 40s linear infinite",
         pulse: "pulse 2s infinite",
         "pulse-move": "pulseMove 3s linear infinite",
         float1: "float1 6s ease-in-out infinite",
@@ -150,6 +154,10 @@ const config: Config = {
       },
       keyframes: {
         marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "scroll-infinite": {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },

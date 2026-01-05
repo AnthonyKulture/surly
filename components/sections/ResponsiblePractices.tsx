@@ -82,7 +82,7 @@ export const ResponsiblePractices = () => {
                         centered
                     />
 
-                    <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="max-w-4xl mx-auto grid grid-cols-1 laptop:grid-cols-2 gap-8">
                         <Reveal delay={100} duration={800}>
                             <div className="bg-white rounded-xl p-8 shadow-sm border border-primary/10 h-full flex flex-col">
                                 {/* Larger logo */}
@@ -151,7 +151,7 @@ export const ResponsiblePractices = () => {
                 className="relative py-24 lg:py-28 bg-white border-b border-primary/10 overflow-hidden"
             >
                 <div className="container relative z-[1]">
-                    <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="max-w-4xl mx-auto grid grid-cols-1 laptop:grid-cols-2 gap-8">
                         <Reveal delay={100} duration={800}>
                             <div className="bg-white rounded-xl p-8 shadow-sm border border-primary/10">
 

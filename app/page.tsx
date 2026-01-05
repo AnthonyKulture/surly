@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { LogoCarousel } from "@/components/ui/LogoCarousel";
 import { WhySurlyAbstract } from "@/components/sections/WhySurlyAbstract";
 import { DashboardShowcase } from "@/components/sections/DashboardShowcase";
 import { FunctionsShowcase } from "@/components/sections/FunctionsShowcase";
@@ -20,6 +21,9 @@ export default function Home() {
       <main>
         {/* 1. HERO - Blanc */}
         <Hero />
+
+        {/* LOGO CAROUSEL - Social Proof */}
+        <LogoCarousel />
 
         {/* 2. POURQUOI SURLY? - Abstract - Vert 🟩 (Full version on /pourquoi-surly) */}
         <WhySurlyAbstract />

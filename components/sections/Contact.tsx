@@ -194,7 +194,7 @@ export const Contact = () => {
       <div className="absolute inset-0 pattern-grid-large opacity-30 pointer-events-none" />
 
       <div className="container relative z-[1]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 laptop:grid-cols-2 gap-16 items-start">
           {/* Info */}
           <Reveal delay={0} duration={800} direction="right">
             <div>

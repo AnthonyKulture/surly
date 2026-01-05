@@ -1,0 +1,7 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8 12L20 28L12 28L8 12Z" fill="#4687FF"/>
+  <path d="M12 12L24 28L16 28L12 12Z" fill="#4687FF" opacity="0.6"/>
+  <text x="30" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#1a1a1a">
+    NordVPN
+  </text>
+</svg>

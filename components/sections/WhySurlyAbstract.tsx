@@ -30,7 +30,7 @@ export const WhySurlyAbstract = () => {
 
                 {/* Two Column Layout */}
                 <div className="max-w-7xl mx-auto mt-16">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                    <div className="grid grid-cols-1 laptop:grid-cols-2 gap-8 items-stretch">
 
                         {/* LEFT COLUMN - Image as background with text overlay */}
                         <Reveal delay={100} duration={1000} className="h-full">
@@ -76,7 +76,7 @@ export const WhySurlyAbstract = () => {
                         </Reveal>
 
                         {/* RIGHT COLUMN - 2x2 Grid of Benefits - Equal Heights */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 auto-rows-fr h-full min-h-[700px]">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 auto-rows-fr h-full min-h-[600px] laptop:min-h-[700px]">
 
                             {/* Benefit 1 */}
                             <Reveal delay={200} duration={1000}>

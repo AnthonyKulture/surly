@@ -79,20 +79,6 @@ export const HowItWorks = () => {
                     ))}
                 </div>
 
-                {/* Legal Note */}
-                <Reveal delay={500} duration={800}>
-                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm max-w-3xl mx-auto mb-8">
-                        <p className="text-xs text-foreground-muted leading-relaxed text-center">
-                            <strong className="text-foreground">*Conditions :</strong> La rémunération de 3% s'applique sur le montant HT facturé.
-                            Le paiement est effectué à partir de l'encaissement de la première facture de la mission.
-                            Pour plus de détails, contactez-nous à{" "}
-                            <a href="mailto:contact@surly.fr" className="text-primary hover:underline font-medium">
-                                contact@surly.fr
-                            </a>
-                        </p>
-                    </div>
-                </Reveal>
-
                 {/* CTA */}
                 <Reveal delay={600} duration={800}>
                     <div className="text-center">

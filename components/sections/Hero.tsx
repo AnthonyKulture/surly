@@ -1,16 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import { Button, ArrowIcon } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { RotatingWords } from "@/components/ui/RotatingWords";
 import { ScrollIndicator } from "@/components/ui/ScrollIndicator";
 import { HeroBackground } from "@/components/ui/HeroBackground";
 import { HeroCards } from "@/components/ui/HeroCards";
-import { cn } from "@/lib/utils";
 
 export const Hero = () => {
-  const [activeTab, setActiveTab] = useState<"banque" | "assurance">("banque");
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -26,22 +23,22 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-screen pt-32 pb-20 md:pt-40 md:pb-24 flex flex-col items-center justify-center overflow-hidden bg-white"
+      className="relative w-full min-h-[100dvh] pt-32 pb-32 md:pb-32 laptop:pb-24 flex flex-col items-center justify-center overflow-hidden bg-white"
     >
       <HeroBackground />
       <div className="container relative z-[2] px-6 md:px-4">
 
-        {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+        {/* Two-column layout - 60/40 split */}
+        <div className="grid grid-cols-1 laptop:grid-cols-[60fr_40fr] gap-8 md:gap-12 laptop:gap-16 items-center max-w-7xl mx-auto">
 
           {/* LEFT COLUMN: Hero Content */}
-          <div className="order-1 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <div className="order-1 laptop:order-1 flex flex-col items-center laptop:items-start text-center laptop:text-left">
 
 
             {/* Dynamic Badge */}
             <Reveal delay={0} duration={800} direction="down">
               <div className="mb-6 w-full flex justify-center lg:justify-start">
-                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-primary/10 shadow-sm hover:shadow-md transition-all max-w-full text-center">
+                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-primary/10 shadow-sm hover:shadow-md transition-all max-w-full text-center laptop:justify-start">
                   <RotatingWords
                     words={[
                       "Bâle III", "IFRS 17", "Solvabilité II", "Data Engineering", "Cybersécurité",
@@ -59,9 +56,9 @@ export const Hero = () => {
 
             {/* Title */}
             <Reveal delay={100} duration={1000}>
-              <h1 className="text-[1.5rem] leading-[1.2] sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-5 tracking-tight lg:leading-[1.1] max-w-2xl">
-                Recrutez les meilleurs experts
-                <span className="text-primary block mt-1">Banque & Assurance.</span>
+              <h1 className="text-xl leading-[1.2] sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-5 tracking-tight lg:leading-[1.1] max-w-2xl">
+                L'écosystème Recrutement & Freelance<br />
+                pour <span className="text-primary">la Banque & l'Assurance</span>
               </h1>
             </Reveal>
 
@@ -74,71 +71,33 @@ export const Hero = () => {
 
             {/* CTAs */}
             <Reveal delay={300} duration={1000}>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start w-full">
+              <div className="flex flex-col md:flex-row gap-3 sm:gap-4 justify-center laptop:justify-start w-full">
                 <Button
                   as="a"
-                  href="#contact"
+                  href="/ai"
                   variant="primary"
                   size="large"
                   className="px-8 min-w-[200px]"
-                  onClick={(e) => handleSmoothScroll(e as React.MouseEvent<HTMLAnchorElement>, "#contact")}
                 >
-                  <span>Trouver un Expert</span>
+                  <span>Trouver un expert</span>
                 </Button>
 
                 <Button
                   as="a"
-                  href="https://app.surly.fr/postulant"
+                  href="/devenir-consultant"
                   variant="outline"
                   size="large"
                   className="px-8 min-w-[200px]"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
-                  <span>Voir les Missions</span>
+                  <span>Trouver des missions</span>
                 </Button>
               </div>
             </Reveal>
 
           </div>
 
-          {/* RIGHT COLUMN: Platform Mockup with Switch */}
-          <div className="order-2 lg:order-2 flex flex-col">
-            {/* Bank/Insurance Switch */}
-            <Reveal delay={0} duration={800}>
-              <div className="mb-6 flex justify-center lg:justify-start">
-                <div className="relative inline-flex items-center gap-1 p-1 rounded-full bg-white border border-primary/10 shadow-sm">
-                  {/* Animated Background */}
-                  <div
-                    className={cn(
-                      "absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-full bg-primary transition-all duration-300 ease-out",
-                      activeTab === "banque" ? "left-1" : "left-[calc(50%+3px)]"
-                    )}
-                  />
-
-                  {/* Buttons */}
-                  <button
-                    onClick={() => setActiveTab("banque")}
-                    className={cn(
-                      "relative z-10 px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-300",
-                      activeTab === "banque" ? "text-white" : "text-foreground/60 hover:text-foreground"
-                    )}
-                  >
-                    Banque
-                  </button>
-                  <button
-                    onClick={() => setActiveTab("assurance")}
-                    className={cn(
-                      "relative z-10 px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-300",
-                      activeTab === "assurance" ? "text-white" : "text-foreground/60 hover:text-foreground"
-                    )}
-                  >
-                    Assurance
-                  </button>
-                </div>
-              </div>
-            </Reveal>
-
+          {/* RIGHT COLUMN: Platform Mockup */}
+          <div className="order-2 laptop:order-2 mb-16 laptop:mb-0">
             {/* Platform Mockup */}
             <Reveal delay={100} duration={1000}>
               <div className="w-full">
@@ -152,7 +111,7 @@ export const Hero = () => {
 
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 flex justify-center z-20">
+      <div className="absolute bottom-0 left-0 right-0 flex justify-center z-[100]">
         <ScrollIndicator />
       </div>
     </section>

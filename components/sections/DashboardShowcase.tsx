@@ -55,7 +55,7 @@ export const DashboardShowcase = () => {
 
                 {/* Platform Stats */}
                 <Reveal delay={175} duration={800}>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto w-full">
+                    <div className="grid grid-cols-1 md:grid-cols-2 laptop:grid-cols-3 gap-6 md:gap-8 mb-12 max-w-4xl mx-auto w-full">
                         <div className="text-center">
                             <div className="text-3xl font-bold text-primary mb-1">3,300+</div>
                             <div className="text-xs text-gray-500 uppercase tracking-wide font-medium">Experts certifiés</div>
@@ -234,7 +234,7 @@ export const DashboardShowcase = () => {
                                         </div>
 
                                         {/* CARDS GRID - Different profiles for each mode */}
-                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 laptop:grid-cols-3 gap-6">
                                             {mode === 'banque' ? (
                                                 <>
                                                     {/* Banque Profiles */}
