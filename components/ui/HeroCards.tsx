@@ -228,10 +228,10 @@ export const HeroCards = () => {
                 <div className="ml-0 mr-12 md:mr-16">
                     <ExpertCard expert={EXPERTS[indices[0]]} />
                 </div>
-                <div className="ml-16 md:ml-20 mr-0">
+                <div className="hidden laptop:block ml-16 md:ml-20 mr-0">
                     <ExpertCard expert={EXPERTS[indices[1]]} />
                 </div>
-                <div className="ml-6 md:ml-8 mr-6 md:mr-8">
+                <div className="hidden laptop:block ml-6 md:ml-8 mr-6 md:mr-8">
                     <ExpertCard expert={EXPERTS[indices[2]]} />
                 </div>
             </div>
