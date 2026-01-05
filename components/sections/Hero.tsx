@@ -3,7 +3,6 @@
 import { Button, ArrowIcon } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { RotatingWords } from "@/components/ui/RotatingWords";
-import { ScrollIndicator } from "@/components/ui/ScrollIndicator";
 import { HeroBackground } from "@/components/ui/HeroBackground";
 import { HeroCards } from "@/components/ui/HeroCards";
 
@@ -109,10 +108,6 @@ export const Hero = () => {
         </div>
 
 
-      </div>
-
-      <div className="absolute bottom-0 left-0 right-0 flex justify-center z-[100]">
-        <ScrollIndicator />
       </div>
     </section>
   );

@@ -33,7 +33,7 @@ export const LogoCarousel = () => {
                                 <div
                                     key={idx}
                                     className="flex items-center justify-center flex-shrink-0"
-                                    style={{ minWidth: "140px", width: "140px" }}
+                                    style={{ minWidth: "180px", width: "180px" }}
                                 >
                                     <div className="w-full h-20 flex items-center justify-center bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200/60 hover:border-primary/30 shadow-sm hover:shadow-md transition-all duration-300 group px-4">
                                         <span
