@@ -12,27 +12,42 @@ interface MegaMenuSection {
 // Sections pour les clients / entreprises (FOCUS PRIORITAIRE)
 const clientSections: MegaMenuSection[] = [
     {
+        title: "Pourquoi Surly ?",
+        abstract: "Notre expertise et notre approche unique",
+        href: "/pourquoi-surly",
+    },
+    {
         title: "Sourcing d'expert",
         abstract: "Grands comptes & cabinets : recrutez vos experts en 48h",
         href: "/sourcing-expert",
     },
     {
-        title: "Conformité & RSE",
-        abstract: "Un recrutement responsable",
+        title: "Conformité, RSE et Sécurité",
+        abstract: "Un recrutement responsable et sécurisé",
         href: "/rse",
+    },
+    {
+        title: "Contact",
+        abstract: "Échangez avec notre équipe",
+        href: "/contact",
     },
 ];
 
 // Sections pour les consultants (SECONDAIRE)
 const consultantSections: MegaMenuSection[] = [
     {
-        title: "Trouver une mission",
+        title: "Trouver des missions et postes",
         abstract: "Missions freelance & postes salariés",
         href: "/devenir-consultant",
     },
     {
-        title: "Avantages Membres",
-        abstract: "Partenaires et réductions exclusifs",
+        title: "Programme apport d'affaires",
+        abstract: "Générez des revenus complémentaires",
+        href: "/apport-affaires",
+    },
+    {
+        title: "Partenaires et Avantages",
+        abstract: "Réductions exclusives pour nos membres",
         href: "/partenaires-avantages",
     },
 ];
@@ -74,7 +89,7 @@ export const MegaMenu = ({ isOpen, onClose, showAnnouncementBar = true }: MegaMe
                                 Pour les entreprises
                             </h3>
 
-                            <div className="grid grid-rows-2 gap-3 flex-1 auto-rows-fr">
+                            <div className="grid grid-rows-4 gap-3 flex-1 auto-rows-fr">
                                 {clientSections.map((section, index) => (
                                     <a
                                         key={section.href}
@@ -126,7 +141,7 @@ export const MegaMenu = ({ isOpen, onClose, showAnnouncementBar = true }: MegaMe
                                 </div>
                                 Pour les consultants
                             </h3>
-                            <div className="grid grid-rows-2 gap-3 flex-1 auto-rows-fr">
+                            <div className="grid grid-rows-3 gap-3 flex-1 auto-rows-fr">
                                 {consultantSections.map((section, index) => (
                                     <a
                                         key={section.href}
