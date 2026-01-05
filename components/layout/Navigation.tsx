@@ -295,16 +295,6 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               </h3>
               <div className="flex flex-col gap-3 pl-6 border-l-2 border-primary/10">
                 <a
-                  href="/pourquoi-surly"
-                  onClick={handleCloseMenu}
-                  className="text-base font-medium text-foreground-muted hover:text-primary transition-colors flex items-start gap-2 group"
-                >
-                  <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                  <span>Pourquoi Surly ?</span>
-                </a>
-                <a
                   href="/sourcing-expert"
                   onClick={handleCloseMenu}
                   className="text-base font-medium text-foreground-muted hover:text-primary transition-colors flex items-start gap-2 group"
@@ -322,17 +312,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                   <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                  <span>Conformité, RSE et Sécurité</span>
-                </a>
-                <a
-                  href="/contact"
-                  onClick={handleCloseMenu}
-                  className="text-base font-medium text-foreground-muted hover:text-primary transition-colors flex items-start gap-2 group"
-                >
-                  <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                  <span>Contact</span>
+                  <span>Conformité & RSE</span>
                 </a>
               </div>
             </div>
@@ -354,17 +334,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                   <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                  <span>Trouver des missions et postes</span>
-                </a>
-                <a
-                  href="/apport-affaires"
-                  onClick={handleCloseMenu}
-                  className="text-base font-medium text-foreground-muted hover:text-primary transition-colors flex items-start gap-2 group"
-                >
-                  <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                  <span>Programme apport d'affaires</span>
+                  <span>Trouver une mission</span>
                 </a>
                 <a
                   href="/partenaires-avantages"
@@ -374,7 +344,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                   <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                  <span>Partenaires et Avantages</span>
+                  <span>Avantages Membres</span>
                 </a>
               </div>
             </div>
