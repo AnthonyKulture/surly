@@ -21,7 +21,7 @@ type Expert = {
 
 const EXPERTS: Expert[] = [
     {
-        image: "/avatars/profile_expert_1_1765802590256.png",
+        image: "/avatars/profile_expert_4_1765802699392.png",
         name: "Thomas B.",
         title: "Expert IFRS 17 & Consolidation",
         sector: "Banque & Assurance",
@@ -34,7 +34,7 @@ const EXPERTS: Expert[] = [
         online: true,
     },
     {
-        image: "/avatars/profile_expert_2_1765802613092.png",
+        image: "/avatars/profile_expert_1_1765802590256.png",
         name: "Sarah M.",
         title: "Risk Manager Bâle III",
         sector: "Banque",
@@ -84,7 +84,7 @@ const EXPERTS: Expert[] = [
         online: true,
     },
     {
-        image: "/avatars/profile_expert_4_1765802699392.png",
+        image: "/avatars/pierre_m_profile.png",
         name: "Pierre M.",
         title: "Chef de Projet InsurTech",
         sector: "Assurance",
@@ -96,7 +96,7 @@ const EXPERTS: Expert[] = [
         company: "Assureur innovant",
     },
     {
-        image: "/avatars/testimonial_1_1765803183944.png",
+        image: "/avatars/sophie_l_profile.png",
         name: "Sophie L.",
         title: "Compliance Officer KYC/AML",
         sector: "Banque",
@@ -108,7 +108,7 @@ const EXPERTS: Expert[] = [
         company: "Banque internationale",
     },
     {
-        image: "/avatars/profile_expert_1_1765802590256.png",
+        image: "/avatars/profile_expert_2_1765802613092.png",
         name: "Alexandre V.",
         title: "Data Engineer Finance",
         sector: "Banque",
@@ -121,7 +121,7 @@ const EXPERTS: Expert[] = [
         online: true,
     },
     {
-        image: "/avatars/profile_expert_2_1765802613092.png",
+        image: "/avatars/profile_expert_3_1765802652999.png",
         name: "Camille P.",
         title: "Directrice Marketing Digital",
         sector: "Assurance",
@@ -133,7 +133,7 @@ const EXPERTS: Expert[] = [
         company: "Assurance mutualiste",
     },
     {
-        image: "/avatars/profile_expert_claire_new.png",
+        image: "/avatars/laurent_s_profile.png",
         name: "Laurent S.",
         title: "Responsable ALM",
         sector: "Banque",
@@ -145,7 +145,7 @@ const EXPERTS: Expert[] = [
         company: "Banque de réseau",
     },
     {
-        image: "/avatars/profile_expert_6_1765802756821.png",
+        image: "/avatars/emma_t_profile.png",
         name: "Emma T.",
         title: "Experte Tarification Vie",
         sector: "Assurance",
@@ -158,7 +158,7 @@ const EXPERTS: Expert[] = [
         online: true,
     },
     {
-        image: "/avatars/profile_expert_3_1765802652999.png",
+        image: "/avatars/testimonial_1_1765803183944.png",
         name: "Nicolas G.",
         title: "Product Owner Monétique",
         sector: "Banque",
@@ -174,16 +174,32 @@ const EXPERTS: Expert[] = [
 export const HeroCards = () => {
     const [indices, setIndices] = useState([0, 4, 8]);
 
+    // Helper function to get next unique index
+    const getNextUniqueIndex = (currentIndex: number, otherIndices: number[]): number => {
+        let nextIndex = (currentIndex + 1) % EXPERTS.length;
+        // Keep incrementing until we find an index not used by other cards
+        while (otherIndices.includes(nextIndex)) {
+            nextIndex = (nextIndex + 1) % EXPERTS.length;
+        }
+        return nextIndex;
+    };
+
     useEffect(() => {
         // Card 1 changes every 3.5 seconds
         const interval1 = setInterval(() => {
-            setIndices(prev => [(prev[0] + 1) % EXPERTS.length, prev[1], prev[2]]);
+            setIndices(prev => {
+                const newIndex = getNextUniqueIndex(prev[0], [prev[1], prev[2]]);
+                return [newIndex, prev[1], prev[2]];
+            });
         }, 3500);
 
         // Card 2 changes every 4 seconds (offset by 1s)
         const timeout2 = setTimeout(() => {
             const interval2 = setInterval(() => {
-                setIndices(prev => [prev[0], (prev[1] + 1) % EXPERTS.length, prev[2]]);
+                setIndices(prev => {
+                    const newIndex = getNextUniqueIndex(prev[1], [prev[0], prev[2]]);
+                    return [prev[0], newIndex, prev[2]];
+                });
             }, 4000);
             return () => clearInterval(interval2);
         }, 1000);
@@ -191,7 +207,10 @@ export const HeroCards = () => {
         // Card 3 changes every 4.5 seconds (offset by 2s)
         const timeout3 = setTimeout(() => {
             const interval3 = setInterval(() => {
-                setIndices(prev => [prev[0], prev[1], (prev[2] + 1) % EXPERTS.length]);
+                setIndices(prev => {
+                    const newIndex = getNextUniqueIndex(prev[2], [prev[0], prev[1]]);
+                    return [prev[0], prev[1], newIndex];
+                });
             }, 4500);
             return () => clearInterval(interval3);
         }, 2000);
