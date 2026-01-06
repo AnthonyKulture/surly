@@ -86,10 +86,10 @@ export const QuickRegistration = () => {
             <div className="container">
 
                 {/* 3-column layout matching FunctionsShowcase (50%-20%-30%) */}
-                <div className="grid grid-cols-12 gap-6 lg:gap-8 items-center max-w-7xl mx-auto">
+                <div className="grid grid-cols-12 gap-4 tablet:gap-6 laptop:gap-8 items-center max-w-7xl mx-auto">
 
                     {/* LEFT COLUMN: Title & Description (50% - 6 cols) */}
-                    <div className="col-span-12 lg:col-span-7 laptop:col-span-6 flex flex-col justify-center pr-0 lg:pr-12">
+                    <div className="col-span-12 tablet:col-span-6 flex flex-col justify-center pr-0 tablet:pr-8 laptop:pr-12">
                         <SectionHeader
                             tag="Inscription"
                             title={
@@ -140,7 +140,7 @@ export const QuickRegistration = () => {
                     </div>
 
                     {/* MIDDLE COLUMN: Vertical Steps (20% - 2 cols) */}
-                    <div className="col-span-12 lg:col-span-2 laptop:col-span-2 flex flex-col">
+                    <div className="col-span-12 tablet:col-span-3 flex flex-col">
                         <div className="space-y-1.5 flex-1">
                             {STEPS.map((step, index) => {
                                 const isActive = index === currentStep;
@@ -190,7 +190,7 @@ export const QuickRegistration = () => {
                     </div>
 
                     {/* RIGHT COLUMN: Mini Mockup (30% - 4 cols) */}
-                    <div className="col-span-12 lg:col-span-3 laptop:col-span-4 flex flex-col">
+                    <div className="col-span-12 tablet:col-span-3 flex flex-col">
                         <div className="bg-white rounded-lg border border-gray-200/80 shadow-sm p-3 transition-all duration-500 flex flex-col">
 
                             {/* Mini Header */}

@@ -66,7 +66,7 @@ export const SuccessStories = () => {
                     light
                 />
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 laptop:grid-cols-3 gap-6 mt-16">
+                <div className="grid grid-cols-1 tablet:grid-cols-3 gap-4 tablet:gap-5 laptop:gap-6 mt-12 tablet:mt-16">
                     {stories.map((story, index) => (
                         <StoryCard key={index} story={story} index={index} />
                     ))}

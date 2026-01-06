@@ -29,12 +29,12 @@ export const WhySurlyAbstract = () => {
                 />
 
                 {/* Two Column Layout */}
-                <div className="max-w-7xl mx-auto mt-16">
-                    <div className="grid grid-cols-1 laptop:grid-cols-2 gap-8 items-stretch">
+                <div className="max-w-7xl mx-auto mt-12 tablet:mt-16">
+                    <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6 tablet:gap-6 laptop:gap-8 items-stretch">
 
                         {/* LEFT COLUMN - Image as background with text overlay */}
                         <Reveal delay={100} duration={1000} className="h-full">
-                            <div className="relative rounded-3xl overflow-hidden border border-white/10 h-full min-h-[700px] flex flex-col justify-end">
+                            <div className="relative rounded-2xl tablet:rounded-3xl overflow-hidden border border-white/10 h-full min-h-[400px] tablet:min-h-[500px] laptop:min-h-[700px] flex flex-col justify-end">
                                 {/* Background Image - Full height */}
                                 <div className="absolute inset-0 z-0">
                                     <img
@@ -52,13 +52,13 @@ export const WhySurlyAbstract = () => {
                                 <div className="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-accent/50 rounded-tl-3xl z-[2]" />
 
                                 {/* Content Layer - All at bottom */}
-                                <div className="relative z-10 p-6 lg:p-10">
-                                    <h3 className="text-2xl lg:text-4xl font-bold text-white leading-tight mb-2 lg:mb-4">
+                                <div className="relative z-10 p-4 tablet:p-6 laptop:p-10">
+                                    <h3 className="text-xl tablet:text-2xl laptop:text-4xl font-bold text-white leading-tight mb-2 laptop:mb-4">
                                         Des experts qui changent
                                         <br />
                                         <span className="text-accent">la donne.</span>
                                     </h3>
-                                    <p className="text-base lg:text-lg text-white/90 leading-relaxed max-w-md mb-4 lg:mb-6">
+                                    <p className="text-sm tablet:text-base laptop:text-lg text-white/90 leading-relaxed max-w-md mb-3 laptop:mb-6">
                                         Que vous soyez expert en recherche d'opportunités ou entreprise à la recherche d'experts, Surly est la plateforme 100% dédiée à la bancassurance qui vous correspond.
                                     </p>
 
@@ -66,8 +66,7 @@ export const WhySurlyAbstract = () => {
                                         as="a"
                                         href="/pourquoi-surly"
                                         variant="white"
-                                        size="large"
-                                        className="px-8"
+                                        size="default"
                                     >
                                         <span>Découvrir Surly</span>
                                     </Button>
@@ -76,7 +75,7 @@ export const WhySurlyAbstract = () => {
                         </Reveal>
 
                         {/* RIGHT COLUMN - 2x2 Grid of Benefits - Equal Heights */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 auto-rows-fr h-full min-h-[600px] laptop:min-h-[700px]">
+                        <div className="grid grid-cols-2 gap-3 tablet:gap-4 laptop:gap-6 auto-rows-fr h-full min-h-[400px] tablet:min-h-[500px] laptop:min-h-[700px]">
 
                             {/* Benefit 1 */}
                             <Reveal delay={200} duration={1000}>

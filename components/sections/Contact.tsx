@@ -194,7 +194,7 @@ export const Contact = () => {
       <div className="absolute inset-0 pattern-grid-large opacity-30 pointer-events-none" />
 
       <div className="container relative z-[1]">
-        <div className="grid grid-cols-1 laptop:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 gap-8 tablet:gap-12 laptop:gap-16 items-start">
           {/* Info */}
           <Reveal delay={0} duration={800} direction="right">
             <div>
@@ -202,24 +202,23 @@ export const Contact = () => {
                 tag="Contact"
                 title={
                   <>
-                    Prêt à transformer
+                    Une question ?
                     <br />
-                    <span className="text-gradient">votre recrutement ?</span>
+                    <span className="text-gradient">Parlons-en.</span>
                   </>
                 }
-                className="mb-6"
+                className="mb-4 tablet:mb-6"
               />
 
-              <p className="text-lg text-foreground/70 leading-relaxed mb-8">
-                Discutons de vos besoins en experts Banque & Assurance. Notre équipe vous
-                répond sous 24h.
+              <p className="text-base tablet:text-lg text-foreground/70 leading-relaxed mb-6 tablet:mb-8">
+                Que vous soyez entreprise en quête d'experts ou consultant cherchant des opportunités, notre équipe vous répond sous 24h.
               </p>
 
-              {/* Contact Methods */}
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-4 p-5 border border-primary/10 bg-background rounded-xl shadow-sm">
-                  <div className="w-12 h-12 flex items-center justify-center bg-primary text-background rounded-xl shadow-sm">
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+              {/* Contact Methods - Side by side on tablet */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 tablet:grid-cols-1 laptop:grid-cols-2 gap-3 tablet:gap-4">
+                <div className="flex items-center gap-3 tablet:gap-4 p-3 tablet:p-4 laptop:p-5 border border-primary/10 bg-background rounded-xl shadow-sm">
+                  <div className="w-10 h-10 tablet:w-12 tablet:h-12 flex items-center justify-center bg-primary text-background rounded-xl shadow-sm">
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 tablet:w-5 tablet:h-5">
                       <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                     </svg>
                   </div>
@@ -235,10 +234,10 @@ export const Contact = () => {
 
                 <a
                   href="/ai"
-                  className="flex items-center gap-4 p-5 border border-primary/10 bg-background rounded-xl shadow-sm hover:border-accent hover:bg-accent/5 hover:shadow-md transition-all group"
+                  className="flex items-center gap-3 tablet:gap-4 p-3 tablet:p-4 laptop:p-5 border border-primary/10 bg-background rounded-xl shadow-sm hover:border-accent hover:bg-accent/5 hover:shadow-md transition-all group"
                 >
-                  <div className="w-12 h-12 flex items-center justify-center bg-primary text-background rounded-xl shadow-sm group-hover:bg-accent group-hover:text-primary transition-colors">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
+                  <div className="w-10 h-10 tablet:w-12 tablet:h-12 flex items-center justify-center bg-primary text-background rounded-xl shadow-sm group-hover:bg-accent group-hover:text-primary transition-colors">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 tablet:w-5 tablet:h-5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>

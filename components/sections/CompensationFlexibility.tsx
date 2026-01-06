@@ -50,7 +50,7 @@ export const CompensationFlexibility = () => {
                     centered
                 />
 
-                <div className="grid md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mb-12">
+                <div className="grid tablet:grid-cols-3 gap-5 tablet:gap-6 laptop:gap-8 max-w-6xl mx-auto mb-12">
                     {FLEXIBILITY_OPTIONS.map((option, i) => (
                         <Reveal key={i} delay={200 + (i * 150)} duration={800}>
                             <div className="relative p-8 rounded-2xl bg-gradient-to-br from-white to-primary/5 border-2 border-primary/10 hover:border-primary/30 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all h-full flex flex-col group">

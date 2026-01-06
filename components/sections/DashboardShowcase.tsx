@@ -8,7 +8,6 @@ import { CandidateCard } from "@/components/ui/dashboard/CandidateCard";
 import { FunctionBadge } from "@/components/ui/dashboard/FunctionBadge";
 import { FilterSelect } from "@/components/ui/dashboard/FilterSelect";
 import { NavItem } from "@/components/ui/dashboard/NavItem";
-import { RotatingKeywords } from "@/components/ui/dashboard/RotatingKeywords";
 import { Button, ArrowIcon } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 
@@ -49,28 +48,6 @@ export const DashboardShowcase = () => {
                         <FunctionBadge label="Audit" color="indigo" />
                     </div>
                 </Reveal>
-
-                {/* Rotating Keywords - Isolated Component */}
-                <RotatingKeywords mode={mode} />
-
-                {/* Platform Stats */}
-                <Reveal delay={175} duration={800}>
-                    <div className="grid grid-cols-1 md:grid-cols-2 laptop:grid-cols-3 gap-6 md:gap-8 mb-12 max-w-4xl mx-auto w-full">
-                        <div className="text-center">
-                            <div className="text-3xl font-bold text-primary mb-1">3,300+</div>
-                            <div className="text-xs text-gray-500 uppercase tracking-wide font-medium">Experts certifiés</div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-3xl font-bold text-primary mb-1">100%</div>
-                            <div className="text-xs text-gray-500 uppercase tracking-wide font-medium">Banque & Assurance</div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-3xl font-bold text-primary mb-1">48h</div>
-                            <div className="text-xs text-gray-500 uppercase tracking-wide font-medium">Délai moyen présentation</div>
-                        </div>
-                    </div>
-                </Reveal>
-
                 {/* Mode Switcher */}
                 <Reveal delay={200} duration={800}>
                     <div className="flex flex-col items-center mb-12">

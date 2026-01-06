@@ -32,7 +32,7 @@ export const ServiceOptions = () => {
                 </Reveal>
 
                 {/* Two Column Grid */}
-                <div className="grid grid-cols-1 laptop:grid-cols-2 gap-8 max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6 tablet:gap-8 max-w-7xl mx-auto">
 
                     {/* Option 1: Cabinet de Conseil */}
                     <Reveal delay={200} duration={1000}>

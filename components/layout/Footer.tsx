@@ -21,9 +21,9 @@ const footerLinks = {
 
 export const Footer = () => {
   return (
-    <footer className="bg-primary text-background py-2xl pb-lg">
+    <footer className="bg-primary text-background py-16 tablet:py-20 laptop:py-2xl pb-lg">
       <div className="container">
-        <div className="grid grid-cols-1 laptop:grid-cols-[1.5fr_2fr] gap-2xl pb-xl border-b border-white/15 mb-lg">
+        <div className="grid grid-cols-1 tablet:grid-cols-[1fr_2fr] laptop:grid-cols-[1.5fr_2fr] gap-8 tablet:gap-12 laptop:gap-2xl pb-8 tablet:pb-xl border-b border-white/15 mb-lg">
           {/* Brand */}
           <div>
             <div className="mb-md">
@@ -36,8 +36,8 @@ export const Footer = () => {
             </p>
           </div>
 
-          {/* Links */}
-          <div className="grid grid-cols-2 laptop:grid-cols-3 gap-lg">
+          {/* Links - Always 3 columns on tablet+ */}
+          <div className="grid grid-cols-2 tablet:grid-cols-3 gap-6 tablet:gap-4 laptop:gap-lg">
             <div>
               <h4 className="text-micro font-bold uppercase tracking-[0.15em] text-background mb-md">
                 Plateforme

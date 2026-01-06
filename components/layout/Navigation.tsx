@@ -150,7 +150,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
             </Link>
 
             {/* Desktop Navigation Links - Hidden on mobile */}
-            <div className="hidden laptop:flex items-center gap-6 laptop:gap-8 flex-1 justify-center">
+            <div className="hidden tablet:flex items-center gap-4 laptop:gap-6 xl:gap-8 flex-1 justify-center">
               {/* Nos solutions - Mega Menu Trigger */}
               <button
                 onClick={handleMegaMenuToggle}
@@ -203,13 +203,13 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
             </div>
 
             {/* Desktop CTA Buttons - Hidden on mobile */}
-            <div className="hidden laptop:flex items-center gap-3 flex-shrink-0">
+            <div className="hidden tablet:flex items-center gap-2 laptop:gap-3 flex-shrink-0">
               <Button
                 as="a"
                 href="https://app.surly.fr/postulant"
                 variant="ghost"
                 size="default"
-                className="text-[11px] whitespace-nowrap"
+                className="text-[10px] laptop:text-[11px] whitespace-nowrap py-1.5 px-2.5 laptop:py-2.5 laptop:px-5"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -220,20 +220,20 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                 href="/ai"
                 variant="primary"
                 size="default"
-                className="text-[11px] whitespace-nowrap"
+                className="text-[10px] laptop:text-[11px] whitespace-nowrap py-1.5 px-2.5 laptop:py-2.5 laptop:px-5"
               >
                 Je recherche un expert
               </Button>
 
-              {/* Separator */}
-              <div className="w-px h-6 bg-primary/10 mx-1" />
+              {/* Separator - Only on laptop+ */}
+              <div className="hidden laptop:block w-px h-6 bg-primary/10 mx-1" />
 
-              {/* Login Link - Discrete */}
+              {/* Login Link - Only on laptop+ */}
               <a
                 href="https://app.surly.fr/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[11px] font-medium text-foreground-muted hover:text-primary transition-colors whitespace-nowrap"
+                className="hidden laptop:block text-[11px] font-medium text-foreground-muted hover:text-primary transition-colors whitespace-nowrap"
               >
                 Se connecter
               </a>
@@ -241,7 +241,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
 
             {/* Burger Menu Toggle - Visible on mobile */}
             <button
-              className="laptop:hidden relative z-20 p-2 -mr-2 text-foreground"
+              className="tablet:hidden relative z-20 p-2 -mr-2 text-foreground"
               onClick={handleToggleMenu}
               aria-label="Toggle Menu"
             >

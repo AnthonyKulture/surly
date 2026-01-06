@@ -81,7 +81,7 @@ export const ExpertRequirements = () => {
                     </h3>
                 </Reveal>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+                <div className="grid sm:grid-cols-2 tablet:grid-cols-3 gap-4 tablet:gap-5 laptop:gap-6 max-w-6xl mx-auto mb-12">
                     {DOMAINS.map((domain, i) => (
                         <Reveal key={i} delay={250 + (i * 100)} duration={800}>
                             <div className="relative p-6 rounded-2xl bg-white border-2 border-gray-100 hover:border-primary/30 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all h-full">

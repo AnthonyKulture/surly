@@ -57,7 +57,7 @@ export const DualOpportunities = () => {
                 />
 
                 {/* Two Columns */}
-                <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+                <div className="grid tablet:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
                     {OPPORTUNITY_TYPES.map((type, i) => (
                         <Reveal key={i} delay={200 + (i * 150)} duration={800}>
                             <div className="relative p-8 rounded-2xl bg-white border-2 border-white/10 hover:border-accent/50 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all h-full flex flex-col items-center text-center">

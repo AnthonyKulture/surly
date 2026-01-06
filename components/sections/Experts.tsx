@@ -41,14 +41,6 @@ const experts = [
     status: "Disponible sous 2 semaines",
     image: "/avatars/profile_expert_3_1765802652999.png",
   },
-  {
-    name: "Pierre Moreau",
-    role: "Architecte Cloud SecNumCloud",
-    experience: "12 ans d'expérience",
-    skills: ["AWS Financial Services", "Terraform", "Zero Trust"],
-    status: "Disponible sous 1 mois",
-    image: "/avatars/profile_expert_4_1765802699392.png",
-  },
 ];
 
 export const Experts = () => {
@@ -69,8 +61,8 @@ export const Experts = () => {
           }
         />
 
-        {/* Experts Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 laptop:grid-cols-4 gap-6 mb-12">
+        {/* Experts Grid - 3 columns on tablet */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 tablet:grid-cols-3 gap-6 mb-12">
           {experts.map((expert, index) => (
             <Reveal key={expert.name} delay={index * 100} duration={800}>
               <div className="group p-5 border border-gray-200 bg-white rounded-lg shadow-sm hover:shadow-md hover:border-primary/20 transition-all h-full">

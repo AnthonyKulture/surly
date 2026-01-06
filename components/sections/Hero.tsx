@@ -28,16 +28,16 @@ export const Hero = () => {
       <div className="container relative z-[2] px-6 md:px-4">
 
         {/* Two-column layout - 60/40 split */}
-        <div className="grid grid-cols-1 laptop:grid-cols-[60fr_40fr] gap-8 md:gap-12 laptop:gap-16 items-center max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 tablet:grid-cols-[55fr_45fr] laptop:grid-cols-[60fr_40fr] gap-6 tablet:gap-4 laptop:gap-16 items-center max-w-5xl laptop:max-w-7xl mx-auto px-4 tablet:px-8 laptop:px-0">
 
           {/* LEFT COLUMN: Hero Content */}
-          <div className="order-1 laptop:order-1 flex flex-col items-center laptop:items-start text-center laptop:text-left">
+          <div className="order-1 tablet:order-1 flex flex-col items-center tablet:items-start text-center tablet:text-left">
 
 
             {/* Dynamic Badge */}
             <Reveal delay={0} duration={800} direction="down">
-              <div className="mb-6 w-full flex justify-center lg:justify-start">
-                <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-primary/10 shadow-sm hover:shadow-md transition-all max-w-full text-center laptop:justify-start">
+              <div className="mb-4 laptop:mb-6 w-full flex justify-center tablet:justify-start">
+                <div className="flex items-center justify-center gap-2 px-3 laptop:px-4 py-1.5 laptop:py-2 rounded-full bg-white/80 backdrop-blur-sm border border-primary/10 shadow-sm hover:shadow-md transition-all max-w-full text-center tablet:justify-start">
                   <RotatingWords
                     words={[
                       "Bâle III", "IFRS 17", "Solvabilité II", "Data Engineering", "Cybersécurité",
@@ -55,7 +55,7 @@ export const Hero = () => {
 
             {/* Title */}
             <Reveal delay={100} duration={1000}>
-              <h1 className="text-xl leading-[1.2] sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-5 tracking-tight lg:leading-[1.1] max-w-2xl">
+              <h1 className="text-xl leading-[1.2] sm:text-2xl tablet:text-[1.35rem] laptop:text-4xl font-bold text-foreground mb-3 laptop:mb-5 tracking-tight laptop:leading-[1.1] max-w-2xl">
                 L'écosystème Recrutement & Freelance<br />
                 pour <span className="text-primary">la Banque & l'Assurance</span>
               </h1>
@@ -63,20 +63,19 @@ export const Hero = () => {
 
             {/* Subtitle */}
             <Reveal delay={200} duration={1000}>
-              <h2 className="text-sm sm:text-base md:text-lg text-foreground-muted mb-6 md:mb-8 max-w-xl font-normal leading-relaxed">
+              <h2 className="text-sm tablet:text-sm laptop:text-base xl:text-lg text-foreground-muted mb-4 laptop:mb-8 max-w-xl font-normal leading-relaxed">
                 La seule marketplace <strong className="text-foreground font-semibold">ultra-spécialisée</strong> qui réunit l&apos;intégralité des experts et des opportunités du secteur <strong className="text-foreground font-semibold">Bancassurance</strong>.
               </h2>
             </Reveal>
 
             {/* CTAs */}
             <Reveal delay={300} duration={1000}>
-              <div className="flex flex-col md:flex-row gap-3 sm:gap-4 justify-center laptop:justify-start w-full">
+              <div className="flex flex-col tablet:flex-row gap-3 laptop:gap-4 justify-center tablet:justify-start w-full">
                 <Button
                   as="a"
                   href="/ai"
                   variant="primary"
-                  size="large"
-                  className="px-8 min-w-[200px]"
+                  size="default"
                 >
                   <span>Trouver un expert</span>
                 </Button>
@@ -85,8 +84,7 @@ export const Hero = () => {
                   as="a"
                   href="/devenir-consultant"
                   variant="primary"
-                  size="large"
-                  className="px-8 min-w-[200px]"
+                  size="default"
                 >
                   <span>Trouver des missions</span>
                 </Button>
@@ -96,7 +94,7 @@ export const Hero = () => {
           </div>
 
           {/* RIGHT COLUMN: Platform Mockup */}
-          <div className="order-2 laptop:order-2 mb-16 laptop:mb-0">
+          <div className="order-2 tablet:order-2 mb-8 tablet:mb-0">
             {/* Platform Mockup */}
             <Reveal delay={100} duration={1000}>
               <div className="w-full">

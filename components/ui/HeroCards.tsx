@@ -223,15 +223,15 @@ export const HeroCards = () => {
     }, []);
 
     return (
-        <div className="relative w-full max-w-2xl mx-auto laptop:max-w-none">
-            <div className="space-y-4">
-                <div className="ml-0 mr-12 md:mr-16">
-                    <ExpertCard expert={EXPERTS[indices[0]]} />
+        <div className="relative w-full max-w-2xl mx-auto tablet:max-w-none">
+            <div className="space-y-2 tablet:space-y-3 laptop:space-y-4">
+                <div className="ml-0 mr-8 tablet:mr-12 laptop:mr-16">
+                    <ExpertCard expert={EXPERTS[indices[0]]} compact />
                 </div>
-                <div className="hidden laptop:block ml-16 md:ml-20 mr-0">
-                    <ExpertCard expert={EXPERTS[indices[1]]} />
+                <div className="hidden tablet:block ml-12 tablet:ml-16 laptop:ml-20 mr-0">
+                    <ExpertCard expert={EXPERTS[indices[1]]} compact />
                 </div>
-                <div className="hidden laptop:block ml-6 md:ml-8 mr-6 md:mr-8">
+                <div className="hidden laptop:block ml-4 tablet:ml-6 laptop:ml-8 mr-4 tablet:mr-6 laptop:mr-8">
                     <ExpertCard expert={EXPERTS[indices[2]]} />
                 </div>
             </div>
@@ -239,7 +239,7 @@ export const HeroCards = () => {
     );
 };
 
-const ExpertCard = ({ expert }: { expert: Expert }) => {
+const ExpertCard = ({ expert, compact = false }: { expert: Expert; compact?: boolean }) => {
     const getSectorColor = (sector: Expert["sector"]) => {
         switch (sector) {
             case "Banque":
@@ -267,8 +267,11 @@ const ExpertCard = ({ expert }: { expert: Expert }) => {
     };
 
     return (
-        <div className="group relative bg-white rounded-xl p-3 shadow-sm border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
-            <div className="flex items-start gap-3">
+        <div className={cn(
+            "group relative bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300",
+            compact ? "p-2 laptop:p-3" : "p-3"
+        )}>
+            <div className="flex items-start gap-2 laptop:gap-3">
                 {/* Avatar - Animated */}
                 <div className="relative flex-shrink-0">
                     <AnimatePresence mode="wait">
@@ -278,7 +281,10 @@ const ExpertCard = ({ expert }: { expert: Expert }) => {
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.8 }}
                             transition={{ duration: 0.3 }}
-                            className="w-12 h-12 rounded-full overflow-hidden bg-gray-100 border-2 border-white shadow-sm"
+                            className={cn(
+                                "rounded-full overflow-hidden bg-gray-100 border-2 border-white shadow-sm",
+                                compact ? "w-10 h-10 laptop:w-12 laptop:h-12" : "w-12 h-12"
+                            )}
                         >
                             <Image
                                 src={expert.image}
@@ -342,8 +348,11 @@ const ExpertCard = ({ expert }: { expert: Expert }) => {
                                 </div>
                             </div>
 
-                            {/* Tags */}
-                            <div className="flex flex-wrap gap-1 mb-2">
+                            {/* Tags - Hidden on compact tablet */}
+                            <div className={cn(
+                                "flex flex-wrap gap-1 mb-2",
+                                compact && "hidden laptop:flex"
+                            )}>
                                 {expert.tags.map((tag) => (
                                     <span
                                         key={tag}

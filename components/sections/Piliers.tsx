@@ -105,7 +105,7 @@ export const Piliers = () => {
           centered
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 laptop:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 tablet:grid-cols-3 gap-4 tablet:gap-5 laptop:gap-8">
           {piliers.map((pilier, index) => (
             <PilierCard
               key={pilier.number}

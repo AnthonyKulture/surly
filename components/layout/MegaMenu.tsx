@@ -53,18 +53,18 @@ export const MegaMenu = ({ isOpen, onClose, showAnnouncementBar = true }: MegaMe
         <>
             {/* Backdrop - visible uniquement sur desktop */}
             <div
-                className="hidden laptop:block fixed inset-0 bg-black/20 z-[999] transition-opacity duration-300"
+                className="hidden tablet:block fixed inset-0 bg-black/20 z-[999] transition-opacity duration-300"
                 onClick={onClose}
             />
 
             {/* Mega Menu Content - visible uniquement sur desktop */}
-            <div className={`hidden laptop:block fixed left-0 right-0 ${topPosition} z-[1000] bg-white border-b border-primary/10 shadow-xl`}>
-                <div className="max-w-[1200px] mx-auto px-6 py-8">
+            <div className={`hidden tablet:block fixed left-0 right-0 ${topPosition} z-[1000] bg-white border-b border-primary/10 shadow-xl`}>
+                <div className="max-w-[1200px] mx-auto px-4 laptop:px-6 py-6 laptop:py-8">
                     {/* Two column layout: Clients | Consultants */}
-                    <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-6">
+                    <div className="grid grid-cols-2 gap-4 laptop:gap-8 mb-6">
                         {/* Colonne CLIENTS - Mise en avant PRIORITAIRE */}
                         {/* Colonne Clients / Entreprises */}
-                        <div className="flex flex-col xl:order-1">
+                        <div className="flex flex-col">
                             <h3 className="text-xs font-bold uppercase tracking-wider text-primary mb-4 px-1 flex items-center gap-2">
                                 <div className="w-6 h-6 rounded-lg bg-primary flex items-center justify-center">
                                     <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -80,7 +80,7 @@ export const MegaMenu = ({ isOpen, onClose, showAnnouncementBar = true }: MegaMe
                                         key={section.href}
                                         href={section.href}
                                         onClick={onClose}
-                                        className="group relative p-4 rounded-xl border border-primary/10 bg-gradient-to-br from-white to-primary/[0.02] hover:border-accent/40 hover:shadow-md transition-all duration-300 flex flex-col min-h-[100px] h-full"
+                                        className="group relative p-3 laptop:p-4 rounded-xl border border-primary/10 bg-gradient-to-br from-white to-primary/[0.02] hover:border-accent/40 hover:shadow-md transition-all duration-300 flex flex-col min-h-[80px] laptop:min-h-[100px] h-full"
                                         style={{
                                             animationDelay: `${index * 50}ms`,
                                         }}
@@ -113,11 +113,11 @@ export const MegaMenu = ({ isOpen, onClose, showAnnouncementBar = true }: MegaMe
                             </div>
                         </div>
 
-                        {/* Séparateur vertical - visible seulement sur XL */}
-                        <div className="hidden xl:block absolute left-1/2 top-8 bottom-8 w-px bg-gradient-to-b from-transparent via-primary/10 to-transparent" />
+                        {/* Séparateur vertical - visible sur tablet+ */}
+                        <div className="hidden tablet:block absolute left-1/2 top-8 bottom-8 w-px bg-gradient-to-b from-transparent via-primary/10 to-transparent" />
 
                         {/* Colonne Consultants */}
-                        <div className="flex flex-col xl:order-2">
+                        <div className="flex flex-col">
                             <h3 className="text-xs font-bold uppercase tracking-wider text-primary mb-4 px-1 flex items-center gap-2">
                                 <div className="w-6 h-6 rounded-lg bg-primary flex items-center justify-center">
                                     <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -132,7 +132,7 @@ export const MegaMenu = ({ isOpen, onClose, showAnnouncementBar = true }: MegaMe
                                         key={section.href}
                                         href={section.href}
                                         onClick={onClose}
-                                        className="group relative p-4 rounded-xl border border-primary/10 bg-gradient-to-br from-white to-primary/[0.02] hover:border-accent/40 hover:shadow-md transition-all duration-300 flex flex-col min-h-[100px]"
+                                        className="group relative p-3 laptop:p-4 rounded-xl border border-primary/10 bg-gradient-to-br from-white to-primary/[0.02] hover:border-accent/40 hover:shadow-md transition-all duration-300 flex flex-col min-h-[80px] laptop:min-h-[100px]"
                                         style={{
                                             animationDelay: `${(index + clientSections.length) * 50}ms`,
                                         }}
