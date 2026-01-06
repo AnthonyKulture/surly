@@ -72,15 +72,7 @@ export const SuccessStories = () => {
                     ))}
                 </div>
 
-                {/* Harmonized CTA */}
-                <Reveal delay={600} duration={800}>
-                    <div className="mt-12 text-center">
-                        <Button variant="outline-light" className="pointer-events-auto cursor-default">
-                            <span>Lire les études de cas</span>
-                            <ArrowIcon />
-                        </Button>
-                    </div>
-                </Reveal>
+
             </div>
         </section>
     );
