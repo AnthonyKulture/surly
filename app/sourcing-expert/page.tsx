@@ -7,6 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Piliers } from "@/components/sections/Piliers";
 import { Experts } from "@/components/sections/Experts";
 import { ExpertSourcingCTA } from "@/components/sections/ExpertSourcingCTA";
+import { KeywordsCarousel } from "@/components/ui/KeywordsCarousel";
 
 export default function SourcingExpert() {
     return (
@@ -20,7 +21,7 @@ export default function SourcingExpert() {
                 <ServiceOptions />
 
                 {/* 3. Expertises Section - From AI page */}
-                <section className="relative py-16 sm:py-20 lg:py-28 bg-white">
+                <section id="expertises" className="relative py-16 sm:py-20 lg:py-28 bg-white">
                     <div className="container">
                         <SectionHeader
                             tag="Expertise Sectorielle"
@@ -42,29 +43,8 @@ export default function SourcingExpert() {
                             </p>
                         </Reveal>
 
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-12">
-                            {[
-                                { skill: "IFRS 17", desc: "Actuaires & Comptables" },
-                                { skill: "Bâle III", desc: "Risk Managers" },
-                                { skill: "Solvabilité II", desc: "Experts Prudentiels" },
-                                { skill: "Business Analyst", desc: "Core Banking & SI" },
-                                { skill: "Actuaire", desc: "Pricing & Tarification" },
-                                { skill: "Risk Manager", desc: "Crédit, Marché, Opérationnel" },
-                                { skill: "Conformité LCB-FT", desc: "KYC & AML" },
-                                { skill: "Data Engineering", desc: "Big Data & Analytics" },
-                                { skill: "DevOps", desc: "Cloud & Infrastructure" },
-                                { skill: "Architecture SI", desc: "Modernisation & API" },
-                                { skill: "Product Owner", desc: "Agile & Produit" },
-                                { skill: "Pillar 3", desc: "Reporting Réglementaire" }
-                            ].map((item, i) => (
-                                <Reveal key={i} delay={200 + (i * 30)} duration={600}>
-                                    <div className="bg-white border border-gray-100 rounded-lg p-2.5 sm:p-3 hover:border-primary/20 hover:shadow-sm transition-all shadow-sm">
-                                        <p className="font-bold text-xs sm:text-sm text-foreground mb-0.5 sm:mb-1">{item.skill}</p>
-                                        <p className="text-[10px] sm:text-xs text-foreground-muted leading-relaxed">{item.desc}</p>
-                                    </div>
-                                </Reveal>
-                            ))}
-                        </div>
+                        {/* Keywords Carousel - Dynamic Effect */}
+                        <KeywordsCarousel />
 
                         <Reveal delay={500} duration={800}>
                             <div className="text-center bg-white p-4 sm:p-6 rounded-lg border border-gray-100 shadow-sm">

@@ -29,3 +29,5 @@ export { CompensationFlexibility } from "./CompensationFlexibility";
 export { ConsultantBusinessReferralCTA } from "./ConsultantBusinessReferralCTA";
 export { DualOpportunities } from "./DualOpportunities";
 export { ConsultantFinalCTA } from "./ConsultantFinalCTA";
+export { FAQCategory, ClientIcon, ConsultantIcon, GeneralIcon } from "./FAQSection";
+export { FAQHighlights } from "./FAQHighlights";

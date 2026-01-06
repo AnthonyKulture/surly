@@ -233,7 +233,7 @@ export const Contact = () => {
                 </div>
 
                 <a
-                  href="/ai"
+                  href="/sourcing-expert"
                   className="flex items-center gap-3 tablet:gap-4 p-3 tablet:p-4 laptop:p-5 border border-primary/10 bg-background rounded-xl shadow-sm hover:border-accent hover:bg-accent/5 hover:shadow-md transition-all group"
                 >
                   <div className="w-10 h-10 tablet:w-12 tablet:h-12 flex items-center justify-center bg-primary text-background rounded-xl shadow-sm group-hover:bg-accent group-hover:text-primary transition-colors">

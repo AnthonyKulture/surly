@@ -65,12 +65,13 @@ export const DashboardShowcase = () => {
                                             "relative px-8 py-3.5 rounded-lg font-semibold text-sm transition-all duration-300",
                                             "flex items-center gap-2.5 hover:scale-105 active:scale-95",
                                             mode === 'banque'
-                                                ? "bg-white text-foreground shadow-sm border border-gray-200/40"
+                                                ? "bg-blue-50 text-blue-700 shadow-sm border border-blue-200"
                                                 : "text-gray-500 hover:text-gray-700 hover:bg-gray-50/50"
                                         )}
                                     >
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                                        <svg className={cn("w-5 h-5", mode === 'banque' && "text-blue-600")} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
                                         <span>Banque</span>
+                                        {mode === 'banque' && <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />}
                                     </button>
 
                                     <button
@@ -79,12 +80,13 @@ export const DashboardShowcase = () => {
                                             "relative px-8 py-3.5 rounded-lg font-semibold text-sm transition-all duration-300",
                                             "flex items-center gap-2.5 hover:scale-105 active:scale-95",
                                             mode === 'assurance'
-                                                ? "bg-white text-foreground shadow-sm border border-gray-200/40"
+                                                ? "bg-emerald-50 text-emerald-700 shadow-sm border border-emerald-200"
                                                 : "text-gray-500 hover:text-gray-700 hover:bg-gray-50/50"
                                         )}
                                     >
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                                        <svg className={cn("w-5 h-5", mode === 'assurance' && "text-emerald-600")} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                                         <span>Assurance</span>
+                                        {mode === 'assurance' && <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />}
                                     </button>
                                 </div>
                             </div>
@@ -99,7 +101,12 @@ export const DashboardShowcase = () => {
 
                     {/* MAIN DASHBOARD UI */}
                     <Reveal delay={300} duration={1000} className="relative z-10 w-full">
-                        <div className="bg-[#FAFBF9] border border-border/10 rounded-xl shadow-2xl overflow-hidden flex h-[800px] md:h-[700px]">
+                        <div className={cn(
+                            "bg-[#FAFBF9] rounded-xl shadow-2xl overflow-hidden flex h-[800px] md:h-[700px] transition-all duration-500",
+                            mode === 'banque'
+                                ? "border-2 border-blue-200/60"
+                                : "border-2 border-emerald-200/60"
+                        )}>
 
                             {/* LEFT SIDEBAR (Desktop Only) */}
                             <div className="hidden md:flex flex-col w-[260px] border-r border-border/10 bg-white p-4">
@@ -141,13 +148,29 @@ export const DashboardShowcase = () => {
                             <div className="flex-1 flex flex-col min-w-0 bg-[#F5F7FA]">
 
                                 {/* Top Navigation / Header */}
-                                <div className="h-16 bg-white border-b border-border/10 flex items-center justify-between px-6">
+                                <div className={cn(
+                                    "h-16 bg-white border-b flex items-center justify-between px-6 transition-colors duration-500",
+                                    mode === 'banque' ? "border-blue-100" : "border-emerald-100"
+                                )}>
                                     <div className="flex items-center gap-3">
                                         <div className="md:hidden">
                                             {/* Mobile Menu Icon */}
                                             <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
                                         </div>
                                         <span className="font-semibold text-sm text-gray-700 hidden sm:block">Recherche d'experts</span>
+                                        {/* Sector Badge */}
+                                        <span className={cn(
+                                            "px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide transition-all duration-300 hidden sm:inline-flex items-center gap-1.5",
+                                            mode === 'banque'
+                                                ? "bg-blue-100/80 text-blue-700"
+                                                : "bg-emerald-100/80 text-emerald-700"
+                                        )}>
+                                            <span className={cn(
+                                                "w-2 h-2 rounded-full",
+                                                mode === 'banque' ? "bg-blue-500" : "bg-emerald-500"
+                                            )} />
+                                            {mode === 'banque' ? 'Banque' : 'Assurance'}
+                                        </span>
                                     </div>
                                     <div className="flex items-center gap-4">
                                         <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-600">
@@ -337,11 +360,11 @@ export const DashboardShowcase = () => {
                         </Button>
                         <Button
                             as="a"
-                            href="/ai"
+                            href="/sourcing-expert"
                             variant="primary"
                             className="pointer-events-auto w-full sm:w-auto"
                         >
-                            <span>Je recrute un Expert</span>
+                            <span>Trouver un expert</span>
                             <ArrowIcon />
                         </Button>
                     </div>

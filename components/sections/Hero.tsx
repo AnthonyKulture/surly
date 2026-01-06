@@ -73,7 +73,7 @@ export const Hero = () => {
               <div className="flex flex-col tablet:flex-row gap-3 laptop:gap-4 justify-center tablet:justify-start w-full">
                 <Button
                   as="a"
-                  href="/ai"
+                  href="/sourcing-expert"
                   variant="primary"
                   size="default"
                 >

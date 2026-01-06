@@ -103,7 +103,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
             </div>
 
             <a
-              href="/ai"
+              href="/sourcing-expert"
               className="group relative inline-flex items-center justify-center p-[1px] rounded-full overflow-hidden"
             >
               {/* Spinning Beam */}
@@ -206,23 +206,21 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
             <div className="hidden tablet:flex items-center gap-2 laptop:gap-3 flex-shrink-0">
               <Button
                 as="a"
-                href="https://app.surly.fr/postulant"
+                href="/devenir-consultant"
                 variant="ghost"
                 size="default"
                 className="text-[10px] laptop:text-[11px] whitespace-nowrap py-1.5 px-2.5 laptop:py-2.5 laptop:px-5"
-                target="_blank"
-                rel="noopener noreferrer"
               >
-                Je suis expert
+                Trouver des missions
               </Button>
               <Button
                 as="a"
-                href="/ai"
+                href="/sourcing-expert"
                 variant="primary"
                 size="default"
                 className="text-[10px] laptop:text-[11px] whitespace-nowrap py-1.5 px-2.5 laptop:py-2.5 laptop:px-5"
               >
-                Je recherche un expert
+                Trouver un expert
               </Button>
 
               {/* Separator - Only on laptop+ */}
@@ -376,23 +374,21 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
           <div className="flex flex-col gap-3 w-full">
             <Button
               as="a"
-              href="/ai"
+              href="/sourcing-expert"
               variant="primary"
               size="large"
               className="w-full justify-center"
             >
-              Je recherche un expert
+              Trouver un expert
             </Button>
             <Button
               as="a"
-              href="https://app.surly.fr/postulant"
+              href="/devenir-consultant"
               variant="outline"
               size="large"
               className="w-full justify-center"
-              target="_blank"
-              rel="noopener noreferrer"
             >
-              Je suis expert
+              Trouver des missions
             </Button>
 
             {/* Login Link */}

@@ -6,7 +6,7 @@ export default function ContactPage() {
     return (
         <>
             <Navigation />
-            <main>
+            <main className="pt-32">
                 {/* Contact Section */}
                 <Contact />
             </main>

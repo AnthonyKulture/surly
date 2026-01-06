@@ -4,12 +4,12 @@ import { Hero } from "@/components/sections/Hero";
 import { LogoCarousel } from "@/components/ui/LogoCarousel";
 import { WhySurlyAbstract } from "@/components/sections/WhySurlyAbstract";
 import { DashboardShowcase } from "@/components/sections/DashboardShowcase";
-import { AIChat } from "@/components/sections/AIChat";
-import { Piliers } from "@/components/sections/Piliers";
+import { PlatformBenefits } from "@/components/sections/PlatformBenefits";
 import { SuccessStories } from "@/components/sections/SuccessStories";
 import { FunctionsShowcase } from "@/components/sections/FunctionsShowcase";
 import { Contact } from "@/components/sections/Contact";
 import { IntermediateCTA } from "@/components/ui/IntermediateCTA";
+import { FAQHighlights } from "@/components/sections/FAQHighlights";
 
 export default function Home() {
   return (
@@ -25,13 +25,10 @@ export default function Home() {
         {/* 3. POURQUOI SURLY? - Abstract - Vert 🟩 */}
         <WhySurlyAbstract />
 
-        {/* 4. LA SOLUTION - Dashboard - Blanc */}
-        <DashboardShowcase />
+        {/* 4. AVANTAGES PLATEFORME - Pourquoi Surly est le choix des meilleurs décideurs */}
+        <PlatformBenefits />
 
-        {/* 5. INNOVATION IA - Blanc */}
-        <AIChat />
-
-        {/* CTA INTERMÉDIAIRE 1 : Options Client */}
+        {/* CTA INTERMÉDIAIRE : Options Client */}
         <IntermediateCTA
           title="Besoin d'un expert bancassurance ?"
           description="Essayez notre IA pour un matching instantané ou contactez nos talent managers pour un accompagnement sur-mesure"
@@ -40,13 +37,13 @@ export default function Home() {
           variant="urgent"
         />
 
-        {/* 6. NOS PILIERS - Blanc */}
-        <Piliers />
+        {/* 5. LA SOLUTION - Dashboard - Blanc */}
+        <DashboardShowcase />
 
-        {/* 7. SUCCESS STORIES - Blanc (remplace Testimonials aussi) */}
+        {/* 6. SUCCESS STORIES - Blanc (remplace Testimonials aussi) */}
         <SuccessStories />
 
-        {/* 8. FONCTIONNALITÉS / EXPERTISES - Blanc */}
+        {/* 7. FONCTIONNALITÉS / EXPERTISES - Blanc */}
         <FunctionsShowcase />
 
         {/* CTA INTERMÉDIAIRE 2 : Pour les experts/consultants */}
@@ -58,7 +55,10 @@ export default function Home() {
           variant="urgent"
         />
 
-        {/* 9. CONTACT - Blanc */}
+        {/* 9. FAQ HIGHLIGHTS - Questions phares */}
+        <FAQHighlights />
+
+        {/* 10. CONTACT - Blanc */}
         <Contact />
       </main>
       <Footer />

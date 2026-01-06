@@ -8,6 +8,7 @@ import { MAX_MESSAGE_LENGTH } from "@/lib/input-validator";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { Footer } from "@/components/layout/Footer";
+import { KeywordsCarousel } from "@/components/ui/KeywordsCarousel";
 
 type Message = {
     role: "user" | "assistant";
@@ -272,7 +273,7 @@ export default function SurlyAIPage() {
             {/* SEO SECTIONS BELOW - Full Width */}
 
             {/* Expertises Section - Similar to Market Analysis */}
-            <section className="relative py-16 sm:py-20 lg:py-28 bg-gradient-to-br from-primary/5 to-accent/5">
+            <section className="relative py-16 sm:py-20 lg:py-28 bg-white">
                 <div className="container">
                     <SectionHeader
                         tag="Expertise Sectorielle"
@@ -294,29 +295,8 @@ export default function SurlyAIPage() {
                         </p>
                     </Reveal>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-12">
-                        {[
-                            { skill: "IFRS 17", desc: "Actuaires & Comptables" },
-                            { skill: "Bâle III", desc: "Risk Managers" },
-                            { skill: "Solvabilité II", desc: "Experts Prudentiels" },
-                            { skill: "Business Analyst", desc: "Core Banking & SI" },
-                            { skill: "Actuaire", desc: "Pricing & Tarification" },
-                            { skill: "Risk Manager", desc: "Crédit, Marché, Opérationnel" },
-                            { skill: "Conformité LCB-FT", desc: "KYC & AML" },
-                            { skill: "Data Engineering", desc: "Big Data & Analytics" },
-                            { skill: "DevOps", desc: "Cloud & Infrastructure" },
-                            { skill: "Architecture SI", desc: "Modernisation & API" },
-                            { skill: "Product Owner", desc: "Agile & Produit" },
-                            { skill: "Pillar 3", desc: "Reporting Réglementaire" }
-                        ].map((item, i) => (
-                            <Reveal key={i} delay={200 + (i * 30)} duration={600}>
-                                <div className="bg-white border border-gray-100 rounded-lg p-2.5 sm:p-3 hover:border-primary/20 hover:shadow-sm transition-all shadow-sm">
-                                    <p className="font-bold text-xs sm:text-sm text-foreground mb-0.5 sm:mb-1">{item.skill}</p>
-                                    <p className="text-[10px] sm:text-xs text-foreground-muted leading-relaxed">{item.desc}</p>
-                                </div>
-                            </Reveal>
-                        ))}
-                    </div>
+                    {/* Keywords Carousel - Dynamic Effect */}
+                    <KeywordsCarousel />
 
                     <Reveal delay={500} duration={800}>
                         <div className="text-center bg-white p-4 sm:p-6 rounded-lg border border-gray-100 shadow-sm">
@@ -371,7 +351,7 @@ export default function SurlyAIPage() {
                                 number: "03",
                                 title: "Spécialisation exclusive",
                                 desc: "Contrairement aux cabinets généralistes, Surly se concentre à 100% sur la Banque et l'Assurance. Nos talent managers parlent le même langage technique que vous.",
-                                stat: "3000+ experts"
+                                stat: "100% sectoriel"
                             },
                             {
                                 number: "04",

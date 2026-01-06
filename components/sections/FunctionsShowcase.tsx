@@ -258,7 +258,7 @@ export const FunctionsShowcase = () => {
                 {/* Harmonized CTA */}
                 <Reveal delay={300} duration={800}>
                     <div className="mt-12 text-center relative z-10">
-                        <Button variant="outline" className="pointer-events-auto cursor-default">
+                        <Button as="a" href="/sourcing-expert#expertises" variant="outline" className="pointer-events-auto">
                             <span>Explorer toutes les fonctions</span>
                             <ArrowIcon />
                         </Button>
