@@ -4,6 +4,7 @@ import { WhySurlyHero } from "@/components/sections/WhySurlyHero";
 import { MarketAnalysis } from "@/components/sections/MarketAnalysis";
 import { Piliers } from "@/components/sections/Piliers";
 import { Contact } from "@/components/sections/Contact";
+import { FAQHighlights } from "@/components/sections/FAQHighlights";
 
 export default function PourquoiSurly() {
     return (
@@ -18,6 +19,10 @@ export default function PourquoiSurly() {
 
                 {/* Section 3: Les 3 Piliers - Copied from homepage */}
                 <Piliers />
+
+                {/* FAQ Highlights */}
+                <FAQHighlights />
+
                 {/* Section 4: Contact - Added as requested */}
                 <Contact />
             </main>

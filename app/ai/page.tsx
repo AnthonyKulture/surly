@@ -339,7 +339,7 @@ export default function SurlyAIPage() {
                                 number: "01",
                                 title: "Profils pré-qualifiés",
                                 desc: "Tous nos experts justifient d'au moins une expérience significative en Banque ou Assurance. Terminé les profils généralistes qui ne comprennent pas vos enjeux réglementaires.",
-                                stat: "100% secteur"
+                                stat: "0 CV hors-sujet"
                             },
                             {
                                 number: "02",
