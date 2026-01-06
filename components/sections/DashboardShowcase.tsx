@@ -349,13 +349,11 @@ export const DashboardShowcase = () => {
                     <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Button
                             as="a"
-                            href="https://app.surly.fr/postulant"
+                            href="/devenir-consultant"
                             variant="outline"
                             className="pointer-events-auto w-full sm:w-auto"
-                            target="_blank"
-                            rel="noopener noreferrer"
                         >
-                            <span>Je suis Expert</span>
+                            <span>Trouver des missions</span>
                             <ArrowIcon />
                         </Button>
                         <Button
