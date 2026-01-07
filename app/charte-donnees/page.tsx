@@ -1,4 +1,5 @@
 import { LegalPageLayout } from "@/components/layout/LegalPageLayout";
+import { SurlyContactEmail, SurlyDPOEmail } from "@/components/ui/ObfuscatedEmail";
 
 export default function CharteDonneesPage() {
     return (
@@ -15,10 +16,10 @@ export default function CharteDonneesPage() {
                 ONYBUNS SAS<br />
                 Siège : 64, rue La Boétie – 75008 Paris – France<br />
                 SIREN : 942 708 868<br />
-                Email : <a href="mailto:contact@surly.fr">contact@surly.fr</a><br />
+                Email : <SurlyContactEmail /><br />
                 Site : <a href="https://www.surly.fr">www.surly.fr</a>
             </p>
-            <p>Délégué à la Protection des Données (DPO) : <a href="mailto:dpo@surly.fr">dpo@surly.fr</a></p>
+            <p>Délégué à la Protection des Données (DPO) : <SurlyDPOEmail /></p>
             <p>
                 ONYBUNS agit en qualité de responsable de traitement pour la gestion des comptes utilisateurs, de la mise en relation et des opérations administratives relatives à l’utilisation de la plateforme.
             </p>
@@ -100,7 +101,7 @@ export default function CharteDonneesPage() {
                 <li>Droit de définir le devenir de vos données après décès</li>
             </ul>
             <p>
-                📧 <a href="mailto:dpo@surly.fr">dpo@surly.fr</a><br />
+                📧 <SurlyDPOEmail /><br />
                 📮 ONYBUNS SAS – DPO – 64 rue La Boétie – 75008 Paris<br />
                 Réclamation possible : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>
             </p>
@@ -118,7 +119,7 @@ export default function CharteDonneesPage() {
 
             <h2>12. Contact</h2>
             <p>
-                📧 <a href="mailto:dpo@surly.fr">dpo@surly.fr</a><br />
+                📧 <SurlyDPOEmail /><br />
                 📮 ONYBUNS SAS – 64 rue La Boétie – 75008 Paris
             </p>
         </LegalPageLayout>

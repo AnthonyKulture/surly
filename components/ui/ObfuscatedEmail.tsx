@@ -23,7 +23,8 @@ export const ObfuscatedEmail = ({
     tld,
     className = "",
     showMailto = true,
-}: ObfuscatedEmailProps) => {
+    label,
+}: ObfuscatedEmailProps & { label?: React.ReactNode }) => {
     const [email, setEmail] = useState<string | null>(null);
 
     useEffect(() => {
@@ -46,7 +47,7 @@ export const ObfuscatedEmail = ({
                 href={`mailto:${email}`}
                 className={className || "text-primary hover:underline font-medium"}
             >
-                {email}
+                {label || email}
             </a>
         );
     }
@@ -55,6 +56,11 @@ export const ObfuscatedEmail = ({
 };
 
 // Pre-configured component for contact@surly.fr
-export const SurlyContactEmail = ({ className }: { className?: string }) => (
-    <ObfuscatedEmail user="contact" domain="surly" tld="fr" className={className} />
+export const SurlyContactEmail = ({ className, label }: { className?: string; label?: React.ReactNode }) => (
+    <ObfuscatedEmail user="contact" domain="surly" tld="fr" className={className} label={label} />
+);
+
+// Pre-configured component for dpo@surly.fr
+export const SurlyDPOEmail = ({ className, label }: { className?: string; label?: React.ReactNode }) => (
+    <ObfuscatedEmail user="dpo" domain="surly" tld="fr" className={className} label={label} />
 );

@@ -6,6 +6,16 @@ import { ExpertRequirements } from "@/components/sections/ExpertRequirements";
 import { CompensationFlexibility } from "@/components/sections/CompensationFlexibility";
 import { DualOpportunities } from "@/components/sections/DualOpportunities";
 import { ConsultantFinalCTA } from "@/components/sections/ConsultantFinalCTA";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Missions Freelance & Emploi Banque Assurance | Rejoindre Surly",
+    description: "Accédez aux meilleures missions freelance et postes CDI en Banque, Finance et Assurance. TJM attractifs, clients grands comptes, inscription gratuite en 2 min.",
+    keywords: ["mission freelance banque", "emploi assurance", "consultant bancaire", "freelance finance", "portage salarial banque", "tjm freelance assurance"],
+    alternates: {
+        canonical: "https://surly.fr/devenir-consultant",
+    },
+};
 
 export default function DevenirConsultant() {
     return (

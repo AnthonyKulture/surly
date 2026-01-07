@@ -3,6 +3,7 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
+import { SurlyContactEmail } from "@/components/ui/ObfuscatedEmail";
 
 export const WhyParticipate = () => {
     const benefits = [
@@ -128,9 +129,7 @@ export const WhyParticipate = () => {
                         </Button>
                         <p className="text-xs text-foreground-muted mt-4">
                             Des questions ?{" "}
-                            <a href="mailto:contact@surly.fr" className="text-primary hover:underline font-medium">
-                                Contactez-nous
-                            </a>
+                            <SurlyContactEmail label="Contactez-nous" className="text-primary hover:underline font-medium" />
                         </p>
                     </div>
                 </Reveal>

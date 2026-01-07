@@ -1,4 +1,5 @@
 import { LegalPageLayout } from "@/components/layout/LegalPageLayout";
+import { SurlyContactEmail, SurlyDPOEmail } from "@/components/ui/ObfuscatedEmail";
 
 export default function CGUClientPage() {
     return (
@@ -11,7 +12,7 @@ export default function CGUClientPage() {
                 Les présentes Conditions Générales d’Utilisation et de Vente (ci-après les « CGU-CGV ») régissent les conditions d’accès et d’utilisation de la plateforme numérique SURLY.FR, exploitée par ONYBUNS, société par actions simplifiée au capital de 10 000 €, immatriculée au RCS de Paris sous le numéro 942 708 868, dont le siège social est situé 64 rue La Boétie – 75008 Paris (ci-après « SURLY »).
             </p>
             <p>
-                Contact : <a href="mailto:contact@surly.fr">contact@surly.fr</a> – <a href="https://www.surly.fr">www.surly.fr</a>
+                Contact : <SurlyContactEmail /> – <a href="https://www.surly.fr">www.surly.fr</a>
             </p>
             <p>
                 SURLY est une plateforme communautaire et de mise en relation professionnelle entre des entreprises clientes du secteur Banque–Assurance–Finance (ci-après les « Clients ») et des experts indépendants qualifiés (ci-après les « Surlyers »).
@@ -55,7 +56,7 @@ export default function CGUClientPage() {
                 <li>des notifications concernant les opportunités de Missions ou événements professionnels.</li>
             </ul>
             <p>
-                Le Client peut se désinscrire à tout moment : via le lien présent au bas de chaque email, ou par simple demande à <a href="mailto:dpo@surly.fr">dpo@surly.fr</a>. Cette désinscription n’affecte en rien l’accès aux Services.
+                Le Client peut se désinscrire à tout moment : via le lien présent au bas de chaque email, ou par simple demande à <SurlyDPOEmail />. Cette désinscription n’affecte en rien l’accès aux Services.
             </p>
 
             <h3>4.2 Vérification</h3>
@@ -134,7 +135,7 @@ export default function CGUClientPage() {
             <h2>14. PROTECTION DES DONNÉES (RGPD)</h2>
             <p>
                 SURLY agit en responsable de traitement. Les Clients disposent de droits d’accès, rectification, suppression et opposition.<br />
-                Contact DPO : <a href="mailto:dpo@surly.fr">dpo@surly.fr</a>
+                Contact DPO : <SurlyDPOEmail />
             </p>
 
             <h2>15. CYBERSÉCURITÉ</h2>
@@ -153,7 +154,7 @@ export default function CGUClientPage() {
             <p>
                 ONYBUNS SAS – SURLY<br />
                 64 rue La Boétie – 75008 Paris<br />
-                <a href="mailto:contact@surly.fr">contact@surly.fr</a> – <a href="https://www.surly.fr">www.surly.fr</a>
+                <SurlyContactEmail /> – <a href="https://www.surly.fr">www.surly.fr</a>
             </p>
         </LegalPageLayout>
     );

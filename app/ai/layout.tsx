@@ -1,28 +1,15 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Surly IA — Trouvez votre Expert Bancassurance en quelques secondes",
-    description:
-        "Notre intelligence artificielle spécialisée Banque & Assurance vous aide à trouver l'expert idéal. IFRS 17, Bâle III, Actuariat, Risk Management, Data Engineering, DevOps. Matching instantané parmi +3000 profils certifiés.",
-    keywords: [
-        // Réglementation
-        "IFRS 17", "Bâle III", "Solvabilité II", "LCB-FT", "KYC", "AML",
-        "ICAAP", "Pillar 3", "DORA", "ISO 27001",
-        // Métiers Finance
-        "actuaire", "risk manager", "conformité bancaire", "stress testing", "ALM",
-        // Métiers Assurance  
-        "souscription", "sinistres", "réassurance", "courtage", "prévoyance",
-        // Tech
-        "data engineering", "devops", "cybersécurité", "machine learning", "python",
-        "architecture SI", "business analyst", "product owner", "PMO", "AMOA",
-        // Commercial
-        "consultant banque", "freelance assurance", "expert bancassurance",
-        "recrutement bancaire", "talent banque assurance"
-    ],
+    title: "Sourcing par IA : Trouvez un Expert en 2 Secondes | Surly",
+    description: "Dites adieu aux recherches fastidieuses. Notre IA analyse votre besoin et identifie instantanément les meilleurs profils freelance ou CDI disponibles.",
+    keywords: ["ia recrutement", "matching cv banque", "sourcing automatique", "chatgpt recrutement", "intelligence artificielle rh"],
+    alternates: {
+        canonical: "https://surly.fr/ai",
+    },
     openGraph: {
-        title: "Surly IA — Trouvez votre Expert Bancassurance instantanément",
-        description:
-            "IA spécialisée Banque & Assurance. IFRS 17, Bâle III, Actuariat, DevOps, Data Engineering. +3000 experts certifiés disponibles.",
+        title: "Sourcing par IA : Trouvez un Expert en 2 Secondes | Surly",
+        description: "Dites adieu aux recherches fastidieuses. Notre IA analyse votre besoin et identifie instantanément les meilleurs profils freelance ou CDI disponibles.",
         type: "website",
     },
 };

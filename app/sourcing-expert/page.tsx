@@ -9,6 +9,16 @@ import { Experts } from "@/components/sections/Experts";
 import { ExpertSourcingCTA } from "@/components/sections/ExpertSourcingCTA";
 import { KeywordsCarousel } from "@/components/ui/KeywordsCarousel";
 import { SuccessStories } from "@/components/sections/SuccessStories";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Recrutez des Experts Banque & Assurance (Freelance ou CDI) | Surly",
+    description: "Trouvez l'expert idéal pour vos projets réglementaires (Bâle III, IFRS 17), IT ou transformation. Sourcing par IA ou Cabinet de recrutement spécialisé.",
+    keywords: ["recrutement expert banque", "chasseur de tête assurance", "cabinet recrutement bancaire", "sourcing freelance finance", "assistance technique banque", "profils ifrs17"],
+    alternates: {
+        canonical: "https://surly.fr/sourcing-expert",
+    },
+};
 
 export default function SourcingExpert() {
     return (

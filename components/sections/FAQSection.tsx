@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/Reveal";
 import type { FAQItem } from "@/lib/faq-data";
@@ -73,6 +74,19 @@ const FAQAccordionItem = ({
                         <p className="text-foreground-muted leading-relaxed pb-5 text-sm pr-8">
                             {item.answer}
                         </p>
+                        {item.link && (
+                            <div className="pb-5">
+                                <Link
+                                    href={item.link.url}
+                                    className="text-primary hover:underline font-medium text-sm inline-flex items-center gap-1.5"
+                                >
+                                    {item.link.text}
+                                    <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </Link>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

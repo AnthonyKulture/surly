@@ -10,7 +10,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Surly — L'écosystème Recrutement & Freelance Bancassurance",
+  metadataBase: new URL("https://surly.fr"),
+  title: {
+    default: "Surly — L'écosystème Recrutement & Freelance Bancassurance",
+    template: "%s | Surly",
+  },
   description:
     "La marketplace ultra-spécialisée qui réunit l'intégralité des experts et opportunités du secteur Banque & Assurance. +3300 experts certifiés.",
   keywords: [
@@ -24,11 +28,56 @@ export const metadata: Metadata = {
     "Bâle III",
   ],
   authors: [{ name: "Surly" }],
+  creator: "Surly",
+  publisher: "Surly",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Surly — L'écosystème Recrutement & Freelance Bancassurance",
     description:
       "La marketplace ultra-spécialisée qui réunit l'intégralité des experts et opportunités du secteur Banque & Assurance.",
+    url: "https://surly.fr",
+    siteName: "Surly",
+    locale: "fr_FR",
     type: "website",
+    images: [
+      {
+        url: "/surly-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Surly - Experts Banque & Assurance",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Surly — L'écosystème Recrutement & Freelance Bancassurance",
+    description:
+      "La seule marketplace ultra-spécialisée Banque & Assurance. Trouvez votre expert ou votre mission en moins de 48h.",
+    creator: "@surly_fr",
+    images: ["/surly-hero.jpg"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -37,14 +86,38 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Surly",
+    url: "https://surly.fr",
+    logo: "https://surly.fr/logo-neon.svg",
+    description: "L'écosystème de référence pour le recrutement et le freelance en Banque & Assurance.",
+    sameAs: [
+      "https://www.linkedin.com/company/surly-fr",
+      "https://twitter.com/surly_fr"
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+33-1-00-00-00-00",
+      contactType: "customer service",
+      areaServed: "FR",
+      availableLanguage: "French"
+    }
+  };
+
   return (
     <html lang="fr" className={inter.variable}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="text-foreground" suppressHydrationWarning>
         <SwissGridBackground />
         <div className="relative z-10">
           {children}
-
-
         </div>
       </body>
     </html>

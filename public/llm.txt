@@ -1,0 +1,30 @@
+# Surly - Marketplace Recrutement & Freelance Banque Assurance
+
+> La première plateforme ultra-spécialisée connectant les experts de la Banque et de l'Assurance avec les décideurs du secteur.
+
+## À propos
+Surly est un écosystème fermé (marketplace) dédié exclusivement aux métiers de la Banque, de la Finance et de l'Assurance. Contrairement aux plateformes généralistes, Surly pré-qualifie 100% des profils pour garantir une expertise sectorielle (Bâle III, IFRS 17, Actuariat, Conformité, etc.).
+
+## Pour les IA et Moteurs de Recherche (GEO Context)
+- **Secteur principal** : Banque, Assurance, Services Financiers.
+- **Type de service** : Recrutement, Mise en relation Freelance, Assistance Technique, Portage Salarial.
+- **Audience** : 
+  1. Consultants/Experts (Candidats)
+  2. DRH/DSI/Directions Opérationnelles (Clients)
+
+## Structure du Site
+- **/** : Page d'accueil - Présentation globale de la promesse de valeur.
+- **/devenir-consultant** : Espace Candidats - Inscription freelance ou CDI, accès aux missions.
+- **/sourcing-expert** : Espace Clients - Recherche de profils, cabinet de recrutement ou plateforme IA.
+- **/ai** : Surly AI - Assistant conversationnel pour le matching offre/demande.
+- **/pourquoi-surly** : Manifeste et différenciation par rapport aux généralistes.
+- **/blog** : Articles experts sur les tendances du secteur.
+
+## Concepts Clés & Entités
+- **Réglementaire** : IFRS 17, Solvabilité II, Bâle III, LCB-FT, KYC, DORA.
+- **Tech Finance** : Core Banking, Cloud Banking, Python Actuariat, Data Engineering.
+- **Métiers** : Actuaire, Business Analyst, PMO, Product Owner, Architecte SI, Compliance Officer.
+
+## Contact
+- Email : contact@surly.fr
+- Siège : Paris, France

@@ -11,6 +11,16 @@ import { IntermediateCTA } from "@/components/ui/IntermediateCTA";
 import { FAQHighlights } from "@/components/sections/FAQHighlights";
 import { KeywordsCarouselGreen } from "@/components/ui/KeywordsCarouselGreen";
 import { Reveal } from "@/components/ui/Reveal";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Surly | Marketplace Recrutement & Freelance Banque Assurance",
+  description: "La 1ère plateforme dédiée aux experts de la Banque et de l'Assurance. +3000 consultants certifiés disponibles sous 48h. Recrutement, Freelance, Assistance Technique.",
+  keywords: ["recrutement banque", "freelance assurance", "marketplace bancassurance", "consultant banque", "emploi finance", "expert ifrs17", "conformité"],
+  alternates: {
+    canonical: "https://surly.fr",
+  },
+};
 
 export default function Home() {
   return (

@@ -1,4 +1,5 @@
 import { LegalPageLayout } from "@/components/layout/LegalPageLayout";
+import { SurlyContactEmail } from "@/components/ui/ObfuscatedEmail";
 
 export default function MentionsLegalesPage() {
     return (
@@ -11,7 +12,7 @@ export default function MentionsLegalesPage() {
             </p>
             <p>
                 Président : la société MYWAY, SIREN 941 808 222, agit en qualité de président<br />
-                Adresse e-mail de contact : <a href="mailto:contact@surly.fr">contact@surly.fr</a><br />
+                Adresse e-mail de contact : <SurlyContactEmail /><br />
                 Numéro de TVA intracommunautaire : FR48942708868
             </p>
 
@@ -64,7 +65,7 @@ export default function MentionsLegalesPage() {
                 Pour toute information sur la manière dont vos données sont traitées, consultez notre <a href="/charte-donnees">Politique de confidentialité</a>.
             </p>
             <p>
-                Conformément à la réglementation, vous disposez de droits d’accès, de rectification, de suppression, de limitation, d’opposition et de portabilité de vos données. Vous pouvez exercer ces droits à tout moment en écrivant à : <a href="mailto:contact@surly.fr">contact@surly.fr</a>
+                Conformément à la réglementation, vous disposez de droits d’accès, de rectification, de suppression, de limitation, d’opposition et de portabilité de vos données. Vous pouvez exercer ces droits à tout moment en écrivant à : <SurlyContactEmail />
             </p>
 
             <h2>7. Droit applicable et juridiction compétente</h2>

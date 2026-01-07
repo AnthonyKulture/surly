@@ -1,4 +1,5 @@
 import { LegalPageLayout } from "@/components/layout/LegalPageLayout";
+import { SurlyDPOEmail } from "@/components/ui/ObfuscatedEmail";
 
 export default function PolitiqueCookiesPage() {
     return (
@@ -71,7 +72,7 @@ export default function PolitiqueCookiesPage() {
                 <li>de retrait du consentement à tout moment.</li>
             </ul>
             <p>
-                📧 <a href="mailto:dpo@surly.fr">dpo@surly.fr</a><br />
+                📧 <SurlyDPOEmail /><br />
                 📮 ONYBUNS SAS – 64, rue La Boétie – 75008 Paris
             </p>
             <p>

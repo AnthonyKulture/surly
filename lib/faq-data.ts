@@ -4,21 +4,25 @@
 export interface FAQItem {
     question: string;
     answer: string;
+    link?: {
+        text: string;
+        url: string;
+    };
 }
 
 export const FAQ_CLIENTS: FAQItem[] = [
     // Présentation
     {
         question: "Qu'est-ce que Surly ?",
-        answer: "Surly est la première marketplace de recrutement ultra-spécialisée dans les secteurs Banque et Assurance. Notre plateforme connecte les entreprises (banques, assurances, mutuelles, fintech, établissements de paiement, etc.) avec des experts qualifiés pour des missions freelance ou des postes en CDI/CDD."
+        answer: "Surly, c’est le One Stop Shop du sourcing en bancassurance : une marketplace qui connecte banques & assureurs avec des experts du secteur (freelance ou CDI/CDD). Rapide, simple, efficace : vous déposez votre besoin et recevez des profils ultra-ciblés avec un modèle simple, transparent et pensé pour aller vite."
     },
     {
-        question: "Quelle est la spécialisation de Surly ?",
-        answer: "Surly se concentre exclusivement sur les métiers de la Banque et de l'Assurance : conformité réglementaire, transformation digitale, actuariat, risk management, IT bancaire, gestion des risques, finance de marché, opérations, RH, marketing, et tous les métiers supports du secteur."
+        question: "Sur quels métiers Banque & Assurance Surly est-elle spécialisée ?",
+        answer: "Nous sommes spécialisés uniquement sur la bancassurance, avec une couverture complète des métiers et des fonctions supports : conformité & réglementation, risques, actuariat, transformation, IT/data, MOA/AMOA, Finance & marchés, opérations, Commercial, Marketing, RH… Objectif : vous proposer des profils qui comprennent réellement vos enjeux sectoriels."
     },
     {
-        question: "Quelle différence avec un cabinet classique ?",
-        answer: "Contrairement aux cabinets généralistes, Surly est 100% spécialisé bancassurance. Nos talent managers parlent le même langage technique que vous, et notre base de profils est pré-qualifiée sur les expertises sectorielles."
+        question: "Quelle différence avec les solutions généralistes ?",
+        answer: "La différence, c’est la spécialisation. Surly est conçu uniquement pour la bancassurance : profils ciblés, pré-qualification, et interlocuteurs qui comprennent vos enjeux. Vous obtenez une sélection pertinente plus vite, sans “bruit” ni profils hors sujet — pour du freelance comme pour du CDI/CDD."
     },
     // Utilisation plateforme
     {
@@ -40,7 +44,7 @@ export const FAQ_CLIENTS: FAQItem[] = [
     // Tarification
     {
         question: "Quels sont les tarifs de Surly ?",
-        answer: "L'accès à la plateforme est 100% gratuit, pour les clients comme pour les consultants. Tous les TJM et salaires sont affichés en toute transparence, avec le détail du prix incluant la commission Surly. En utilisation autonome de la plateforme, une commission de 15% est appliquée à la contractualisation, payée par le client. Vous pouvez également négocier directement avec les consultants avant de contractualiser."
+        answer: "L’accès à Surly est 100% gratuit pour les entreprises comme pour les experts : vous pouvez publier un besoin, consulter les profils et échanger sans frais. Les TJM et salaires sont affichés en toute transparence. Surly se rémunère via une commission appliquée uniquement en cas de contractualisation (mission ou recrutement)."
     },
     {
         question: "Y a-t-il des frais d'inscription ?",
@@ -77,7 +81,7 @@ export const FAQ_CONSULTANTS: FAQItem[] = [
     },
     {
         question: "Quels sont les critères pour être référencé sur Surly ?",
-        answer: "Vous devez justifier d'au moins une expérience significative dans le secteur Banque ou Assurance. Tous les profils sont vérifiés par notre équipe avant validation."
+        answer: "Avoir au moins une expérience significative en Banque ou Assurance. Tous les profils sont vérifiés par notre équipe avant validation. Vous n’êtes pas sûr d’être éligible ? Inscrivez-vous : notre équipe vous indique rapidement si votre profil correspond."
     },
     {
         question: "Puis-je m'inscrire si je suis en CDI actuellement ?",
@@ -103,7 +107,7 @@ export const FAQ_CONSULTANTS: FAQItem[] = [
     // Rémunération
     {
         question: "Comment sont fixés mon TJM ou mon SAB ?",
-        answer: "Vous fixez librement votre taux journalier moyen (TJM) pour les missions freelance ou votre salaire annuel brut (SAB) pour les postes en CDI/CDD. Notre plateforme affiche une fourchette indicative pour vous aider à vous positionner sur le marché."
+        answer: "Vous fixez librement votre TJM (freelance) ou votre SAB (CDI/CDD). Surly ne les impose pas : vous gardez la main et pouvez les modifier quand vous le souhaitez. Aucune exclusivité. Besoin d’un repère ? Nos talent managers peuvent vous aider à positionner votre TJM/SAB selon le type de mission ou de poste."
     },
     {
         question: "Surly demande-t-il une exclusivité ?",
@@ -111,7 +115,7 @@ export const FAQ_CONSULTANTS: FAQItem[] = [
     },
     {
         question: "Comment suis-je payé pour mes missions ?",
-        answer: "Pour les missions freelance, vous facturez directement Surly. Nous nous occupons de toute la partie paiement : vous êtes réglé selon les délais convenus, généralement à 30 jours fin de mois. Aucune démarche auprès du client final."
+        answer: "Pour les missions freelance, vous facturez Surly. Nous prenons en charge la gestion administrative et le paiement : vous êtes réglé dans les délais légaux et contractuels convenus, sans démarche à effectuer auprès du client final."
     },
     {
         question: "Pouvez-vous me proposer du portage salarial ?",
@@ -120,11 +124,15 @@ export const FAQ_CONSULTANTS: FAQItem[] = [
     // Apport affaires
     {
         question: "Qu'est-ce que le programme apport d'affaires ?",
-        answer: "Si vous recommandez un consultant ou un client à Surly et que cette recommandation aboutit à une mission, vous recevez une commission de 3% du chiffre d'affaires généré."
+        answer: "Si vous recommandez un consultant ou un client à Surly et que cette recommandation aboutit à une mission, vous recevez une commission de 3% du chiffre d'affaires généré.",
+        link: {
+            text: "Découvrir le programme d'apport d'affaires",
+            url: "/apport-affaires"
+        }
     },
     {
         question: "Comment fonctionne la commission d'apport d'affaires ?",
-        answer: "Vous partagez le contact d'un consultant ou d'une entreprise via notre formulaire dédié. Si une mission est signée, vous touchez 3% du CA HT pendant toute la durée de la première mission (sous conditions)."
+        answer: "Vous partagez le contact d'une mission à pourvoir chez un client via notre formulaire dédié. Si la mission est signée, vous touchez 3% du CA HT pendant toute la durée de la première mission (sous conditions)."
     },
     {
         question: "Qui peut participer au programme ?",
@@ -147,6 +155,10 @@ export const FAQ_GENERAL: FAQItem[] = [
     },
     {
         question: "Proposez-vous des partenariats ?",
-        answer: "Oui, nous développons des partenariats avec des acteurs du secteur (cabinets de conseil, ESN, associations professionnelles). Contactez-nous pour en discuter."
+        answer: "Oui. Nous construisons des partenariats avec des acteurs de l’écosystème Banque & Assurance afin d’apporter toute l’aide possible à notre communauté de Surlyers et qu’ils puissent se concentrer pleinement sur l’essentiel : leur mission !",
+        link: {
+            text: "Retrouvez les détails sur la page « Partenaires & Avantages »",
+            url: "/partenaires-avantages"
+        }
     },
 ];

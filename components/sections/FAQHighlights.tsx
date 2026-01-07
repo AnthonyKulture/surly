@@ -10,21 +10,21 @@ import { Button, ArrowIcon } from "@/components/ui/Button";
 const FAQ_HIGHLIGHTS = [
     {
         question: "Qu'est-ce que Surly ?",
-        answer: "Surly est la première marketplace de recrutement ultra-spécialisée dans les secteurs Banque et Assurance. Notre plateforme connecte les entreprises avec des experts qualifiés pour des missions freelance ou des postes en CDI/CDD.",
+        answer: "Surly, c’est le One Stop Shop du sourcing en bancassurance : une marketplace qui connecte banques & assureurs avec des experts du secteur (freelance ou CDI/CDD). Rapide, simple, efficace : vous déposez votre besoin et recevez des profils ultra-ciblés avec un modèle simple, transparent et pensé pour aller vite.",
         category: "client"
     },
     {
         question: "Quels sont les tarifs de Surly ?",
-        answer: "L'accès à la plateforme est 100% gratuit, pour les clients comme pour les consultants. Tous les TJM et salaires sont affichés en toute transparence. Une commission de 15% est appliquée uniquement à la contractualisation.",
+        answer: "L’accès à Surly est 100% gratuit pour les entreprises comme pour les experts : vous pouvez publier un besoin, consulter les profils et échanger sans frais. Les TJM et salaires sont affichés en toute transparence. Surly se rémunère via une commission appliquée uniquement en cas de contractualisation (mission ou recrutement).",
         category: "client"
     },
     {
-        question: "Quelle différence avec un cabinet classique ?",
-        answer: "Contrairement aux cabinets généralistes, Surly est 100% spécialisé bancassurance. Nos talent managers parlent le même langage technique que vous, et notre base de profils est pré-qualifiée.",
+        question: "Quelle différence avec les solutions généralistes ?",
+        answer: "La différence, c’est la spécialisation. Surly est conçu uniquement pour la bancassurance : profils ciblés, pré-qualification, et interlocuteurs qui comprennent vos enjeux. Vous obtenez une sélection pertinente plus vite, sans “bruit” ni profils hors sujet — pour du freelance comme pour du CDI/CDD.",
         category: "client"
     },
     {
-        question: "Comment m'inscrire sur Surly ?",
+        question: "Je suis candidat : Comment m'inscrire sur Surly ?",
         answer: "L'inscription se fait en 5 minutes. Vous remplissez vos expériences (import automatique depuis LinkedIn ou CV), vos compétences et outils maîtrisés, puis vous fixez vos critères de recherche.",
         category: "consultant"
     },
@@ -35,7 +35,7 @@ const FAQ_HIGHLIGHTS = [
     },
     {
         question: "Comment sont fixés mon TJM ou mon SAB ?",
-        answer: "Vous fixez librement votre taux journalier (TJM) pour les missions freelance ou votre salaire (SAB) pour les postes CDI/CDD. Aucune exclusivité demandée, vous gardez le contrôle total.",
+        answer: "Vous fixez librement votre TJM (freelance) ou votre SAB (CDI/CDD). Surly ne les impose pas : vous gardez la main et pouvez les modifier quand vous le souhaitez. Aucune exclusivité. Besoin d’un repère ? Nos talent managers peuvent vous aider à positionner votre TJM/SAB selon le type de mission ou de poste.",
         category: "consultant"
     },
 ];
