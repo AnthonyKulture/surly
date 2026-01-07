@@ -114,7 +114,7 @@ export const FunctionsShowcase = () => {
                 <div className="grid grid-cols-12 gap-6 lg:gap-8 items-stretch max-w-7xl mx-auto">
 
                     {/* LEFT COLUMN: Title & Subtitle (50% - 6 cols) */}
-                    <div className="col-span-12 lg:col-span-7 laptop:col-span-6 flex flex-col justify-center pr-0 lg:pr-12">
+                    <div className="col-span-12 lg:col-span-7 laptop:col-span-6 flex flex-col justify-center pr-0 lg:pr-12 mb-8 lg:mb-0">
                         <SectionHeader
                             tag="Fonctions"
                             title={
@@ -138,7 +138,7 @@ export const FunctionsShowcase = () => {
                     </div>
 
                     {/* MIDDLE COLUMN: Vertical Tabs (20% - 2 cols) */}
-                    <div className="col-span-12 lg:col-span-2 laptop:col-span-2 flex flex-col">
+                    <div className="col-span-12 md:col-span-5 lg:col-span-2 laptop:col-span-2 flex flex-col">
                         <div className="space-y-1.5 flex-1">
                             {FUNCTIONS.map((func, index) => {
                                 const isActive = index === currentIndex;
@@ -188,7 +188,7 @@ export const FunctionsShowcase = () => {
                     </div>
 
                     {/* RIGHT COLUMN: Mini Mockup (30% - 4 cols) */}
-                    <div className="col-span-12 lg:col-span-3 laptop:col-span-4 flex flex-col">
+                    <div className="col-span-12 md:col-span-7 lg:col-span-3 laptop:col-span-4 flex flex-col">
                         <div className="bg-white rounded-lg border border-gray-200/80 shadow-sm p-4 transition-all duration-500 flex flex-col h-full">
 
                             {/* Mini Header */}
