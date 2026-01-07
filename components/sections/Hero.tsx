@@ -22,7 +22,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-[100dvh] pt-32 pb-12 md:pb-12 laptop:pb-16 flex flex-col items-center justify-center overflow-hidden bg-white"
+      className="relative w-full min-h-[85vh] pt-32 pb-4 md:pb-6 laptop:pb-8 flex flex-col items-center justify-center overflow-hidden bg-white"
     >
       <HeroBackground />
       <div className="container relative z-[2] px-6 md:px-4">

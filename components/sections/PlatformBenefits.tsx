@@ -7,32 +7,32 @@ const BENEFITS = [
     {
         number: "01",
         title: "Profils pré-qualifiés",
-        desc: "Tous nos experts justifient d'au moins une expérience significative en Banque ou Assurance. Terminé les profils généralistes qui ne comprennent pas vos enjeux réglementaires.",
+        desc: "Tous nos experts justifient d'au moins une expérience significative en Banque ou Assurance.",
         stat: "0 CV hors-sujet"
     },
     {
         number: "02",
         title: "Matching instantané",
-        desc: "Notre intelligence artificielle qualifie votre besoin 24/7 et vous propose les profils pertinents en quelques secondes. Plus besoin d'attendre des jours pour trier des centaines de CVs.",
+        desc: "Notre IA qualifie votre besoin 24/7 et propose les profils pertinents en quelques secondes.",
         stat: "-80% temps"
     },
     {
         number: "03",
         title: "Spécialisation exclusive",
-        desc: "Contrairement aux cabinets généralistes, Surly se concentre à 100% sur la Banque et l'Assurance. Nos talent managers parlent le même langage technique que vous.",
+        desc: "Surly se concentre à 100% sur la Banque et l'Assurance. Nos talent managers parlent votre langage.",
         stat: "100% sectoriel"
     },
     {
         number: "04",
         title: "Gain de productivité",
-        desc: "Réduisez drastiquement vos délais de recrutement et concentrez-vous sur l'essentiel : la validation du fit humain. Nos équipes gèrent l'administratif et la qualification technique.",
+        desc: "Concentrez-vous sur le fit humain. Nous gérons l'administratif et la qualification technique.",
         stat: "48h max"
     }
 ];
 
 export const PlatformBenefits = () => {
     return (
-        <section className="relative py-16 sm:py-20 lg:py-28 bg-white">
+        <section className="relative py-16 sm:py-20 lg:py-24 bg-white">
             <div className="container">
                 <SectionHeader
                     tag="Avantages Plateforme"
@@ -46,27 +46,38 @@ export const PlatformBenefits = () => {
                     centered
                 />
 
-                <Reveal delay={100} duration={1000}>
-                    <p className="text-base sm:text-lg text-foreground-muted text-center max-w-3xl mx-auto mb-12 sm:mb-16 leading-relaxed px-4">
-                        Fini les jobboards généralistes et les CVs hors-sujet. Surly est la seule marketplace
-                        <strong className="text-foreground"> ultra-spécialisée Banque & Assurance</strong>,
-                        conçue par des experts du secteur pour des besoins pointus.
+                <Reveal delay={100} duration={800}>
+                    <p className="text-base sm:text-lg text-foreground-muted text-center max-w-2xl mx-auto mb-12 sm:mb-14 leading-relaxed">
+                        La seule marketplace <strong className="text-foreground">ultra-spécialisée Banque &amp; Assurance</strong>,
+                        conçue par des experts pour des besoins pointus.
                     </p>
                 </Reveal>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
                     {BENEFITS.map((benefit, i) => (
-                        <Reveal key={i} delay={i * 150} duration={800}>
-                            <div className="relative p-8 rounded-xl bg-white border-2 border-primary/5 hover:border-primary/20 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all h-full flex flex-col">
-                                <div className="absolute top-6 right-6 py-1 px-3 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider rounded-full">
+                        <Reveal key={i} delay={i * 80} duration={600}>
+                            <div className="group relative p-6 rounded-xl bg-white border border-gray-100 h-full flex flex-col hover:border-primary/20 hover:shadow-md transition-all duration-300">
+
+                                {/* Number */}
+                                <span className="text-[10px] font-semibold text-primary/60 tracking-wider mb-4">
                                     {benefit.number}
-                                </div>
+                                </span>
 
-                                <h3 className="font-bold text-lg text-foreground mb-3 mt-6">{benefit.title}</h3>
-                                <p className="text-sm text-foreground-muted leading-relaxed mb-6 flex-grow">{benefit.desc}</p>
+                                {/* Title */}
+                                <h3 className="font-semibold text-base text-foreground mb-2 leading-snug">
+                                    {benefit.title}
+                                </h3>
 
-                                <div className="mt-auto p-3 bg-primary/5 rounded-lg text-center">
-                                    <span className="text-lg font-bold text-primary">{benefit.stat}</span>
+                                {/* Description */}
+                                <p className="text-sm text-foreground-muted leading-relaxed mb-5 flex-grow">
+                                    {benefit.desc}
+                                </p>
+
+                                {/* Stat */}
+                                <div className="pt-4 border-t border-gray-50">
+                                    <span className="text-lg font-bold text-primary">
+                                        {benefit.stat}
+                                    </span>
                                 </div>
                             </div>
                         </Reveal>

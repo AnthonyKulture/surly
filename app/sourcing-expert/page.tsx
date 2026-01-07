@@ -8,6 +8,7 @@ import { Piliers } from "@/components/sections/Piliers";
 import { Experts } from "@/components/sections/Experts";
 import { ExpertSourcingCTA } from "@/components/sections/ExpertSourcingCTA";
 import { KeywordsCarousel } from "@/components/ui/KeywordsCarousel";
+import { SuccessStories } from "@/components/sections/SuccessStories";
 
 export default function SourcingExpert() {
     return (
@@ -58,10 +59,14 @@ export default function SourcingExpert() {
                     </div>
                 </section>
 
+
                 {/* 4. Piliers - Why Surly? */}
                 <Piliers />
 
-                {/* 5. Experts vedettes */}
+                {/* 5. Track Record - Success Stories */}
+                <SuccessStories />
+
+                {/* 6. Experts vedettes */}
                 <Experts />
 
                 {/* 6. Final CTA Section */}

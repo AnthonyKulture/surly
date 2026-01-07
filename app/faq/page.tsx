@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button, ArrowIcon } from "@/components/ui/Button";
 import {
@@ -64,25 +64,23 @@ export default function FAQPage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
 
-            <main className="pt-20 sm:pt-24">
-                {/* Hero Section - Clean and minimal */}
-                <section className="relative py-16 sm:py-20 lg:py-24 bg-white border-b border-primary/5">
-                    <div className="container">
-                        <SectionHeader
-                            tag="Centre d'aide"
-                            title={
-                                <>
-                                    Foire aux
-                                    <br />
-                                    <span className="text-primary">questions</span>
-                                </>
-                            }
-                            centered
-                        />
+            <main>
+                {/* Hero Section - Using unified PageHero */}
+                <PageHero
+                    badge="Centre d'aide"
+                    title={
+                        <>
+                            Foire aux
+                            <span className="text-primary block mt-1">questions</span>
+                        </>
+                    }
+                />
 
-                        {/* Quick Navigation Pills */}
+                {/* Quick Navigation Pills */}
+                <section className="py-6 bg-white border-b border-primary/5">
+                    <div className="container">
                         <Reveal delay={100} duration={600}>
-                            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-xl mx-auto mt-8">
+                            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-xl mx-auto">
                                 <a
                                     href="#clients"
                                     className="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 border border-primary/10 rounded-full text-sm font-medium text-foreground hover:bg-primary hover:text-white hover:border-primary transition-all"

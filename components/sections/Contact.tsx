@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect } from "react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button, SendIcon } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { ObfuscatedEmail } from "@/components/ui/ObfuscatedEmail";
 import { cn } from "@/lib/utils";
 
 interface FormData {
@@ -216,8 +217,8 @@ export const Contact = () => {
 
               {/* Contact Methods - Side by side on tablet */}
               <div className="grid grid-cols-1 sm:grid-cols-2 tablet:grid-cols-1 laptop:grid-cols-2 gap-3 tablet:gap-4">
-                <div className="flex items-center gap-3 tablet:gap-4 p-3 tablet:p-4 laptop:p-5 border border-primary/10 bg-background rounded-xl shadow-sm">
-                  <div className="w-10 h-10 tablet:w-12 tablet:h-12 flex items-center justify-center bg-primary text-background rounded-xl shadow-sm">
+                <div className="flex items-center gap-3 tablet:gap-4 p-3 tablet:p-4 laptop:p-5 border border-primary/10 bg-background rounded-xl shadow-sm hover:border-accent hover:bg-accent/5 hover:shadow-md transition-all group">
+                  <div className="w-10 h-10 tablet:w-12 tablet:h-12 flex items-center justify-center bg-primary text-background rounded-xl shadow-sm group-hover:bg-accent group-hover:text-primary transition-colors">
                     <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 tablet:w-5 tablet:h-5">
                       <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                     </svg>
@@ -226,9 +227,12 @@ export const Contact = () => {
                     <span className="block text-xs font-medium uppercase tracking-widest text-foreground/50">
                       Email
                     </span>
-                    <span className="text-sm font-semibold text-foreground select-none" style={{ unicodeBidi: 'bidi-override', direction: 'rtl' }}>
-                      rf.ylrus@tcatnoc
-                    </span>
+                    <ObfuscatedEmail
+                      user="contact"
+                      domain="surly"
+                      tld="fr"
+                      className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors"
+                    />
                   </div>
                 </div>
 
