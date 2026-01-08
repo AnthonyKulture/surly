@@ -4,8 +4,21 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 
 export function ThirdPartyScripts() {
-    // Simplified: Axeptio manages consents. If Brevo is integrated via Axeptio dashboard, 
-    // we don't need to manually listen or inject scripts.
+    // Suppress noisy third-party errors (Axeptio/Brevo compatibility issues)
+    useEffect(() => {
+        const originalError = console.error;
+        console.error = (...args) => {
+            if (args[0] && typeof args[0] === 'string' && args[0].includes('Dropped events')) {
+                // Suppress "Dropped events" error from Brevo/Axeptio
+                return;
+            }
+            originalError.apply(console, args);
+        };
+
+        return () => {
+            console.error = originalError;
+        };
+    }, []);
 
     return (
         <>
