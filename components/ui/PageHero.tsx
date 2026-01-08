@@ -44,7 +44,7 @@ export const PageHero = ({
                 {/* Badge */}
                 {badge && (
                     <Reveal delay={0} duration={600} direction="down">
-                        <div className="mb-5 sm:mb-6">
+                        <div className="mb-5 sm:mb-6 w-full text-center">
                             <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-primary/5 border border-primary/10 shadow-sm">
                                 <span className="text-xs sm:text-sm font-medium text-primary">
                                     {badge}
@@ -54,9 +54,9 @@ export const PageHero = ({
                     </Reveal>
                 )}
 
-                {/* Title */}
+                {/* Title - Smaller on mobile to prevent orphan words */}
                 <Reveal delay={100} duration={800}>
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-foreground text-center mb-4 sm:mb-5 tracking-tight leading-[1.15] max-w-4xl mx-auto">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[3rem] font-bold text-foreground text-center mb-4 sm:mb-5 tracking-tight leading-[1.2] sm:leading-[1.15] max-w-4xl mx-auto">
                         {title}
                     </h1>
                 </Reveal>
@@ -70,10 +70,10 @@ export const PageHero = ({
                     </Reveal>
                 )}
 
-                {/* Subtitle */}
+                {/* Subtitle - Centered on all screen sizes */}
                 {subtitle && (
                     <Reveal delay={200} duration={800}>
-                        <p className="text-base sm:text-lg md:text-xl text-foreground-muted text-center max-w-3xl mx-auto font-normal leading-relaxed">
+                        <p className="text-base sm:text-lg md:text-xl text-foreground-muted text-center max-w-3xl mx-auto font-normal leading-relaxed px-4 sm:px-0">
                             {subtitle}
                         </p>
                     </Reveal>

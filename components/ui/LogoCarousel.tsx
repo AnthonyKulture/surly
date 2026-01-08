@@ -17,7 +17,7 @@ export const LogoCarousel = () => {
     const duplicatedClients = [...clients, ...clients];
 
     return (
-        <section className="relative pt-2 pb-4 sm:pt-3 sm:pb-6 bg-white overflow-hidden">
+        <section className="relative pt-6 pb-8 sm:pt-6 sm:pb-10 bg-white overflow-hidden">
             <div className="container">
                 {/* Minimal Title */}
                 <div className="text-center mb-4 sm:mb-5">

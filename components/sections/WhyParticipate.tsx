@@ -55,7 +55,7 @@ export const WhyParticipate = () => {
                 />
 
                 <Reveal delay={100} duration={1000}>
-                    <p className="text-base sm:text-lg text-foreground-muted text-center max-w-3xl mx-auto mb-12 sm:mb-16 leading-relaxed px-4">
+                    <p className="text-base sm:text-lg text-foreground-muted text-center max-w-3xl mx-auto mb-12 sm:mb-16 leading-relaxed px-4 sm:px-0">
                         Devenir apporteur d'affaires Surly, c'est transformer vos recommandations en{" "}
                         <strong className="text-foreground">revenus concrets</strong> tout en apportant une vraie valeur ajoutée
                         à votre réseau professionnel dans le secteur bancassurance.
@@ -65,7 +65,7 @@ export const WhyParticipate = () => {
                 <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mb-12">
                     {benefits.map((benefit, i) => (
                         <Reveal key={i} delay={200 + (i * 150)} duration={800}>
-                            <div className="relative p-8 rounded-2xl bg-gradient-to-br from-white to-primary/5 border-2 border-primary/10 hover:border-primary/30 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all h-full flex flex-col group">
+                            <div className="relative p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-white to-primary/5 border-2 border-primary/10 hover:border-primary/30 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all h-full flex flex-col group">
                                 {/* Icon */}
                                 <div className="w-16 h-16 rounded-xl bg-primary text-white flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
                                     {benefit.icon}

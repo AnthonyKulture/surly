@@ -9,7 +9,7 @@ import { FunctionsShowcase } from "@/components/sections/FunctionsShowcase";
 import { Contact } from "@/components/sections/Contact";
 import { IntermediateCTA } from "@/components/ui/IntermediateCTA";
 import { FAQHighlights } from "@/components/sections/FAQHighlights";
-import { KeywordsCarouselGreen } from "@/components/ui/KeywordsCarouselGreen";
+import { KeywordsCarouselGreen } from "@/components/ui/KeywordsCarousel";
 import { Reveal } from "@/components/ui/Reveal";
 import { Metadata } from "next";
 

@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { checkRateLimit } from "@/lib/rate-limiter";
+import { validateMessage, sanitizeMessage } from "@/lib/input-validator";
 
 // Lazy initialization to avoid build errors when env var is not set
 let resendInstance: Resend | null = null;
@@ -79,8 +81,29 @@ function formatBusinessReferralEmail(data: BusinessReferralData): string {
     `;
 }
 
+/**
+ * Get client IP address from request headers
+ */
+function getClientIP(req: NextRequest): string {
+    const forwarded = req.headers.get("x-forwarded-for");
+    const realIP = req.headers.get("x-real-ip");
+    if (forwarded) return forwarded.split(",")[0].trim();
+    if (realIP) return realIP;
+    return "unknown";
+}
+
 export async function POST(request: NextRequest) {
     try {
+        // Rate limiting
+        const clientIP = getClientIP(request);
+        const rateLimit = checkRateLimit(`business-referral:${clientIP}`);
+        if (!rateLimit.isAllowed) {
+            return NextResponse.json(
+                { error: "Trop de requêtes. Veuillez réessayer dans quelques minutes." },
+                { status: 429 }
+            );
+        }
+
         const data: BusinessReferralData = await request.json();
 
         // Validation
@@ -90,6 +113,19 @@ export async function POST(request: NextRequest) {
                 { status: 400 }
             );
         }
+
+        // Validate description field for malicious content
+        const descValidation = validateMessage(data.description);
+        if (!descValidation.isValid) {
+            return NextResponse.json(
+                { error: descValidation.error },
+                { status: 400 }
+            );
+        }
+
+        // Sanitize text fields
+        data.description = sanitizeMessage(data.description);
+        data.nom = data.nom.substring(0, 100).trim();
 
         if (data.estInscrit === "non") {
             if (!data.email || !data.telephone) {

@@ -1,9 +1,31 @@
 import { NextResponse } from "next/server";
 import { extractLeadInfo } from "@/lib/lead-extractor";
 import { sendLeadNotification } from "@/lib/email-service";
+import { checkRateLimit } from "@/lib/rate-limiter";
+
+/**
+ * Get client IP address from request headers
+ */
+function getClientIP(req: Request): string {
+    const forwarded = req.headers.get("x-forwarded-for");
+    const realIP = req.headers.get("x-real-ip");
+    if (forwarded) return forwarded.split(",")[0].trim();
+    if (realIP) return realIP;
+    return "unknown";
+}
 
 export async function POST(req: Request) {
     try {
+        // Rate limiting
+        const clientIP = getClientIP(req);
+        const rateLimit = checkRateLimit(`submit-lead:${clientIP}`);
+        if (!rateLimit.isAllowed) {
+            return NextResponse.json(
+                { error: "Too many requests. Please wait." },
+                { status: 429 }
+            );
+        }
+
         const { messages } = await req.json();
 
         if (!messages || !Array.isArray(messages)) {

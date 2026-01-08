@@ -110,11 +110,11 @@ export const FunctionsShowcase = () => {
         <section id="fonctions" className="relative py-24 lg:py-28 overflow-hidden bg-white">
             <div className="container">
 
-                {/* 50-20-30 layout matching screenshot with equal heights */}
-                <div className="grid grid-cols-12 gap-6 lg:gap-8 items-stretch max-w-7xl mx-auto">
+                {/* Optimized layout for mobile: horizontal on mobile, 50-20-30 on desktop */}
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 lg:gap-8 items-stretch max-w-7xl mx-auto">
 
                     {/* LEFT COLUMN: Title & Subtitle (50% - 6 cols) */}
-                    <div className="col-span-12 lg:col-span-7 laptop:col-span-6 flex flex-col justify-center pr-0 lg:pr-12 mb-8 lg:mb-0">
+                    <div className="md:col-span-12 lg:col-span-7 laptop:col-span-6 flex flex-col justify-center pr-0 lg:pr-12 mb-4 md:mb-6 lg:mb-0">
                         <SectionHeader
                             tag="Fonctions"
                             title={
@@ -125,11 +125,11 @@ export const FunctionsShowcase = () => {
                                 </>
                             }
                             subtitle="Trouvez rapidement les experts spécialisés dont vous avez besoin dans tous les métiers de la banque et de l'assurance."
-                            className="mb-8"
+                            className="mb-4 md:mb-8"
                         />
 
                         <Reveal delay={200} duration={800}>
-                            <p className="text-sm text-foreground-muted leading-relaxed mb-6">
+                            <p className="text-sm text-foreground-muted leading-relaxed mb-4 md:mb-6 hidden md:block">
                                 De la finance à l'audit, des profils{' '}
                                 <span className="font-semibold text-foreground">certifiés</span> et{' '}
                                 <span className="font-semibold text-foreground">immédiatement disponibles</span>.
@@ -137,9 +137,43 @@ export const FunctionsShowcase = () => {
                         </Reveal>
                     </div>
 
-                    {/* MIDDLE COLUMN: Vertical Tabs (20% - 2 cols) */}
-                    <div className="col-span-12 md:col-span-5 lg:col-span-2 laptop:col-span-2 flex flex-col">
-                        <div className="space-y-1.5 flex-1">
+                    {/* MIDDLE COLUMN: Vertical Tabs - All functions on 2 lines */}
+                    <div className="md:col-span-5 lg:col-span-2 laptop:col-span-2">
+                        {/* Mobile: 4 columns to fit all on 2 lines */}
+                        <div className="md:hidden">
+                            <div className="grid grid-cols-4 gap-1.5">
+                                {FUNCTIONS.map((func, index) => {
+                                    const isActive = index === currentIndex;
+                                    return (
+                                        <div
+                                            key={func.id}
+                                            className={cn(
+                                                "relative px-1 py-1.5 transition-all duration-500 cursor-default rounded-lg text-center",
+                                                isActive && "bg-primary/5 border border-primary/20"
+                                            )}
+                                        >
+                                            <div className="flex flex-col items-center gap-0.5">
+                                                <div className={cn(
+                                                    "w-4 h-4 rounded-full flex items-center justify-center text-[8px] font-bold transition-all duration-500",
+                                                    isActive ? "bg-primary text-white" : "bg-gray-200 text-gray-500"
+                                                )}>
+                                                    {index + 1}
+                                                </div>
+                                                <span className={cn(
+                                                    "text-[9px] font-semibold transition-all duration-500 leading-tight",
+                                                    isActive ? "text-primary" : "text-gray-500"
+                                                )}>
+                                                    {func.label}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+
+                        {/* Desktop: vertical list */}
+                        <div className="hidden md:block space-y-1.5 flex-1">
                             {FUNCTIONS.map((func, index) => {
                                 const isActive = index === currentIndex;
 
@@ -187,9 +221,9 @@ export const FunctionsShowcase = () => {
                         </div>
                     </div>
 
-                    {/* RIGHT COLUMN: Mini Mockup (30% - 4 cols) */}
-                    <div className="col-span-12 md:col-span-7 lg:col-span-3 laptop:col-span-4 flex flex-col">
-                        <div className="bg-white rounded-lg border border-gray-200/80 shadow-sm p-4 transition-all duration-500 flex flex-col h-full">
+                    {/* RIGHT COLUMN: Mini Mockup - Compact on mobile */}
+                    <div className="md:col-span-7 lg:col-span-3 laptop:col-span-4">
+                        <div className="bg-white rounded-lg border border-gray-200/80 shadow-sm p-3 md:p-4 transition-all duration-500 flex flex-col h-full">
 
                             {/* Mini Header */}
                             <div className="flex items-center justify-between mb-3 pb-2 border-b border-gray-100">

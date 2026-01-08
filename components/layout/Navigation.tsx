@@ -84,11 +84,11 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
       {/* Full Width Announcement Bar - Top of site */}
       {showAnnouncementBar && (
         <div className="fixed top-0 left-0 right-0 z-[1010] h-10 bg-primary text-white overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay" />
+          {/* Decorative gradient blob */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
-          <div className="relative h-full flex items-center justify-center gap-2 sm:gap-3 px-4 text-center">
-            <div className="flex items-center gap-1.5 sm:gap-2 justify-center">
+          <div className="relative h-full flex items-center justify-center gap-2 sm:gap-3 px-3 sm:px-4 text-center">
+            <div className="hidden xs:flex items-center gap-1.5 sm:gap-2 justify-center">
               <span className="flex items-center justify-center w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white/10 text-accent ring-1 ring-white/20">
                 <svg viewBox="0 0 24 24" fill="none" className="w-2 h-2 sm:w-2.5 sm:h-2.5 text-accent">
                   <path
@@ -103,19 +103,20 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
             </div>
 
             <a
-              href="/sourcing-expert"
+              href="/ai"
               className="group relative inline-flex items-center justify-center p-[1px] rounded-full overflow-hidden"
             >
               {/* Spinning Beam */}
               <div className="absolute inset-[-100%] animate-spin-medium bg-[conic-gradient(from_90deg_at_50%_50%,#0000_75%,#ecff73_100%)]" />
 
-              {/* Button Content */}
-              <div className="relative z-10 flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-white text-primary-900 transition-transform active:scale-95">
-                <span className="text-[10px] md:text-xs font-bold whitespace-nowrap">
-                  Sélectionné par notre IA en 2min
+              {/* Button Content - Shorter text on very small mobile */}
+              <div className="relative z-10 flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-0.5 rounded-full bg-white text-primary-900 transition-transform active:scale-95">
+                <span className="text-[9px] sm:text-[10px] md:text-xs font-bold whitespace-nowrap">
+                  <span className="hidden sm:inline">Sélectionné par notre IA en 2min</span>
+                  <span className="sm:hidden">Besoin urgent ? Sourcing IA</span>
                 </span>
                 <svg
-                  className="w-3 h-3 text-primary-800 group-hover:translate-x-0.5 transition-transform"
+                  className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-primary-800 group-hover:translate-x-0.5 transition-transform"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -270,7 +271,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
 
       <div
         className={cn(
-          "fixed inset-0 bg-white/70 backdrop-blur-2xl z-[1100] flex items-center justify-center transition-all duration-500 supports-[backdrop-filter]:bg-white/60",
+          "fixed inset-0 bg-white z-[1100] flex items-center justify-center transition-all duration-500",
           isMobileMenuOpen
             ? "opacity-100 visible translate-y-0"
             : "opacity-0 invisible -translate-y-8"
@@ -366,6 +367,30 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               {link.label}
             </a>
           ))}
+
+          {/* FAQ Link */}
+          <a
+            href="/faq"
+            onClick={handleCloseMenu}
+            className="text-lg font-medium text-foreground hover:text-primary transition-colors w-full flex items-center gap-2 group"
+          >
+            <svg className="w-4 h-4 text-primary/30 group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+            FAQ
+          </a>
+
+          {/* Contact Link */}
+          <a
+            href="/contact"
+            onClick={handleCloseMenu}
+            className="text-lg font-medium text-foreground hover:text-primary transition-colors w-full flex items-center gap-2 group"
+          >
+            <svg className="w-4 h-4 text-primary/30 group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+            Contactez-nous
+          </a>
 
           {/* Séparateur */}
           <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />

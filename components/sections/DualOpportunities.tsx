@@ -60,11 +60,11 @@ export const DualOpportunities = () => {
                 <div className="grid tablet:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
                     {OPPORTUNITY_TYPES.map((type, i) => (
                         <Reveal key={i} delay={200 + (i * 150)} duration={800}>
-                            <div className="relative p-8 rounded-2xl bg-white border-2 border-white/10 hover:border-accent/50 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all h-full flex flex-col items-center text-center">
+                            <div className="relative p-6 sm:p-8 rounded-2xl bg-white border-2 border-white/10 hover:border-accent/50 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all h-full flex flex-col items-center text-center">
 
-                                {/* Badge */}
-                                <div className="absolute top-6 right-6">
-                                    <div className="px-3 py-1 bg-accent/20 border border-accent/40 rounded-full">
+                                {/* Badge - Relative on mobile, absolute on sm+ */}
+                                <div className="sm:absolute sm:top-6 sm:right-6 mb-4 sm:mb-0">
+                                    <div className="px-3 py-1.5 bg-accent/20 border border-accent/40 rounded-full">
                                         <span className="text-xs font-bold text-primary uppercase tracking-wide">
                                             {type.badge}
                                         </span>
@@ -72,24 +72,24 @@ export const DualOpportunities = () => {
                                 </div>
 
                                 {/* Icon */}
-                                <div className="w-16 h-16 rounded-xl bg-primary text-white flex items-center justify-center mb-6 shadow-lg mx-auto">
+                                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-primary text-white flex items-center justify-center mb-5 sm:mb-6 shadow-lg mx-auto">
                                     {type.icon}
                                 </div>
 
                                 {/* Title */}
-                                <h3 className="font-bold text-xl sm:text-2xl text-foreground mb-3 leading-tight">
+                                <h3 className="font-bold text-lg sm:text-xl tablet:text-2xl text-foreground mb-3 leading-tight">
                                     {type.title}
                                 </h3>
 
                                 {/* Description */}
-                                <p className="text-sm text-foreground-muted leading-relaxed mb-6">
+                                <p className="text-sm text-foreground-muted leading-relaxed mb-5 sm:mb-6 text-center">
                                     {type.description}
                                 </p>
 
-                                {/* Features */}
-                                <div className="space-y-3 flex-grow">
+                                {/* Features - Improved spacing */}
+                                <div className="space-y-4 flex-grow w-full">
                                     {type.features.map((feature, idx) => (
-                                        <div key={idx} className="flex items-start gap-3">
+                                        <div key={idx} className="flex items-start gap-3 text-center sm:text-left">
                                             <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
                                                 <svg className="w-3 h-3 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />

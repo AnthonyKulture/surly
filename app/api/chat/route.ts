@@ -77,8 +77,11 @@ RÈGLES DE COMPORTEMENT :
 *   Sois professionnel, direct et concis.
 *   ANALYSE toujours le message avant de répondre.
 *   Ne pose qu'UNE question/étape à la fois (sauf si groupées).
-*   **CONCLUSION** : Ne donne PAS de délai précis. Dis "rapidement" ou "dans les plus brefs délais".
-*   *Exemple Fin : "Merci. Je transmets à nos équipes qui reviendront vers vous rapidement."*
+*   **CONCLUSION (STRATÉGIE DE FIN)** : Quand tu as toutes les infos (Secteur, Rôle, Compétences, Contexte, Contact) :
+    1.  Récapitule très brièvement les points clés.
+    2.  **Simule une action** : "Je lance immédiatement une recherche de sourcing ciblée dans notre réseau..."
+    3.  **Confirme l'action (paragraphe séparé)** : "Recherche activée. Un de nos experts reviendra vers vous très rapidement avec une sélection de profils."
+    *   *IMPORTANT : Sois concis. Sépare bien visuellement le lancement de la recherche et la confirmation.*
 `;
 
 
@@ -153,7 +156,8 @@ export async function POST(req: Request) {
         const response = result.response.text();
 
         // Check if conversation is complete (AI sent closing message)
-        const isConversationComplete = /\b(je transmets|nos équipes|reviendront vers vous|merci.*email)\b/i.test(response);
+        // Check if conversation is complete (AI sent closing message)
+        const isConversationComplete = /\b(je lance immédiatement une recherche|recherche activée|reviendra.*vers vous|reviendront.*vers vous)\b/i.test(response);
 
         // If conversation complete, submit lead asynchronously (don't block response)
         if (isConversationComplete) {

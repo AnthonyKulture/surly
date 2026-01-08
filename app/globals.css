@@ -26,7 +26,16 @@
 /* === Custom Components === */
 @layer components {
   .container {
-    @apply w-full max-w-[1280px] mx-auto px-lg;
+    @apply w-full max-w-[1280px] mx-auto px-5 sm:px-6 tablet:px-lg;
+  }
+
+  /* Mobile-First Text Alignment Utilities */
+  .text-mobile-left {
+    @apply text-left sm:text-center;
+  }
+
+  .text-mobile-left-tablet {
+    @apply text-left tablet:text-center;
   }
 
   /* Force larger h2 sizes - Global Section Titles */

@@ -64,7 +64,7 @@ export const PlatformBenefits = () => {
                                 </span>
 
                                 {/* Title */}
-                                <h3 className="font-semibold text-base text-foreground mb-2 leading-snug">
+                                <h3 className="font-semibold text-lg sm:text-xl text-foreground mb-2 leading-snug">
                                     {benefit.title}
                                 </h3>
 
@@ -75,7 +75,7 @@ export const PlatformBenefits = () => {
 
                                 {/* Stat */}
                                 <div className="pt-4 border-t border-gray-50">
-                                    <span className="text-lg font-bold text-primary">
+                                    <span className="text-base sm:text-lg font-bold text-primary">
                                         {benefit.stat}
                                     </span>
                                 </div>

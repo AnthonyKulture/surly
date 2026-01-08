@@ -22,22 +22,22 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-[85vh] pt-32 pb-4 md:pb-6 laptop:pb-8 flex flex-col items-center justify-center overflow-hidden bg-white"
+      className="relative w-full min-h-[85vh] pt-28 pb-12 md:pt-32 md:pb-16 laptop:pt-36 laptop:pb-20 flex flex-col items-center justify-center overflow-hidden bg-white"
     >
       <HeroBackground />
-      <div className="container relative z-[2] px-6 md:px-4">
+      <div className="container relative z-[2] px-4 md:px-6">
 
         {/* Two-column layout - 60/40 split */}
-        <div className="grid grid-cols-1 tablet:grid-cols-[55fr_45fr] laptop:grid-cols-[60fr_40fr] gap-6 tablet:gap-4 laptop:gap-16 items-center max-w-5xl laptop:max-w-7xl mx-auto px-4 tablet:px-8 laptop:px-0">
+        <div className="grid grid-cols-1 tablet:grid-cols-[55fr_45fr] laptop:grid-cols-[60fr_40fr] gap-8 tablet:gap-4 laptop:gap-16 items-center max-w-5xl laptop:max-w-7xl mx-auto px-0 tablet:px-8 laptop:px-0">
 
           {/* LEFT COLUMN: Hero Content */}
-          <div className="order-1 tablet:order-1 flex flex-col items-center tablet:items-start text-center tablet:text-left">
+          <div className="order-2 tablet:order-1 flex flex-col items-center tablet:items-start text-center tablet:text-left">
 
 
-            {/* Dynamic Badge */}
+            {/* Dynamic Badge - Hidden on mobile */}
             <Reveal delay={0} duration={800} direction="down">
-              <div className="mb-4 laptop:mb-6 w-full flex justify-center tablet:justify-start">
-                <div className="flex items-center justify-center gap-2 px-3 laptop:px-4 py-1.5 laptop:py-2 rounded-full bg-white/80 backdrop-blur-sm border border-primary/10 shadow-sm hover:shadow-md transition-all max-w-full text-center tablet:justify-start">
+              <div className="mb-5 md:mb-5 laptop:mb-6 w-full hidden tablet:flex tablet:justify-start">
+                <div className="flex items-center gap-2 px-3 laptop:px-4 py-1.5 laptop:py-2 rounded-full bg-white/80 backdrop-blur-sm border border-primary/10 shadow-sm hover:shadow-md transition-all max-w-full">
                   <RotatingWords
                     words={[
                       "Bâle III", "IFRS 17", "Solvabilité II", "Data Engineering", "Cybersécurité",
@@ -55,15 +55,24 @@ export const Hero = () => {
 
             {/* Title */}
             <Reveal delay={100} duration={1000}>
-              <h1 className="text-xl leading-[1.2] sm:text-2xl tablet:text-[1.35rem] laptop:text-4xl font-bold text-foreground mb-3 laptop:mb-5 tracking-tight laptop:leading-[1.1] max-w-2xl">
-                L'écosystème Recrutement & Freelance<br />
-                pour <span className="text-primary">la Banque & l'Assurance</span>
+              <h1 className="text-[1.35rem] leading-[1.3] tablet:text-[1.35rem] laptop:text-4xl font-bold text-foreground mb-6 md:mb-4 laptop:mb-5 tracking-tight laptop:leading-[1.1] max-w-2xl">
+                {/* Mobile version - 3 lines forced */}
+                <span className="tablet:hidden block">
+                  L'écosystème<br />
+                  Recrutement & Freelance<br />
+                  pour <span className="text-primary">la Banque & l'Assurance</span>
+                </span>
+                {/* Tablet+ version - original */}
+                <span className="hidden tablet:block">
+                  L'écosystème Recrutement & Freelance<br />
+                  pour <span className="text-primary">la Banque & l'Assurance</span>
+                </span>
               </h1>
             </Reveal>
 
             {/* Subtitle */}
             <Reveal delay={200} duration={1000}>
-              <h2 className="text-sm tablet:text-sm laptop:text-base xl:text-lg text-foreground-muted mb-4 laptop:mb-8 max-w-xl font-normal leading-relaxed">
+              <h2 className="text-base tablet:text-sm laptop:text-base xl:text-lg text-foreground-muted mb-7 md:mb-6 laptop:mb-8 max-w-xl font-normal leading-relaxed px-2 tablet:px-0">
                 La seule marketplace <strong className="text-foreground font-semibold">ultra-spécialisée</strong> qui réunit l&apos;intégralité des experts et des opportunités du secteur <strong className="text-foreground font-semibold">Bancassurance</strong>.
               </h2>
             </Reveal>
@@ -94,7 +103,7 @@ export const Hero = () => {
           </div>
 
           {/* RIGHT COLUMN: Platform Mockup */}
-          <div className="order-2 tablet:order-2 mb-8 tablet:mb-0">
+          <div className="order-1 tablet:order-2 mb-0 tablet:mb-0">
             {/* Platform Mockup */}
             <Reveal delay={100} duration={1000}>
               <div className="w-full">

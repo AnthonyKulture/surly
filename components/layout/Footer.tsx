@@ -23,7 +23,7 @@ export const Footer = () => {
   return (
     <footer className="bg-primary text-background py-16 tablet:py-20 laptop:py-2xl pb-lg">
       <div className="container">
-        <div className="grid grid-cols-1 tablet:grid-cols-[1fr_2fr] laptop:grid-cols-[1.5fr_2fr] gap-8 tablet:gap-12 laptop:gap-2xl pb-8 tablet:pb-xl border-b border-white/15 mb-lg">
+        <div className="grid grid-cols-1 tablet:grid-cols-[300px_1fr] laptop:grid-cols-[350px_1fr] gap-10 tablet:gap-16 laptop:gap-20 pb-10 tablet:pb-16 border-b border-white/10 mb-10">
           {/* Brand */}
           <div>
             <div className="mb-md">
@@ -36,37 +36,43 @@ export const Footer = () => {
             </p>
           </div>
 
-          {/* Links - Always 3 columns on tablet+ */}
-          <div className="grid grid-cols-2 tablet:grid-cols-3 gap-6 tablet:gap-4 laptop:gap-lg">
+          {/* Links - Single column on mobile, 3 columns on tablet+ */}
+          <div className="grid grid-cols-2 tablet:grid-cols-3 gap-8 tablet:gap-8 laptop:gap-12">
             <div>
-              <h4 className="text-micro font-bold uppercase tracking-[0.15em] text-background mb-md">
+              <h4 className="text-sm font-bold uppercase tracking-[0.12em] text-background mb-4 sm:mb-md pb-2 border-b border-white/10 sm:border-0">
                 Plateforme
               </h4>
-              <Link href="https://app.surly.fr" className="block text-small text-background/60 py-xs hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">Application</Link>
-              <Link href="https://app.surly.fr/postulant" className="block text-small text-background/60 py-xs hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">Espace Talent</Link>
-              <Link href="https://app.surly.fr/" className="block text-small text-background/60 py-xs hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">Espace Recruteur</Link>
+              <div className="space-y-3">
+                <Link href="https://app.surly.fr" className="block text-small text-background/70 hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">Application</Link>
+                <Link href="https://app.surly.fr/postulant" className="block text-small text-background/70 hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">Espace Talent</Link>
+                <Link href="https://app.surly.fr/" className="block text-small text-background/70 hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">Espace Recruteur</Link>
+              </div>
             </div>
             <div>
-              <h4 className="text-micro font-bold uppercase tracking-[0.15em] text-background mb-md">
+              <h4 className="text-sm font-bold uppercase tracking-[0.12em] text-background mb-4 sm:mb-md pb-2 border-b border-white/10 sm:border-0">
                 Entreprise
               </h4>
-              <Link href="/pourquoi-surly" className="block text-small text-background/60 py-xs hover:text-background transition-colors">Pourquoi Surly ?</Link>
-              <Link href="/blog" className="block text-small text-background/60 py-xs hover:text-background transition-colors">Blog</Link>
-              <Link href="/rse" className="block text-small text-background/60 py-xs hover:text-background transition-colors">RSE</Link>
-              <Link href="/apport-affaires" className="block text-small text-background/60 py-xs hover:text-background transition-colors">Apport d'affaires</Link>
-              <Link href="/partenaires-avantages" className="block text-small text-background/60 py-xs hover:text-background transition-colors">Partenaires</Link>
-              <Link href="/faq" className="block text-small text-background/60 py-xs hover:text-background transition-colors">FAQ</Link>
-              <Link href="/contact" className="block text-small text-background/60 py-xs hover:text-background transition-colors">Contact</Link>
+              <div className="space-y-3">
+                <Link href="/pourquoi-surly" className="block text-small text-background/70 hover:text-background transition-colors">Pourquoi Surly ?</Link>
+                <Link href="/blog" className="block text-small text-background/70 hover:text-background transition-colors">Blog</Link>
+                <Link href="/rse" className="block text-small text-background/70 hover:text-background transition-colors">RSE</Link>
+                <Link href="/apport-affaires" className="block text-small text-background/70 hover:text-background transition-colors">Apport d'affaires</Link>
+                <Link href="/partenaires-avantages" className="block text-small text-background/70 hover:text-background transition-colors">Partenaires</Link>
+                <Link href="/faq" className="block text-small text-background/70 hover:text-background transition-colors">FAQ</Link>
+                <Link href="/contact" className="block text-small text-background/70 hover:text-background transition-colors">Contact</Link>
+              </div>
             </div>
             <div>
-              <h4 className="text-micro font-bold uppercase tracking-[0.15em] text-background mb-md">
+              <h4 className="text-sm font-bold uppercase tracking-[0.12em] text-background mb-4 sm:mb-md pb-2 border-b border-white/10 sm:border-0">
                 Légal
               </h4>
-              <Link href="/mentions-legales" className="block text-small text-background/60 py-xs hover:text-background transition-colors">Mentions légales</Link>
-              <Link href="/cgu-postulant" className="block text-small text-background/60 py-xs hover:text-background transition-colors">CGU Postulant</Link>
-              <Link href="/cgu-client" className="block text-small text-background/60 py-xs hover:text-background transition-colors">CGU Client</Link>
-              <Link href="/charte-donnees" className="block text-small text-background/60 py-xs hover:text-background transition-colors">Données personelles</Link>
-              <Link href="/politique-cookies" className="block text-small text-background/60 py-xs hover:text-background transition-colors">Cookies</Link>
+              <div className="space-y-3">
+                <Link href="/mentions-legales" className="block text-small text-background/70 hover:text-background transition-colors">Mentions légales</Link>
+                <Link href="/cgu-postulant" className="block text-small text-background/70 hover:text-background transition-colors">CGU Postulant</Link>
+                <Link href="/cgu-client" className="block text-small text-background/70 hover:text-background transition-colors">CGU Client</Link>
+                <Link href="/charte-donnees" className="block text-small text-background/70 hover:text-background transition-colors">Données personelles</Link>
+                <Link href="/politique-cookies" className="block text-small text-background/70 hover:text-background transition-colors">Cookies</Link>
+              </div>
             </div>
           </div>
         </div>

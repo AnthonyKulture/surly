@@ -225,7 +225,7 @@ export const HeroCards = () => {
     return (
         <div className="relative w-full max-w-2xl mx-auto tablet:max-w-none">
             <div className="space-y-2 tablet:space-y-3 laptop:space-y-4">
-                <div className="ml-0 mr-8 tablet:mr-12 laptop:mr-16">
+                <div className="mx-auto tablet:ml-0 tablet:mr-12 laptop:mr-16">
                     <ExpertCard expert={EXPERTS[indices[0]]} compact />
                 </div>
                 <div className="hidden tablet:block ml-12 tablet:ml-16 laptop:ml-20 mr-0">
@@ -243,11 +243,11 @@ const ExpertCard = ({ expert, compact = false }: { expert: Expert; compact?: boo
     const getSectorColor = (sector: Expert["sector"]) => {
         switch (sector) {
             case "Banque":
-                return "bg-blue-50 text-blue-700 border-blue-200";
+                return "bg-blue-100/80 text-blue-700 border-blue-200";
             case "Assurance":
-                return "bg-purple-50 text-purple-700 border-purple-200";
+                return "bg-emerald-100/80 text-emerald-700 border-emerald-200";
             case "Banque & Assurance":
-                return "bg-gradient-to-r from-blue-50 to-purple-50 text-primary border-primary/20";
+                return "bg-gradient-to-r from-blue-100/80 to-emerald-100/80 text-primary border-primary/20";
             default:
                 return "bg-gray-50 text-gray-700 border-gray-200";
         }
@@ -269,9 +269,10 @@ const ExpertCard = ({ expert, compact = false }: { expert: Expert; compact?: boo
     return (
         <div className={cn(
             "group relative bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300",
+            "min-h-[140px] laptop:min-h-[150px] flex items-center",
             compact ? "p-2 laptop:p-3" : "p-3"
         )}>
-            <div className="flex items-start gap-2 laptop:gap-3">
+            <div className="flex items-start gap-2 laptop:gap-3 w-full">
                 {/* Avatar - Animated */}
                 <div className="relative flex-shrink-0">
                     <AnimatePresence mode="wait">
@@ -366,9 +367,6 @@ const ExpertCard = ({ expert, compact = false }: { expert: Expert; compact?: boo
                             {/* Details */}
                             <div className="flex items-center gap-4 text-xs text-gray-600">
                                 <div className="flex items-center gap-1">
-                                    <svg className="w-3.5 h-3.5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
                                     <span className="font-semibold text-foreground">{expert.tjm}€</span>
                                     <span className="text-gray-400">/jour</span>
                                 </div>

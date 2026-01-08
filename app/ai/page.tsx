@@ -8,7 +8,7 @@ import { MAX_MESSAGE_LENGTH } from "@/lib/input-validator";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { Footer } from "@/components/layout/Footer";
-import { KeywordsCarouselGreen } from "@/components/ui/KeywordsCarouselGreen";
+import { KeywordsCarouselGreen } from "@/components/ui/KeywordsCarousel";
 
 type Message = {
     role: "user" | "assistant";
@@ -32,10 +32,12 @@ export default function SurlyAIPage() {
     const [messages, setMessages] = useState<Message[]>([INITIAL_MESSAGE]);
     const [input, setInput] = useState("");
     const [isTyping, setIsTyping] = useState(false);
+    const [isSourcing, setIsSourcing] = useState(false);
     const [step, setStep] = useState(0);
     const [error, setError] = useState<string | null>(null);
     const [isRateLimited, setIsRateLimited] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
+    const chatContainerRef = useRef<HTMLDivElement>(null);
 
     // Removed automatic scrolling to prevent forcing scroll to bottom
     // Users can manually scroll to see new messages if needed
@@ -78,6 +80,33 @@ export default function SurlyAIPage() {
                 throw new Error(data.error);
             }
 
+            // Check for Sourcing/Simulation trigger in response
+            const sourcingTrigger = "Je lance immédiatement une recherche";
+            const confirmationTrigger = "Recherche activée";
+
+            if (data.response.includes(sourcingTrigger) && data.response.includes(confirmationTrigger)) {
+                // Split logic: Part 1 (Recap + Sourcing announcement) | Part 2 (Confirmation)
+                const parts = data.response.split(confirmationTrigger);
+                const part1 = parts[0].trim();
+                const part2 = confirmationTrigger + (parts[1] || ""); // Re-add trigger to start of 2nd msg
+
+                // 1. Add Part 1
+                setMessages((prev) => [...prev, { role: "assistant", content: part1 }]);
+                setIsTyping(false); // Stop standard typing indicator
+
+                // 2. Start Sourcing Animation
+                setIsSourcing(true);
+
+                // 3. Wait and Add Part 2
+                setTimeout(() => {
+                    setIsSourcing(false);
+                    setMessages((prev) => [...prev, { role: "assistant", content: part2 }]);
+                }, 3000);
+
+                return;
+            }
+
+            // Normal flow
             const aiMessage: Message = { role: "assistant", content: data.response };
             setMessages((prev) => [...prev, aiMessage]);
         } catch (error: any) {
@@ -89,7 +118,9 @@ export default function SurlyAIPage() {
             };
             setMessages((prev) => [...prev, errorMessage]);
         } finally {
-            setIsTyping(false);
+            if (!isSourcing) {
+                setIsTyping(false);
+            }
         }
     };
 
@@ -126,6 +157,20 @@ export default function SurlyAIPage() {
         return () => clearInterval(interval);
     }, [hasStartedConversation]);
 
+    // Auto-scroll to bottom of chat container
+    const scrollToBottom = () => {
+        if (chatContainerRef.current) {
+            chatContainerRef.current.scrollTo({
+                top: chatContainerRef.current.scrollHeight,
+                behavior: "smooth"
+            });
+        }
+    };
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages, isTyping, isSourcing]);
+
 
     return (
         <div className="min-h-screen bg-[#F8FAFC] flex flex-col font-sans">
@@ -149,7 +194,10 @@ export default function SurlyAIPage() {
                 <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-accent/20 overflow-hidden min-h-[300px] sm:min-h-[300px] flex flex-col mb-6 sm:mb-8 relative ring-1 ring-accent/10">
 
                     {/* Chat Area */}
-                    <div className="flex-1 p-3 sm:p-6 space-y-4 sm:space-y-6 overflow-y-auto max-h-[350px] sm:max-h-[400px]">
+                    <div
+                        ref={chatContainerRef}
+                        className="flex-1 p-3 sm:p-6 space-y-4 sm:space-y-6 overflow-y-auto max-h-[350px] sm:max-h-[400px]"
+                    >
                         {messages.map((msg, idx) => (
                             <div
                                 key={idx}
@@ -183,6 +231,16 @@ export default function SurlyAIPage() {
                                 </div>
                             </div>
                         ))}
+
+                        {isSourcing && (
+                            <div className="flex items-start gap-2 sm:gap-3 animate-in fade-in slide-in-from-bottom-2">
+                                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0 text-[10px] sm:text-xs font-bold">AI</div>
+                                <div className="bg-gray-50 border border-gray-100 p-3 sm:p-4 rounded-xl sm:rounded-2xl rounded-tl-none flex items-center gap-3 h-[48px] sm:h-[52px]">
+                                    <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+                                    <span className="text-sm text-gray-600 font-medium animate-pulse">Sourcing en cours...</span>
+                                </div>
+                            </div>
+                        )}
 
                         {isTyping && (
                             <div className="flex items-start gap-2 sm:gap-3 animate-in fade-in slide-in-from-bottom-2">

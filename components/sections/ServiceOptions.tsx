@@ -25,7 +25,7 @@ export const ServiceOptions = () => {
                 />
 
                 <Reveal delay={100} duration={1000}>
-                    <p className="text-base sm:text-lg text-white/80 text-center max-w-3xl mx-auto mb-12 sm:mb-16 leading-relaxed px-4">
+                    <p className="text-base sm:text-lg text-white/80 text-center max-w-3xl mx-auto mb-12 sm:mb-16 leading-relaxed px-4 sm:px-0">
                         Que vous ayez besoin d'un accompagnement sur-mesure ou que vous préfériez gérer vos recrutements en autonomie,
                         Surly vous propose la solution qui correspond à vos besoins en ressources spécialisées.
                     </p>
@@ -36,7 +36,7 @@ export const ServiceOptions = () => {
 
                     {/* Option 1: Cabinet de Conseil */}
                     <Reveal delay={200} duration={1000}>
-                        <div className="bg-white border-2 border-primary/10 rounded-3xl p-8 lg:p-10 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all h-full flex flex-col">
+                        <div className="bg-white border-2 border-primary/10 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all h-full flex flex-col">
                             {/* Icon */}
                             <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                                 <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -107,7 +107,7 @@ export const ServiceOptions = () => {
 
                     {/* Option 2: Accès Plateforme */}
                     <Reveal delay={300} duration={1000}>
-                        <div className="bg-white border-2 border-primary/10 rounded-3xl p-8 lg:p-10 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all h-full flex flex-col">
+                        <div className="bg-white border-2 border-primary/10 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all h-full flex flex-col">
                             {/* Icon */}
                             <div className="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center mb-6">
                                 <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
