@@ -6,16 +6,19 @@ import { useEffect, useState } from "react";
 export function ThirdPartyScripts() {
     const [canLoadBrevo, setCanLoadBrevo] = useState(false);
 
+    // Initialize Brevo queue immediately to prevent dropped events
+    useEffect(() => {
+        window.BrevoConversationsID = '6814dc6c0c14195d74019e8e';
+        window.BrevoConversations = window.BrevoConversations || function () {
+            // @ts-ignore
+            (window.BrevoConversations.q = window.BrevoConversations.q || []).push(arguments);
+        };
+    }, []);
+
     useEffect(() => {
         const handleAxeptioUpdate = (e: any) => {
             // Check for 'brevo' consent in the event detail
-            // This assumes the vendor is named 'brevo' in Axeptio configuration
             if (e.detail && e.detail.brevo) {
-                // Initialize Brevo globals BEFORE enabling the script
-                window.BrevoConversationsID = '6814dc6c0c14195d74019e8e';
-                window.BrevoConversations = window.BrevoConversations || function () {
-                    (window.BrevoConversations.q = window.BrevoConversations.q || []).push(arguments);
-                };
                 setCanLoadBrevo(true);
             } else {
                 setCanLoadBrevo(false);
