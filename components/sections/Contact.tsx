@@ -37,21 +37,34 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus("idle");
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setSubmitStatus("success");
+      if (!response.ok) {
+        throw new Error("Erreur lors de l'envoi");
+      }
 
-    setFormData({
-      type: "",
-      name: "",
-      company: "",
-      email: "",
-      message: "",
-    });
-
-    setTimeout(() => setSubmitStatus("idle"), 3000);
+      setSubmitStatus("success");
+      setFormData({
+        type: "",
+        name: "",
+        company: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus("idle"), 5000);
+    }
   };
 
   return (
@@ -162,7 +175,7 @@ const ContactForm = () => {
         size="full"
         disabled={isSubmitting}
         className={cn(
-          "hover:bg-accent hover:text-primary hover:border-accent whitespace-nowrap flex-nowrap",
+          "w-full",
           isSubmitting && "opacity-70 cursor-not-allowed"
         )}
       >
@@ -171,10 +184,18 @@ const ContactForm = () => {
             ? "Envoi..."
             : submitStatus === "success"
               ? "Envoyé ✓"
-              : "Envoyer ma demande"}
+              : submitStatus === "error"
+                ? "Erreur - Réessayer"
+                : "Envoyer ma demande"}
         </span>
         {submitStatus === "idle" && !isSubmitting && <SendIcon />}
       </Button>
+
+      {submitStatus === "success" && (
+        <p className="text-xs text-primary font-medium text-center mt-3 animate-in fade-in slide-in-from-top-1">
+          Message envoyé ! Un email de confirmation vous a été transmis.
+        </p>
+      )}
     </form>
   );
 };
