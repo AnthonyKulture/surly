@@ -94,6 +94,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/plateformes-freelances-banque-assurance',
+        destination: '/blog/plateformes-freelances-banque-assurance',
+        permanent: true,
+      },
+      {
         source: '/tag/:path*',
         destination: '/blog',
         permanent: true,
