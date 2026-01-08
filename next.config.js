@@ -114,6 +114,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/missions-emplois-bancassurance',
+        destination: '/blog/missions-emplois-bancassurance',
+        permanent: true,
+      },
+      {
         source: '/tag/:path*',
         destination: '/blog',
         permanent: true,
