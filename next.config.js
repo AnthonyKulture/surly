@@ -104,6 +104,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/marketplace-missions-freelance-banque-assurance',
+        destination: '/blog/marketplace-missions-freelance-banque-assurance',
+        permanent: true,
+      },
+      {
         source: '/tag/:path*',
         destination: '/blog',
         permanent: true,
