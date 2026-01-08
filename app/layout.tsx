@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { SwissGridBackground } from "@/components/ui/SwissGridBackground";
 import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -151,23 +152,12 @@ export default function RootLayout({
           strategy="lazyOnload"
           src="https://conversations-widget.brevo.com/brevo-conversations.js"
         />
-        <Script
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=G-E9FMCYSQH2`}
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-E9FMCYSQH2');
-          `}
-        </Script>
         <SwissGridBackground />
         <div className="relative z-10">
           {children}
         </div>
       </body>
+      <GoogleAnalytics gaId="G-E9FMCYSQH2" />
     </html>
   );
 }
