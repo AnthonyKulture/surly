@@ -56,7 +56,18 @@ export function ThirdPartyScripts() {
             {/* Brevo - Only load if consented */}
             {canLoadBrevo && (
                 <>
-                    {/* Brevo Conversations SDK */}
+                    {/* 1. Init: Standard script for immediate execution */}
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+                                window.BrevoConversationsID = '6814dc6c0c14195d74019e8e';
+                                window.BrevoConversations = window.BrevoConversations || function () {
+                                    (window.BrevoConversations.q = window.BrevoConversations.q || []).push(arguments);
+                                };
+                            `,
+                        }}
+                    />
+                    {/* 2. Load: SDK */}
                     <Script
                         id="brevo-script"
                         strategy="lazyOnload"
