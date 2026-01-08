@@ -1,39 +1,8 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect, useState } from "react";
 
 export function ThirdPartyScripts() {
-    // Suppress noisy third-party errors (Axeptio/Brevo compatibility issues)
-    useEffect(() => {
-        const originalError = console.error;
-        console.error = (...args) => {
-            if (args[0] && typeof args[0] === 'string' && args[0].includes('Dropped events')) {
-                // Suppress "Dropped events" error from Brevo/Axeptio
-                return;
-            }
-            originalError.apply(console, args);
-        };
-
-        return () => {
-            console.error = originalError;
-        };
-    }, []);
-
-    // Listen for Axeptio consent to load Brevo
-    const [canLoadBrevo, setCanLoadBrevo] = useState(false);
-    useEffect(() => {
-        const handleAxeptioUpdate = (e: any) => {
-            if (e.detail && e.detail.brevo) {
-                setCanLoadBrevo(true);
-            } else {
-                setCanLoadBrevo(false);
-            }
-        };
-        window.addEventListener("axeptio_update", handleAxeptioUpdate);
-        return () => window.removeEventListener("axeptio_update", handleAxeptioUpdate);
-    }, []);
-
     return (
         <>
             {/* Axeptio Configuration */}
@@ -60,6 +29,8 @@ export function ThirdPartyScripts() {
                 strategy="afterInteractive"
                 src="//static.axept.io/sdk.js"
             />
+
+            {/* Brevo Conversations Initialization */}
 
         </>
     );
