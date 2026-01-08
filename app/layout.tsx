@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SwissGridBackground } from "@/components/ui/SwissGridBackground";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -115,6 +116,28 @@ export default function RootLayout({
         />
       </head>
       <body className="text-foreground" suppressHydrationWarning>
+        <Script id="axeptio-settings" strategy="afterInteractive">
+          {`
+            window.axeptioSettings = {
+              clientId: "690e0942b48e4a03c7b9b3f8",
+              cookiesVersion: "1dfd07d5-8c81-4f7c-8d76-dffc0f3160d3",
+              googleConsentMode: {
+                default: {
+                  analytics_storage: "denied",
+                  ad_storage: "denied",
+                  ad_user_data: "denied",
+                  ad_personalization: "denied",
+                  wait_for_update: 500
+                }
+              }
+            };
+          `}
+        </Script>
+        <Script
+          id="axeptio-script"
+          strategy="afterInteractive"
+          src="//static.axept.io/sdk.js"
+        />
         <SwissGridBackground />
         <div className="relative z-10">
           {children}
