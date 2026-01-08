@@ -11,6 +11,11 @@ export function ThirdPartyScripts() {
             // Check for 'brevo' consent in the event detail
             // This assumes the vendor is named 'brevo' in Axeptio configuration
             if (e.detail && e.detail.brevo) {
+                // Initialize Brevo globals BEFORE enabling the script
+                window.BrevoConversationsID = '6814dc6c0c14195d74019e8e';
+                window.BrevoConversations = window.BrevoConversations || function () {
+                    (window.BrevoConversations.q = window.BrevoConversations.q || []).push(arguments);
+                };
                 setCanLoadBrevo(true);
             } else {
                 setCanLoadBrevo(false);
@@ -54,17 +59,6 @@ export function ThirdPartyScripts() {
             {/* Brevo - Only load if consented */}
             {canLoadBrevo && (
                 <>
-                    {/* Brevo Conversations Initialization - Standard script tag to ensure immediate exec */}
-                    <script
-                        dangerouslySetInnerHTML={{
-                            __html: `
-            window.BrevoConversationsID = '6814dc6c0c14195d74019e8e';
-            window.BrevoConversations = window.BrevoConversations || function() {
-                (window.BrevoConversations.q = window.BrevoConversations.q || []).push(arguments);
-            };
-          `,
-                        }}
-                    />
                     {/* Brevo Conversations SDK */}
                     <Script
                         id="brevo-script"
