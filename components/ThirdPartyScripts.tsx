@@ -6,14 +6,8 @@ import { useEffect, useState } from "react";
 export function ThirdPartyScripts() {
     const [canLoadBrevo, setCanLoadBrevo] = useState(false);
 
-    // Initialize Brevo queue immediately to prevent dropped events
-    useEffect(() => {
-        window.BrevoConversationsID = '6814dc6c0c14195d74019e8e';
-        window.BrevoConversations = window.BrevoConversations || function () {
-            // @ts-ignore
-            (window.BrevoConversations.q = window.BrevoConversations.q || []).push(arguments);
-        };
-    }, []);
+    // Removed global stub effect to avoid conflicts
+    // Initialization will happen strictly when consent is granted below
 
     useEffect(() => {
         const handleAxeptioUpdate = (e: any) => {
