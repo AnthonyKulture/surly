@@ -68,12 +68,14 @@ export function ThirdPartyScripts() {
             {/* Brevo - Only load if consented */}
             {canLoadBrevo && (
                 <>
-                    {/* 2. Load: SDK */}
+                    {/* DIAGNOSTIC: Commenting out manual loading to check if Axeptio auto-loads it */}
+                    {/*
                     <Script
                         id="brevo-script"
                         strategy="lazyOnload"
                         src="https://conversations-widget.brevo.com/brevo-conversations.js"
                     />
+                    */}
                 </>
             )}
         </>
