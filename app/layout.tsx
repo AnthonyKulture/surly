@@ -138,20 +138,19 @@ export default function RootLayout({
           strategy="afterInteractive"
           src="//static.axept.io/sdk.js"
         />
-        <Script id="brevo-conversations" strategy="lazyOnload">
+        <Script id="brevo-init" strategy="lazyOnload">
           {`
-            (function(d, w, c) {
-                w.BrevoConversationsID = '6814dc6c0c14195d74019e8e';
-                w[c] = w[c] || function() {
-                    (w[c].q = w[c].q || []).push(arguments);
-                };
-                var s = d.createElement('script');
-                s.async = true;
-                s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
-                if (d.head) d.head.appendChild(s);
-            })(document, window, 'BrevoConversations');
+            window.BrevoConversationsID = '6814dc6c0c14195d74019e8e';
+            window.BrevoConversations = window.BrevoConversations || function() {
+                (window.BrevoConversations.q = window.BrevoConversations.q || []).push(arguments);
+            };
           `}
         </Script>
+        <Script
+          id="brevo-script"
+          strategy="lazyOnload"
+          src="https://conversations-widget.brevo.com/brevo-conversations.js"
+        />
         <SwissGridBackground />
         <div className="relative z-10">
           {children}
