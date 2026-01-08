@@ -1,8 +1,36 @@
-"use client";
+// Declare global types for Axeptio/Brevo
+declare global {
+    interface Window {
+        axeptioSettings: any;
+        BrevoConversationsID: string;
+        BrevoConversations: any;
+    }
+}
 
 import Script from "next/script";
+import { useEffect, useState } from "react";
 
 export function ThirdPartyScripts() {
+    const [canLoadBrevo, setCanLoadBrevo] = useState(false);
+
+    useEffect(() => {
+        const handleAxeptioUpdate = (e: any) => {
+            // Check for 'brevo' consent in the event detail
+            // This assumes the vendor is named 'brevo' in Axeptio configuration
+            if (e.detail && e.detail.brevo) {
+                setCanLoadBrevo(true);
+            } else {
+                setCanLoadBrevo(false);
+            }
+        };
+
+        window.addEventListener("axeptio_update", handleAxeptioUpdate);
+
+        return () => {
+            window.removeEventListener("axeptio_update", handleAxeptioUpdate);
+        };
+    }, []);
+
     return (
         <>
             {/* Axeptio Configuration */}
@@ -30,21 +58,28 @@ export function ThirdPartyScripts() {
                 src="//static.axept.io/sdk.js"
             />
 
-            {/* Brevo Conversations Initialization */}
-            <Script id="brevo-init" strategy="lazyOnload">
-                {`
-          window.BrevoConversationsID = '6814dc6c0c14195d74019e8e';
-          window.BrevoConversations = window.BrevoConversations || function() {
-              (window.BrevoConversations.q = window.BrevoConversations.q || []).push(arguments);
-          };
-        `}
-            </Script>
-            {/* Brevo Conversations SDK */}
-            <Script
-                id="brevo-script"
-                strategy="lazyOnload"
-                src="https://conversations-widget.brevo.com/brevo-conversations.js"
-            />
+            {/* Brevo - Only load if consented */}
+            {canLoadBrevo && (
+                <>
+                    {/* Brevo Conversations Initialization - Standard script tag to ensure immediate exec */}
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+            window.BrevoConversationsID = '6814dc6c0c14195d74019e8e';
+            window.BrevoConversations = window.BrevoConversations || function() {
+                (window.BrevoConversations.q = window.BrevoConversations.q || []).push(arguments);
+            };
+          `,
+                        }}
+                    />
+                    {/* Brevo Conversations SDK */}
+                    <Script
+                        id="brevo-script"
+                        strategy="lazyOnload"
+                        src="https://conversations-widget.brevo.com/brevo-conversations.js"
+                    />
+                </>
+            )}
         </>
     );
 }
