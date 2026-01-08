@@ -20,6 +20,20 @@ export function ThirdPartyScripts() {
         };
     }, []);
 
+    // Listen for Axeptio consent to load Brevo
+    const [canLoadBrevo, setCanLoadBrevo] = useState(false);
+    useEffect(() => {
+        const handleAxeptioUpdate = (e: any) => {
+            if (e.detail && e.detail.brevo) {
+                setCanLoadBrevo(true);
+            } else {
+                setCanLoadBrevo(false);
+            }
+        };
+        window.addEventListener("axeptio_update", handleAxeptioUpdate);
+        return () => window.removeEventListener("axeptio_update", handleAxeptioUpdate);
+    }, []);
+
     return (
         <>
             {/* Axeptio Configuration */}
