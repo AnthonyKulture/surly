@@ -1,8 +1,27 @@
 "use client";
 
 import Script from "next/script";
+import { useEffect } from "react";
 
 export function ThirdPartyScripts() {
+  useEffect(() => {
+    // Filtrer l'erreur "Dropped events" d'Axeptio
+    const originalError = console.error;
+    console.error = (...args) => {
+      if (
+        typeof args[0] === "string" &&
+        args[0].includes("Dropped events")
+      ) {
+        return; // Ignorer cette erreur spécifique
+      }
+      originalError.apply(console, args);
+    };
+
+    return () => {
+      console.error = originalError;
+    };
+  }, []);
+
   return (
     <>
       <Script id="axeptio-integration" strategy="afterInteractive">
@@ -23,13 +42,11 @@ export function ThirdPartyScripts() {
           
           (function(d, s) {
             var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
-            e.async = true; e.src = "//static.axept.io/sdk.js";
+            e.async = true; e.src = "https://static.axept.io/sdk.js";
             t.parentNode.insertBefore(e, t);
           })(document, "script");
         `}
       </Script>
-
-
     </>
   );
 }
