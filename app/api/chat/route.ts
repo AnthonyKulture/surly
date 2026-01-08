@@ -176,7 +176,6 @@ export async function POST(req: Request) {
 
                 if (leadInfo) {
                     // Send email directly and await it to preventing lambda termination
-                    console.log("Lead completed. Sending notification for:", leadInfo.email);
                     await sendLeadNotification(leadInfo);
                 }
             } catch (err) {
