@@ -53,20 +53,21 @@ export function ThirdPartyScripts() {
                 src="//static.axept.io/sdk.js"
             />
 
+            {/* 1. Init: Brevo Globals - ALWAYS LOADED to prevent errors if Axeptio checks it */}
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `
+                        window.BrevoConversationsID = '6814dc6c0c14195d74019e8e';
+                        window.BrevoConversations = window.BrevoConversations || function () {
+                            (window.BrevoConversations.q = window.BrevoConversations.q || []).push(arguments);
+                        };
+                    `,
+                }}
+            />
+
             {/* Brevo - Only load if consented */}
             {canLoadBrevo && (
                 <>
-                    {/* 1. Init: Standard script for immediate execution */}
-                    <script
-                        dangerouslySetInnerHTML={{
-                            __html: `
-                                window.BrevoConversationsID = '6814dc6c0c14195d74019e8e';
-                                window.BrevoConversations = window.BrevoConversations || function () {
-                                    (window.BrevoConversations.q = window.BrevoConversations.q || []).push(arguments);
-                                };
-                            `,
-                        }}
-                    />
                     {/* 2. Load: SDK */}
                     <Script
                         id="brevo-script"
