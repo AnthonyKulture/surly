@@ -65,11 +65,6 @@ export const metadata: Metadata = {
     creator: "@surly_fr",
     images: ["/surly-hero.jpg"],
   },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
   robots: {
     index: true,
     follow: true,
