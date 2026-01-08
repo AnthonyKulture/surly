@@ -26,7 +26,11 @@ export const HeroBackground = () => {
         if (!ctx) return;
 
         // --- Configuration ---
-        const spacing = 32;
+        // Detect mobile (simple width check)
+        const isMobile = window.innerWidth < 768;
+
+        // --- Configuration ---
+        const spacing = isMobile ? 64 : 32; // Double spacing on mobile to reduce point count by 4x
         const mouseRadius = 240;
         const mouseRadiusSq = mouseRadius * mouseRadius;
         const springFactor = 0.12; // Snappier

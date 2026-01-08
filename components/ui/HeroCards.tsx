@@ -226,7 +226,7 @@ export const HeroCards = () => {
         <div className="relative w-full max-w-2xl mx-auto tablet:max-w-none">
             <div className="space-y-2 tablet:space-y-3 laptop:space-y-4">
                 <div className="mx-auto tablet:ml-0 tablet:mr-12 laptop:mr-16">
-                    <ExpertCard expert={EXPERTS[indices[0]]} compact />
+                    <ExpertCard expert={EXPERTS[indices[0]]} compact priority />
                 </div>
                 <div className="hidden tablet:block ml-12 tablet:ml-16 laptop:ml-20 mr-0">
                     <ExpertCard expert={EXPERTS[indices[1]]} compact />
@@ -239,7 +239,7 @@ export const HeroCards = () => {
     );
 };
 
-const ExpertCard = ({ expert, compact = false }: { expert: Expert; compact?: boolean }) => {
+const ExpertCard = ({ expert, compact = false, priority = false }: { expert: Expert; compact?: boolean; priority?: boolean }) => {
     const getSectorColor = (sector: Expert["sector"]) => {
         switch (sector) {
             case "Banque":
@@ -293,6 +293,7 @@ const ExpertCard = ({ expert, compact = false }: { expert: Expert; compact?: boo
                                 width={48}
                                 height={48}
                                 className="object-cover w-full h-full"
+                                priority={priority}
                             />
                         </motion.div>
                     </AnimatePresence>
