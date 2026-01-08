@@ -168,7 +168,8 @@ export async function POST(req: Request) {
             ];
 
             // Submit lead asynchronously (fire and forget)
-            fetch(`${req.url.split('/api/chat')[0]}/api/submit-lead`, {
+            const origin = new URL(req.url).origin;
+            fetch(`${origin}/api/submit-lead`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ messages: allMessages }),
