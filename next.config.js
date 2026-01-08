@@ -43,6 +43,11 @@ const nextConfig = {
         destination: '/devenir-consultant', // Page la plus pertinente faute de page dédiée
         permanent: true,
       },
+      {
+        source: '/missions-en-banque',
+        destination: '/devenir-consultant',
+        permanent: true,
+      },
       // Note: /partenaires-avantages existe à l'identique, pas de redirection nécessaire
 
       // --- ENGAGEMENTS & RSE ---
