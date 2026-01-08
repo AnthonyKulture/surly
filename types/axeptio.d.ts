@@ -18,4 +18,5 @@ interface Window {
     BrevoConversationsID: string;
     BrevoConversations: (method: string, ...args: any[]) => void;
     dataLayer: any[];
+    gtag: (...args: any[]) => void;
 }
