@@ -89,6 +89,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/evenements-banque-assurance-2025-2026',
+        destination: '/blog/evenements-salons-banque-assurance-2025-2026',
+        permanent: true,
+      },
+      {
         source: '/tag/:path*',
         destination: '/blog',
         permanent: true,
