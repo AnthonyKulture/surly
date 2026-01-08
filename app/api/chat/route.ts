@@ -2,6 +2,8 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextResponse } from "next/server";
 import { validateMessage, sanitizeMessage } from "@/lib/input-validator";
 import { checkRateLimit } from "@/lib/rate-limiter";
+import { extractLeadInfo } from "@/lib/lead-extractor";
+import { sendLeadNotification } from "@/lib/email-service";
 
 const API_KEY = process.env.GEMINI_API_KEY || "";
 
@@ -160,6 +162,7 @@ export async function POST(req: Request) {
         const isConversationComplete = /\b(je lance immédiatement une recherche|recherche activée|reviendra.*vers vous|reviendront.*vers vous)\b/i.test(response);
 
         // If conversation complete, submit lead asynchronously (don't block response)
+        // If conversation complete, submit lead synchronously (to ensure execution in serverless)
         if (isConversationComplete) {
             const allMessages = [
                 ...history,
@@ -167,15 +170,18 @@ export async function POST(req: Request) {
                 { role: 'assistant', content: response }
             ];
 
-            // Submit lead asynchronously (fire and forget)
-            const origin = new URL(req.url).origin;
-            fetch(`${origin}/api/submit-lead`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ messages: allMessages }),
-            }).catch(err => {
-                console.error('Failed to submit lead:', err);
-            });
+            try {
+                // Extract lead info directly
+                const leadInfo = extractLeadInfo(allMessages);
+
+                if (leadInfo) {
+                    // Send email directly and await it to preventing lambda termination
+                    console.log("Lead completed. Sending notification for:", leadInfo.email);
+                    await sendLeadNotification(leadInfo);
+                }
+            } catch (err) {
+                console.error("Failed to process lead (direct):", err);
+            }
         }
 
         return NextResponse.json(
