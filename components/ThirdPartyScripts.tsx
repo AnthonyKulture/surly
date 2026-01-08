@@ -4,27 +4,8 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 
 export function ThirdPartyScripts() {
-    const [canLoadBrevo, setCanLoadBrevo] = useState(false);
-
-    // Removed global stub effect to avoid conflicts
-    // Initialization will happen strictly when consent is granted below
-
-    useEffect(() => {
-        const handleAxeptioUpdate = (e: any) => {
-            // Check for 'brevo' consent in the event detail
-            if (e.detail && e.detail.brevo) {
-                setCanLoadBrevo(true);
-            } else {
-                setCanLoadBrevo(false);
-            }
-        };
-
-        window.addEventListener("axeptio_update", handleAxeptioUpdate);
-
-        return () => {
-            window.removeEventListener("axeptio_update", handleAxeptioUpdate);
-        };
-    }, []);
+    // Simplified: Axeptio manages consents. If Brevo is integrated via Axeptio dashboard, 
+    // we don't need to manually listen or inject scripts.
 
     return (
         <>
@@ -53,31 +34,6 @@ export function ThirdPartyScripts() {
                 src="//static.axept.io/sdk.js"
             />
 
-            {/* 1. Init: Brevo Globals - ALWAYS LOADED to prevent errors if Axeptio checks it */}
-            <script
-                dangerouslySetInnerHTML={{
-                    __html: `
-                        window.BrevoConversationsID = '6814dc6c0c14195d74019e8e';
-                        window.BrevoConversations = window.BrevoConversations || function () {
-                            (window.BrevoConversations.q = window.BrevoConversations.q || []).push(arguments);
-                        };
-                    `,
-                }}
-            />
-
-            {/* Brevo - Only load if consented */}
-            {canLoadBrevo && (
-                <>
-                    {/* DIAGNOSTIC: Commenting out manual loading to check if Axeptio auto-loads it */}
-                    {/*
-                    <Script
-                        id="brevo-script"
-                        strategy="lazyOnload"
-                        src="https://conversations-widget.brevo.com/brevo-conversations.js"
-                    />
-                    */}
-                </>
-            )}
         </>
     );
 }
