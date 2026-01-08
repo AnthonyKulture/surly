@@ -1,12 +1,3 @@
-// Declare global types for Axeptio/Brevo
-declare global {
-    interface Window {
-        axeptioSettings: any;
-        BrevoConversationsID: string;
-        BrevoConversations: any;
-    }
-}
-
 import Script from "next/script";
 import { useEffect, useState } from "react";
 
