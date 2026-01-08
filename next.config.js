@@ -99,6 +99,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/freelance-bancassurance',
+        destination: '/blog/freelance-bancassurance',
+        permanent: true,
+      },
+      {
         source: '/tag/:path*',
         destination: '/blog',
         permanent: true,
