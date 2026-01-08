@@ -30,7 +30,7 @@ export const HeroBackground = () => {
         const isMobile = window.innerWidth < 768;
 
         // --- Configuration ---
-        const spacing = isMobile ? 64 : 50; // 50px desktop spacing = ~60% less points vs 32px
+        const spacing = isMobile ? 64 : 32; // Double spacing on mobile to reduce point count by 4x
         const mouseRadius = 240;
         const mouseRadiusSq = mouseRadius * mouseRadius;
         const springFactor = 0.12; // Snappier
@@ -67,7 +67,7 @@ export const HeroBackground = () => {
         const resize = () => {
             const { width, height } = container.getBoundingClientRect();
             // Rounding to prevent sub-pixel blurring
-            const dpr = Math.min(window.devicePixelRatio || 1, 1.5); // Cap at 1.5x for performance (4k optimization)
+            const dpr = Math.min(window.devicePixelRatio || 1, 2); // Cap at 2x for performance
 
             canvas.width = width * dpr;
             canvas.height = height * dpr;

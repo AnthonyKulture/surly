@@ -51,10 +51,7 @@ export default function PolitiqueCookiesPage() {
                 Google Analytics est activé uniquement après votre consentement via Axeptio. Les adresses IP sont anonymisées et les données ne servent pas à de la publicité.
             </p>
 
-            <h3>4.3 Cookies de communication & emailing (soumis à consentement)</h3>
-            <p>
-                <strong>➡️ Important :</strong> Aucun cookie Brevo n’est déposé lors de votre simple visite sur le site. Ces traceurs apparaissent uniquement si vous cliquez sur un lien dans un email envoyé par SURLY.
-            </p>
+
 
             <h2>5. Refus ou suppression des cookies</h2>
             <p>Vous pouvez à tout moment :</p>

@@ -15,8 +15,7 @@ interface AxeptioSettings {
 
 interface Window {
     axeptioSettings: AxeptioSettings;
-    BrevoConversationsID: string;
-    BrevoConversations: (method: string, ...args: any[]) => void;
+
     dataLayer: any[];
     gtag: (...args: any[]) => void;
 }
