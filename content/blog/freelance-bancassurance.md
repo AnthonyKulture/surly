@@ -56,9 +56,11 @@ Cette évolution se traduit par l’émergence de nouveaux métiers. On voit app
 
 Attirer les meilleurs talents du secteur bancassurance en 2025 impose aux employeurs d’adapter leurs pratiques. Offrir un bon salaire ne suffit plus : il faut aussi proposer un environnement de travail attractif. Les organisations l’ont bien compris en misant sur la qualité de vie au travail, la diversité et des perspectives d’évolution claires pour séduire et fidéliser les employés.
 
-### [S’inscrire sur Surly](https://surly.fr/devenir-consultant)
+### [S'inscrire sur Surly](https://surly.fr/devenir-consultant)
 
-Un équilibre sain entre vie professionnelle et vie privée, ainsi qu’une culture d’entreprise positive, sont désormais des arguments majeurs lors du recrutement.
+**💼 Découvrez également** : [Exemples de missions freelance en bancassurance](/missions-exemples) (conformité, IT, transformation, cybersécurité, etc.)
+
+Un équilibre sain entre vie professionnelle et vie privée, ainsi qu'une culture d'entreprise positive, sont désormais des arguments majeurs lors du recrutement.
 
 La formation continue est un autre levier essentiel de rétention. Les collaborateurs souhaitent développer leurs compétences et progresser ; les employeurs qui encouragent activement cet apprentissage tout au long de la carrière en retirent un avantage compétitif. Mettre en place des programmes de formation et de mentorat contribue à maintenir motivation et expertise en interne.
 

@@ -37,6 +37,28 @@ export default function DevenirConsultant() {
                 {/* Section 5: Expert Requirements - Qualification Douce */}
                 <ExpertRequirements />
 
+                {/* Section 5.5: Mission Examples Teaser */}
+                <section className="py-12 sm:py-16 bg-gray-50">
+                    <div className="container max-w-4xl text-center">
+                        <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+                            Découvrez des exemples de missions
+                        </h2>
+                        <p className="text-base text-foreground-muted mb-6 max-w-2xl mx-auto">
+                            Conformité Bâle III, Actuariat IFRS 17, Transformation Digitale, Cybersécurité, Risques de Marché...
+                            Consultez des exemples concrets de missions disponibles sur Surly.
+                        </p>
+                        <a
+                            href="/missions-exemples"
+                            className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-medium transition-colors"
+                        >
+                            Voir les exemples de missions
+                            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </section>
+
                 {/* Section 6: Final CTA - Action Finale */}
                 <ConsultantFinalCTA />
             </main>

@@ -36,8 +36,9 @@ export const Footer = () => {
             </p>
           </div>
 
-          {/* Links - Single column on mobile, 3 columns on tablet+ */}
-          <div className="grid grid-cols-2 tablet:grid-cols-3 gap-8 tablet:gap-8 laptop:gap-12">
+          {/* Links - 4 columns: Plateforme, Entreprise, Ressources, Légal */}
+          <div className="grid grid-cols-2 tablet:grid-cols-4 gap-8 tablet:gap-6 laptop:gap-8">
+            {/* Plateforme */}
             <div>
               <h4 className="text-sm font-bold uppercase tracking-[0.12em] text-background mb-4 sm:mb-md pb-2 border-b border-white/10 sm:border-0">
                 Plateforme
@@ -48,20 +49,34 @@ export const Footer = () => {
                 <Link href="https://app.surly.fr/" className="block text-small text-background/70 hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">Espace Recruteur</Link>
               </div>
             </div>
+
+            {/* Entreprise */}
             <div>
               <h4 className="text-sm font-bold uppercase tracking-[0.12em] text-background mb-4 sm:mb-md pb-2 border-b border-white/10 sm:border-0">
                 Entreprise
               </h4>
               <div className="space-y-3">
                 <Link href="/pourquoi-surly" className="block text-small text-background/70 hover:text-background transition-colors">Pourquoi Surly ?</Link>
-                <Link href="/blog" className="block text-small text-background/70 hover:text-background transition-colors">Blog</Link>
                 <Link href="/rse" className="block text-small text-background/70 hover:text-background transition-colors">RSE</Link>
-                <Link href="/apport-affaires" className="block text-small text-background/70 hover:text-background transition-colors">Apport d'affaires</Link>
                 <Link href="/partenaires-avantages" className="block text-small text-background/70 hover:text-background transition-colors">Partenaires</Link>
+                <Link href="/apport-affaires" className="block text-small text-background/70 hover:text-background transition-colors">Apport d'affaires</Link>
+              </div>
+            </div>
+
+            {/* Ressources */}
+            <div>
+              <h4 className="text-sm font-bold uppercase tracking-[0.12em] text-background mb-4 sm:mb-md pb-2 border-b border-white/10 sm:border-0">
+                Ressources
+              </h4>
+              <div className="space-y-3">
+                <Link href="/blog" className="block text-small text-background/70 hover:text-background transition-colors">Blog</Link>
+                <Link href="/missions-exemples" className="block text-small text-background/70 hover:text-background transition-colors">Exemples Missions</Link>
                 <Link href="/faq" className="block text-small text-background/70 hover:text-background transition-colors">FAQ</Link>
                 <Link href="/contact" className="block text-small text-background/70 hover:text-background transition-colors">Contact</Link>
               </div>
             </div>
+
+            {/* Légal */}
             <div>
               <h4 className="text-sm font-bold uppercase tracking-[0.12em] text-background mb-4 sm:mb-md pb-2 border-b border-white/10 sm:border-0">
                 Légal
