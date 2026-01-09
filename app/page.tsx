@@ -14,9 +14,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Surly | Marketplace Recrutement & Freelance Banque Assurance",
-  description: "La 1ère plateforme dédiée aux experts de la Banque et de l'Assurance. +3000 consultants certifiés disponibles sous 48h. Recrutement, Freelance, Assistance Technique.",
-  keywords: ["recrutement banque", "freelance assurance", "marketplace bancassurance", "consultant banque", "emploi finance", "expert ifrs17", "conformité"],
+  title: "Emplois & Missions Banque Assurance | Surly - Freelance & CDI",
+  description: "La 1ère plateforme dédiée aux experts de la Banque et de l'Assurance. +3000 consultants certifiés disponibles sous 48h. Missions freelance, recrutement CDI/CDD.",
+  keywords: ["emploi banque", "mission freelance banque", "recrutement assurance", "freelance bancassurance", "consultant banque", "emploi finance", "expert ifrs17", "conformité", "TJM banque"],
   alternates: {
     canonical: "https://surly.fr",
   },
