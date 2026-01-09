@@ -18,7 +18,7 @@ Le **Taux Journalier Moyen (TJM)** représente le tarif facturé par un consulta
 * **L'expertise technique** : Plus le domaine est pointu (réglementation Bâle III, IFRS 17, cybersécurité), plus le TJM est élevé
 * **L'expérience** : Un junior (2-5 ans) facture 30-40% de moins qu'un senior (10+ ans)
 * **La localisation** : Paris/Île-de-France affiche des TJM 10-15% supérieurs à la province
-* **La durée de mission** : Les missions courtes (<3 mois) justifient un TJM majoré de 10-15%
+* **La durée de mission** : Les missions courtes (&lt;3 mois) justifient un TJM majoré de 10-15%
 * **Le type de client** : Les grandes institutions bancaires (BNP Paribas, Société Générale, AXA) paient généralement mieux que les structures plus petites
 
 ## Grille TJM 2026 par métier et expérience
@@ -101,11 +101,11 @@ Le **Taux Journalier Moyen (TJM)** représente le tarif facturé par un consulta
 
 ### Majorations possibles
 
-* **+10-15%** : Missions urgentes (<2 semaines de préavis)
+* **+10-15%** : Missions urgentes (&lt;2 semaines de préavis)
 * **+15-20%** : Compétences rares (DORA, IFRS 17, Cloud Architecture)
 * **+10%** : Certifications reconnues (CISA, CISSP, CFA, CIA, CAMS)
 * **+5-10%** : Bilinguisme anglais courant
-* **+10-15%** : Mission courte durée (<3 mois)
+* **+10-15%** : Mission courte durée (&lt;3 mois)
 
 ### Minorations fréquentes
 

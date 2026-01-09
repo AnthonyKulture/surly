@@ -20,7 +20,7 @@ Avant de chercher une mission, comprendre **pourquoi les banques font appel à d
 * **Expertise ponctuelle** : Mise en conformité Bâle III, déploiement DORA, migration cloud → besoins temporaires sur 6-18 mois
 * **Flexibilité** : Adapter les effectifs selon les pics d'activité sans CDI
 * **Compétences rares** : Profils IFRS 17, cybersécurité, IA difficiles à recruter en CDI
-* **Réactivité**  : Démarrage rapide (<2 semaines vs 3-6 mois pour un CDI)
+* **Réactivité**  : Démarrage rapide (&lt;2 semaines vs 3-6 mois pour un CDI)
 * **Objectivité** : Regard extérieur pour audits, transformations, due diligence
 
 **Opportunité pour vous** : Ces besoins créent un marché dynamique avec des centaines de missions disponibles chaque mois.
@@ -207,7 +207,7 @@ Stack : SAS, Python, SQL, Confluence, JIRA
 *Complétez votre profil à 100%
 *Activez les alertes missions
 *Postulez en 1 clic avec votre profil
-*Répondez rapidement aux sollicitations (<24h)
+*Répondez rapidement aux sollicitations (&lt;24h)
 
 **Autres plateformes** :
 * Personnalisez chaque candidature
@@ -353,7 +353,7 @@ mission est de [montant]€. Si le budget évolue, n'hésitez pas à me recontac
 
 ### Cas particuliers
 
-**Mission urgente (<2 semaines)** : +10-15% de majoration légitime  
+**Mission urgente (&lt;2 semaines)** : +10-15% de majoration légitime  
 **Mission longue (>12 mois)** : Acceptez -5-10% contre garantie ferme  
 **Client stratégique** (référence, réseau) : Légère concession OK si ROI long terme
 
