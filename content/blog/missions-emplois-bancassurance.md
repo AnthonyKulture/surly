@@ -1,7 +1,7 @@
 ---
 title: "L’art de la mise en relation pour les missions emplois en bancassurance"
 excerpt: "Découvrez comment Surly révolutionne le matching entre talents et entreprises pour les missions emplois bancassurance."
-date: "2026-01-08"
+date: "2026-01-02"
 author: "Surly"
 coverImage: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=2669&auto=format&fit=crop"
 tags: ["Missions", "Emploi", "Bancassurance", "Matching", "Surly"]

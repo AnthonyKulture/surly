@@ -1,7 +1,7 @@
 ---
 title: "Freelance bancassurance sur le marché de l’emploi en 2025"
 excerpt: "Mutations du marché, essor du freelance en bancassurance et compétences technologiques : découvrez les tendances 2025."
-date: "2026-01-08"
+date: "2025-12-20"
 author: "Surly"
 coverImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2670&auto=format&fit=crop"
 tags: ["Freelance", "Banque", "Assurance", "Marché de l'emploi", "Tendances 2025"]

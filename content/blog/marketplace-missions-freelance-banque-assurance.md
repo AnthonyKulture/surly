@@ -1,7 +1,7 @@
 ---
 title: "Découvrez Surly : La Marketplace incontournable pour les Missions Freelance en Banque et Assurance"
 excerpt: "Surly s'impose comme la référence face à Malt et freelance.com pour le secteur Banque et Assurance. Découvrez pourquoi."
-date: "2026-01-08"
+date: "2025-12-28"
 author: "Surly"
 coverImage: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2670&auto=format&fit=crop"
 tags: ["Marketplace", "Freelance", "Banque", "Assurance", "Sourcing"]

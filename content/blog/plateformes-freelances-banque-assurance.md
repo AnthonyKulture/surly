@@ -1,7 +1,7 @@
 ---
 title: "TOP 5 des plateformes freelance spécialisées en banque et assurance"
 excerpt: "Découvrez les 5 meilleures plateformes pour trouver des missions en banque et assurance, dont Malt, Surly, et Freelance.com. Comparatif et conseils."
-date: "2026-01-08"
+date: "2026-01-05"
 author: "Surly"
 coverImage: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2664&auto=format&fit=crop"
 tags: ["Freelance", "Banque", "Assurance", "Plateformes", "Conseils"]
