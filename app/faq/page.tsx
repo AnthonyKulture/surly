@@ -64,6 +64,47 @@ export default function FAQPage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
 
+            {/* Hidden FAQ content for search engines - visually hidden but crawlable */}
+            <div className="sr-only" aria-hidden="true">
+                <h1>Questions Fréquentes Surly - Experts Banque & Assurance</h1>
+
+                <section>
+                    <h2>Pour les entreprises</h2>
+                    {FAQ_CLIENTS.map((faq, index) => (
+                        <div key={index} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                            <h3 itemProp="name">{faq.question}</h3>
+                            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                                <p itemProp="text">{faq.answer}</p>
+                            </div>
+                        </div>
+                    ))}
+                </section>
+
+                <section>
+                    <h2>Pour les consultants</h2>
+                    {FAQ_CONSULTANTS.map((faq, index) => (
+                        <div key={index} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                            <h3 itemProp="name">{faq.question}</h3>
+                            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                                <p itemProp="text">{faq.answer}</p>
+                            </div>
+                        </div>
+                    ))}
+                </section>
+
+                <section>
+                    <h2>Questions générales</h2>
+                    {FAQ_GENERAL.map((faq, index) => (
+                        <div key={index} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                            <h3 itemProp="name">{faq.question}</h3>
+                            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                                <p itemProp="text">{faq.answer}</p>
+                            </div>
+                        </div>
+                    ))}
+                </section>
+            </div>
+
             <main>
                 {/* Hero Section - Custom compact hero for FAQ */}
                 <section
