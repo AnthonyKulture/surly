@@ -70,9 +70,9 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-10 border border-primary/10 bg-background rounded-xl shadow-lg"
+      className="p-5 sm:p-8 md:p-10 border border-primary/10 bg-background rounded-xl shadow-lg"
     >
-      <div className="mb-6">
+      <div className="mb-4 sm:mb-6">
         <label
           htmlFor="type"
           className="block text-xs font-semibold uppercase tracking-widest text-primary mb-2"
@@ -85,7 +85,7 @@ const ContactForm = () => {
           value={formData.type}
           onChange={handleChange}
           required
-          className="w-full py-3 px-4 bg-background border border-primary/20 rounded-lg font-sans text-base text-foreground focus:outline-none focus:border-primary transition-all"
+          className="w-full py-4 px-4 bg-background border border-primary/20 rounded-lg font-sans text-base text-foreground focus:outline-none focus:border-primary transition-all"
         >
           <option value="">Sélectionnez votre profil</option>
           <option value="entreprise">Une entreprise qui recrute</option>
@@ -93,7 +93,7 @@ const ContactForm = () => {
         </select>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 sm:mb-6">
         <div>
           <label
             htmlFor="name"
@@ -109,7 +109,7 @@ const ContactForm = () => {
             onChange={handleChange}
             placeholder="Jean Dupont"
             required
-            className="w-full py-3 px-4 bg-background border border-primary/20 rounded-lg font-sans text-base text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary transition-all"
+            className="w-full py-4 px-4 bg-background border border-primary/20 rounded-lg font-sans text-base text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary transition-all"
           />
         </div>
         <div>
@@ -126,7 +126,7 @@ const ContactForm = () => {
             value={formData.company}
             onChange={handleChange}
             placeholder="Votre entreprise"
-            className="w-full py-3 px-4 bg-background border border-primary/20 rounded-lg font-sans text-base text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary transition-all"
+            className="w-full py-4 px-4 bg-background border border-primary/20 rounded-lg font-sans text-base text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary transition-all"
           />
         </div>
       </div>
@@ -146,7 +146,7 @@ const ContactForm = () => {
           onChange={handleChange}
           placeholder="jean@entreprise.fr"
           required
-          className="w-full py-3 px-4 bg-background border border-primary/20 rounded-lg font-sans text-base text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary transition-all"
+          className="w-full py-4 px-4 bg-background border border-primary/20 rounded-lg font-sans text-base text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary transition-all"
         />
       </div>
 
@@ -165,7 +165,7 @@ const ContactForm = () => {
           rows={4}
           placeholder="Décrivez votre besoin en recrutement ou votre expertise..."
           required
-          className="w-full py-3 px-4 bg-background border border-primary/20 rounded-lg font-sans text-base text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary transition-all resize-y min-h-[120px]"
+          className="w-full py-4 px-4 bg-background border border-primary/20 rounded-lg font-sans text-base text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary transition-all resize-y min-h-[120px]"
         />
       </div>
 
@@ -216,7 +216,7 @@ export const Contact = () => {
       <div className="absolute inset-0 pattern-grid-large opacity-30 pointer-events-none" />
 
       <div className="container relative z-[1]">
-        <div className="grid grid-cols-1 tablet:grid-cols-2 gap-8 tablet:gap-12 laptop:gap-16 items-start">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6 tablet:gap-12 laptop:gap-16 items-start">
           {/* Info */}
           <Reveal delay={0} duration={800} direction="right">
             <div>
