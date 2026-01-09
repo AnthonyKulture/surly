@@ -65,16 +65,35 @@ export default function FAQPage() {
             />
 
             <main>
-                {/* Hero Section - Using unified PageHero */}
-                <PageHero
-                    badge="Centre d'aide"
-                    title={
-                        <>
-                            Foire aux
-                            <span className="text-primary block mt-1">questions</span>
-                        </>
-                    }
-                />
+                {/* Hero Section - Custom compact hero for FAQ */}
+                <section
+                    id="hero"
+                    className="relative w-full min-h-[40vh] sm:min-h-[55vh] md:min-h-[65vh] pt-24 pb-12 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-24 flex flex-col items-center justify-center overflow-hidden bg-white"
+                >
+                    {/* Background Pattern */}
+                    <div className="absolute inset-0 pattern-grid-large opacity-30 pointer-events-none" />
+
+                    <div className="container relative z-[2] flex flex-col items-center px-6 md:px-4 max-w-5xl">
+                        {/* Badge */}
+                        <Reveal delay={0} duration={600} direction="down">
+                            <div className="mb-5 sm:mb-6 w-full text-center">
+                                <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-primary/5 border border-primary/10 shadow-sm">
+                                    <span className="text-xs sm:text-sm font-medium text-primary">
+                                        Centre d'aide
+                                    </span>
+                                </div>
+                            </div>
+                        </Reveal>
+
+                        {/* Title */}
+                        <Reveal delay={100} duration={800}>
+                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[3rem] font-bold text-foreground text-center mb-4 sm:mb-5 tracking-tight leading-[1.2] sm:leading-[1.15] max-w-4xl mx-auto">
+                                Foire aux
+                                <span className="text-primary block mt-1">questions</span>
+                            </h1>
+                        </Reveal>
+                    </div>
+                </section>
 
                 {/* Quick Navigation Pills */}
                 <section className="py-6 bg-white border-b border-primary/5">
