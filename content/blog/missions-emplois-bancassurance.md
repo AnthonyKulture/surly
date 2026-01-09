@@ -45,11 +45,11 @@ En choisissant Surly, vous bénéficiez d’une plateforme entièrement dédiée
 
 Pour maximiser vos chances de trouver les missions emplois bancassurance qui vous correspondent, suivez ces conseils :
 
-***Soignez votre profil :** Décrivez précisément vos compétences, votre expérience et vos aspirations. Mettez en avant vos réalisations et vos certifications. [Compléter mon profil sur Surly](https://surly.fr/devenir-consultant)
-***Utilisez les filtres de recherche :** Affinez votre recherche en utilisant les filtres de Surly pour cibler les offres qui vous intéressent le plus.
-***Découvrez des exemples concrets :** Consultez nos [exemples de missions en bancassurance](/missions-exemples) pour mieux comprendre les opportunités disponibles (conformité, IT, transformation digitale, etc.).
-***Participez à la communauté :** Échangez avec d’autres professionnels de la bancassurance, posez des questions, partagez vos expériences et développez votre réseau.
-***Contactez l’équipe de Surly :** N’hésitez pas à contacter l’équipe de Surly pour obtenir des conseils personnalisés et un accompagnement dans votre recherche.
+* **Soignez votre profil :** Décrivez précisément vos compétences, votre expérience et vos aspirations. Mettez en avant vos réalisations et vos certifications. [Compléter mon profil sur Surly](https://surly.fr/devenir-consultant)
+* **Utilisez les filtres de recherche :** Affinez votre recherche en utilisant les filtres de Surly pour cibler les offres qui vous intéressent le plus.
+* **Découvrez des exemples concrets :** Consultez nos [exemples de missions en bancassurance](/missions-exemples) pour mieux comprendre les opportunités disponibles (conformité, IT, transformation digitale, etc.).
+* **Participez à la communauté :** Échangez avec d’autres professionnels de la bancassurance, posez des questions, partagez vos expériences et développez votre réseau.
+* **Contactez l’équipe de Surly :** N’hésitez pas à contacter l’équipe de Surly pour obtenir des conseils personnalisés et un accompagnement dans votre recherche.
 
 ### Témoignages : Des professionnels de la bancassurance satisfaits de Surly
 

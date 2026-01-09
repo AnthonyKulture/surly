@@ -17,11 +17,11 @@ Avant de chercher une mission, comprendre **pourquoi les banques font appel à d
 
 ### Les 5 raisons principales
 
-***Expertise ponctuelle** : Mise en conformité Bâle III, déploiement DORA, migration cloud → besoins temporaires sur 6-18 mois
-***Flexibilité** : Adapter les effectifs selon les pics d'activité sans CDI
-***Compétences rares** : Profils IFRS 17, cybersécurité, IA difficiles à recruter en CDI
-***Réactivité**  : Démarrage rapide (<2 semaines vs 3-6 mois pour un CDI)
-***Objectivité** : Regard extérieur pour audits, transformations, due diligence
+* **Expertise ponctuelle** : Mise en conformité Bâle III, déploiement DORA, migration cloud → besoins temporaires sur 6-18 mois
+* **Flexibilité** : Adapter les effectifs selon les pics d'activité sans CDI
+* **Compétences rares** : Profils IFRS 17, cybersécurité, IA difficiles à recruter en CDI
+* **Réactivité**  : Démarrage rapide (<2 semaines vs 3-6 mois pour un CDI)
+* **Objectivité** : Regard extérieur pour audits, transformations, due diligence
 
 **Opportunité pour vous** : Ces besoins créent un marché dynamique avec des centaines de missions disponibles chaque mois.
 
@@ -119,13 +119,13 @@ Avant de postuler, clarifiez vos attentes pour cibler les bonnes opportunités.
 **50% des missions** se pourvoient par réseau avant publication.
 
 **Comment activer votre réseau** :
-***LinkedIn** : 
+* **LinkedIn** : 
    - Optimisez votre profil (mots-clés banque, compétences claires)
    - Publiez régulièrement (veille sectorielle, retours d'expérience)
    - Commentez les posts d'influenceurs banque/finance
-***Anciens collègues** : Restez en contact, informez de votre disponibilité
-***Événements sectoriels** : Salons (voir notre [calendrier événements bancassurance](/blog/evenements-salons-banque-assurance-2025-2026)), meetups, conférences
-***Groupes LinkedIn** : "Freelance Banque Finance", "Consultants Bancassurance"
+* **Anciens collègues** : Restez en contact, informez de votre disponibilité
+* **Événements sectoriels** : Salons (voir notre [calendrier événements bancassurance](/blog/evenements-salons-banque-assurance-2025-2026)), meetups, conférences
+* **Groupes LinkedIn** : "Freelance Banque Finance", "Consultants Bancassurance"
 
 **Script réseau efficace** :
 > "Bonjour [Prénom], j'espère que tout va bien. Je suis actuellement en recherche de ma prochaine mission freelance en [votre spécialité] dans le secteur bancaire (disponible dès [date]). Si tu connais des opportunités ou des contacts RH intéressés, je serais ravi d'échanger. Merci !"
@@ -405,9 +405,9 @@ mission est de [montant]€. Si le budget évolue, n'hésitez pas à me recontac
 ### Construire votre réputation
 
 **Les 3 piliers du succès freelance** :
-***Livrer de la qualité** (→ recommandations, renouvellements)
-***Entretenir son réseau** (→ cooptations, bouche-à-oreille)
-***Être visible** (→ LinkedIn, articles, conférences)
+* **Livrer de la qualité** (→ recommandations, renouvellements)
+* **Entretenir son réseau** (→ cooptations, bouche-à-oreille)
+* **Être visible** (→ LinkedIn, articles, conférences)
 
 **Astuce** : Demandez systématiquement une **recommandation LinkedIn** à la fin de chaque mission réussie.
 

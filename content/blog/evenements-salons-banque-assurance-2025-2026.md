@@ -38,8 +38,8 @@ Dans un secteur en perpétuelle évolution, participer aux événements clés es
 ## Pourquoi Participer ?
 
 Pour les experts indépendants et les consultants, ces événements sont des opportunités en or pour :
-***Prospecter** : Rencontrer des décideurs hors du cadre formel d'un appel d'offres.
-***Se former** : Les conférences sont souvent animées par les meilleurs experts du marché.
-***Visibilité** : Intervenir dans une table ronde peut booster votre personal branding.
+* **Prospecter** : Rencontrer des décideurs hors du cadre formel d'un appel d'offres.
+* **Se former** : Les conférences sont souvent animées par les meilleurs experts du marché.
+* **Visibilité** : Intervenir dans une table ronde peut booster votre personal branding.
 
 **Vous ne pouvez pas assister à tous les événements ?** Inscrivez-vous à la newsletter Surly pour recevoir les comptes-rendus des temps forts du secteur.

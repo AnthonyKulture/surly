@@ -63,9 +63,9 @@ La convergence entre banque et assurance favorise l’émergence de missions aut
 
 Pour maximiser votre visibilité sur Surly :
 
-***Présentez vos livrables** et résultats mesurables.
-***Utilisez les bons mots-clés** : DORA, AI Act, CSRD, ISO 20022, AML, MLOps.
-***Publiez vos études de cas** et succès clients récents.
+* **Présentez vos livrables** et résultats mesurables.
+* **Utilisez les bons mots-clés** : DORA, AI Act, CSRD, ISO 20022, AML, MLOps.
+* **Publiez vos études de cas** et succès clients récents.
 
 [Créez votre profil freelance sur Surly](/devenir-consultant) et rejoignez la communauté des experts du secteur banque et assurance.
 
