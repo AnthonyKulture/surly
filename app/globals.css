@@ -483,3 +483,92 @@ select {
   font-style: italic;
   color: rgba(0, 0, 0, 0.7);
 }
+
+/* === Blog Post Prose Styles === */
+.blog-post-content {
+  @apply text-foreground-muted leading-relaxed;
+}
+
+.blog-post-content h2 {
+  @apply text-2xl sm:text-3xl font-bold text-foreground mt-12 mb-6 leading-tight;
+}
+
+.blog-post-content h3 {
+  @apply text-xl sm:text-2xl font-semibold text-foreground mt-10 mb-4 leading-tight;
+}
+
+.blog-post-content h4 {
+  @apply text-lg sm:text-xl font-semibold text-foreground mt-8 mb-3;
+}
+
+.blog-post-content p {
+  @apply mb-6 leading-relaxed;
+}
+
+.blog-post-content ul,
+.blog-post-content ol {
+  @apply mb-6 pl-6 space-y-2;
+}
+
+.blog-post-content li {
+  @apply leading-relaxed;
+}
+
+.blog-post-content a {
+  @apply text-primary hover:text-primary/80 underline underline-offset-2 transition-colors;
+}
+
+.blog-post-content strong {
+  @apply font-semibold text-foreground;
+}
+
+.blog-post-content blockquote {
+  @apply border-l-4 border-primary/30 pl-4 py-2 my-6 italic text-foreground-muted bg-primary/5 rounded-r;
+}
+
+.blog-post-content table {
+  @apply w-full border-collapse my-8 text-sm;
+}
+
+.blog-post-content table thead {
+  @apply bg-gray-50 border-b-2 border-gray-200;
+}
+
+.blog-post-content table th {
+  @apply px-4 py-3 text-left font-semibold text-foreground;
+}
+
+.blog-post-content table td {
+  @apply px-4 py-3 border-b border-gray-200;
+}
+
+.blog-post-content table tbody tr:hover {
+  @apply bg-gray-50/50;
+}
+
+/* Code Blocks - High Contrast & Readable */
+.blog-post-content code {
+  @apply bg-gray-100 text-gray-900 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.blog-post-content pre {
+  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-6 border border-gray-800;
+}
+
+.blog-post-content pre code {
+  @apply bg-transparent text-gray-100 p-0;
+}
+
+/* Ensure inline code in lists/paragraphs has good contrast */
+.blog-post-content p code,
+.blog-post-content li code {
+  @apply bg-primary/10 text-primary px-2 py-0.5 rounded font-mono text-sm font-medium;
+}
+
+/* Template/Example blocks */
+.blog-post-content pre code {
+  @apply block;
+  color: #e5e7eb; /* Tailwind gray-200 - high contrast on dark background */
+  font-size: 0.875rem;
+  line-height: 1.7;
+}

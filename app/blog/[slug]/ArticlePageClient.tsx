@@ -117,7 +117,7 @@ export default function ArticlePageClient({ post, children, formattedDate, jsonL
                 {/* Content Container */}
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
                     {/* Main Article Content */}
-                    <div className="prose prose-lg max-w-none mb-16">
+                    <div className="blog-post-content max-w-none mb-16">
                         {children}
                     </div>
 
