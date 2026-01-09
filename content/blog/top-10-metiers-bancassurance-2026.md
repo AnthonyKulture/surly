@@ -1,7 +1,7 @@
 ---
 title: "Top 10 des Métiers les Plus Recherchés en Bancassurance 2026"
 excerpt: "Découvrez les 10 métiers stars de la banque et de l'assurance en 2026 : salaires, compétences, perspectives. Conformité, data, cyber, actuariat... Quels profils recrutent ?"
-date: "2026-01-09"
+date: "2026-01-07"
 author: "Surly"
 coverImage: "/images/blog/top-10-metiers-bancassurance.png"
 tags: ["Métiers", "Banque", "Assurance", "Recrutement", "Emploi", "2026"]
@@ -15,9 +15,9 @@ Voici le **Top 10 des métiers stars** de la banque et de l'assurance en 2026, a
 
 Ce classement est basé sur **3 critères** :
 
-1. **Volume d'offres** : Nombre de postes CDI + missions freelance publiés en 2025-2026
-2. **Difficultés de recrutement** : Pénurie de profils qualifiés = forte demande
-3. **Rémunération** : Niveau de salaire/TJM proposé (indicateur de la valeur marché)
+- **Volume d'offres** : Nombre de postes CDI + missions freelance publiés en 2025-2026
+- **Difficultés de recrutement** : Pénurie de profils qualifiés = forte demande
+- **Rémunération** : Niveau de salaire/TJM proposé (indicateur de la valeur marché)
 
 **Sources** : Données Surly 2025-2026, enquêtes RH secteur bancassurance, baromètres emploi finance.
 
@@ -521,9 +521,9 @@ R : **Paris / Île-de-France** (70% des offres), puis Lyon, Nantes, Lille, Borde
 Le secteur bancassurance offre de **belles opportunités de carrière** en 2026, avec des métiers variés, bien rémunérés et porteurs de sens (finance responsable, protection cyber, accompagnement clients).
 
 **Les 3 tendances clés** :
-1. 🔐 **Cybersécurité & Réglementation** = métiers #1
-2. 📊 **Data & IA** = transformation en cours
-3. 🌱 **Finance durable** = marché émergent à fort potentiel
+- 🔐 **Cybersécurité & Réglementation** = métiers #1
+- 📊 **Data & IA** = transformation en cours
+- 🌱 **Finance durable** = marché émergent à fort potentiel
 
 **Action plan** :
 - [ ] Identifiez 2-3 métiers qui vous attirent dans ce top 10

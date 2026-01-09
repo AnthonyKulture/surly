@@ -1,7 +1,7 @@
 ---
 title: "Guide Complet : Trouver une Mission Freelance en Banque en 2026"
 excerpt: "Guide étape par étape pour décrocher votre prochaine mission freelance en banque : plateformes, CV, réseau, négociation TJM. Conseils d'experts + FAQ complète."
-date: "2026-01-09"
+date: "2026-01-08"
 author: "Surly"
 coverImage: "/images/blog/guide-mission-freelance-banque.png"
 tags: ["Mission Freelance", "Banque", "Guide", "Consultant", "2026", "Conseils"]

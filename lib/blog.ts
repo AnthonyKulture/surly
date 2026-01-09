@@ -71,7 +71,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
             author: data.author,
             category: data.category,
             tags: data.tags || [],
-            image: data.image,
+            image: data.coverImage || data.image, // Support both coverImage and image
             readingTime: readingTimeText,
             content,
         };
