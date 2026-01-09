@@ -98,10 +98,10 @@ Spécialisée dans le recrutement pour les secteurs réglementés, **Hays Consul
 
 ## Comment vous démarquer sur ces plateformes freelance spécialisées en banque et assurance ?
 
-1.  **Optimisez votre profil :** Mentionnez clairement vos expertises (conformité, gestion des risques, data, etc.) et enrichissez votre CV de références chiffrées ou de projets marquants.
-2.  **Soyez réactif :** Sur un job board, les offres peuvent disparaître vite. Répondre tôt, c’est augmenter vos chances de décrocher un entretien.
-3.  **Capitalisez sur les avis clients :** Les recommandations et retours positifs rassurent les recruteurs et peuvent faire la différence face à la concurrence.
-4.  **Restez à l’affût des nouveautés :** Les besoins du marché évoluent rapidement ; formez-vous régulièrement aux nouvelles réglementations et technologies.
+***Optimisez votre profil :** Mentionnez clairement vos expertises (conformité, gestion des risques, data, etc.) et enrichissez votre CV de références chiffrées ou de projets marquants.
+***Soyez réactif :** Sur un job board, les offres peuvent disparaître vite. Répondre tôt, c’est augmenter vos chances de décrocher un entretien.
+***Capitalisez sur les avis clients :** Les recommandations et retours positifs rassurent les recruteurs et peuvent faire la différence face à la concurrence.
+***Restez à l’affût des nouveautés :** Les besoins du marché évoluent rapidement ; formez-vous régulièrement aux nouvelles réglementations et technologies.
 
 ## Les profils les plus recherchés sur les plateformes freelance spécialisées en banque et assurance
 

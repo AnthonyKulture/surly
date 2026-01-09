@@ -38,14 +38,14 @@ L'ATS compare votre CV à la description du poste. Vous devez donc parler le mê
 
 Organisez votre CV de manière linéaire et logique :
 
-1.  **En-tête** : Prénom, Nom, Titre du poste visé (exactement celui de l'annonce).
-2.  **Résumé (Optionnel)** : 3-4 lignes intégrant les mots-clés principaux (ex: "Expert Conformité avec 10 ans d'expérience en Banque d'Investissement...").
-3.  **Expérience Professionnelle** :
+***En-tête** : Prénom, Nom, Titre du poste visé (exactement celui de l'annonce).
+***Résumé (Optionnel)** : 3-4 lignes intégrant les mots-clés principaux (ex: "Expert Conformité avec 10 ans d'expérience en Banque d'Investissement...").
+***Expérience Professionnelle** :
     *   Nom de l'entreprise, Lieu, Dates (Mois/Année).
     *   Titre du poste.
     *   Liste à puces des réalisations (commencez par des verbes d'action).
-4.  **Formation** : Diplômes, Écoles, Années.
-5.  **Compétences Techniques** : Liste simple de mots-clés (Langues, Logiciels, Réglementations).
+***Formation** : Diplômes, Écoles, Années.
+***Compétences Techniques** : Liste simple de mots-clés (Langues, Logiciels, Réglementations).
 
 ## L'Astuce Surly
 
