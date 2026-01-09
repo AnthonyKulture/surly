@@ -202,12 +202,10 @@ La grille TJM 2026 montre que le marché bancassurance valorise l'expertise poin
 * 🎯 **Sweetspot marché** : 600-800€ pour les profils confirmés (5-10 ans)
 * 📊 **Tendance** : Croissance modérée (+3-5% projeté en 2027)
 
-{{< cta >}}
 **Prêt à trouver votre prochaine mission au bon TJM ?**  
 Inscrivez-vous gratuitement sur Surly et accédez à +500 missions en bancassurance avec TJM transparents.
 
-👉 [Créer mon profil consultant](https://surly.fr/devenir-consultant)
-{{< /cta >}}
+👉 **[Créer mon profil consultant](https://surly.fr/devenir-consultant)**
 
 ---
 
