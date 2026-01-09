@@ -36,7 +36,7 @@ export const PageHero = ({
     return (
         <section
             id="hero"
-            className="relative w-full min-h-[50vh] sm:min-h-[60vh] md:min-h-[65vh] pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28 flex flex-col items-center justify-center overflow-hidden bg-white"
+            className="relative w-full min-h-[65vh] sm:min-h-[65vh] pt-32 pb-20 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28 flex flex-col items-center justify-center overflow-hidden bg-white"
         >
             <HeroBackground />
             <div className="container relative z-[2] flex flex-col items-center px-6 md:px-4 max-w-5xl">
