@@ -147,7 +147,7 @@ Les données sont le **nouveau pétrole** de la banque :
 
 ---
 
-## 4️⃣ - Actuaire IFRS 17 / Solvabilité II
+## #4 - Actuaire IFRS 17 / Solvabilité II
 
 ### Pourquoi c'est crucial ?
 
@@ -182,7 +182,7 @@ Depuis l'entrée en vigueur d'**IFRS 17** (2023, consolidation en cours), les as
 
 ---
 
-## 5️⃣ - Architecte Cloud Banking (AWS / Azure)
+## #5 - Architecte Cloud Banking (AWS / Azure)
 
 ### Pourquoi c'est stratégique ?
 
@@ -222,7 +222,7 @@ Les banques migrent massivement vers le **cloud** (AWS, Azure, Google Cloud) pou
 
 ---
 
-## 6️⃣ - Product Owner / Product Manager Fintech
+## #6 - Product Owner / Product Manager Fintech
 
 ### Pourquoi c'est en vogue ?
 
@@ -260,7 +260,7 @@ Avec l'essor des **fintechs** et des **néobanques** (Qonto, Lydia, Revolut), le
 
 ---
 
-## 7️⃣ - Consultant Transformation Digitale
+## #7 - Consultant Transformation Digitale
 
 ### Pourquoi c'est demandé ?
 
@@ -297,7 +297,7 @@ Les banques traditionnelles doivent se **réinventer** face aux fintechs :
 
 ---
 
-## 8️⃣ - Analyste Risques de Crédit / Marché
+## #8 - Analyste Risques de Crédit / Marché
 
 ### Pourquoi ça recrute ?
 
@@ -334,7 +334,7 @@ Les risques financiers restent au cœur de l'activité bancaire :
 
 ---
 
-## 9️⃣ - Expert LCB-FT / AML Compliance
+## #9 - Expert LCB-FT / AML Compliance
 
 ### Pourquoi c'est incontournable ?
 
@@ -375,7 +375,7 @@ La **lutte contre le blanchiment** (LCB-FT) et le financement du terrorisme est 
 
 ---
 
-## 🔟 - Consultant Finance Durable / ESG
+## #10 - Consultant Finance Durable / ESG
 
 ### Pourquoi c'est le métier émergent ?
 
