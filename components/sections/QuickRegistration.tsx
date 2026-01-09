@@ -132,15 +132,15 @@ export const QuickRegistration = () => {
                                 as="a"
                                 href="https://app.surly.fr"
                                 size="large"
-                                className="shadow-lg hover:shadow-xl"
+                                className="shadow-lg hover:shadow-xl w-full tablet:w-auto justify-center"
                             >
                                 Commencer mon inscription
                             </Button>
                         </Reveal>
                     </div>
 
-                    {/* MIDDLE COLUMN: Vertical Steps (20% - 2 cols) */}
-                    <div className="col-span-12 tablet:col-span-3 flex flex-col">
+                    {/* MIDDLE COLUMN: Vertical Steps (20% - 2 cols) - Hidden on mobile */}
+                    <div className="hidden tablet:flex col-span-12 tablet:col-span-3 flex-col">
                         <div className="space-y-1.5 flex-1">
                             {STEPS.map((step, index) => {
                                 const isActive = index === currentStep;
@@ -189,8 +189,8 @@ export const QuickRegistration = () => {
                         </div>
                     </div>
 
-                    {/* RIGHT COLUMN: Mini Mockup (30% - 4 cols) */}
-                    <div className="col-span-12 tablet:col-span-3 flex flex-col">
+                    {/* RIGHT COLUMN: Mini Mockup (30% - 4 cols) - Hidden on mobile */}
+                    <div className="hidden tablet:flex col-span-12 tablet:col-span-3 flex-col">
                         <div className="bg-white rounded-lg border border-gray-200/80 shadow-sm p-3 transition-all duration-500 flex flex-col">
 
                             {/* Mini Header */}
