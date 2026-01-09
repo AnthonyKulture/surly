@@ -83,7 +83,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
 
       {/* Full Width Announcement Bar - Top of site */}
       {showAnnouncementBar && (
-        <div className="fixed top-0 left-0 right-0 z-[1010] h-10 bg-primary text-white overflow-hidden">
+        <div className="fixed top-0 left-0 right-0 z-[1010] h-10 bg-primary text-white overflow-hidden" style={{ transform: 'translate3d(0, 0, 0)' }}>
           {/* Decorative gradient blob */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
@@ -138,6 +138,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
             ? "bg-white border-primary/10 shadow-lg"
             : "bg-white border-transparent"
         )}
+        style={{ transform: 'translate3d(0, 0, 0)', willChange: 'transform' }}
       >
         <div className="max-w-[1600px] mx-auto px-4 lg:px-8">
           <nav className="flex items-center justify-between h-20">
