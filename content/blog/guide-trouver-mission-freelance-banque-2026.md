@@ -17,11 +17,11 @@ Avant de chercher une mission, comprendre **pourquoi les banques font appel à d
 
 ### Les 5 raisons principales
 
-1. **Expertise ponctuelle** : Mise en conformité Bâle III, déploiement DORA, migration cloud → besoins temporaires sur 6-18 mois
-2. **Flexibilité** : Adapter les effectifs selon les pics d'activité sans CDI
-3. **Compétences rares** : Profils IFRS 17, cybersécurité, IA difficiles à recruter en CDI
-4. **Réactivité**  : Démarrage rapide (<2 semaines vs 3-6 mois pour un CDI)
-5. **Objectivité** : Regard extérieur pour audits, transformations, due diligence
+***Expertise ponctuelle** : Mise en conformité Bâle III, déploiement DORA, migration cloud → besoins temporaires sur 6-18 mois
+***Flexibilité** : Adapter les effectifs selon les pics d'activité sans CDI
+***Compétences rares** : Profils IFRS 17, cybersécurité, IA difficiles à recruter en CDI
+***Réactivité**  : Démarrage rapide (<2 semaines vs 3-6 mois pour un CDI)
+***Objectivité** : Regard extérieur pour audits, transformations, due diligence
 
 **Opportunité pour vous** : Ces besoins créent un marché dynamique avec des centaines de missions disponibles chaque mois.
 
@@ -81,11 +81,11 @@ Avant de postuler, clarifiez vos attentes pour cibler les bonnes opportunités.
 * ✅ **Accompagnement** : Talent managers disponibles
 
 **Comment ça marche** :
-1. Inscription 5 min (LinkedIn ou CV)
-2. Profil vérifié sous 24-48h
-3. Missions matchées envoyées par email
-4. Postulez en 1 clic
-5. Entretien client sous 72h
+*Inscription 5 min (LinkedIn ou CV)
+*Profil vérifié sous 24-48h
+*Missions matchées envoyées par email
+*Postulez en 1 clic
+*Entretien client sous 72h
 
 💡 Consultez nos [exemples de missions](/missions-exemples) pour découvrir les types d'opportunités disponibles.
 
@@ -119,13 +119,13 @@ Avant de postuler, clarifiez vos attentes pour cibler les bonnes opportunités.
 **50% des missions** se pourvoient par réseau avant publication.
 
 **Comment activer votre réseau** :
-1. **LinkedIn** : 
+***LinkedIn** : 
    - Optimisez votre profil (mots-clés banque, compétences claires)
    - Publiez régulièrement (veille sectorielle, retours d'expérience)
    - Commentez les posts d'influenceurs banque/finance
-2. **Anciens collègues** : Restez en contact, informez de votre disponibilité
-3. **Événements sectoriels** : Salons (voir notre [calendrier événements bancassurance](/blog/evenements-salons-banque-assurance-2025-2026)), meetups, conférences
-4. **Groupes LinkedIn** : "Freelance Banque Finance", "Consultants Bancassurance"
+***Anciens collègues** : Restez en contact, informez de votre disponibilité
+***Événements sectoriels** : Salons (voir notre [calendrier événements bancassurance](/blog/evenements-salons-banque-assurance-2025-2026)), meetups, conférences
+***Groupes LinkedIn** : "Freelance Banque Finance", "Consultants Bancassurance"
 
 **Script réseau efficace** :
 > "Bonjour [Prénom], j'espère que tout va bien. Je suis actuellement en recherche de ma prochaine mission freelance en [votre spécialité] dans le secteur bancaire (disponible dès [date]). Si tu connais des opportunités ou des contacts RH intéressés, je serais ravi d'échanger. Merci !"
@@ -204,10 +204,10 @@ Stack : SAS, Python, SQL, Confluence, JIRA
 ### Sur les plateformes
 
 **Surly** :
-1. Complétez votre profil à 100%
-2. Activez les alertes missions
-3. Postulez en 1 clic avec votre profil
-4. Répondez rapidement aux sollicitations (<24h)
+*Complétez votre profil à 100%
+*Activez les alertes missions
+*Postulez en 1 clic avec votre profil
+*Répondez rapidement aux sollicitations (<24h)
 
 **Autres plateformes** :
 * Personnalisez chaque candidature
@@ -405,9 +405,9 @@ mission est de [montant]€. Si le budget évolue, n'hésitez pas à me recontac
 ### Construire votre réputation
 
 **Les 3 piliers du succès freelance** :
-1. **Livrer de la qualité** (→ recommandations, renouvellements)
-2. **Entretenir son réseau** (→ cooptations, bouche-à-oreille)
-3. **Être visible** (→ LinkedIn, articles, conférences)
+***Livrer de la qualité** (→ recommandations, renouvellements)
+***Entretenir son réseau** (→ cooptations, bouche-à-oreille)
+***Être visible** (→ LinkedIn, articles, conférences)
 
 **Astuce** : Demandez systématiquement une **recommandation LinkedIn** à la fin de chaque mission réussie.
 
@@ -439,14 +439,14 @@ R : Oui, si compatible avec vos engagements contractuels (vérifiez clauses de n
 Trouver une mission freelance en banque en 2026 est **accessible** si vous suivez une méthode structurée :
 
 **Les 8 étapes clés** :
-1. ✅ Définir votre profil et critères
-2. ✅ Utiliser les bonnes plateformes ([Surly](https://surly.fr/devenir-consultant) en priorité)
-3. ✅ Optimiser votre CV freelance
-4. ✅ Postuler intelligemment (qualité > quantité)
-5. ✅ Réussir vos entretiens (préparation = clé)
-6. ✅ Négocier votre juste TJM
-7. ✅ Démarrer sereinement
-8. ✅ Construire votre réputation
+*✅ Définir votre profil et critères
+*✅ Utiliser les bonnes plateformes ([Surly](https://surly.fr/devenir-consultant) en priorité)
+*✅ Optimiser votre CV freelance
+*✅ Postuler intelligemment (qualité > quantité)
+*✅ Réussir vos entretiens (préparation = clé)
+*✅ Négocier votre juste TJM
+*✅ Démarrer sereinement
+*✅ Construire votre réputation
 
 **Votre plan d'action dès aujourd'hui** :
 - [ ] Inscrivez-vous sur [Surly](https://surly.fr/devenir-consultant) (5 min, gratuit)

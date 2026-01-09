@@ -130,21 +130,21 @@ Exemple :
 
 ### Pour les consultants
 
-1. **Benchmarkez votre profil** : Utilisez cette grille comme référence, ajustez selon votre expérience
-2. **Valorisez vos certifications** : CISA, CISSP, Agile, PMP justifient un TJM supérieur
-3. **Adaptez selon la mission** :
+***Benchmarkez votre profil** : Utilisez cette grille comme référence, ajustez selon votre expérience
+***Valorisez vos certifications** : CISA, CISSP, Agile, PMP justifient un TJM supérieur
+***Adaptez selon la mission** :
    - Mission stratégique à fort enjeu → TJM haut de grille
    - Régie longue durée classique → TJM milieu de grille
-4. **Restez flexible** : Préférer une mission longue à TJM légèrement réduit qu'un TJM élevé sans garantie de volume
-5. **Négociez les conditions** : Télétravail, délai de paiement, clause de renouvellement
+***Restez flexible** : Préférer une mission longue à TJM légèrement réduit qu'un TJM élevé sans garantie de volume
+***Négociez les conditions** : Télétravail, délai de paiement, clause de renouvellement
 
 ### Pour les entreprises
 
-1. **Définissez le besoin précisément** : Senior vs Junior, compétences obligatoires vs nice-to-have
-2. **Anticipez le recrutement** : Les meilleurs profils sont booking 2-3 mois à l'avance
-3. **Privilégiez la qualité** : Un expert senior à 850€ livre souvent 2x plus qu'un junior à 500€
-4. **Soyez transparents** : Budget, durée prévisionnelle, possibilité de prolongation
-5. **Facilitez l'intégration** : Remote partiel, process clair, équipe projet identifiée
+***Définissez le besoin précisément** : Senior vs Junior, compétences obligatoires vs nice-to-have
+***Anticipez le recrutement** : Les meilleurs profils sont booking 2-3 mois à l'avance
+***Privilégiez la qualité** : Un expert senior à 850€ livre souvent 2x plus qu'un junior à 500€
+***Soyez transparents** : Budget, durée prévisionnelle, possibilité de prolongation
+***Facilitez l'intégration** : Remote partiel, process clair, équipe projet identifiée
 
 ## Évolution des TJM 2024-2026
 
