@@ -3,6 +3,7 @@ title: "IFRS 18 : Nouvelles opportunités en Banque et Assurance"
 description: "Tout savoir sur la norme IFRS 18 qui remplacera IAS 1 en 2027 : impacts sur le compte de résultat, transformation SI et opportunités pour les experts comptables."
 date: "2025-12-05"
 author: "Expert Comptable Surly"
+coverImage: "/images/blog/ifrs-18.png"
 category: "Finance"
 tags: ["IFRS 18", "IAS 1", "Comptabilité", "Normes", "Reporting Financier", "Consulting"]
 image: "/images/blog/ifrs-18.jpg"

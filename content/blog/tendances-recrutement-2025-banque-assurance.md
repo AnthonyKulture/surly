@@ -3,6 +3,7 @@ title: "Tendances Recrutement Banque-Assurance 2025 : Profils et Compétences"
 description: "Analyse du marché du recrutement bancaire en 2025 : détente post-inflation, profils en tension, importance de l'ESG et soft skills clés."
 date: "2025-09-10"
 author: "Équipe RH Surly"
+coverImage: "/images/blog/tendances-recrutement-2025.png"
 category: "Carrière"
 tags: ["Recrutement", "Carrière", "ESG", "Soft Skills", "Tendances", "Emploi"]
 image: "/images/blog/recrutement-2025.jpg"

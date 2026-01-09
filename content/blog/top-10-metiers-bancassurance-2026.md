@@ -3,7 +3,7 @@ title: "Top 10 des Métiers les Plus Recherchés en Bancassurance 2026"
 excerpt: "Découvrez les 10 métiers stars de la banque et de l'assurance en 2026 : salaires, compétences, perspectives. Conformité, data, cyber, actuariat... Quels profils recrutent ?"
 date: "2026-01-09"
 author: "Surly"
-coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
+coverImage: "/images/blog/top-10-metiers-bancassurance.png"
 tags: ["Métiers", "Banque", "Assurance", "Recrutement", "Emploi", "2026"]
 ---
 

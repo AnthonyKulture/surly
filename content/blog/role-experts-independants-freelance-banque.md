@@ -3,6 +3,7 @@ title: "Le Rôle Crucial des Experts Indépendants en Banque et Assurance"
 description: "Pourquoi les banques et assureurs font-ils de plus en plus appel aux freelances ? Flexibilité, expertise pointue et regard externe : analyse d'une tendance de fond."
 date: "2025-06-20"
 author: "Analyse Marché Surly"
+coverImage: "/images/blog/role-experts-independants.png"
 category: "Marché Freelance"
 tags: ["Freelance", "Consulting", "Expertise", "Management de transition", "Transformation"]
 image: "/images/blog/experts-independants.jpg"

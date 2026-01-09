@@ -3,6 +3,7 @@ title: "IA en Banque et Assurance 2025 : Transformation et compétences clés"
 description: "Comment l'IA transforme la banque et l'assurance en 2025 : automatisation, gestion des risques, relation client et les nouvelles compétences recherchées."
 date: "2025-10-22"
 author: "Surly Tech Trends"
+coverImage: "/images/blog/ia-banque-assurance.png"
 category: "Innovation"
 tags: ["IA", "Intelligence Artificielle", "Machine Learning", "Automatisation", "Data", "Fintech"]
 image: "/images/blog/ia-banque.jpg"

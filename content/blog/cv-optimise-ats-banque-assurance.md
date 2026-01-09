@@ -3,6 +3,7 @@ title: "CV Optimisé ATS : Les Essentiels en Banque et Assurance"
 description: "Comment adapter votre CV pour passer les filtres ATS (Applicant Tracking Systems) des grandes banques et cabinets de conseil. Mots-clés et structure à adopter."
 date: "2025-07-15"
 author: "Coach Carrière Surly"
+coverImage: "/images/blog/cv-optimise-ats.png"
 category: "Conseils Carrière"
 tags: ["CV", "ATS", "Recrutement", "Conseils", "Emploi", "Candidature"]
 image: "/images/blog/cv-ats.jpg"

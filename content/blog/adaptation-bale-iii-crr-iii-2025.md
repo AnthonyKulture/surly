@@ -3,6 +3,7 @@ title: "Adaptation à Bâle III et CRR III en 2025 : Reporting bancaire et missi
 description: "Comprendre les enjeux de Bâle III et CRR III pour 2025 : calendrier, impacts sur le reporting bancaire et opportunités pour les consultants spécialisés."
 date: "2025-11-15"
 author: "Expert Réglementaire Surly"
+coverImage: "/images/blog/adaptation-bale-iii.png"
 category: "Réglementation"
 tags: ["Basel III", "CRR III", "CRD VI", "Conformité", "Reporting", "Freelance"]
 image: "/images/blog/bale-iii.jpg"

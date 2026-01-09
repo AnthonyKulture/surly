@@ -3,6 +3,7 @@ title: "Freelance banque assurance 2026 : quelles missions seront les plus deman
 description: "Le marché du freelance banque assurance 2026 est en pleine mutation. Découvrez les 10 missions les plus porteuses : IA, DORA, Bâle III, et plus encore."
 date: "2026-01-07"
 author: "Équipe Surly"
+coverImage: "/images/blog/freelance-banque-assurance-2026.png"
 category: "Tendances"
 tags: ["Freelance", "2026", "Réglementations", "IA", "DORA", "Bâle III"]
 image: "/images/blog/freelance-2026.jpg"

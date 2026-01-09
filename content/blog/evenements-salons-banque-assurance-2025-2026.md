@@ -3,6 +3,7 @@ title: "Événements et Salons Banque-Assurance 2025-2026 : Le Guide Complet"
 description: "L'agenda incontournable des professionnels de la banque et de l'assurance : salons, congrès et événements de networking à ne pas manquer en 2025 et 2026."
 date: "2025-08-30"
 author: "Rédaction Surly"
+coverImage: "/images/blog/evenements-salons.png"
 category: "Networking"
 tags: ["Événements", "Networking", "Conférences", "Salons", "Agenda", "Paris"]
 image: "/images/blog/events-finance.jpg"

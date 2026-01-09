@@ -3,7 +3,7 @@ title: "Grille TJM 2026 : Tarifs des Consultants Banque & Assurance"
 excerpt: "Découvrez la grille complète des TJM 2026 pour les consultants freelance en bancassurance : conformité, IT, risques, actuariat. Salaires et tendances du marché."
 date: "2026-01-09"
 author: "Surly"
-coverImage: "https://images.unsplash.com/photo-1554224311-beee4ece3c0e?q=80&w=2670&auto=format&fit=crop"
+coverImage: "/images/blog/grille-tjm-2026.png"
 tags: ["TJM", "Freelance", "Tarifs", "Consultant", "Bancassurance", "2026"]
 ---
 
