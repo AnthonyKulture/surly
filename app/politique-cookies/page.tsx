@@ -35,7 +35,7 @@ export default function PolitiqueCookiesPage() {
                 <li>ou de choisir cookie par cookie.</li>
             </ul>
             <p>
-                → en cliquant sur le bouton « Gestion des cookies » disponible en pied de page.
+                → en cliquant sur le bouton <a href="#tarteaucitron" className="text-primary font-bold hover:underline">Gestion des cookies</a> (ou le lien disponible en pied de page).
             </p>
             <p>
                 <strong>Tarteaucitron</strong> est un outil open-source français qui garantit :

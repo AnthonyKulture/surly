@@ -85,8 +85,8 @@ export const Footer = () => {
                 <Link href="/mentions-legales" className="block text-small text-background/70 hover:text-background transition-colors">Mentions légales</Link>
                 <Link href="/cgu-postulant" className="block text-small text-background/70 hover:text-background transition-colors">CGU Postulant</Link>
                 <Link href="/cgu-client" className="block text-small text-background/70 hover:text-background transition-colors">CGU Client</Link>
-                <Link href="/charte-donnees" className="block text-small text-background/70 hover:text-background transition-colors">Données personelles</Link>
-                <Link href="/politique-cookies" className="block text-small text-background/70 hover:text-background transition-colors">Cookies</Link>
+                <Link href="/charte-donnees" className="block text-small text-background/70 hover:text-background transition-colors">Données personnelles</Link>
+                <a href="#tarteaucitron" className="block text-small text-background/70 hover:text-background transition-colors">Gestion des cookies</a>
               </div>
             </div>
           </div>
