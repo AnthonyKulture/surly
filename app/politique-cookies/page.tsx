@@ -35,9 +35,7 @@ export default function PolitiqueCookiesPage() {
                 <li>ou de choisir cookie par cookie.</li>
             </ul>
             <p>
-                Vous pouvez modifier vos préférences à tout moment :<br />
-                → depuis l'icône "Cookie" visible en bas à droite du site,<br />
-                → ou en cliquant sur le bouton « Gestion des cookies » disponible en pied de page.
+                → en cliquant sur le bouton « Gestion des cookies » disponible en pied de page.
             </p>
             <p>
                 <strong>Tarteaucitron</strong> est un outil open-source français qui garantit :
@@ -120,7 +118,7 @@ export default function PolitiqueCookiesPage() {
             <h2>5. Refus ou suppression des cookies</h2>
             <p>Vous pouvez à tout moment :</p>
             <ul>
-                <li>Refuser les cookies via Tarteaucitron (icône en bas à droite),</li>
+                <li>Modifier vos choix via le lien "Gestion des cookies" en bas de page,</li>
                 <li>Supprimer les cookies depuis les paramètres de votre navigateur,</li>
                 <li>Configurer votre navigateur pour empêcher leur enregistrement.</li>
             </ul>

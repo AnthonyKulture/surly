@@ -31,7 +31,7 @@ export function ThirdPartyScripts() {
 
               "closePopup": false,
 
-              "showIcon": true,
+              "showIcon": false,
               "iconPosition": "BottomRight",
 
               "adblocker": false,
