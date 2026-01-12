@@ -5,7 +5,7 @@ export default function CharteDonneesPage() {
     return (
         <LegalPageLayout
             title="Charte de Protection des Données Personnelles"
-            lastUpdated="7 novembre 2025"
+            lastUpdated="12 janvier 2026"
         >
             <p>
                 La protection de vos données personnelles est une priorité pour ONYBUNS SAS, exploitant la plateforme SURLY.FR. La présente charte a pour objectif de vous informer de manière transparente sur la collecte, l’utilisation, la protection et la conservation de vos données.
@@ -88,6 +88,62 @@ export default function CharteDonneesPage() {
 
             <h2>8. Sous-traitants</h2>
             <p>Aucun transfert vers des pays non adéquats sans garanties contractuelles.</p>
+
+            <h2>8bis. Utilisation de l'Intelligence Artificielle (Chat Surly AI)</h2>
+            <p>
+                Notre chatbot conversationnel utilise l'API <strong>Google Gemini</strong> pour qualifier vos besoins en expertise.
+            </p>
+            <h3>Données traitées</h3>
+            <ul>
+                <li>Messages échangés dans le chat</li>
+                <li>Coordonnées que vous partagez volontairement (email, nom, téléphone)</li>
+                <li>Informations sur votre besoin (secteur, compétences recherchées, durée de mission)</li>
+            </ul>
+            <h3>Transfert hors UE</h3>
+            <p>
+                Les conversations sont traitées par <strong>Google LLC (États-Unis)</strong> via des Clauses Contractuelles Types
+                approuvées par la Commission Européenne. Vous êtes informé de ce traitement avant toute utilisation du chat.
+            </p>
+            <h3>Conservation</h3>
+            <ul>
+                <li>Vos conversations <strong>ne sont pas stockées</strong> par Surly</li>
+                <li>Google peut conserver temporairement les données (voir <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">politique Google AI</a>)</li>
+                <li>Les leads extraits (email + besoin) sont conservés pour suivi commercial uniquement</li>
+            </ul>
+            <h3>Vos droits</h3>
+            <p>
+                Vous pouvez à tout moment :
+            </p>
+            <ul>
+                <li>Refuser d'utiliser le chat et nous contacter directement</li>
+                <li>Demander l'effacement de vos données de lead</li>
+                <li>Exercer vos droits RGPD (accès, rectification, opposition)</li>
+            </ul>
+
+            <h2>8ter. Envoi d'Emails (Resend)</h2>
+            <p>
+                Nous utilisons <strong>Resend</strong> (via Amazon SES) pour envoyer :
+            </p>
+            <ul>
+                <li>Emails de confirmation suite à vos formulaires de contact</li>
+                <li>Notifications internes de leads et demandes</li>
+            </ul>
+            <h3>Données transférées</h3>
+            <p>Email, nom, message (si formulaire de contact), entreprise.</p>
+            <h3>Localisation</h3>
+            <p>
+                <strong>États-Unis</strong> (Amazon Web Services). Transfert sécurisé via Clauses Contractuelles Types.
+            </p>
+            <h3>Base légale</h3>
+            <ul>
+                <li>Consentement (formulaires de contact)</li>
+                <li>Intérêt légitime (support client, suivi de votre demande)</li>
+            </ul>
+            <h3>Conservation</h3>
+            <p>
+                Les emails sont conservés dans nos systèmes pendant la durée nécessaire au traitement de votre demande,
+                puis archivés conformément à nos durées de conservation légales.
+            </p>
 
             <h2>9. Vos droits</h2>
             <p>Conformément aux articles 15 à 22 du RGPD, vous disposez de :</p>

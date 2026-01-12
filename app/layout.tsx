@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SwissGridBackground } from "@/components/ui/SwissGridBackground";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { ThirdPartyScripts } from "@/components/ThirdPartyScripts";
 
 const inter = Inter({
@@ -112,7 +111,6 @@ export default function RootLayout({
         {/* DNS Preconnect for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://static.axept.io" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
         {/* Preload LCP image - Critical for mobile performance */}
@@ -135,7 +133,6 @@ export default function RootLayout({
           {children}
         </div>
       </body>
-      <GoogleAnalytics gaId="G-E9FMCYSQH2" />
     </html>
   );
 }

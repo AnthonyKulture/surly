@@ -27,7 +27,8 @@
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
     "resend": "^6.6.0",
-    "tailwind-merge": "^2.5.4"
+    "tailwind-merge": "^2.5.4",
+    "tarteaucitronjs": "^1.28.0"
   },
   "devDependencies": {
     "@types/node": "^20.17.6",
