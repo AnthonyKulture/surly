@@ -447,7 +447,7 @@ Aspects pratiques :
 ### Vérification des références et certifications
 
 **Références clients** :
-* Demandez **au minimum 2-3 références** de clients récents (< 2 ans)
+* Demandez **au minimum 2-3 références** de clients récents (moins de 2 ans)
 * Contactez effectivement les références (appel téléphonique privilégié)
 * Questions aux références :
   * "Quels étaient les livrables du consultant ?"
@@ -546,7 +546,7 @@ Une fois votre choix effectué :
 **🤖 Matching intelligent basé sur l'IA**
 * Algorithme propriétaire analysant 50+ critères
 * Amélioration continue via machine learning
-* Taux de satisfaction client > 90%
+* Taux de satisfaction client supérieur à 90%
 * Gain de temps massif vs tri manuel de CV
 
 **💰 Transparence et optimisation budgétaire**
@@ -741,8 +741,8 @@ Les **tarifs journaliers moyens (TJM) en 2026** varient selon l'expertise et le 
 
 **Facteurs d'ajustement** :
 * Localisation : Paris +10-15% vs province
-* Durée : Mission longue (>12 mois) : -5-10%
-* Urgence : Démarrage <2 semaines : +10-15%
+* Durée : Mission longue (plus de 12 mois) : -5-10%
+* Urgence : Démarrage sous 2 semaines : +10-15%
 * Temps partiel : 2-3j/semaine : légère majoration
 
 Consultez notre [grille TJM détaillée banque-assurance](/blog/grille-tjm-consultants-banque-assurance-2026).
@@ -872,7 +872,7 @@ La **durée moyenne** varie selon le type de projet :
 * **Remote** : 100% remote → économies déplacement à partager
 
 **Leviers côté consultant** :
-* **Urgence** : Démarrage <2 semaines → +10-15%
+* **Urgence** : Démarrage sous 2 semaines → +10-15%
 * **Expertise rare** : Réassurance, IFRS 17 post-implémentation → haut de fourchette
 * **Valeur démontrable** : ROI chiffré → justification TJM premium
 
