@@ -212,14 +212,14 @@ export function ThirdPartyScripts() {
           color: #005e53 !important;
         }
 
-        /* Icône cookie - Design moderne blanc */
+        /* Icône cookie - Transformation en badge texte discret */
         #tarteaucitronIcon {
           background: #ffffff !important;
           border: 1px solid rgba(0, 94, 83, 0.15) !important;
-          border-radius: 12px !important;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
-          width: 52px !important;
-          height: 52px !important;
+          border-radius: 20px !important; /* Forme de pilule */
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+          width: auto !important;
+          height: 36px !important; /* Hauteur réduite pour être discret */
           bottom: 20px !important;
           right: 20px !important;
           display: flex !important;
@@ -227,31 +227,48 @@ export function ThirdPartyScripts() {
           justify-content: center !important;
           cursor: pointer !important;
           transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+          padding: 0 16px !important; /* Espace pour le texte */
+          overflow: hidden !important;
         }
 
         #tarteaucitronIcon:hover {
-          transform: scale(1.08) !important;
-          box-shadow: 0 6px 24px rgba(0, 94, 83, 0.2) !important;
+          background: #f8fafc !important;
+          transform: translateY(-2px) !important;
+          box-shadow: 0 6px 16px rgba(0, 94, 83, 0.15) !important;
           border-color: rgba(0, 94, 83, 0.3) !important;
         }
 
-        /* Corriger le logo Tarteaucitron aplati */
+        /* Masquer l'icône visuellement mais garder le bouton clickable */
         #tarteaucitronIcon button {
+          display: block !important;
+          opacity: 0 !important;
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
           width: 100% !important;
           height: 100% !important;
-          display: flex !important;
-          align-items: center !important;
-          justify-content: center !important;
+          z-index: 20 !important; /* Au-dessus du texte pour capter le clic */
+          cursor: pointer !important;
           padding: 0 !important;
+          margin: 0 !important;
+          border: none !important;
         }
 
-        #tarteaucitronIcon svg,
-        #tarteaucitronIcon img {
-          max-width: 28px !important;
-          max-height: 28px !important;
-          width: auto !important;
-          height: auto !important;
-          object-fit: contain !important;
+        #tarteaucitronIcon img, 
+        #tarteaucitronIcon svg {
+          display: none !important;
+        }
+
+        /* Ajouter le texte via pseudo-élément */
+        #tarteaucitronIcon::after {
+          content: "Gestion des cookies" !important;
+          font-size: 12px !important;
+          font-weight: 500 !important;
+          color: #005e53 !important; /* Vert Surly */
+          white-space: nowrap !important;
+          font-family: var(--font-inter), system-ui, sans-serif !important;
+          position: relative !important;
+          z-index: 10 !important; /* En dessous du bouton invisible */
         }
 
         /* Liens */
