@@ -96,7 +96,7 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-md text-center md:text-left">
           <div className="flex flex-col gap-1">
             <p className="text-micro text-background/50">
-              © 2025 Onybuns®. Reproduction interdite – INPI – CNIL
+              © {new Date().getFullYear()} Onybuns®. Reproduction interdite – INPI – CNIL
             </p>
             <p className="text-micro text-background/50">
               Surly respecte le RGPD et protège la confidentialité de vos données.
