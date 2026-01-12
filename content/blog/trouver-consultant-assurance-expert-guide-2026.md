@@ -370,7 +370,7 @@ Recruter le bon consultant est critique pour la réussite de votre projet. Voici
 
 ### Critères de sélection fondamentaux
 
-**1. Expertise technique et sectorielle**
+**Expertise technique et sectorielle**
 
 Vérifiez la profondeur de l'expertise :
 * **Années d'expérience** : Minimum 5 ans pour un confirmé, 10+ pour un senior
@@ -378,7 +378,7 @@ Vérifiez la profondeur de l'expertise :
 * **Certifications** : Institut des Actuaires (IA), CFA, FRM, CISA, certifications éditeurs
 * **Connaissance réglementaire** : Maîtrise IFRS 17, Solvabilité II, DORA
 
-**2. Expériences similaires**
+**Expériences similaires**
 
 Le consultant a-t-il déjà réalisé des projets comparables ?
 * **Même type de projet** : Implémentation IFRS 17, optimisation réassurance, transformation IT
@@ -386,7 +386,7 @@ Le consultant a-t-il déjà réalisé des projets comparables ?
 * **Même typologie** : Vie, non-vie, santé, réassurance
 * **Livrables concrets** : Demandez des exemples anonymisés
 
-**3. Compétences techniques (outils)**
+**Compétences techniques (outils)**
 
 Selon la mission, vérifiez la maîtrise des outils :
 * **Actuariat** : Prophet, MoSes, ResQ, Emblem, R, Python, SAS
@@ -395,7 +395,7 @@ Selon la mission, vérifiez la maîtrise des outils :
 * **IT** : Guidewire, Duck Creek, SQL, Python, Cloud (AWS/Azure/GCP)
 * **BI** : PowerBI, Tableau, Qlik, Looker
 
-**4. Soft skills et fit culturel**
+**Soft skills et fit culturel**
 
 Au-delà des compétences techniques :
 * **Communication** : Capacité à vulgariser et à convaincre le COMEX
@@ -403,7 +403,7 @@ Au-delà des compétences techniques :
 * **Adaptabilité** : Intégration rapide dans vos équipes et votre culture
 * **Pédagogie** : Transfert de compétences vers vos collaborateurs
 
-**5. Disponibilité et engagement**
+**Disponibilité et engagement**
 
 Aspects pratiques :
 * **Date de début** : Disponible immédiatement ou préavis ?
@@ -768,22 +768,22 @@ Consultez notre [grille TJM détaillée banque-assurance](/blog/grille-tjm-consu
 
 Pour valider qu'un consultant est vraiment **expert en réassurance** :
 
-**1. Vérifications CV** :
+**Vérifications CV** :
 * Minimum 5-7 ans d'expérience en réassurance (département cession ou chez réassureur)
 * Missions concrètes : négociation traités, modélisation cat nat, optimisation programme
 * Clients de référence : compagnies d'assurance ou réassureurs connus
 
-**2. Questions techniques en entretien** :
+**Questions techniques en entretien** :
 * "Comment structurez-vous un programme de réassurance cat nat pour un portefeuille donné ?"
 * "Quelle différence entre quota share et excédent de plein ? Quand utiliser l'un vs l'autre ?"
 * "Avez-vous utilisé RMS/AIR ? Pour quels types d'analyses ?"
 * "Comment calculez-vous le coût-bénéfice d'un traité XL vs cat bond ?"
 
-**3. Références** :
+**Références** :
 * Contactez au moins 2 références (anciens clients/employeurs)
 * Question clé : "Quels résultats concrets le consultant a-t-il apportés ?" (économies, optimisation capital, etc.)
 
-**4. Certifications** :
+**Certifications** :
 * Actuaire certifié (Institut des Actuaires)
 * Certifications cat models (RMS, AIR) si pertinent
 
@@ -861,22 +861,22 @@ La **durée moyenne** varie selon le type de projet :
 
 **Stratégies de négociation TJM efficaces** :
 
-**1. Connaître le marché** :
+**Connaître le marché** :
 * Consultez notre [grille TJM 2026](/blog/grille-tjm-consultants-banque-assurance-2026)
 * Positionnez-vous dans la fourchette selon le profil
 
-**2. Leviers de négociation côté entreprise** :
+**Leviers de négociation côté entreprise** :
 * **Durée** : Engagement 12+ mois → demande -5 à 10%
 * **Volume** : Plusieurs consultants → remise globale
 * **Délai paiement** : 30j au lieu de 45-60j → léger discount possible
 * **Remote** : 100% remote → économies déplacement à partager
 
-**3. Leviers côté consultant** :
+**Leviers côté consultant** :
 * **Urgence** : Démarrage <2 semaines → +10-15%
 * **Expertise rare** : Réassurance, IFRS 17 post-implémentation → haut de fourchette
 * **Valeur démontrable** : ROI chiffré → justification TJM premium
 
-**4. Approche gagnant-gagnant** :
+**Approche gagnant-gagnant** :
 * Négociez le package global (TJM + durée + conditions) pas seulement le tarif
 * Clause de performance : bonus si objectifs dépassés
 * Reconduction : TJM initial acceptable si engagement tacite renouvellement
@@ -909,23 +909,23 @@ La **durée moyenne** varie selon le type de projet :
 
 **Les 5 secteurs à plus forte demande en 2026** :
 
-**1. Assurance vie et épargne** :
+**Assurance vie et épargne** :
 * Enjeux : IFRS 17, transformation rachat/arbitrage online, rendements bas
 * Profils : Actuaires ALM, consultants IFRS 17, experts épargne digitale
 
-**2. Assurance IARD (Incendie, Accidents, Risques Divers)** :
+**Assurance IARD (Incendie, Accidents, Risques Divers)** :
 * Enjeux : Cat nat, tarification comportementale, fraude IA
 * Profils : Actuaires tarification, experts cat models, data scientists fraude
 
-**3. Santé et prévoyance** :
+**Santé et prévoyance** :
 * Enjeux : Mutualisation, digital santé, télémédecine intégrée
 * Profils : Actuaires santé/prévoyance, consultants IT santé, experts parcours clients
 
-**4. Réassurance** :
+**Réassurance** :
 * Enjeux : Risques climatiques, ILS, optimisation capital
 * Profils : Experts réassurance, actuaires cat nat, structureurs alternatifs
 
-**5. Cyber-assurance** (forte croissance) :
+**Cyber-assurance (forte croissance)** :
 * Enjeux : Souscription cyber, modélisation risques, sinistres ransomware
 * Profils : Experts cyber + assurance, actuaires risques émergents
 
