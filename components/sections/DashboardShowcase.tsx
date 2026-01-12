@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { CandidateCard } from "@/components/ui/dashboard/CandidateCard";
@@ -178,7 +179,15 @@ export const DashboardShowcase = () => {
                                             En ligne
                                         </div>
                                         <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs overflow-hidden relative">
-                                            <img src="/avatars/testimonial_1_1765803183944.png" alt="Profile" className="object-cover w-full h-full" />
+                                            <Image
+                                                src="/avatars/testimonial_1_1765803183944.png"
+                                                alt="Profile"
+                                                width={32}
+                                                height={32}
+                                                className="object-cover w-full h-full"
+                                                loading="lazy"
+                                                quality={85}
+                                            />
                                         </div>
                                     </div>
                                 </div>

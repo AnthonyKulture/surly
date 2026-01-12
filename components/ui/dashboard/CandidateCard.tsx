@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import React, { memo } from "react";
+import Image from "next/image";
 
 export interface CandidateCardProps {
     initials?: string;
@@ -58,7 +59,15 @@ export const CandidateCard = memo(({
 
             <div className="relative mb-3 mt-4">
                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-sm ring-2 ring-gray-100">
-                    <img src={image} alt={name} className="object-cover w-full h-full" />
+                    <Image
+                        src={image}
+                        alt={name}
+                        width={64}
+                        height={64}
+                        className="object-cover w-full h-full"
+                        loading="lazy"
+                        quality={85}
+                    />
                 </div>
                 {online && <div className="absolute bottom-1 right-1 w-3 h-3 bg-emerald-500 border-2 border-white rounded-full"></div>}
             </div>

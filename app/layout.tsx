@@ -115,6 +115,14 @@ export default function RootLayout({
         <link rel="preconnect" href="https://static.axept.io" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
+        {/* Preload LCP image - Critical for mobile performance */}
+        <link
+          rel="preload"
+          as="image"
+          href="/surly-hero.jpg"
+          type="image/jpeg"
+        />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
