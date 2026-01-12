@@ -109,6 +109,8 @@ export default function RootLayout({
     <html lang="fr" className={inter.variable}>
       <head>
         {/* DNS Preconnect for performance */}
+        <link rel="dns-prefetch" href="//tarteaucitron.io" />
+        <link rel="preconnect" href="https://tarteaucitron.io" crossOrigin="" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
