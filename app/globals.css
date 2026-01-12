@@ -214,6 +214,33 @@
     @apply outline-none ring-2 ring-primary ring-offset-2;
   }
 
+  /* Mobile Performance Optimizations */
+  @media (max-width: 768px) {
+
+    .hover-lift:hover,
+    .hover-glow:hover {
+      animation: none;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .floating-card {
+      animation: none;
+    }
+
+    .animate-scroll-left,
+    .animate-scroll-right {
+      animation-duration: 20s;
+      /* Faster on mobile */
+    }
+  }
+
+  /* Content Visibility for better rendering */
+  section {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
+
   /* Reduced Motion Support */
   @media (prefers-reduced-motion: reduce) {
 
@@ -568,7 +595,8 @@ select {
 /* Template/Example blocks */
 .blog-post-content pre code {
   @apply block;
-  color: #e5e7eb; /* Tailwind gray-200 - high contrast on dark background */
+  color: #e5e7eb;
+  /* Tailwind gray-200 - high contrast on dark background */
   font-size: 0.875rem;
   line-height: 1.7;
 }

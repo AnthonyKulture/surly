@@ -120,10 +120,21 @@ export const SwissGridBackground = memo(function SwissGridBackground() {
   const [dimensions, setDimensions] = useState({ cols: 0, rows: 0 });
   const highlightCounterRef = useRef(0);
   const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Set mounted state on client side only
   useEffect(() => {
     setMounted(true);
+
+    // Detect mobile viewport
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   useEffect(() => {
@@ -193,7 +204,8 @@ export const SwissGridBackground = memo(function SwissGridBackground() {
   }, [mounted, dimensions.cols, dimensions.rows]);
 
   useEffect(() => {
-    if (!mounted || dimensions.cols === 0 || dimensions.rows === 0) return;
+    // Skip interval setup on mobile
+    if (!mounted || dimensions.cols === 0 || dimensions.rows === 0 || isMobile) return;
 
     const initialDelay = setTimeout(() => {
       generateHighlight();
@@ -205,8 +217,19 @@ export const SwissGridBackground = memo(function SwissGridBackground() {
       clearTimeout(initialDelay);
       clearInterval(interval);
     };
-  }, [generateHighlight, dimensions.cols, dimensions.rows]);
+  }, [generateHighlight, dimensions.cols, dimensions.rows, isMobile]);
 
+  // Render simple background on mobile (no animations)
+  if (isMobile) {
+    return (
+      <div
+        className="fixed inset-0 pointer-events-none overflow-hidden z-0 bg-background"
+        aria-hidden="true"
+      />
+    );
+  }
+
+  // Full desktop experience with animations
   return (
     <div
       className="fixed inset-0 pointer-events-none overflow-hidden z-0 bg-background"

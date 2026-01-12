@@ -24,7 +24,7 @@ export function ThirdPartyScripts() {
 
   return (
     <>
-      <Script id="axeptio-integration" strategy="afterInteractive">
+      <Script id="axeptio-integration" strategy="lazyOnload">
         {`
           window.axeptioSettings = {
             clientId: "690e0942b48e4a03c7b9b3f8",

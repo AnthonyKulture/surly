@@ -1,17 +1,58 @@
+import dynamic from 'next/dynamic';
+import { Metadata } from "next";
+
+// Critical imports (above the fold) - Load immediately
 import { Navigation } from "@/components/layout/Navigation";
-import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { LogoCarousel } from "@/components/ui/LogoCarousel";
-import { WhySurlyAbstract } from "@/components/sections/WhySurlyAbstract";
-import { DashboardShowcase } from "@/components/sections/DashboardShowcase";
-import { PlatformBenefits } from "@/components/sections/PlatformBenefits";
-import { FunctionsShowcase } from "@/components/sections/FunctionsShowcase";
-import { Contact } from "@/components/sections/Contact";
-import { IntermediateCTA } from "@/components/ui/IntermediateCTA";
-import { FAQHighlights } from "@/components/sections/FAQHighlights";
-import { KeywordsCarouselGreen } from "@/components/ui/KeywordsCarousel";
-import { Reveal } from "@/components/ui/Reveal";
-import { Metadata } from "next";
+
+// Non-critical sections - Lazy loaded
+const WhySurlyAbstract = dynamic(() =>
+  import("@/components/sections/WhySurlyAbstract").then(mod => ({ default: mod.WhySurlyAbstract })),
+  { loading: () => <div className="min-h-[400px]" /> }
+);
+
+const DashboardShowcase = dynamic(() =>
+  import("@/components/sections/DashboardShowcase").then(mod => ({ default: mod.DashboardShowcase })),
+  { loading: () => <div className="min-h-[600px]" /> }
+);
+
+const PlatformBenefits = dynamic(() =>
+  import("@/components/sections/PlatformBenefits").then(mod => ({ default: mod.PlatformBenefits })),
+  { loading: () => <div className="min-h-[500px]" /> }
+);
+
+const FunctionsShowcase = dynamic(() =>
+  import("@/components/sections/FunctionsShowcase").then(mod => ({ default: mod.FunctionsShowcase })),
+  { loading: () => <div className="min-h-[600px]" /> }
+);
+
+const Contact = dynamic(() =>
+  import("@/components/sections/Contact").then(mod => ({ default: mod.Contact })),
+  { loading: () => <div className="min-h-[400px]" /> }
+);
+
+const Footer = dynamic(() =>
+  import("@/components/layout/Footer").then(mod => ({ default: mod.Footer }))
+);
+
+const FAQHighlights = dynamic(() =>
+  import("@/components/sections/FAQHighlights").then(mod => ({ default: mod.FAQHighlights })),
+  { loading: () => <div className="min-h-[400px]" /> }
+);
+
+const IntermediateCTA = dynamic(() =>
+  import("@/components/ui/IntermediateCTA").then(mod => ({ default: mod.IntermediateCTA }))
+);
+
+const KeywordsCarouselGreen = dynamic(() =>
+  import("@/components/ui/KeywordsCarousel").then(mod => ({ default: mod.KeywordsCarouselGreen }))
+);
+
+const Reveal = dynamic(() =>
+  import("@/components/ui/Reveal").then(mod => ({ default: mod.Reveal })),
+  { ssr: true } // Keep SSR for SEO
+);
 
 export const metadata: Metadata = {
   title: "Emplois & Missions Banque Assurance | Surly - Freelance & CDI",
