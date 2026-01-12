@@ -39,6 +39,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/formulaire-apport-daffaires',
+        destination: '/formulaire-apport-affaires',
+        permanent: true,
+      },
+      {
         source: '/portage-salarial',
         destination: '/devenir-consultant', // Page la plus pertinente faute de page dédiée
         permanent: true,
