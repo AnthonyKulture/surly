@@ -21,6 +21,24 @@ declare const tarteaucitron: {
         useExternalCss?: boolean;
         readmoreLink?: string;
         mandatory?: boolean;
+        showDetailsOnClick?: boolean;
+        serviceDefaultState?: "wait" | "true" | "false";
+        cookieslistEmbed?: boolean;
+        alwaysNeedConsent?: boolean;
+
+        // Google Consent Mode
+        googleConsentMode?: boolean;
+
+        // Autres options
+        pianoConsentModeEssential?: boolean;
+        pianoConsentMode?: boolean;
+        bingConsentMode?: boolean;
+        softConsentMode?: boolean;
+        dataLayer?: boolean;
+        serverSide?: boolean;
+        partnersList?: boolean;
+        useExternalJs?: boolean;
+        mandatoryCta?: boolean;
     }) => void;
     user: {
         gtagUa?: string;
