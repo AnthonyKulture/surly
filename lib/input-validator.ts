@@ -8,7 +8,7 @@ export interface ValidationResult {
     error?: string;
 }
 
-const MAX_MESSAGE_LENGTH = 1000;
+const MAX_MESSAGE_LENGTH = 5000;
 const MIN_MESSAGE_LENGTH = 1;
 
 // Suspicious patterns to block

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { MAX_MESSAGE_LENGTH } from "@/lib/input-validator";
 
 interface FormData {
     secteur: "banque" | "assurance" | "";
@@ -50,7 +51,11 @@ export const BusinessReferralForm = () => {
             if (formData.fonction === "autres" && !formData.autrefonction.trim()) {
                 newErrors.autrefonction = "Veuillez préciser la fonction";
             }
-            if (!formData.description.trim()) newErrors.description = "Veuillez décrire le projet";
+            if (!formData.description.trim()) {
+                newErrors.description = "Veuillez décrire le projet";
+            } else if (formData.description.length > MAX_MESSAGE_LENGTH) {
+                newErrors.description = `La description ne peut pas dépasser ${MAX_MESSAGE_LENGTH} caractères`;
+            }
         }
 
         if (currentStep === 2) {
@@ -279,12 +284,25 @@ export const BusinessReferralForm = () => {
                                 onChange={(e) => updateField("description", e.target.value)}
                                 placeholder="Décrivez le contexte, les besoins, la durée estimée, le budget si connu..."
                                 rows={6}
+                                maxLength={MAX_MESSAGE_LENGTH}
                                 className={cn(
                                     "w-full p-3 rounded-xl border-2 transition-all resize-none",
                                     errors.description ? "border-red-500" : "border-gray-200 focus:border-primary"
                                 )}
                             />
-                            {errors.description && <p className="text-sm text-red-500 mt-1">{errors.description}</p>}
+                            <div className="flex items-center justify-between mt-1">
+                                {errors.description && <p className="text-sm text-red-500">{errors.description}</p>}
+                                <p className={cn(
+                                    "text-sm ml-auto",
+                                    formData.description.length > MAX_MESSAGE_LENGTH * 0.9
+                                        ? "text-red-500 font-semibold"
+                                        : formData.description.length > MAX_MESSAGE_LENGTH * 0.75
+                                            ? "text-orange-500"
+                                            : "text-gray-500"
+                                )}>
+                                    {formData.description.length} / {MAX_MESSAGE_LENGTH}
+                                </p>
+                            </div>
                         </div>
                     </div>
 
