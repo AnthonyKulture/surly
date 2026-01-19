@@ -102,15 +102,24 @@ export default function ArticlePageClient({ post, children, formattedDate, jsonL
                     </div>
                 </header>
 
-                {/* Featured Image - Full Width */}
+                {/* Featured Image - Optimized Layout for all aspect ratios */}
                 {post.image && (
-                    <div className="relative w-full h-[400px] tablet:h-[500px] laptop:h-[600px] mb-16 overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background z-10" />
-                        <img
-                            src={post.image}
-                            alt={post.title}
-                            className="w-full h-full object-cover"
+                    <div className="relative w-full h-[400px] tablet:h-[500px] laptop:h-[600px] mb-16 bg-muted/30 overflow-hidden">
+                        {/* Blurry Background */}
+                        <div
+                            className="absolute inset-0 bg-cover bg-center blur-2xl opacity-50 scale-110"
+                            style={{ backgroundImage: `url(${post.image})` }}
                         />
+                        <div className="absolute inset-0 bg-black/10" />
+
+                        {/* Main Image */}
+                        <div className="relative h-full w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 tablet:py-12">
+                            <img
+                                src={post.image}
+                                alt={post.title}
+                                className="w-full h-full object-contain drop-shadow-2xl rounded-xl"
+                            />
+                        </div>
                     </div>
                 )}
 

@@ -3,16 +3,26 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { X } from 'lucide-react';
 
 export default function FrenchTechPopup() {
     const [isVisible, setIsVisible] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         setIsMounted(true);
         // Check if previously dismissed
         const dismissed = localStorage.getItem('surly_french_tech_popup_dismissed');
+
+        // If user is on the article page, mark as dismissed and don't show
+        if (pathname === '/blog/surly-rejoint-je-choisis-la-french-tech') {
+            if (!dismissed) {
+                localStorage.setItem('surly_french_tech_popup_dismissed', 'true');
+            }
+            return;
+        }
 
         if (!dismissed) {
             // Appear after 10 seconds (increased from 2s)
@@ -22,7 +32,7 @@ export default function FrenchTechPopup() {
 
             return () => clearTimeout(appearTimer);
         }
-    }, []);
+    }, [pathname]);
 
     // Auto-dismiss after 40 seconds of visibility
     useEffect(() => {
