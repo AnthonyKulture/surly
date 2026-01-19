@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { SwissGridBackground } from "@/components/ui/SwissGridBackground";
 import { ThirdPartyScripts } from "@/components/ThirdPartyScripts";
+import FrenchTechPopup from "@/components/ui/FrenchTechPopup";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -134,6 +135,7 @@ export default function RootLayout({
         <div className="relative z-10">
           {children}
         </div>
+        <FrenchTechPopup />
       </body>
     </html>
   );
