@@ -13,58 +13,8 @@ export function ThirdPartyScripts() {
           // @ts-ignore
           if (typeof tarteaucitron !== 'undefined') {
             // @ts-ignore
-            tarteaucitron.init({
-              "privacyUrl": "/politique-cookies",
-
-              "hashtag": "#tarteaucitron",
-              "cookieName": "tarteaucitron",
-
-              "orientation": "bottom",
-
-              "groupServices": true,
-              "showDetailsOnClick": true,
-              "serviceDefaultState": "wait",
-
-              "showAlertSmall": false,
-              "cookieslist": false,
-              "cookieslistEmbed": false,
-
-              "closePopup": false,
-
-              "showIcon": false,
-              "iconPosition": "BottomRight",
-
-              "adblocker": false,
-
-              "DenyAllCta": true,
-              "AcceptAllCta": true,
-              "highPrivacy": true,
-              "alwaysNeedConsent": false,
-
-              "handleBrowserDNTRequest": false,
-
-              "removeCredit": true,
-              "moreInfoLink": true,
-
-              "useExternalCss": false,
-              "useExternalJs": false,
-
-              "readmoreLink": "/politique-cookies",
-
-              "mandatory": false,
-              "mandatoryCta": false,
-
-              "googleConsentMode": true,
-              "bingConsentMode": false,
-              "pianoConsentMode": false,
-              "pianoConsentModeEssential": false,
-              "softConsentMode": false,
-
-              "dataLayer": false,
-              "serverSide": false,
-
-              "partnersList": false
-            });
+            // Configuration manuelle retirée pour utiliser celle du CDN
+            // Si des paramètres spécifiques sont nécessaires, il faut les configurer sur le panel tarteaucitron.io
 
             // Configuration Google Analytics
             // @ts-ignore
