@@ -29,11 +29,12 @@ export const DashboardShowcase = () => {
                     tag="La Solution"
                     title={
                         <>
-                            Une plateforme pensée pour{' '}
-                            <span className="text-primary">votre métier</span>
+                            Une plateforme pensée pour répondre
+                            <br />
+                            <span className="text-primary">à vos enjeux métiers !</span>
                         </>
                     }
-                    subtitle="Découvrez une expérience de recrutement sur-mesure, adaptée aux spécificités de la banque et de l'assurance."
+                    subtitle="Tous les métiers et fonctions du secteur regroupés sur une plateforme unique..."
                     centered
                 />
 

@@ -46,7 +46,7 @@ export const Footer = () => {
               <div className="space-y-3">
                 <Link href="https://app.surly.fr" className="block text-small text-background/70 hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">Application</Link>
                 <Link href="https://app.surly.fr/postulant" className="block text-small text-background/70 hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">Espace Talent</Link>
-                <Link href="https://app.surly.fr/" className="block text-small text-background/70 hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">Espace Recruteur</Link>
+                <Link href="https://app.surly.fr/" className="block text-small text-background/70 hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">Espace Client</Link>
               </div>
             </div>
 
@@ -93,7 +93,7 @@ export const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-md text-center md:text-left">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div className="flex flex-col gap-1">
             <p className="text-micro text-background/50">
               © {new Date().getFullYear()} Onybuns®. Reproduction interdite – INPI – CNIL
@@ -106,6 +106,7 @@ export const Footer = () => {
             </p>
           </div>
 
+          {/* Social Media - Center */}
           <div className="flex gap-sm">
             <a
               href="https://www.linkedin.com/company/surly1"
@@ -130,9 +131,18 @@ export const Footer = () => {
               </svg>
             </a>
           </div>
+
+          {/* French Tech Logo - Right with rounded border */}
+          <div className="flex flex-col items-center gap-2 p-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
+            <img
+              src="/french-tech-logo.jpg"
+              alt="Je choisis la French Tech - Membre référencé"
+              className="w-[100px] h-auto rounded-lg"
+            />
+            <p className="text-xs text-background/70 font-medium">Membre référencé</p>
+          </div>
         </div>
       </div>
     </footer>
   );
 };
-

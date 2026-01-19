@@ -29,8 +29,7 @@ export const MarketAnalysis = () => {
 
                 <Reveal delay={100} duration={1000}>
                     <p className="text-lg text-background/80 text-center max-w-3xl mx-auto mb-16 leading-relaxed">
-                        Pénurie d'experts, exigences techniques pointues, urgence... le secteur fait face à une tempête parfaite.
-                        Et pourtant, <strong className="text-white">on continue d&apos;utiliser des outils généralistes conçus pour la masse</strong>, ignorant les spécificités critiques de notre industrie.
+                        Le recrutement en Banque & en Assurance est à réinventer. Pénurie d'experts, exigences techniques pointues, urgence... Le secteur accélère, les contraintes s’intensifient. Et pourtant, le marché continue avec des outils généralistes voire traditionnels, conçus pour la masse, sans prise en compte réelle des enjeux de la filière.
                     </p>
                 </Reveal>
 
@@ -46,21 +45,21 @@ export const MarketAnalysis = () => {
 
                             <div className="flex flex-col gap-4 flex-1">
                                 <div className="bg-white/5 border border-white/10 p-6 rounded-lg flex-1 hover:bg-white/10 transition-colors">
-                                    <h4 className="text-accent font-semibold mb-2">Le marché est caché</h4>
+                                    <h4 className="text-accent font-semibold mb-2">Le marché est opaque et difficile d&apos;accès</h4>
                                     <p className="text-background/70 text-sm leading-relaxed">
                                         Les meilleurs experts (Actuaires, PMO, Architectes SI) sont en poste. Ils ne répondent plus aux annonces LinkedIn ou Indeed. <span className="text-white/90 font-medium">Ils fonctionnent par réseau.</span>
                                     </p>
                                 </div>
 
                                 <div className="bg-white/5 border border-white/10 p-6 rounded-lg flex-1 hover:bg-white/10 transition-colors">
-                                    <h4 className="text-accent font-semibold mb-2">La complexité technique</h4>
+                                    <h4 className="text-accent font-semibold mb-2">La maîtrise technique</h4>
                                     <p className="text-background/70 text-sm leading-relaxed">
                                         Un mot-clé n&apos;est pas une compétence. Confondre &quot;connaissance Bâle III&quot; et &quot;expérience d&apos;implémentation&quot; coûte des mois de retard sur vos projets réglementaires.
                                     </p>
                                 </div>
 
                                 <div className="bg-white/5 border border-white/10 p-6 rounded-lg flex-1 hover:bg-white/10 transition-colors">
-                                    <h4 className="text-accent font-semibold mb-2">L&apos;urgence permanente</h4>
+                                    <h4 className="text-accent font-semibold mb-2">Le besoin de réactivité</h4>
                                     <p className="text-background/70 text-sm leading-relaxed">
                                         Vos projets ont des deadlines strictes (BCE, ACPR). Chaque semaine perdue à trier des CVs inadaptés augmente le risque opérationnel.
                                     </p>
@@ -107,7 +106,7 @@ export const MarketAnalysis = () => {
                                 <div className="bg-white/5 border border-white/10 p-6 rounded-lg flex-1 hover:bg-white/10 transition-colors">
                                     <h4 className="text-red-400 font-semibold mb-2">Absence de validation</h4>
                                     <p className="text-background/70 text-sm leading-relaxed">
-                                        Les recruteurs généralistes ne peuvent pas valider techniquement un Actuaire ou un CISO. Ils transmettent des CVs, pas des compétences vérifiées.
+                                        Absence de validation Les recruteurs généralistes ne peuvent pas valider techniquement un Actuaire ou un CISO. Ils transmettent des CVs, pas des profils qualifiées.
                                     </p>
                                 </div>
                             </div>
@@ -123,10 +122,10 @@ export const MarketAnalysis = () => {
 
                         <div className="relative z-10 max-w-3xl mx-auto space-y-6">
                             <h3 className="text-2xl md:text-3xl font-bold text-white">
-                                Surly n&apos;est pas un autre cabinet de recrutement.
+                                Surly n&apos;est pas une autre plateforme de sourcing.
                             </h3>
                             <p className="text-lg text-background/80 leading-relaxed">
-                                C&apos;est la réponse d&apos;experts du secteur qui en avaient assez de voir des projets échouer faute de bonnes compétences. Nous avons construit <span className="text-accent font-medium">la plateforme que nous aurions aimé avoir</span>.
+                                C&apos;est la réponse d&apos;experts du secteur qui en avaient assez de voir des projets échouer faute d&apos;avoir les bonnes compétences. Nous avons pensé et construit la plateforme que nous aurions aimé trouvé.
                             </p>
                             <div className="pt-4 flex flex-wrap justify-center gap-4 text-sm font-medium text-background/60">
                                 <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 flex items-center gap-2">
@@ -155,7 +154,7 @@ export const MarketAnalysis = () => {
                                 Vous recrutez ?
                             </h3>
                             <p className="text-background/80 mb-6 leading-relaxed">
-                                Trouvez vos experts en 48h avec notre IA ou notre service Cabinet
+                                Trouvez vos experts en 48h avec notre IA en self-service ou via notre service d&apos;accompagnement.
                             </p>
                             <Button
                                 as="a"
@@ -174,7 +173,7 @@ export const MarketAnalysis = () => {
                                 Vous cherchez une mission ?
                             </h3>
                             <p className="text-background/80 mb-6 leading-relaxed">
-                                Accédez aux meilleures opportunités du secteur bancassurance
+                                Vous cherchez un tremplin pour accélérer votre carrière professionnelle? Accédez aux meilleures opportunités du secteur de la bancassurance
                             </p>
                             <Button
                                 as="a"

@@ -24,7 +24,7 @@ const STEPS: RegistrationStep[] = [
         description: "Création de votre compte consultant",
         mockupContent: {
             title: "Créez votre profil",
-            items: ["👤 Nom et prénom", "📧 Email professionnel", "📱 Téléphone", "📍 Localisation"],
+            items: ["Nom et prénom", "Email professionnel", "Téléphone", "Localisation"],
         }
     },
     {
@@ -33,7 +33,7 @@ const STEPS: RegistrationStep[] = [
         description: "Renseignement du profil (CV ou LinkedIn)",
         mockupContent: {
             title: "Expériences",
-            items: ["📄 Upload CV (PDF, DOCX)", "💼 Import LinkedIn", "⚡ Remplissage automatique"],
+            items: ["Upload CV (PDF, DOCX)", "Import LinkedIn", "Remplissage automatique"],
         }
     },
     {
@@ -51,7 +51,7 @@ const STEPS: RegistrationStep[] = [
         description: "Validation manuelle équipe Surly (48h)",
         mockupContent: {
             title: "En cours de vérification",
-            items: ["👤 Revue par notre équipe", "📞 Vérification expériences", "⏱️ Délai: sous 48h"],
+            items: ["Revue par notre équipe", "Vérification expériences", "Délai: sous 48h"],
             status: "En cours"
         }
     },
@@ -61,7 +61,7 @@ const STEPS: RegistrationStep[] = [
         description: "Profil actif sur la plateforme",
         mockupContent: {
             title: "Profil activé",
-            items: ["🎉 Félicitations !", "✅ Profil 100% validé", "🚀 Visible par les clients"],
+            items: ["Félicitations !", "Profil 100% validé", "Visible par les clients"],
             status: "Actif"
         }
     }
@@ -106,7 +106,11 @@ export const QuickRegistration = () => {
                         <Reveal delay={200} duration={800}>
                             <div className="space-y-4 mb-8">
                                 <div className="flex items-start gap-3 p-4 bg-gradient-to-br from-white to-primary/5 border border-primary/10 rounded-lg">
-                                    <div className="text-2xl">📄</div>
+                                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                        </svg>
+                                    </div>
                                     <div>
                                         <h3 className="font-semibold text-sm text-foreground mb-1">Upload CV</h3>
                                         <p className="text-xs text-foreground-muted leading-relaxed">
@@ -116,7 +120,11 @@ export const QuickRegistration = () => {
                                 </div>
 
                                 <div className="flex items-start gap-3 p-4 bg-gradient-to-br from-white to-primary/5 border border-primary/10 rounded-lg">
-                                    <div className="text-2xl">💼</div>
+                                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
                                     <div>
                                         <h3 className="font-semibold text-sm text-foreground mb-1">Connexion LinkedIn</h3>
                                         <p className="text-xs text-foreground-muted leading-relaxed">

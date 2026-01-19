@@ -18,14 +18,14 @@ const BENEFITS = [
     },
     {
         number: "03",
-        title: "Spécialisation exclusive",
-        desc: "Surly se concentre à 100% sur la Banque et l'Assurance. Nos talent managers parlent votre langage.",
+        title: "Expertise sectorielle",
+        desc: "Surly s’adresse exclusivement à la Banque et l’Assurance. Nos talent managers comprennent vos enjeux.",
         stat: "100% sectoriel"
     },
     {
         number: "04",
         title: "Gain de productivité",
-        desc: "Concentrez-vous sur le fit humain. Nous gérons l'administratif et la qualification technique.",
+        desc: "Concentrez-vous sur la sélection et le choix. Nous gérons l'administratif et la qualification technique.",
         stat: "48h max"
     }
 ];
@@ -40,7 +40,7 @@ export const PlatformBenefits = () => {
                         <>
                             Pourquoi Surly est le choix
                             <br />
-                            <span className="text-primary">des meilleurs décideurs</span>
+                            <span className="text-primary">des décideurs avisés</span>
                         </>
                     }
                     centered
@@ -48,8 +48,7 @@ export const PlatformBenefits = () => {
 
                 <Reveal delay={100} duration={800}>
                     <p className="text-base sm:text-lg text-foreground-muted text-center max-w-2xl mx-auto mb-12 sm:mb-14 leading-relaxed">
-                        La seule marketplace <strong className="text-foreground">ultra-spécialisée Banque &amp; Assurance</strong>,
-                        conçue par des experts pour des besoins pointus.
+                        La seule marketplace ultra-spécialisée du secteur, conçue par des experts pour des experts.
                     </p>
                 </Reveal>
 

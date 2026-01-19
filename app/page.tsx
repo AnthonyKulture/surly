@@ -106,18 +106,16 @@ export default function Home() {
               </Reveal>
               <Reveal delay={100} duration={800}>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center tracking-tight leading-tight">
-                  Tous les métiers experts de la
+                  Toutes les spécialités, Tous les savoir-faire,
                   <br />
-                  <span className="text-accent">Banque &amp; Assurance</span>
+                  <span className="text-accent">Tous les enjeux</span>
                 </h2>
               </Reveal>
             </div>
 
             <Reveal delay={100} duration={1000}>
               <p className="text-base sm:text-lg text-white/90 text-center max-w-3xl mx-auto mb-12 sm:mb-16 leading-relaxed px-4">
-                De la conformité réglementaire (Bâle III, IFRS 17, LCB-FT) aux transformations digitales,
-                notre plateforme vous connecte aux <strong className="text-white font-semibold">meilleurs profils</strong> spécialisés
-                du secteur bancassurance. Chaque expert possède une expérience significative validée dans son domaine.
+                De la conformité réglementaire (Bâle III, IFRS 17, LCB-FT) aux transformations digitales, en passant par le marketing omnicanal ou la digitalisation des RH, notre plateforme vous connecte aux meilleurs talents du secteur. Chaque expert possède une expérience validée dans son domaine.
               </p>
             </Reveal>
 

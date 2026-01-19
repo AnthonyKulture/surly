@@ -4,6 +4,7 @@ export { WhySurlyAbstract } from "./WhySurlyAbstract";
 export { RSEHero } from "./RSEHero";
 export { FundamentalCommitments } from "./FundamentalCommitments";
 export { ResponsiblePractices } from "./ResponsiblePractices";
+export { FrenchTechSection } from "./FrenchTechSection";
 export { MarketAnalysis } from "./MarketAnalysis";
 export { DashboardShowcase } from "./DashboardShowcase";
 export { FunctionsShowcase } from "./FunctionsShowcase";

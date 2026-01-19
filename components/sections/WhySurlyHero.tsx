@@ -11,8 +11,8 @@ export const WhySurlyHero = () => {
             }
             subtitle={
                 <>
-                    Le secteur mérite <strong className="text-foreground font-semibold">une plateforme dédiée</strong>, conçue par des experts pour des experts.
-                    Surly connecte les meilleurs experts avec les opportunités les plus pertinentes.
+                    Pourquoi Surly ? <strong className="text-primary font-semibold">La bancassurance mérite une plateforme dédiée</strong>, pensée par des spécialistes pour des experts.
+                    Surly connecte les meilleurs profils aux missions et postes les plus pertinents.
                 </>
             }
         />

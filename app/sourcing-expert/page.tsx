@@ -38,9 +38,9 @@ export default function SourcingExpert() {
                             tag="Expertise Sectorielle"
                             title={
                                 <>
-                                    Tous les métiers experts de la
+                                    Toutes les spécialités, Tous les savoir-faire,
                                     <br />
-                                    <span className="text-primary">Banque & Assurance</span>
+                                    <span className="text-primary">Tous les enjeux</span>
                                 </>
                             }
                             centered
@@ -48,9 +48,7 @@ export default function SourcingExpert() {
 
                         <Reveal delay={100} duration={1000}>
                             <p className="text-base sm:text-lg text-foreground-muted text-center max-w-3xl mx-auto mb-12 sm:mb-16 leading-relaxed px-4">
-                                De la conformité réglementaire (Bâle III, IFRS 17, LCB-FT) aux transformations digitales,
-                                notre plateforme vous connecte aux <strong className="text-foreground">meilleurs profils</strong> spécialisés
-                                du secteur bancassurance. Chaque expert possède une expérience significative validée dans son domaine.
+                                De la conformité réglementaire (Bâle III, IFRS 17, LCB-FT) aux transformations digitales, en passant par le marketing omnicanal ou la digitalisation des RH, notre plateforme vous connecte aux meilleurs talents du secteur. Chaque expert possède une expérience validée dans son domaine.
                             </p>
                         </Reveal>
 

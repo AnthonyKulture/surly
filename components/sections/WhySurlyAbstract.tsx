@@ -14,7 +14,7 @@ const BENEFITS = [
     {
         color: "from-blue-400/20 to-blue-400/5",
         title: "Pertinence immédiate",
-        desc: "Un matching intelligent qui comprend votre environnement métier dès le premier jour."
+        desc: "Un matching intelligent, instantané, qui maîtrise votre environnement métier"
     },
     {
         color: "from-purple-400/20 to-purple-400/5",
@@ -87,7 +87,7 @@ export const WhySurlyAbstract = () => {
                                         <span className="text-accent">la donne.</span>
                                     </h3>
                                     <p className="text-sm sm:text-base text-white/90 leading-relaxed max-w-md mb-4 lg:mb-6">
-                                        Que vous soyez expert en recherche d'opportunités ou entreprise à la recherche d'experts, Surly est la plateforme 100% dédiée à la bancassurance.
+                                        Que vous soyez expert en quête d'opportunités ou client en quête de talents, Surly est la plateforme 100% dédiée au secteur de la bancassurance
                                     </p>
 
                                     <Button

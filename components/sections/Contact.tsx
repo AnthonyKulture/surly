@@ -231,12 +231,11 @@ export const Contact = () => {
                 }
                 className="mb-4 tablet:mb-6"
               />
-
-              <p className="text-base tablet:text-lg text-foreground/70 leading-relaxed mb-6 tablet:mb-8">
-                Que vous soyez entreprise en quête d'experts ou consultant cherchant des opportunités, notre équipe vous répond sous 24h.
-              </p>
-
-              {/* Contact Methods - Side by side on tablet */}
+              <Reveal delay={100} duration={800}>
+                <p className="text-base text-gray-600 text-left max-w-2xl mb-10 leading-relaxed">
+                  Que vous soyez décideur en quête d’experts ou talents qualifiés en quête d’opportunités, notre équipe vous répond sous 24h.
+                </p>
+              </Reveal>   {/* Contact Methods - Side by side on tablet */}
               <div className="grid grid-cols-1 sm:grid-cols-2 tablet:grid-cols-1 laptop:grid-cols-2 gap-3 tablet:gap-4">
                 <div className="flex items-center gap-3 tablet:gap-4 p-3 tablet:p-4 laptop:p-5 border border-primary/10 bg-background rounded-xl shadow-sm hover:border-accent hover:bg-accent/5 hover:shadow-md transition-all group">
                   <div className="w-10 h-10 tablet:w-12 tablet:h-12 flex items-center justify-center bg-primary text-background rounded-xl shadow-sm group-hover:bg-accent group-hover:text-primary transition-colors">

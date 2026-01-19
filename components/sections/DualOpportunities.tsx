@@ -26,7 +26,7 @@ const OPPORTUNITY_TYPES = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
         ),
-        title: "Être trouvé par les clients",
+        title: "Être repéré par les clients",
         description: "Votre profil est visible 24/7 dans notre moteur de recherche",
         features: [
             "Visibilité permanente auprès des grands comptes",

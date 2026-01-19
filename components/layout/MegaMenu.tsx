@@ -18,7 +18,7 @@ const clientSections: MegaMenuSection[] = [
     },
     {
         title: "Conformité & RSE",
-        abstract: "Un recrutement responsable",
+        abstract: "Charte Achats/Fournisseurs RFAR - Membre de la French Tech",
         href: "/rse",
     },
 ];
@@ -93,6 +93,7 @@ export const MegaMenu = ({ isOpen, onClose, showAnnouncementBar = true }: MegaMe
                                                 {section.abstract}
                                             </p>
                                         </div>
+
 
                                         {/* Hover arrow */}
                                         <svg
