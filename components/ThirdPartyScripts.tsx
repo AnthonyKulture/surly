@@ -7,7 +7,7 @@ export function ThirdPartyScripts() {
     <>
       {/* Tarteaucitron.js - Gestion des cookies RGPD (Dashboard) */}
       <Script
-        src="/tarteaucitron/tarteaucitron.js"
+        src="https://tarteaucitron.io/load.js?domain=surly.fr&uuid=3ca70052d3eabef6b93224a3e7eb62db8f20c10e"
         strategy="afterInteractive"
         onLoad={() => {
           // @ts-ignore
