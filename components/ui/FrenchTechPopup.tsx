@@ -43,7 +43,9 @@ export default function FrenchTechPopup() {
 
     return (
         <div
-            className={`fixed bottom-4 left-4 z-50 transition-all duration-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0 pointer-events-none'
+            className={`fixed z-40 transition-all duration-500 transform 
+            left-4 right-4 bottom-24 md:left-4 md:right-auto md:bottom-4 md:w-auto
+            ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0 pointer-events-none'
                 }`}
         >
             <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-100 dark:border-gray-700 p-5 max-w-md flex items-center gap-5 group hover:scale-[1.02] transition-transform">
