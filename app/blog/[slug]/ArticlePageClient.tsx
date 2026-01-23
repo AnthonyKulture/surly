@@ -1,9 +1,9 @@
 'use client';
 
-import { Calendar, Clock, ArrowLeft, Tag as TagIcon, Share2, User, Bookmark } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft, Tag as TagIcon, Share2, User, Bookmark, Check } from 'lucide-react';
 import Link from 'next/link';
 import { BlogPost } from '@/lib/blog';
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 
 interface ArticlePageClientProps {
     post: BlogPost;
@@ -13,6 +13,30 @@ interface ArticlePageClientProps {
 }
 
 export default function ArticlePageClient({ post, children, formattedDate, jsonLd }: ArticlePageClientProps) {
+    const [isCopied, setIsCopied] = useState(false);
+
+    const handleShare = async () => {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: post.title,
+                    text: post.description,
+                    url: window.location.href,
+                });
+            } catch (err) {
+                console.error('Error sharing:', err);
+            }
+        } else {
+            try {
+                await navigator.clipboard.writeText(window.location.href);
+                setIsCopied(true);
+                setTimeout(() => setIsCopied(false), 2000);
+            } catch (err) {
+                console.error('Error copying to clipboard:', err);
+            }
+        }
+    };
+
     return (
         <>
             {/* JSON-LD Schema */}
@@ -36,10 +60,15 @@ export default function ArticlePageClient({ post, children, formattedDate, jsonL
 
                             <div className="flex items-center gap-3">
                                 <button
-                                    className="p-2 hover:bg-background-subtle rounded-lg transition-colors"
+                                    onClick={handleShare}
+                                    className="p-2 hover:bg-background-subtle rounded-lg transition-colors relative"
                                     aria-label="Partager l'article"
                                 >
-                                    <Share2 className="w-4 h-4 text-foreground-muted" />
+                                    {isCopied ? (
+                                        <Check className="w-4 h-4 text-green-500" />
+                                    ) : (
+                                        <Share2 className="w-4 h-4 text-foreground-muted" />
+                                    )}
                                 </button>
                                 <button
                                     className="p-2 hover:bg-background-subtle rounded-lg transition-colors"
@@ -159,9 +188,21 @@ export default function ArticlePageClient({ post, children, formattedDate, jsonL
                             <p className="text-foreground-muted mb-6">
                                 Partagez-le avec votre réseau professionnel
                             </p>
-                            <button className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg font-medium">
-                                <Share2 className="w-4 h-4" />
-                                Partager l&apos;article
+                            <button
+                                onClick={handleShare}
+                                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg font-medium"
+                            >
+                                {isCopied ? (
+                                    <>
+                                        <Check className="w-4 h-4" />
+                                        Lien copié !
+                                    </>
+                                ) : (
+                                    <>
+                                        <Share2 className="w-4 h-4" />
+                                        Partager l&apos;article
+                                    </>
+                                )}
                             </button>
                         </div>
                     </div>
