@@ -497,8 +497,8 @@ Quel que soit le statut choisi, **Surly** vous accompagne dans votre activité d
 
 ### Outils et simulateurs
 
-- **Simulateur revenus portage vs société** : [shine.fr/simulateur](https://shine.fr)
-- **Comparateur sociétés de portage** : [portage-salarial.com](https://portage-salarial.com)
+- **Simulateur portage salarial (Partenaire Surly)** : [konectiv.fr/simulateur](https://konectiv.fr/simulateur/)
+- **Site officiel Konectiv** : [konectiv.fr](https://konectiv.fr/)
 - **Création SASU en ligne** : [legalstart.fr](https://legalstart.fr), [shine.fr](https://shine.fr)
 
 ### Organismes utiles
