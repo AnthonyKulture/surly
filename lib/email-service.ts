@@ -58,10 +58,10 @@ function formatLeadEmail(lead: LeadInfo): string {
         </div>
 
         <div class="section">
-            <h2>📧 Contact</h2>
-            <div class="info-row"><span class="label">Email:</span> <span class="value">${lead.email}</span></div>
-            ${lead.name ? `<div class="info-row"><span class="label">Nom:</span> <span class="value">${lead.name}</span></div>` : ''}
-            ${lead.phone ? `<div class="info-row"><span class="label">Téléphone:</span> <span class="value">${lead.phone}</span></div>` : ''}
+            <h2>📧 Informations de Contact</h2>
+            ${lead.name ? `<div class="info-row"><span class="label">Nom:</span> <span class="value">${lead.name}</span></div>` : '<div class="info-row"><span class="label">Nom:</span> <span class="value" style="color: #999; font-style: italic;">Non fourni</span></div>'}
+            ${lead.phone ? `<div class="info-row"><span class="label">Téléphone:</span> <span class="value">${lead.phone}</span></div>` : '<div class="info-row"><span class="label">Téléphone:</span> <span class="value" style="color: #999; font-style: italic;">Non fourni</span></div>'}
+            <div class="info-row"><span class="label">Email:</span> <span class="value" style="font-weight: bold; color: #0A5C4C;">${lead.email}</span></div>
         </div>
 
         <div class="section">

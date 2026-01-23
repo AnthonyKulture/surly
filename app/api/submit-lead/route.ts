@@ -36,7 +36,7 @@ export async function POST(req: Request) {
         }
 
         // Extract lead information from conversation
-        const leadInfo = extractLeadInfo(messages);
+        const leadInfo = await extractLeadInfo(messages);
 
         if (!leadInfo) {
             return NextResponse.json(

@@ -1,4 +1,6 @@
 "use client";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/Button";
@@ -229,7 +231,15 @@ export default function SurlyAIPage() {
                                             : "bg-primary text-white rounded-tr-none shadow-sm"
                                     )}
                                 >
-                                    {msg.content}
+                                    {msg.role === "assistant" ? (
+                                        <div className="prose prose-sm max-w-none text-gray-800 [&>ul]:list-disc [&>ul]:pl-5 [&>ol]:list-decimal [&>ol]:pl-5 [&>p]:mb-2 last:[&>p]:mb-0">
+                                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                                {msg.content}
+                                            </ReactMarkdown>
+                                        </div>
+                                    ) : (
+                                        msg.content
+                                    )}
                                 </div>
                             </div>
                         ))}

@@ -1,7 +1,6 @@
-/**
- * Lead extraction utility
- * Extracts structured information from AI chat conversation
- */
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+
 
 export interface LeadInfo {
     // Contact
@@ -26,181 +25,68 @@ export interface LeadInfo {
 }
 
 /**
- * Extracts email from conversation history
+ * Extracts structured lead information from conversation using Gemini
  */
-function extractEmail(messages: any[]): string | null {
-    for (const msg of messages) {
-        if (msg.role === 'user') {
-            // Email regex pattern
-            const emailMatch = msg.content.match(/[\w.-]+@[\w.-]+\.\w+/);
-            if (emailMatch) {
-                return emailMatch[0];
+export async function extractLeadInfo(messages: any[]): Promise<LeadInfo | null> {
+    try {
+        const API_KEY = process.env.GEMINI_API_KEY || "";
+        const genAI = new GoogleGenerativeAI(API_KEY);
+        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+
+        // Format conversation for context
+        const conversationText = messages
+            .map(msg => `${msg.role === 'user' ? 'Client' : 'Surly AI'}: ${msg.content}`)
+            .join('\n');
+
+        const prompt = `
+        Tu es un expert en extraction de données. Analyse cette conversation de qualification entre un recruteur IA (Surly AI) et un client.
+        
+        Objectif : Extraire les informations finales validées.
+        Règles :
+        1. **Corrections** : Si le client se corrige (ex: donne un mauvais email puis le bon), prends UNIQUEMENT la dernière valeur valide.
+        2. **Négations** : Si le client dit "Non" ou "Pas d'info" pour un champ optionnel (Nom, Tel), laisse le champ vide.
+        3. **Contexte** : Déduis le Secteur, Rôle, Séniorité, etc. du contexte global.
+        
+        Format de sortie attendu (JSON uniquement) :
+        {
+            "email": "string (obligatoire)",
+            "name": "string (optionnel)",
+            "phone": "string (optionnel)",
+            "sector": "string (Banque / Assurance / Mixte)",
+            "role": "string",
+            "seniority": "string",
+            "skills": ["skill1", "skill2"],
+            "tools": ["tool1", "tool2"],
+            "duration": "string",
+            "startDate": "string",
+            "type": "string"
+        }
+
+        Conversation :
+        ${conversationText}
+        `;
+
+        const result = await model.generateContent({
+            contents: [{ role: "user", parts: [{ text: prompt }] }],
+            generationConfig: {
+                responseMimeType: "application/json",
             }
+        });
+
+        const responseText = result.response.text();
+        const data = JSON.parse(responseText);
+
+        if (!data.email) {
+            return null;
         }
-    }
-    return null;
-}
 
-/**
- * Extracts name from conversation
- */
-function extractName(messages: any[]): string | null {
-    for (const msg of messages) {
-        if (msg.role === 'user') {
-            // Look for common name patterns after email
-            const namePatterns = [
-                /(?:je suis|je m'appelle|mon nom est)\s+([A-ZÀ-Ÿ][a-zà-ÿ]+(?:\s+[A-ZÀ-Ÿ][a-zà-ÿ]+)?)/i,
-                /^([A-ZÀ-Ÿ][a-zà-ÿ]+\s+[A-ZÀ-Ÿ][a-zà-ÿ]+)$/,
-            ];
+        return {
+            ...data,
+            fullConversation: conversationText // Keep the full log for admin reference
+        };
 
-            for (const pattern of namePatterns) {
-                const match = msg.content.match(pattern);
-                if (match && match[1]) {
-                    return match[1];
-                }
-            }
-        }
-    }
-    return null;
-}
-
-/**
- * Extracts phone number from conversation
- */
-function extractPhone(messages: any[]): string | null {
-    for (const msg of messages) {
-        if (msg.role === 'user') {
-            // French phone number patterns
-            const phoneMatch = msg.content.match(/(?:\+33|0)[1-9](?:[\s.-]?\d{2}){4}/);
-            if (phoneMatch) {
-                return phoneMatch[0];
-            }
-        }
-    }
-    return null;
-}
-
-/**
- * Extracts sector (Banque/Assurance) from conversation
- */
-function extractSector(messages: any[]): string | null {
-    const conversationText = messages.map(m => m.content).join(' ').toLowerCase();
-
-    const hasBanque = /\b(banque|bancaire|banking)\b/i.test(conversationText);
-    const hasAssurance = /\b(assurance|insurance|iard)\b/i.test(conversationText);
-
-    if (hasBanque && hasAssurance) return 'Banque & Assurance';
-    if (hasBanque) return 'Banque';
-    if (hasAssurance) return 'Assurance';
-
-    return null;
-}
-
-/**
- * Extracts role/position from conversation
- */
-function extractRole(messages: any[]): string | null {
-    const conversationText = messages.map(m => m.content).join(' ');
-
-    // Common roles
-    const roles = [
-        'Business Analyst', 'Actuaire', 'Analyste', 'Développeur', 'Chef de projet',
-        'PMO', 'Product Owner', 'Scrum Master', 'Responsable', 'Manager',
-        'Expert', 'Consultant', 'Auditeur', 'Contrôleur', 'Risk Manager',
-        'Compliance Officer', 'Data Analyst', 'Data Scientist'
-    ];
-
-    for (const role of roles) {
-        if (new RegExp(role, 'i').test(conversationText)) {
-            return role;
-        }
-    }
-
-    return null;
-}
-
-/**
- * Extracts skills and tools from conversation
- */
-function extractSkillsAndTools(messages: any[]): { skills: string[], tools: string[] } {
-    const conversationText = messages.map(m => m.content).join(' ');
-
-    const commonSkills = ['SQL', 'Python', 'Java', 'JavaScript', 'C#', 'R', 'Excel', 'VBA'];
-    const commonTools = ['JIRA', 'Confluence', 'ALM', 'Octane', 'Prophet', 'SAS', 'Tableau'];
-
-    const skills = commonSkills.filter(skill =>
-        new RegExp(`\\b${skill}\\b`, 'i').test(conversationText)
-    );
-
-    const tools = commonTools.filter(tool =>
-        new RegExp(`\\b${tool}\\b`, 'i').test(conversationText)
-    );
-
-    return { skills, tools };
-}
-
-/**
- * Extracts mission duration from conversation
- */
-function extractDuration(messages: any[]): string | null {
-    const conversationText = messages.map(m => m.content).join(' ');
-
-    const durationMatch = conversationText.match(/(\d+)\s*(mois|an|année)/i);
-    if (durationMatch) {
-        return durationMatch[0];
-    }
-
-    return null;
-}
-
-/**
- * Extracts start date from conversation
- */
-function extractStartDate(messages: any[]): string | null {
-    const conversationText = messages.map(m => m.content).join(' ');
-
-    if (/\b(asap|immédiatement|urgent)\b/i.test(conversationText)) {
-        return 'ASAP';
-    }
-
-    const monthMatch = conversationText.match(/\b(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)\s*(\d{4})?\b/i);
-    if (monthMatch) {
-        return monthMatch[0];
-    }
-
-    return null;
-}
-
-/**
- * Main function to extract lead information from conversation
- */
-export function extractLeadInfo(messages: any[]): LeadInfo | null {
-    const email = extractEmail(messages);
-
-    // Email is mandatory
-    if (!email) {
+    } catch (error) {
+        console.error("LLM Extraction Failed:", error);
         return null;
     }
-
-    const { skills, tools } = extractSkillsAndTools(messages);
-
-    // Format full conversation
-    const fullConversation = messages
-        .map(msg => `${msg.role === 'user' ? 'Client' : 'Surly AI'}: ${msg.content}`)
-        .join('\n\n');
-
-    return {
-        email,
-        name: extractName(messages) ?? undefined,
-        phone: extractPhone(messages) ?? undefined,
-        sector: extractSector(messages) ?? undefined,
-        role: extractRole(messages) ?? undefined,
-        seniority: undefined,
-        skills,
-        tools,
-        duration: extractDuration(messages) ?? undefined,
-        startDate: extractStartDate(messages) ?? undefined,
-        type: undefined,
-        fullConversation,
-    };
 }
