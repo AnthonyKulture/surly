@@ -16,7 +16,10 @@ export const PlatformBenefits = () => {
                 <SectionHeader
                     tag={t('platformBenefits.tag')}
                     title={
-                        <span dangerouslySetInnerHTML={{ __html: t.raw('platformBenefits.title') }} />
+                        <>{t.rich('platformBenefits.title', {
+                            br: () => <br />,
+                            primary: (chunks) => <span className="text-primary">{chunks}</span>
+                        })}</>
                     }
                     centered
                 />

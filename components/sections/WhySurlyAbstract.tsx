@@ -30,7 +30,10 @@ export const WhySurlyAbstract = () => {
                 <SectionHeader
                     tag={t('whySurlyAbstract.tag')}
                     title={
-                        <span dangerouslySetInnerHTML={{ __html: t.raw('whySurlyAbstract.title') }} />
+                        <>{t.rich('whySurlyAbstract.title', {
+                            br: () => <br />,
+                            accent: (chunks) => <span className="text-accent">{chunks}</span>
+                        })}</>
                     }
                     light
                     centered
@@ -61,9 +64,12 @@ export const WhySurlyAbstract = () => {
 
                                 {/* Content Layer */}
                                 <div className="relative z-10 p-5 sm:p-6 lg:p-8">
-                                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-tight mb-2 lg:mb-4"
-                                        dangerouslySetInnerHTML={{ __html: t.raw('whySurlyAbstract.leftCard.title') }}
-                                    />
+                                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-tight mb-2 lg:mb-4">
+                                        {t.rich('whySurlyAbstract.leftCard.title', {
+                                            br: () => <br />,
+                                            accent: (chunks) => <span className="text-accent">{chunks}</span>
+                                        })}
+                                    </h3>
                                     <p className="text-sm sm:text-base text-white/90 leading-relaxed max-w-md mb-4 lg:mb-6">
                                         {t('whySurlyAbstract.leftCard.description')}
                                     </p>

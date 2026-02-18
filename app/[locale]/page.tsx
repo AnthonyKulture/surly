@@ -109,9 +109,12 @@ export default async function Home({ params }: Props) {
                 </div>
               </Reveal>
               <Reveal delay={100} duration={800}>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center tracking-tight leading-tight"
-                  dangerouslySetInnerHTML={{ __html: t.raw('expertises.title') }}
-                />
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center tracking-tight leading-tight">
+                  {t.rich('expertises.title', {
+                    br: () => <br />,
+                    accent: (chunks) => <span className="text-accent">{chunks}</span>
+                  })}
+                </h2>
               </Reveal>
             </div>
 
@@ -126,9 +129,11 @@ export default async function Home({ params }: Props) {
 
             <Reveal delay={500} duration={800}>
               <div className="text-center bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-lg border border-white/20 shadow-lg">
-                <p className="text-xs sm:text-sm text-white leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: t.raw('expertises.stats') }}
-                />
+                <p className="text-xs sm:text-sm text-white leading-relaxed">
+                  {t.rich('expertises.stats', {
+                    strong: (chunks) => <strong className="text-white font-bold">{chunks}</strong>
+                  })}
+                </p>
               </div>
             </Reveal>
           </div>

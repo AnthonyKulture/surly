@@ -23,7 +23,7 @@ export const MarketAnalysis = () => {
                         <>
                             {t.rich('title', {
                                 br: () => <br />,
-                                span: (chunks) => <span className="text-accent">{chunks}</span>
+                                accent: (chunks) => <span className="text-accent">{chunks}</span>
                             })}
                         </>
                     }
