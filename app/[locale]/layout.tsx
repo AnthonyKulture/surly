@@ -38,18 +38,17 @@ export async function generateMetadata({ params }: Props) {
         description: t('defaultDescription'),
         alternates: {
             canonical: `/${locale}`,
-            languages: {
-                'fr': '/fr',
-                'en': '/en',
-                'x-default': '/fr'
-            }
+            languages: routing.locales.reduce((acc, loc) => ({
+                ...acc,
+                [loc]: `/${loc}`
+            }), {})
         },
         openGraph: {
             title: t('defaultTitle'),
             description: t('defaultDescription'),
             url: "https://surly.fr",
             siteName: "Surly",
-            locale: locale === 'fr' ? 'fr_FR' : 'en_US',
+            locale: locale === 'fr' ? 'fr_FR' : (locale === 'es' ? 'es_ES' : (locale === 'pt' ? 'pt_PT' : 'en_US')),
             type: "website",
             images: [
                 {
@@ -96,8 +95,8 @@ export default async function LocaleLayout({
             "@type": "ContactPoint",
             telephone: "+33-1-00-00-00-00",
             contactType: "customer service",
-            areaServed: locale === 'fr' ? 'FR' : 'GB',
-            availableLanguage: locale === 'fr' ? 'French' : 'English'
+            areaServed: locale === 'fr' ? 'FR' : (locale === 'es' ? 'ES' : (locale === 'pt' ? 'PT' : 'GB')),
+            availableLanguage: locale === 'fr' ? 'French' : (locale === 'es' ? 'Spanish' : (locale === 'pt' ? 'Portuguese' : 'English'))
         }
     };
 

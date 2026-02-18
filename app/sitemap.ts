@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { routing } from "@/i18n/routing";
 
 const baseUrl = process.env.NEXT_PUBLIC_URL || "https://surly.fr";
 
@@ -26,30 +27,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const sitemapEntries: MetadataRoute.Sitemap = [];
 
     routes.forEach((route) => {
-        sitemapEntries.push({
-            url: `${baseUrl}/fr${route}`,
-            lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: route === "" ? 1 : 0.8,
-            alternates: {
-                languages: {
-                    fr: `${baseUrl}/fr${route}`,
-                    en: `${baseUrl}/en${route}`,
+        routing.locales.forEach((locale) => {
+            sitemapEntries.push({
+                url: `${baseUrl}/${locale}${route}`,
+                lastModified: new Date(),
+                changeFrequency: "weekly",
+                priority: route === "" ? 1 : 0.8,
+                alternates: {
+                    languages: routing.locales.reduce((acc, loc) => ({
+                        ...acc,
+                        [loc]: `${baseUrl}/${loc}${route}`
+                    }), {})
                 },
-            },
-        });
-
-        sitemapEntries.push({
-            url: `${baseUrl}/en${route}`,
-            lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: route === "" ? 1 : 0.8,
-            alternates: {
-                languages: {
-                    fr: `${baseUrl}/fr${route}`,
-                    en: `${baseUrl}/en${route}`,
-                },
-            },
+            });
         });
     });
 
