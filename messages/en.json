@@ -120,9 +120,9 @@
         },
         "whySurlyAbstract": {
             "tag": "Why Surly?",
-            "title": "Banking & Insurance recruitment<br></br><span class=\"text-accent\">deserves better.</span>",
+            "title": "Banking & Insurance recruitment<br></br><accent>deserves better.<\/accent>",
             "leftCard": {
-                "title": "Experts who make<br></br><span class=\"text-accent\">the difference.</span>",
+                "title": "Experts who make<br></br><accent>the difference.<\/accent>",
                 "description": "Whether you're an expert seeking opportunities or a client seeking talent, Surly is the platform 100% dedicated to the banking and insurance sector",
                 "cta": "Discover Surly"
             },
@@ -191,7 +191,7 @@
         },
         "expertises": {
             "tag": "Sector Expertise",
-            "title": "All specialties, All know-how,<br></br><span class=\"text-accent\">All challenges</span>",
+            "title": "All specialties, All know-how,<br></br><accent>All challenges<\/accent>",
             "description": "From regulatory compliance (Basel III, IFRS 17, AML-CFT) to digital transformation, including omnichannel marketing or HR digitalization, our platform connects you to the best talents in the sector. Each expert has validated experience in their field.",
             "stats": "<strong class=\"text-white font-bold\">More than 3,000 experts</strong> referenced • <strong class=\"text-white font-bold\"> 100% verified</strong> • Available <strong class=\"text-white font-bold\">within 48h</strong>"
         },
@@ -1067,7 +1067,7 @@
     },
     "marketAnalysis": {
         "tag": "Reality & Diagnosis",
-        "title": "Recruitment in Banking & Insurance<br></br><span class=\"text-accent\">needs reinventing.</span>",
+        "title": "Recruitment in Banking & Insurance<br></br><accent>needs reinventing.<\/accent>",
         "intro": "Recruitment in Banking & Insurance needs reinventing. Expert shortages, specialized technical requirements, urgency... The sector is accelerating, constraints are intensifying. Yet the market continues with generalist or even traditional tools, designed for mass recruitment, without truly addressing the sector's challenges.",
         "reality": {
             "title": "The field reality",
@@ -1885,7 +1885,7 @@
         "hero": {
             "badge": "Share an opportunity",
             "title": "Business Referral Program",
-            "highlightAmount": "Earn <span class=\"text-accent\">3%</span> of the billed amount*",
+            "highlightAmount": "Earn <accent>3%<\/accent> of the billed amount*",
             "highlightSub": "by sharing an opportunity",
             "subtitle": "Do you know a client with a need for <strong>Banking or Insurance expertise</strong>? Share the opportunity and get rewarded for every successful mission.",
             "cta": "I share an opportunity"
@@ -2323,7 +2323,7 @@
             "description": "Share an opportunity in banking or insurance and earn 3% of the billed amount."
         },
         "title": "Share an opportunity",
-        "subtitle": "Earn <span class=\"text-accent\">3%</span> by referring a banking/insurance project to our community of experts."
+        "subtitle": "Earn <accent>3%<\/accent> by referring a banking/insurance project to our community of experts."
     },
     "legal": {
         "updatedAt": "Last updated on {date}",

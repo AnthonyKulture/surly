@@ -370,6 +370,7 @@ export default function SurlyAIPage() {
                             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center tracking-tight leading-tight">
                                 {t.rich('expertises.title', {
                                     span: (chunks) => <span className="text-accent">{chunks}</span>,
+                                    accent: (chunks) => <span className="text-accent">{chunks}</span>,
                                     br: () => <br />
                                 })}
                             </h2>
@@ -406,6 +407,7 @@ export default function SurlyAIPage() {
                             <>
                                 {t.rich('benefits.title', {
                                     span: (chunks) => <span className="text-primary">{chunks}</span>,
+                                    accent: (chunks) => <span className="text-accent">{chunks}</span>,
                                     br: () => <br />
                                 })}
                             </>
@@ -463,6 +465,7 @@ export default function SurlyAIPage() {
                             <>
                                 {t.rich('missions.title', {
                                     span: (chunks) => <span className="text-primary">{chunks}</span>,
+                                    accent: (chunks) => <span className="text-accent">{chunks}</span>,
                                     br: () => <br />
                                 })}
                             </>

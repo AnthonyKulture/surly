@@ -120,9 +120,9 @@
         },
         "whySurlyAbstract": {
             "tag": "Pourquoi Surly ?",
-            "title": "Le recrutement en Banque & Assurance<br></br><span class=\"text-accent\">mérite mieux.</span>",
+            "title": "Le recrutement en Banque & Assurance<br></br><accent>mérite mieux.<\/accent>",
             "leftCard": {
-                "title": "Des experts qui changent<br></br><span class=\"text-accent\">la donne.</span>",
+                "title": "Des experts qui changent<br></br><accent>la donne.<\/accent>",
                 "description": "Que vous soyez expert en quête d'opportunités ou client en quête de talents, Surly est la plateforme 100% dédiée au secteur de la bancassurance",
                 "cta": "Découvrir Surly"
             },
@@ -191,7 +191,7 @@
         },
         "expertises": {
             "tag": "Expertise Sectorielle",
-            "title": "Toutes les spécialités, Tous les savoir-faire,<br></br><span class=\"text-accent\">Tous les enjeux</span>",
+            "title": "Toutes les spécialités, Tous les savoir-faire,<br></br><accent>Tous les enjeux<\/accent>",
             "description": "De la conformité réglementaire (Bâle III, IFRS 17, LCB-FT) aux transformations digitales, en passant par le marketing omnicanal ou la digitalisation des RH, notre plateforme vous connecte aux meilleurs talents du secteur. Chaque expert possède une expérience validée dans son domaine.",
             "stats": "<strong class=\"text-white font-bold\">Plus de 3 000 experts</strong> référencés • <strong class=\"text-white font-bold\"> 100% vérifiés</strong> • Disponibles <strong class=\"text-white font-bold\">sous 48h</strong>"
         },
@@ -1067,7 +1067,7 @@
     },
     "marketAnalysis": {
         "tag": "Réalité & diagnostic",
-        "title": "Le recrutement en Banque & Assurance<br></br><span class=\"text-accent\">est à réinventer.</span>",
+        "title": "Le recrutement en Banque & Assurance<br></br><accent>est à réinventer.<\/accent>",
         "intro": "Le recrutement en Banque & en Assurance est à réinventer. Pénurie d'experts, exigences techniques pointues, urgence... Le secteur accélère, les contraintes s'intensifient. Et pourtant, le marché continue avec des outils généralistes voire traditionnels, conçus pour la masse, sans prise en compte réelle des enjeux de la filière.",
         "reality": {
             "title": "La réalité du terrain",
@@ -1885,7 +1885,7 @@
         "hero": {
             "badge": "Partagez une opportunité",
             "title": "Programme d'apport d'affaires",
-            "highlightAmount": "Gagnez <span class=\"text-accent\">3%</span> du montant facturé*",
+            "highlightAmount": "Gagnez <accent>3%<\/accent> du montant facturé*",
             "highlightSub": "en partageant une opportunité",
             "subtitle": "Vous connaissez un client avec un besoin en <strong>expertise Banque ou Assurance</strong> ? Partagez l'opportunité et soyez récompensé pour chaque mission conclue.",
             "cta": "Je partage une opportunité"
@@ -2323,7 +2323,7 @@
             "description": "Partagez une opportunité en banque ou assurance et gagnez 3% du montant facturé."
         },
         "title": "Partagez une opportunité",
-        "subtitle": "Gagnez <span class=\"text-accent\">3%</span> en recommandant un projet banque/assurance à notre communauté d'experts."
+        "subtitle": "Gagnez <accent>3%<\/accent> en recommandant un projet banque/assurance à notre communauté d'experts."
     },
     "legal": {
         "updatedAt": "Mis à jour le {date}",
