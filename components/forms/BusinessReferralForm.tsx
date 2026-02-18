@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { MAX_MESSAGE_LENGTH } from "@/lib/input-validator";
+import { useTranslations } from 'next-intl';
 
 interface FormData {
     secteur: "banque" | "assurance" | "";
@@ -28,6 +29,7 @@ const initialFormData: FormData = {
 };
 
 export const BusinessReferralForm = () => {
+    const t = useTranslations('businessReferralForm');
     const [step, setStep] = useState(0);
     const [formData, setFormData] = useState<FormData>(initialFormData);
     const [errors, setErrors] = useState<Record<string, string>>({});
@@ -36,7 +38,6 @@ export const BusinessReferralForm = () => {
 
     const updateField = (field: keyof FormData, value: string) => {
         setFormData(prev => ({ ...prev, [field]: value }));
-        // Clear error when user starts typing
         if (errors[field]) {
             setErrors(prev => ({ ...prev, [field]: "" }));
         }
@@ -46,29 +47,29 @@ export const BusinessReferralForm = () => {
         const newErrors: Record<string, string> = {};
 
         if (currentStep === 1) {
-            if (!formData.secteur) newErrors.secteur = "Veuillez sélectionner un secteur";
-            if (!formData.fonction) newErrors.fonction = "Veuillez sélectionner une fonction";
+            if (!formData.secteur) newErrors.secteur = t('validation.sectorRequired');
+            if (!formData.fonction) newErrors.fonction = t('validation.functionRequired');
             if (formData.fonction === "autres" && !formData.autrefonction.trim()) {
-                newErrors.autrefonction = "Veuillez préciser la fonction";
+                newErrors.autrefonction = t('validation.otherFunctionRequired');
             }
             if (!formData.description.trim()) {
-                newErrors.description = "Veuillez décrire le projet";
+                newErrors.description = t('validation.descriptionRequired');
             } else if (formData.description.length > MAX_MESSAGE_LENGTH) {
-                newErrors.description = `La description ne peut pas dépasser ${MAX_MESSAGE_LENGTH} caractères`;
+                newErrors.description = t('validation.descriptionMaxLength', { max: MAX_MESSAGE_LENGTH.toString() });
             }
         }
 
         if (currentStep === 2) {
-            if (!formData.estInscrit) newErrors.estInscrit = "Veuillez indiquer si vous êtes inscrit";
+            if (!formData.estInscrit) newErrors.estInscrit = t('validation.registeredRequired');
             if (formData.estInscrit === "non") {
-                if (!formData.nom.trim()) newErrors.nom = "Le nom est requis";
-                if (!formData.email.trim()) newErrors.email = "L'email est requis";
+                if (!formData.nom.trim()) newErrors.nom = t('validation.nameRequired');
+                if (!formData.email.trim()) newErrors.email = t('validation.emailRequired');
                 if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-                    newErrors.email = "Email invalide";
+                    newErrors.email = t('validation.emailInvalid');
                 }
-                if (!formData.telephone.trim()) newErrors.telephone = "Le téléphone est requis";
+                if (!formData.telephone.trim()) newErrors.telephone = t('validation.phoneRequired');
             } else if (formData.estInscrit === "oui") {
-                if (!formData.nom.trim()) newErrors.nom = "Le nom est requis";
+                if (!formData.nom.trim()) newErrors.nom = t('validation.nameRequired');
             }
         }
 
@@ -97,28 +98,19 @@ export const BusinessReferralForm = () => {
                 body: JSON.stringify(formData),
             });
 
-            if (!response.ok) throw new Error("Erreur lors de l'envoi");
+            if (!response.ok) throw new Error("Submit error");
 
             setIsSuccess(true);
-            setStep(3); // Success step
+            setStep(3);
         } catch (error) {
             console.error(error);
-            alert("Une erreur est survenue. Veuillez réessayer.");
+            alert(t('validation.submitError'));
         } finally {
             setIsSubmitting(false);
         }
     };
 
-    const fonctions = [
-        "Finance",
-        "Gestion",
-        "IT",
-        "Marketing",
-        "RH",
-        "Juridique",
-        "Audit",
-        "Autres"
-    ];
+    const fonctions = t.raw('step1.functions') as string[];
 
     return (
         <div className="max-w-2xl mx-auto">
@@ -127,12 +119,12 @@ export const BusinessReferralForm = () => {
                 <div className="mb-8">
                     <div className="flex items-center justify-between mb-2">
                         <span className="text-sm font-medium text-foreground">
-                            Étape {step + 1} sur 3
+                            {t('progress.stepOf', { current: (step + 1).toString(), total: '3' })}
                         </span>
                         <span className="text-sm text-foreground-muted">
-                            {step === 0 && "Introduction"}
-                            {step === 1 && "Détails du projet"}
-                            {step === 2 && "Vos informations"}
+                            {step === 0 && t('progress.step0')}
+                            {step === 1 && t('progress.step1')}
+                            {step === 2 && t('progress.step2')}
                         </span>
                     </div>
                     <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
@@ -148,41 +140,41 @@ export const BusinessReferralForm = () => {
             {step === 0 && (
                 <div className="bg-white rounded-2xl shadow-lg p-8 border border-primary/10">
                     <h2 className="text-2xl font-bold text-primary mb-6">
-                        Rappel du programme d'apport d'affaires de Surly
+                        {t('step0.title')}
                     </h2>
 
                     <div className="space-y-6 mb-8">
                         <div>
                             <h3 className="font-bold text-foreground mb-2">
-                                Envoyez les détails du projet :
+                                {t('step0.sendTitle')}
                             </h3>
                             <p className="text-foreground-muted leading-relaxed">
-                                Vous êtes mis en contact avec un client ou un projet dans les secteurs banque/assurance que vous ne pouvez pas réaliser ?
+                                {t('step0.sendDesc')}
                             </p>
                         </div>
 
                         <div>
                             <h3 className="font-bold text-foreground mb-2">
-                                La mission est gagnée, vous êtes rémunéré :
+                                {t('step0.wonTitle')}
                             </h3>
                             <p className="text-foreground-muted leading-relaxed">
-                                Une fois la mission signée avec un expert de notre communauté, vous recevez 3% du montant à partir de l'encaissement de la première facture.
+                                {t('step0.wonDesc')}
                             </p>
                         </div>
 
                         <div className="bg-accent/10 border-l-4 border-primary p-4 rounded">
                             <p className="font-semibold text-foreground mb-2">
-                                Surly ne doit avoir aucune connaissance préalable de ce projet.
+                                {t('step0.warningTitle')}
                             </p>
                             <p className="text-foreground-muted">
-                                Pour nous partager une opportunité, vous ne pouvez pas être le client final ni le décideur du projet.
+                                {t('step0.warningDesc')}
                             </p>
                         </div>
                     </div>
 
                     <div className="flex justify-end">
                         <Button onClick={handleNext} size="large">
-                            Suivant
+                            {t('buttons.next')}
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
@@ -195,14 +187,14 @@ export const BusinessReferralForm = () => {
             {step === 1 && (
                 <div className="bg-white rounded-2xl shadow-lg p-8 border border-primary/10">
                     <h2 className="text-2xl font-bold text-foreground mb-6">
-                        Détails du projet
+                        {t('step1.title')}
                     </h2>
 
                     <div className="space-y-6">
                         {/* Secteur */}
                         <div>
                             <label className="block text-sm font-semibold text-foreground mb-2">
-                                Secteur <span className="text-red-500">*</span>
+                                {t('step1.sectorLabel')} <span className="text-red-500">*</span>
                             </label>
                             <div className="grid grid-cols-2 gap-4">
                                 <button
@@ -215,7 +207,7 @@ export const BusinessReferralForm = () => {
                                             : "border-gray-200 hover:border-primary/30"
                                     )}
                                 >
-                                    <div className="font-semibold text-foreground">Banque</div>
+                                    <div className="font-semibold text-foreground">{t('step1.sectorBanque')}</div>
                                 </button>
                                 <button
                                     type="button"
@@ -227,7 +219,7 @@ export const BusinessReferralForm = () => {
                                             : "border-gray-200 hover:border-primary/30"
                                     )}
                                 >
-                                    <div className="font-semibold text-foreground">Assurance</div>
+                                    <div className="font-semibold text-foreground">{t('step1.sectorAssurance')}</div>
                                 </button>
                             </div>
                             {errors.secteur && <p className="text-sm text-red-500 mt-1">{errors.secteur}</p>}
@@ -236,7 +228,7 @@ export const BusinessReferralForm = () => {
                         {/* Fonction */}
                         <div>
                             <label className="block text-sm font-semibold text-foreground mb-2">
-                                Fonction concernée <span className="text-red-500">*</span>
+                                {t('step1.functionLabel')} <span className="text-red-500">*</span>
                             </label>
                             <select
                                 value={formData.fonction}
@@ -246,7 +238,7 @@ export const BusinessReferralForm = () => {
                                     errors.fonction ? "border-red-500" : "border-gray-200 focus:border-primary"
                                 )}
                             >
-                                <option value="">Sélectionnez une fonction</option>
+                                <option value="">{t('step1.functionPlaceholder')}</option>
                                 {fonctions.map(f => (
                                     <option key={f} value={f.toLowerCase()}>{f}</option>
                                 ))}
@@ -258,13 +250,13 @@ export const BusinessReferralForm = () => {
                         {formData.fonction === "autres" && (
                             <div>
                                 <label className="block text-sm font-semibold text-foreground mb-2">
-                                    Précisez la fonction <span className="text-red-500">*</span>
+                                    {t('step1.otherLabel')} <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
                                     value={formData.autrefonction}
                                     onChange={(e) => updateField("autrefonction", e.target.value)}
-                                    placeholder="Ex: Data Science, DevOps..."
+                                    placeholder={t('step1.otherPlaceholder')}
                                     className={cn(
                                         "w-full p-3 rounded-xl border-2 transition-all",
                                         errors.autrefonction ? "border-red-500" : "border-gray-200 focus:border-primary"
@@ -277,12 +269,12 @@ export const BusinessReferralForm = () => {
                         {/* Description */}
                         <div>
                             <label className="block text-sm font-semibold text-foreground mb-2">
-                                En dire plus sur le client / mission <span className="text-red-500">*</span>
+                                {t('step1.descriptionLabel')} <span className="text-red-500">*</span>
                             </label>
                             <textarea
                                 value={formData.description}
                                 onChange={(e) => updateField("description", e.target.value)}
-                                placeholder="Décrivez le contexte, les besoins, la durée estimée, le budget si connu..."
+                                placeholder={t('step1.descriptionPlaceholder')}
                                 rows={6}
                                 maxLength={MAX_MESSAGE_LENGTH}
                                 className={cn(
@@ -311,10 +303,10 @@ export const BusinessReferralForm = () => {
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                             </svg>
-                            Retour
+                            {t('buttons.back')}
                         </Button>
                         <Button onClick={handleNext} size="large">
-                            Suivant
+                            {t('buttons.next')}
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
@@ -327,14 +319,14 @@ export const BusinessReferralForm = () => {
             {step === 2 && (
                 <div className="bg-white rounded-2xl shadow-lg p-8 border border-primary/10">
                     <h2 className="text-2xl font-bold text-foreground mb-6">
-                        Vos informations
+                        {t('step2.title')}
                     </h2>
 
                     <div className="space-y-6">
                         {/* Déjà inscrit ? */}
                         <div>
                             <label className="block text-sm font-semibold text-foreground mb-3">
-                                Êtes-vous déjà inscrit sur Surly ? <span className="text-red-500">*</span>
+                                {t('step2.registeredLabel')} <span className="text-red-500">*</span>
                             </label>
                             <div className="grid grid-cols-2 gap-4">
                                 <button
@@ -347,7 +339,7 @@ export const BusinessReferralForm = () => {
                                             : "border-gray-200 hover:border-primary/30"
                                     )}
                                 >
-                                    <div className="font-semibold text-foreground">Oui</div>
+                                    <div className="font-semibold text-foreground">{t('step2.yes')}</div>
                                 </button>
                                 <button
                                     type="button"
@@ -359,7 +351,7 @@ export const BusinessReferralForm = () => {
                                             : "border-gray-200 hover:border-primary/30"
                                     )}
                                 >
-                                    <div className="font-semibold text-foreground">Non</div>
+                                    <div className="font-semibold text-foreground">{t('step2.no')}</div>
                                 </button>
                             </div>
                             {errors.estInscrit && <p className="text-sm text-red-500 mt-1">{errors.estInscrit}</p>}
@@ -369,13 +361,13 @@ export const BusinessReferralForm = () => {
                         {formData.estInscrit && (
                             <div>
                                 <label className="block text-sm font-semibold text-foreground mb-2">
-                                    Nom complet <span className="text-red-500">*</span>
+                                    {t('step2.nameLabel')} <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
                                     value={formData.nom}
                                     onChange={(e) => updateField("nom", e.target.value)}
-                                    placeholder="Jean Dupont"
+                                    placeholder={t('step2.namePlaceholder')}
                                     className={cn(
                                         "w-full p-3 rounded-xl border-2 transition-all",
                                         errors.nom ? "border-red-500" : "border-gray-200 focus:border-primary"
@@ -390,13 +382,13 @@ export const BusinessReferralForm = () => {
                             <>
                                 <div>
                                     <label className="block text-sm font-semibold text-foreground mb-2">
-                                        Email <span className="text-red-500">*</span>
+                                        {t('step2.emailLabel')} <span className="text-red-500">*</span>
                                     </label>
                                     <input
                                         type="email"
                                         value={formData.email}
                                         onChange={(e) => updateField("email", e.target.value)}
-                                        placeholder="jean.dupont@exemple.fr"
+                                        placeholder={t('step2.emailPlaceholder')}
                                         className={cn(
                                             "w-full p-3 rounded-xl border-2 transition-all",
                                             errors.email ? "border-red-500" : "border-gray-200 focus:border-primary"
@@ -407,13 +399,13 @@ export const BusinessReferralForm = () => {
 
                                 <div>
                                     <label className="block text-sm font-semibold text-foreground mb-2">
-                                        Téléphone <span className="text-red-500">*</span>
+                                        {t('step2.phoneLabel')} <span className="text-red-500">*</span>
                                     </label>
                                     <input
                                         type="tel"
                                         value={formData.telephone}
                                         onChange={(e) => updateField("telephone", e.target.value)}
-                                        placeholder="06 12 34 56 78"
+                                        placeholder={t('step2.phonePlaceholder')}
                                         className={cn(
                                             "w-full p-3 rounded-xl border-2 transition-all",
                                             errors.telephone ? "border-red-500" : "border-gray-200 focus:border-primary"
@@ -430,14 +422,14 @@ export const BusinessReferralForm = () => {
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                             </svg>
-                            Retour
+                            {t('buttons.back')}
                         </Button>
                         <Button
                             onClick={handleSubmit}
                             size="large"
                             disabled={isSubmitting}
                         >
-                            {isSubmitting ? "Envoi en cours..." : "Envoyer"}
+                            {isSubmitting ? t('buttons.sending') : t('buttons.send')}
                         </Button>
                     </div>
                 </div>
@@ -453,20 +445,20 @@ export const BusinessReferralForm = () => {
                     </div>
 
                     <h2 className="text-2xl font-bold text-foreground mb-4">
-                        Merci pour votre recommandation !
+                        {t('success.title')}
                     </h2>
 
                     <p className="text-foreground-muted mb-6 leading-relaxed">
-                        Votre opportunité a bien été transmise à notre équipe. Nous allons l'étudier et reviendrons vers vous rapidement.
+                        {t('success.message')}
                     </p>
 
                     <div className="bg-primary/5 border border-primary/10 rounded-xl p-6 mb-6">
                         <p className="text-sm text-foreground-muted mb-2">
-                            💡 <strong className="text-foreground">Rappel :</strong>
+                            💡 <strong className="text-foreground">{t('success.reminderLabel')}</strong>
                         </p>
-                        <p className="text-sm text-foreground-muted">
-                            Si la mission est conclue avec un de nos experts, vous recevrez <strong className="text-primary">3%</strong> du montant facturé dès l'encaissement de la première facture.
-                        </p>
+                        <p className="text-sm text-foreground-muted"
+                            dangerouslySetInnerHTML={{ __html: t.raw('success.reminderText') }}
+                        />
                     </div>
 
                     <Button
@@ -474,7 +466,7 @@ export const BusinessReferralForm = () => {
                         href="/apport-affaires"
                         size="large"
                     >
-                        Retour au programme
+                        {t('success.backToProgram')}
                     </Button>
                 </div>
             )}

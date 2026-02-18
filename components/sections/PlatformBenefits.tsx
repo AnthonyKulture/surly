@@ -2,80 +2,55 @@
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
+import { useTranslations } from 'next-intl';
 
-const BENEFITS = [
-    {
-        number: "01",
-        title: "Profils pré-qualifiés",
-        desc: "Tous nos experts justifient d'au moins une expérience significative en Banque ou Assurance.",
-        stat: "0 CV hors-sujet"
-    },
-    {
-        number: "02",
-        title: "Matching instantané",
-        desc: "Notre IA qualifie votre besoin 24/7 et propose les profils pertinents en quelques secondes.",
-        stat: "-80% temps"
-    },
-    {
-        number: "03",
-        title: "Expertise sectorielle",
-        desc: "Surly s’adresse exclusivement à la Banque et l’Assurance. Nos talent managers comprennent vos enjeux.",
-        stat: "100% sectoriel"
-    },
-    {
-        number: "04",
-        title: "Gain de productivité",
-        desc: "Concentrez-vous sur la sélection et le choix. Nous gérons l'administratif et la qualification technique.",
-        stat: "48h max"
-    }
-];
+const BENEFIT_KEYS = ['qualified', 'matching', 'expertise', 'productivity'] as const;
+const NUMBERS = ['01', '02', '03', '04'];
 
 export const PlatformBenefits = () => {
+    const t = useTranslations('home');
+
     return (
         <section className="relative py-16 sm:py-20 lg:py-24 bg-white">
             <div className="container">
                 <SectionHeader
-                    tag="Avantages Plateforme"
+                    tag={t('platformBenefits.tag')}
                     title={
-                        <>
-                            Pourquoi Surly est le choix
-                            <br />
-                            <span className="text-primary">des décideurs avisés</span>
-                        </>
+                        <span dangerouslySetInnerHTML={{ __html: t.raw('platformBenefits.title') }} />
                     }
                     centered
                 />
 
                 <Reveal delay={100} duration={800}>
                     <p className="text-base sm:text-lg text-foreground-muted text-center max-w-2xl mx-auto mb-12 sm:mb-14 leading-relaxed">
-                        La seule marketplace ultra-spécialisée du secteur, conçue par des experts pour des experts.
+                        {t('platformBenefits.expertSubtitle')}
                     </p>
                 </Reveal>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
-                    {BENEFITS.map((benefit, i) => (
-                        <Reveal key={i} delay={i * 80} duration={600}>
+                    {BENEFIT_KEYS.map((key, i) => (
+                        <Reveal key={key} delay={i * 80} duration={600}>
                             <div className="group relative p-6 rounded-xl bg-white border border-gray-100 h-full flex flex-col hover:border-primary/20 hover:shadow-md transition-all duration-300">
 
                                 {/* Number */}
                                 <span className="text-[10px] font-semibold text-primary/60 tracking-wider mb-4">
-                                    {benefit.number}
+                                    {NUMBERS[i]}
                                 </span>
 
                                 {/* Title */}
                                 <h3 className="font-semibold text-lg sm:text-xl text-foreground mb-2 leading-snug">
-                                    {benefit.title}
+                                    {t(`platformBenefits.items.${key}.title`)}
                                 </h3>
 
                                 {/* Description */}
                                 <p className="text-sm text-foreground-muted leading-relaxed mb-5 flex-grow">
-                                    {benefit.desc}
+                                    {t(`platformBenefits.items.${key}.desc`)}
                                 </p>
 
                                 {/* Stat */}
                                 <div className="pt-4 border-t border-gray-50">
                                     <span className="text-base sm:text-lg font-bold text-primary">
-                                        {benefit.stat}
+                                        {t(`platformBenefits.items.${key}.stat`)}
                                     </span>
                                 </div>
                             </div>

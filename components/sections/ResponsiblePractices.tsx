@@ -3,8 +3,11 @@
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import Image from "next/image";
+import { useTranslations } from 'next-intl';
 
 export const ResponsiblePractices = () => {
+    const t = useTranslations('responsiblePractices');
+
     return (
         <>
             {/* Responsible Purchasing Section */}
@@ -14,12 +17,13 @@ export const ResponsiblePractices = () => {
             >
                 <div className="container relative z-[1]">
                     <SectionHeader
-                        tag="Achats Responsables"
+                        tag={t('purchasing.tag')}
                         title={
                             <>
-                                Des achats
-                                <br />
-                                <span className="text-primary">responsables</span>
+                                {t.rich('purchasing.title', {
+                                    br: () => <br />,
+                                    span: (chunks) => <span className="text-primary">{chunks}</span>
+                                })}
                             </>
                         }
                         centered
@@ -40,22 +44,22 @@ export const ResponsiblePractices = () => {
                                         />
                                     </div>
                                     <h3 className="text-2xl font-bold text-foreground mb-3">
-                                        Signataire de la charte Relations fournisseurs & Achats responsables
+                                        {t('purchasing.charterTitle')}
                                     </h3>
                                     <p className="text-base text-foreground-muted max-w-2xl">
-                                        Nous construisons des relations équitables et durables avec nos fournisseurs et freelances partenaires.
+                                        {t('purchasing.charterDescription')}
                                     </p>
                                 </div>
 
                                 <ul className="space-y-3 text-center">
                                     <li className="text-sm text-foreground-muted">
-                                        <span className="font-semibold text-foreground">Transparence totale</span> des processus d'achat
+                                        <span dangerouslySetInnerHTML={{ __html: t.raw('purchasing.items.0') }} />
                                     </li>
                                     <li className="text-sm text-foreground-muted">
-                                        <span className="font-semibold text-foreground">Respect rigoureux</span> des délais de paiement
+                                        <span dangerouslySetInnerHTML={{ __html: t.raw('purchasing.items.1') }} />
                                     </li>
                                     <li className="text-sm text-foreground-muted">
-                                        <span className="font-semibold text-foreground">Dialogue ouvert</span> en cas de litige
+                                        <span dangerouslySetInnerHTML={{ __html: t.raw('purchasing.items.2') }} />
                                     </li>
                                 </ul>
                             </div>
@@ -71,12 +75,13 @@ export const ResponsiblePractices = () => {
             >
                 <div className="container relative z-[1]">
                     <SectionHeader
-                        tag="French Tech"
+                        tag={t('frenchTech.tag')}
                         title={
                             <>
-                                Lauréat du programme
-                                <br />
-                                <span className="text-primary">« Je choisis la French Tech »</span>
+                                {t.rich('frenchTech.title', {
+                                    br: () => <br />,
+                                    span: (chunks) => <span className="text-primary">{chunks}</span>
+                                })}
                             </>
                         }
                         centered
@@ -97,22 +102,14 @@ export const ResponsiblePractices = () => {
                                         />
                                     </div>
                                     <h3 className="text-2xl font-bold text-foreground mb-6">
-                                        Surly, partenaire stratégique de confiance
+                                        {t('frenchTech.partnerTitle')}
                                     </h3>
                                 </div>
 
                                 <div className="space-y-6 text-base text-foreground-muted">
-                                    <p>
-                                        Lauréat du programme gouvernemental « Je choisis la French Tech », Surly s'affirme comme un <span className="font-semibold text-foreground">partenaire stratégique de confiance</span> pour les grands acteurs bancaires et assurantiels.
-                                    </p>
-
-                                    <p>
-                                        Ce référencement institutionnel valide non seulement la <span className="font-semibold text-foreground">pérennité de notre modèle</span>, mais s'inscrit directement dans la politique d'<span className="font-semibold text-foreground">Achats Responsables</span> de nos clients. En collaborant avec Surly, vous soutenez l'innovation souveraine française tout en concrétisant vos engagements formels d'augmentation de la part des start-up dans vos volumes d'achats.
-                                    </p>
-
-                                    <p>
-                                        Nous garantissons une <span className="font-semibold text-foreground">expertise 100% locale</span> et une <span className="font-semibold text-foreground">conformité stricte</span>, alignée avec les exigences de sécurité du secteur financier.
-                                    </p>
+                                    <p dangerouslySetInnerHTML={{ __html: t.raw('frenchTech.p1') }} />
+                                    <p dangerouslySetInnerHTML={{ __html: t.raw('frenchTech.p2') }} />
+                                    <p dangerouslySetInnerHTML={{ __html: t.raw('frenchTech.p3') }} />
                                 </div>
                             </div>
                         </Reveal>
@@ -127,12 +124,13 @@ export const ResponsiblePractices = () => {
             >
                 <div className="container relative z-[1]">
                     <SectionHeader
-                        tag="Numérique Responsable"
+                        tag={t('digital.tag')}
                         title={
                             <>
-                                Un numérique
-                                <br />
-                                <span className="text-primary">responsable</span>
+                                {t.rich('digital.title', {
+                                    br: () => <br />,
+                                    span: (chunks) => <span className="text-primary">{chunks}</span>
+                                })}
                             </>
                         }
                         centered
@@ -153,16 +151,16 @@ export const ResponsiblePractices = () => {
                                 </div>
 
                                 <h3 className="text-xl font-bold text-foreground mb-3 text-center">
-                                    Engagement Charte Numérique Responsable
+                                    {t('digital.charterTitle')}
                                 </h3>
                                 <p className="text-sm text-foreground-muted mb-6 flex-grow text-center">
-                                    Surly s'engage à minimiser l'empreinte écologique du numérique en optimisant ses infrastructures technologiques. Nous adoptons des pratiques de sobriété numérique pour réduire notre consommation énergétique.
+                                    {t('digital.charterDescription')}
                                 </p>
 
                                 <ul className="space-y-2 text-sm text-foreground-muted text-center">
-                                    <li>• Hébergement écoresponsable</li>
-                                    <li>• Sensibilisation aux bonnes pratiques numériques</li>
-                                    <li>• Promotion du télétravail et réunions virtuelles</li>
+                                    <li>• {t('digital.charterItems.0')}</li>
+                                    <li>• {t('digital.charterItems.1')}</li>
+                                    <li>• {t('digital.charterItems.2')}</li>
                                 </ul>
                             </div>
                         </Reveal>
@@ -181,19 +179,19 @@ export const ResponsiblePractices = () => {
                                 </div>
 
                                 <h3 className="text-xl font-bold text-foreground mb-3 text-center">
-                                    Sécurité des données & infrastructure Cloud
+                                    {t('digital.securityTitle')}
                                 </h3>
                                 <p className="text-sm font-medium text-primary mb-2 text-center">
-                                    Neon database : Sécurité & protection des données
+                                    {t('digital.securitySubtitle')}
                                 </p>
                                 <p className="text-sm text-foreground-muted mb-6 flex-grow text-center">
-                                    Chez Surly, la sécurité n'est pas une option, c'est un engagement. Nous protégeons les données personnelles, professionnelles et contractuelles de l'ensemble de nos utilisateurs avec les plus hauts standards de sécurité numérique.
+                                    {t('digital.securityDescription')}
                                 </p>
 
                                 <ul className="space-y-2 text-sm text-foreground-muted text-center">
-                                    <li>• Confidentialité des informations</li>
-                                    <li>• Intégrité des échanges</li>
-                                    <li>• Résilience face aux cybermenaces</li>
+                                    <li>• {t('digital.securityItems.0')}</li>
+                                    <li>• {t('digital.securityItems.1')}</li>
+                                    <li>• {t('digital.securityItems.2')}</li>
                                 </ul>
                             </div>
                         </Reveal>
@@ -213,27 +211,27 @@ export const ResponsiblePractices = () => {
 
 
                                 <h3 className="text-xl font-bold text-foreground mb-3">
-                                    Éthique et conformité
+                                    {t('ethics.title')}
                                 </h3>
                                 <h4 className="text-base font-semibold text-primary mb-3">
-                                    L'intégrité est notre priorité absolue
+                                    {t('ethics.subtitle')}
                                 </h4>
                                 <p className="text-sm text-foreground-muted mb-6">
-                                    L'intégrité guide chacune de nos actions. Surly respecte les plus hauts standards de sécurité grâce à son infrastructure Neon, certifiée SOC 2 Type II et ISO 27001.
+                                    {t('ethics.description')}
                                 </p>
 
                                 <ul className="space-y-3 text-sm text-foreground-muted">
                                     <li>
-                                        <span className="font-semibold text-foreground">Audit des partenaires</span><br />
-                                        Vérification systématique et continue
+                                        <span className="font-semibold text-foreground">{t('ethics.items.0.title')}</span><br />
+                                        {t('ethics.items.0.desc')}
                                     </li>
                                     <li>
-                                        <span className="font-semibold text-foreground">Protection maximale</span><br />
-                                        Chiffrement AES-256 et surveillance 24/7
+                                        <span className="font-semibold text-foreground">{t('ethics.items.1.title')}</span><br />
+                                        {t('ethics.items.1.desc')}
                                     </li>
                                     <li>
-                                        <span className="font-semibold text-foreground">Conformité totale</span><br />
-                                        GDPR, CCPA et standards internationaux
+                                        <span className="font-semibold text-foreground">{t('ethics.items.2.title')}</span><br />
+                                        {t('ethics.items.2.desc')}
                                     </li>
                                 </ul>
                             </div>
@@ -246,5 +244,3 @@ export const ResponsiblePractices = () => {
         </>
     );
 };
-
-

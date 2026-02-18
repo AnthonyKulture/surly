@@ -1,52 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-
-// Extended keywords with descriptions for Banking & Insurance sector
-const ROW_1_KEYWORDS = [
-    { skill: "IFRS 17", desc: "Actuaires & Comptables" },
-    { skill: "Bâle III", desc: "Risk Managers" },
-    { skill: "Solvabilité II", desc: "Experts Prudentiels" },
-    { skill: "LCB-FT", desc: "Conformité & AML" },
-    { skill: "KYC", desc: "Onboarding Client" },
-    { skill: "SEPA", desc: "Paiements Européens" },
-    { skill: "ISO 20022", desc: "Messagerie Financière" },
-    { skill: "Monétique", desc: "Cartes & Terminaux" },
-    { skill: "ALM", desc: "Gestion Actif-Passif" },
-    { skill: "Stress Testing", desc: "Scénarios de Crise" },
-    { skill: "ICAAP", desc: "Adéquation Capital" },
-    { skill: "Pillar 3", desc: "Reporting Réglementaire" },
-];
-
-const ROW_2_KEYWORDS = [
-    { skill: "Actuaire", desc: "Pricing & Tarification" },
-    { skill: "Souscription", desc: "IARD & Vie" },
-    { skill: "Sinistres", desc: "Gestion & Indemnisation" },
-    { skill: "Réassurance", desc: "Traités & Facultatives" },
-    { skill: "Commercial B2B", desc: "Développement Grands Comptes" },
-    { skill: "CRM", desc: "Relation Client" },
-    { skill: "Marketing Digital", desc: "Growth & Acquisition" },
-    { skill: "Data Marketing", desc: "Segmentation & Ciblage" },
-    { skill: "Courtage", desc: "Distribution Assurance" },
-    { skill: "Prévoyance", desc: "Santé & Protection" },
-    { skill: "Banque Privée", desc: "Gestion de Patrimoine" },
-    { skill: "Crédit", desc: "Analyse & Scoring" },
-];
-
-const ROW_3_KEYWORDS = [
-    { skill: "Data Engineering", desc: "Big Data & Analytics" },
-    { skill: "DevOps", desc: "Cloud & Infrastructure" },
-    { skill: "Architecture SI", desc: "Modernisation & API" },
-    { skill: "Product Owner", desc: "Agile & Produit" },
-    { skill: "Business Analyst", desc: "Core Banking & SI" },
-    { skill: "Risk Manager", desc: "Crédit, Marché, Opérationnel" },
-    { skill: "Cybersécurité", desc: "ISO 27001 & DORA" },
-    { skill: "Machine Learning", desc: "IA & Prédictif" },
-    { skill: "Python", desc: "Data Science" },
-    { skill: "PMO", desc: "Pilotage Projet" },
-    { skill: "Scrum Master", desc: "Agilité & Transformation" },
-    { skill: "AMOA", desc: "Maîtrise d'Ouvrage" },
-];
+import { useTranslations } from 'next-intl';
 
 interface KeywordCardProps {
     skill: string;
@@ -139,16 +94,21 @@ interface KeywordsCarouselProps {
 }
 
 export const KeywordsCarousel = ({ variant = "light" }: KeywordsCarouselProps) => {
+    const t = useTranslations('home');
+    const row1 = t.raw('keywordsCarousel.row1') as { skill: string; desc: string }[];
+    const row2 = t.raw('keywordsCarousel.row2') as { skill: string; desc: string }[];
+    const row3 = t.raw('keywordsCarousel.row3') as { skill: string; desc: string }[];
+
     return (
         <div className="w-full space-y-3 sm:space-y-4 py-4 mb-8 sm:mb-12">
             {/* Row 1 - moves right */}
-            <InfiniteRow keywords={ROW_1_KEYWORDS} direction="right" variant={variant} />
+            <InfiniteRow keywords={row1} direction="right" variant={variant} />
 
             {/* Row 2 - moves left */}
-            <InfiniteRow keywords={ROW_2_KEYWORDS} direction="left" variant={variant} />
+            <InfiniteRow keywords={row2} direction="left" variant={variant} />
 
             {/* Row 3 - moves right */}
-            <InfiniteRow keywords={ROW_3_KEYWORDS} direction="right" variant={variant} />
+            <InfiniteRow keywords={row3} direction="right" variant={variant} />
         </div>
     );
 };

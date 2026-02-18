@@ -11,11 +11,51 @@ import { FilterSelect } from "@/components/ui/dashboard/FilterSelect";
 import { NavItem } from "@/components/ui/dashboard/NavItem";
 import { Button, ArrowIcon } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
+import { useTranslations } from 'next-intl';
 
 type Mode = 'banque' | 'assurance';
 
 export const DashboardShowcase = () => {
     const [mode, setMode] = useState<Mode>('banque');
+    const t = useTranslations('dashboard_showcase');
+
+    // Fetch mock profiles from translations
+    const bankProfiles = t.raw('mock_profiles.bank') as any[];
+    const insuranceProfiles = t.raw('mock_profiles.insurance') as any[];
+
+    // Profile images mapping (since they are not in JSON)
+    const profileImages = {
+        bank: [
+            "/avatars/profile_expert_1_1765802590256.png",
+            "/avatars/profile_expert_2_1765802613092.png",
+            "/avatars/profile_expert_claire_new.png"
+        ],
+        insurance: [
+            "/avatars/profile_expert_6_1765802756821.png",
+            "/avatars/profile_expert_3_1765802652999.png",
+            "/avatars/profile_expert_4_1765802699392.png"
+        ]
+    };
+
+    // Profile initials mapping
+    const profileInitials = {
+        bank: ["ML", "JD", "CB"],
+        insurance: ["AD", "SM", "PL"]
+    };
+
+    // Profile names (only first name needed if defined in code, but taken from JSON title usually, 
+    // actually JSON has 'title' like "Corporate Credit Manager", but name matches the mock data "Marie", "Jean" etc.
+    // The previous code had hardcoded names "Marie", "Jean", etc.
+    // The JSON doesn't seem to have "name" field, only "title".
+    // I need to check if JSON has "name" or if I should keep them hardcoded or add them to JSON.
+    // Checking en.json, line 454: "title": "Corporate Credit Manager". No name.
+    // I will add names to the local mapping or assume they are generic.
+    // Actually, distinct names are better for realism.
+
+    const profileNames = {
+        bank: ["Marie", "Jean", "Claire"],
+        insurance: ["Alexandre", "Sarah", "Pierre"]
+    };
 
     return (
         <section
@@ -26,35 +66,35 @@ export const DashboardShowcase = () => {
 
                 {/* Title */}
                 <SectionHeader
-                    tag="La Solution"
+                    tag={t('tag')}
                     title={
                         <>
-                            Une plateforme pensée pour répondre
+                            {t('title')}
                             <br />
-                            <span className="text-primary">à vos enjeux métiers !</span>
+                            <span className="text-primary">{t('titleHighlight')}</span>
                         </>
                     }
-                    subtitle="Tous les métiers et fonctions du secteur regroupés sur une plateforme unique..."
+                    subtitle={t('subtitle')}
                     centered
                 />
 
                 {/* Main Functions - Cross-sector */}
                 <Reveal delay={125} duration={800}>
                     <div className="flex flex-wrap justify-center gap-2 mb-8 max-w-4xl mx-auto">
-                        <FunctionBadge label="Finance" color="blue" />
-                        <FunctionBadge label="Gestion" color="purple" />
-                        <FunctionBadge label="IT" color="cyan" />
-                        <FunctionBadge label="RH" color="pink" />
-                        <FunctionBadge label="Marketing" color="orange" />
-                        <FunctionBadge label="Juridique" color="emerald" />
-                        <FunctionBadge label="Audit" color="indigo" />
+                        <FunctionBadge label={t('functions.finance')} color="blue" />
+                        <FunctionBadge label={t('functions.gestion')} color="purple" />
+                        <FunctionBadge label={t('functions.it')} color="cyan" />
+                        <FunctionBadge label={t('functions.rh')} color="pink" />
+                        <FunctionBadge label={t('functions.marketing')} color="orange" />
+                        <FunctionBadge label={t('functions.juridique')} color="emerald" />
+                        <FunctionBadge label={t('functions.audit')} color="indigo" />
                     </div>
                 </Reveal>
                 {/* Mode Switcher */}
                 <Reveal delay={200} duration={800}>
                     <div className="flex flex-col items-center mb-12">
                         <p className="text-xs text-gray-500 uppercase tracking-wider font-medium mb-4">
-                            Explorez par secteur
+                            {t('mode.explore')}
                         </p>
                         <div className="relative">
                             <div className="relative inline-flex items-center gap-1 p-1 rounded-xl overflow-hidden bg-transparent">
@@ -72,7 +112,7 @@ export const DashboardShowcase = () => {
                                         )}
                                     >
                                         <svg className={cn("w-5 h-5", mode === 'banque' && "text-blue-600")} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-                                        <span>Banque</span>
+                                        <span>{t('mode.bank')}</span>
                                         {mode === 'banque' && <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />}
                                     </button>
 
@@ -87,7 +127,7 @@ export const DashboardShowcase = () => {
                                         )}
                                     >
                                         <svg className={cn("w-5 h-5", mode === 'assurance' && "text-emerald-600")} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                                        <span>Assurance</span>
+                                        <span>{t('mode.insurance')}</span>
                                         {mode === 'assurance' && <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />}
                                     </button>
                                 </div>
@@ -119,27 +159,27 @@ export const DashboardShowcase = () => {
 
                                 {/* Navigation */}
                                 <div className="space-y-1">
-                                    <NavItem icon="home" label="Mon profil" />
-                                    <NavItem icon="search" label="Trouver un expert" active />
-                                    <NavItem icon="heart" label="Profils favoris" badge="12" />
-                                    <NavItem icon="plus" label="Poster une annonce" />
-                                    <NavItem icon="list" label="Mes annonces" badge="3" />
-                                    <NavItem icon="inbox" label="Candidatures reçues" badge="24" notification />
-                                    <NavItem icon="briefcase" label="Mes offres de mission" badge="5" />
-                                    <NavItem icon="sparkles" label="Scoring IA" isNew />
-                                    <NavItem icon="check-circle" label="Qualification Candidat" />
+                                    <NavItem icon="home" label={t('sidebar.profile')} />
+                                    <NavItem icon="search" label={t('sidebar.findExpert')} active />
+                                    <NavItem icon="heart" label={t('sidebar.favorites')} badge="12" />
+                                    <NavItem icon="plus" label={t('sidebar.postAd')} />
+                                    <NavItem icon="list" label={t('sidebar.myAds')} badge="3" />
+                                    <NavItem icon="inbox" label={t('sidebar.applications')} badge="24" notification />
+                                    <NavItem icon="briefcase" label={t('sidebar.missions')} badge="5" />
+                                    <NavItem icon="sparkles" label={t('sidebar.scoring')} isNew />
+                                    <NavItem icon="check-circle" label={t('sidebar.qualification')} />
                                 </div>
 
                                 {/* Sidebar Stats */}
                                 <div className="mt-auto pt-4 border-t border-gray-100 space-y-3">
-                                    <div className="text-xs text-gray-500 uppercase tracking-wide font-semibold px-2">Activité</div>
+                                    <div className="text-xs text-gray-500 uppercase tracking-wide font-semibold px-2">{t('sidebar.activity')}</div>
                                     <div className="space-y-2">
                                         <div className="flex items-center justify-between px-2 text-xs">
-                                            <span className="text-gray-500">Vues profil</span>
+                                            <span className="text-gray-500">{t('sidebar.profileViews')}</span>
                                             <span className="font-bold text-emerald-600">+127</span>
                                         </div>
                                         <div className="flex items-center justify-between px-2 text-xs">
-                                            <span className="text-gray-500">Match IA</span>
+                                            <span className="text-gray-500">{t('sidebar.aiMatch')}</span>
                                             <span className="font-bold text-primary">98%</span>
                                         </div>
                                     </div>
@@ -159,7 +199,7 @@ export const DashboardShowcase = () => {
                                             {/* Mobile Menu Icon */}
                                             <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
                                         </div>
-                                        <span className="font-semibold text-sm text-gray-700 hidden sm:block">Recherche d'experts</span>
+                                        <span className="font-semibold text-sm text-gray-700 hidden sm:block">{t('header.searchExperts')}</span>
                                         {/* Sector Badge */}
                                         <span className={cn(
                                             "px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide transition-all duration-300 hidden sm:inline-flex items-center gap-1.5",
@@ -171,13 +211,13 @@ export const DashboardShowcase = () => {
                                                 "w-2 h-2 rounded-full",
                                                 mode === 'banque' ? "bg-blue-500" : "bg-emerald-500"
                                             )} />
-                                            {mode === 'banque' ? 'Banque' : 'Assurance'}
+                                            {mode === 'banque' ? t('mode.bank') : t('mode.insurance')}
                                         </span>
                                     </div>
                                     <div className="flex items-center gap-4">
                                         <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-600">
                                             <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                                            En ligne
+                                            {t('header.online')}
                                         </div>
                                         <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs overflow-hidden relative">
                                             <Image
@@ -206,8 +246,8 @@ export const DashboardShowcase = () => {
                                             <input
                                                 type="text"
                                                 placeholder={mode === 'banque'
-                                                    ? "Essayez 'Chargé d'étude', 'Gestionnaire d'actifs', 'Conseiller banque privée'..."
-                                                    : "Essayez 'Actuaire', 'Souscripteur', 'Gestionnaire sinistres'..."
+                                                    ? t('search.placeholder.bank')
+                                                    : t('search.placeholder.insurance')
                                                 }
                                                 className="flex-1 bg-transparent border-none outline-none text-sm text-gray-700 placeholder:text-gray-400 h-10"
                                                 disabled
@@ -217,28 +257,28 @@ export const DashboardShowcase = () => {
                                         {/* Filters - Different for Banque and Assurance */}
                                         <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-100 mb-4">
                                             <div className="flex items-center justify-between mb-3">
-                                                <span className="text-xs font-semibold text-gray-700 uppercase tracking-wide">Filtres spécialisés</span>
+                                                <span className="text-xs font-semibold text-gray-700 uppercase tracking-wide">{t('filters.title')}</span>
                                                 <span className="text-xs text-primary font-bold">
-                                                    {mode === 'banque' ? '847 résultats' : '623 résultats'}
+                                                    {t('filters.results', { count: mode === 'banque' ? 847 : 623 })}
                                                 </span>
                                             </div>
                                             {mode === 'banque' ? (
                                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                                    <FilterSelect label="Métiers Banque" count={234} active />
-                                                    <FilterSelect label="Branches Banque" count={189} />
-                                                    <FilterSelect label="Fonctions" count={456} />
-                                                    <FilterSelect label="Outils Gestion" count={167} />
-                                                    <FilterSelect label="Outils RH" count={98} />
-                                                    <FilterSelect label="Certifications" count={145} />
+                                                    <FilterSelect label={t('filters.labels.bankJobs')} count={234} active />
+                                                    <FilterSelect label={t('filters.labels.bankBranches')} count={189} />
+                                                    <FilterSelect label={t('filters.labels.functions')} count={456} />
+                                                    <FilterSelect label={t('filters.labels.managementTools')} count={167} />
+                                                    <FilterSelect label={t('filters.labels.hrTools')} count={98} />
+                                                    <FilterSelect label={t('filters.labels.certifications')} count={145} />
                                                 </div>
                                             ) : (
                                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                                    <FilterSelect label="Branches Assurance" count={178} active />
-                                                    <FilterSelect label="Métiers Assurance" count={201} />
-                                                    <FilterSelect label="Spécialités" count={156} />
-                                                    <FilterSelect label="Produits" count={134} />
-                                                    <FilterSelect label="Outils Actuariat" count={89} />
-                                                    <FilterSelect label="Normes & Réglementations" count={112} />
+                                                    <FilterSelect label={t('filters.labels.insuranceBranches')} count={178} active />
+                                                    <FilterSelect label={t('filters.labels.insuranceJobs')} count={201} />
+                                                    <FilterSelect label={t('filters.labels.specialties')} count={156} />
+                                                    <FilterSelect label={t('filters.labels.products')} count={134} />
+                                                    <FilterSelect label={t('filters.labels.actuarialTools')} count={89} />
+                                                    <FilterSelect label={t('filters.labels.regulations')} count={112} />
                                                 </div>
                                             )}
                                         </div>
@@ -246,105 +286,45 @@ export const DashboardShowcase = () => {
                                         {/* CARDS GRID - Different profiles for each mode */}
                                         <div className="grid grid-cols-1 md:grid-cols-2 laptop:grid-cols-3 gap-6">
                                             {mode === 'banque' ? (
-                                                <>
-                                                    {/* Banque Profiles */}
+                                                bankProfiles.map((profile, index) => (
                                                     <CandidateCard
-                                                        initials="ML"
-                                                        image="/avatars/profile_expert_1_1765802590256.png"
-                                                        name="Marie"
-                                                        title="Responsable Crédit Corporate"
-                                                        location="Paris La Défense"
-                                                        tags={["Banque", "Crédit"]}
-                                                        exp="Plus de 10 ans"
-                                                        status="Freelance"
-                                                        skills={["Bâle III", "Crédit Scoring", "ALM"]}
-                                                        certifications={["Certified Credit Analyst"]}
-                                                        matchScore={94}
-                                                        rate="850 € HT"
-                                                        isNew
+                                                        key={`bank-profile-${index}`}
+                                                        initials={profileInitials.bank[index]}
+                                                        image={profileImages.bank[index]}
+                                                        name={profileNames.bank[index]}
+                                                        title={profile.title}
+                                                        location={index === 0 ? "Paris La Défense" : index === 1 ? "Lyon" : "Paris"}
+                                                        tags={profile.tags}
+                                                        exp={index === 0 ? t('cards.exp.senior') : index === 1 ? t('cards.exp.expert') : t('cards.exp.mid')}
+                                                        status={index === 0 ? t('cards.status.freelance') : index === 1 ? t('cards.status.portage') : t('cards.status.cdi')}
+                                                        rate={index === 0 ? "850 € HT" : index === 1 ? "1050 € HT" : "Négociable"}
+                                                        skills={profile.skills}
+                                                        certifications={index === 0 ? ["Certified Credit Analyst"] : index === 1 ? ["FRM", "CFA Level II"] : ["CGPC"]}
+                                                        matchScore={index === 0 ? 94 : index === 1 ? 98 : 89}
+                                                        isNew={index === 0}
+                                                        online={index === 1}
                                                     />
-
-                                                    <CandidateCard
-                                                        initials="JD"
-                                                        image="/avatars/profile_expert_2_1765802613092.png"
-                                                        name="Jean"
-                                                        title="Expert Gestion des Risques & Bâle III"
-                                                        location="Lyon"
-                                                        tags={["Banque", "Risk"]}
-                                                        exp="Expert (+15 ans)"
-                                                        status="Portage"
-                                                        rate="1050 € HT"
-                                                        online
-                                                        skills={["ICAAP", "Stress Testing", "VaR"]}
-                                                        certifications={["FRM", "CFA Level II"]}
-                                                        matchScore={98}
-                                                    />
-
-                                                    <CandidateCard
-                                                        initials="CB"
-                                                        image="/avatars/profile_expert_claire_new.png"
-                                                        name="Claire"
-                                                        title="Conseiller Banque Privée & Gestion Patrimoine"
-                                                        location="Paris"
-                                                        tags={["Banque", "Patrimoine"]}
-                                                        exp="5 à 10 ans"
-                                                        status="CDI"
-                                                        rate="Négociable"
-                                                        skills={["MiFID II", "Asset Allocation", "Family Office"]}
-                                                        certifications={["CGPC"]}
-                                                        matchScore={89}
-                                                    />
-                                                </>
+                                                ))
                                             ) : (
-                                                <>
-                                                    {/* Assurance Profiles */}
+                                                insuranceProfiles.map((profile, index) => (
                                                     <CandidateCard
-                                                        initials="AD"
-                                                        image="/avatars/profile_expert_6_1765802756821.png"
-                                                        name="Alexandre"
-                                                        title="Actuaire Senior Vie & Modélisation"
-                                                        location="Île-de-France"
-                                                        tags={["Assurance", "Actuariat"]}
-                                                        exp="Expert (+15 ans)"
-                                                        status="Portage"
-                                                        rate="1100 € HT"
-                                                        isNew
-                                                        skills={["Prophet", "Python", "IFRS 17"]}
-                                                        certifications={["IA", "FSAG"]}
-                                                        matchScore={96}
+                                                        key={`insurance-profile-${index}`}
+                                                        initials={profileInitials.insurance[index]}
+                                                        image={profileImages.insurance[index]}
+                                                        name={profileNames.insurance[index]}
+                                                        title={profile.title}
+                                                        location={index === 0 ? "Île-de-France" : index === 1 ? "Lyon" : "Paris"}
+                                                        tags={profile.tags}
+                                                        exp={index === 0 ? t('cards.exp.expert') : index === 1 ? t('cards.exp.mid') : t('cards.exp.senior')}
+                                                        status={index === 0 ? t('cards.status.portage') : index === 1 ? t('cards.status.freelance') : t('cards.status.available')}
+                                                        rate={index === 0 ? "1100 € HT" : index === 1 ? "750 € HT" : "950 € HT"}
+                                                        skills={profile.skills}
+                                                        certifications={index === 0 ? ["IA", "FSAG"] : index === 1 ? ["CIP"] : ["IA", "CERA"]}
+                                                        matchScore={index === 0 ? 96 : index === 1 ? 91 : 93}
+                                                        isNew={index === 0}
+                                                        online={index === 1}
                                                     />
-
-                                                    <CandidateCard
-                                                        initials="SM"
-                                                        image="/avatars/profile_expert_3_1765802652999.png"
-                                                        name="Sarah"
-                                                        title="Souscriptrice Risques d'Entreprise"
-                                                        location="Lyon"
-                                                        tags={["Assurance", "Souscription"]}
-                                                        exp="5 à 10 ans"
-                                                        status="Freelance"
-                                                        rate="750 € HT"
-                                                        online
-                                                        skills={["RC Pro", "Cyber", "D&O"]}
-                                                        certifications={["CIP"]}
-                                                        matchScore={91}
-                                                    />
-
-                                                    <CandidateCard
-                                                        initials="PL"
-                                                        image="/avatars/profile_expert_4_1765802699392.png"
-                                                        name="Pierre"
-                                                        title="Expert IFRS 17 & Solvabilité II"
-                                                        location="Paris"
-                                                        tags={["Assurance", "Conformité"]}
-                                                        exp="Plus de 10 ans"
-                                                        status="Dispo imméd."
-                                                        rate="950 € HT"
-                                                        skills={["QRT", "ORSA", "SCR"]}
-                                                        certifications={["IA", "CERA"]}
-                                                        matchScore={93}
-                                                    />
-                                                </>
+                                                ))
                                             )}
                                         </div>
                                     </div>
@@ -363,7 +343,7 @@ export const DashboardShowcase = () => {
                             variant="outline"
                             className="pointer-events-auto w-full sm:w-auto"
                         >
-                            <span>Trouver des missions</span>
+                            <span>{t('cta.findMissions')}</span>
                             <ArrowIcon />
                         </Button>
                         <Button
@@ -372,7 +352,7 @@ export const DashboardShowcase = () => {
                             variant="primary"
                             className="pointer-events-auto w-full sm:w-auto"
                         >
-                            <span>Trouver un expert</span>
+                            <span>{t('cta.findExpert')}</span>
                             <ArrowIcon />
                         </Button>
                     </div>

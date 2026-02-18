@@ -5,6 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Button, ArrowIcon } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useTranslations } from 'next-intl';
 
 interface Partner {
     name: string;
@@ -14,90 +15,10 @@ interface Partner {
     benefit: string;
 }
 
-const partners: Partner[] = [
-    {
-        name: "Mammouth AI",
-        logo: "/logos/partners/mammouth-surly.jpg",
-        description: "Mammouth donne accès aux meilleurs modèles d'IA dans une même interface.",
-        features: [
-            "Mammouth mets à jour les dernières versions des modèles à leur sortie",
-            "La fonction \"reprompting\" permet de comparer les modèles",
-            "Les mammouths personnalisés : Créer votre propre mammouth avec vos propres instructions pour organiser vos projets",
-            "La recherche approfondie via Perplexity",
-            "Documents & Images: Analysez images et documents…"
-        ],
-        benefit: "Bénéficiez de 1 mois offert sur Mammouth AI avec l'abonnement Standard."
-    },
-    {
-        name: "Qonto",
-        logo: "/logos/partners/qonto-surly.jpg",
-        description: "Solution bancaire professionnelle tout-en-un pour centraliser vos finances et simplifier votre comptabilité.",
-        features: [
-            "Gérez facilement vos dépenses, suivez vos encaissements et automatisez vos tâches administratives"
-        ],
-        benefit: "Bénéficiez de vos 2 premiers mois offerts sur Qonto et créez gratuitement votre société si vous le souhaitez grâce à notre partenariat."
-    },
-    {
-        name: "Shine",
-        logo: "/logos/partners/shine-surly.jpg",
-        description: "Shine propose un compte pro 100 % en ligne et un véritable copilote administratif. Compte pro, factures, comptabilité, assurances…",
-        features: [
-            "Il simplifie l'expérience bancaire et administrative des entrepreneurs"
-        ],
-        benefit: "En faisant partie intégrante de la communauté Surly, bénéficiez de la création d'un compte PRO Shine pour 0€ !"
-    },
-    {
-        name: "WeWork",
-        logo: "/logos/partners/wework-surly.jpg",
-        description: "Réseau mondial d'espaces de coworking premium offrant des environnements de travail flexibles, professionnels et inspirants.",
-        features: [
-            "Accédez à des bureaux entièrement équipés, des salles de réunion high-tech et des espaces communs conçus pour favoriser la productivité et la créativité"
-        ],
-        benefit: "Surly vous fait profiter d'une offre spéciale pour devenir membre de WeWork. Bénéficiez de 1 mois gratuit pour notre communauté."
-    },
-    {
-        name: "Pennylane",
-        logo: "/logos/partners/pennylane-surly.jpg",
-        description: "Un logiciel complet, puissant et intégré à tous vos outils métiers.",
-        features: [
-            "Pennylane rassemble tous les outils et toutes les intégrations nécessaires pour gérer l'ensemble de vos dépenses, votre facturation, votre trésorerie ainsi que votre comptabilité"
-        ],
-        benefit: "Bénéficiez de 200€ de bon cadeau et 1 mois offert sur l'abonnement pour les indépendants."
-    },
-    {
-        name: "Konectiv",
-        logo: "/logos/partners/konectiv-surly.jpg",
-        description: "En choisissant le portage salarial avec Surly et Konectiv, vous optez pour une solution qui allie sécurité et liberté.",
-        features: [
-            "Profitez des avantages du salariat tout en conservant votre indépendance et votre flexibilité",
-            "Contactez-nous dès aujourd'hui pour en savoir plus sur notre offre de portage salarial et commencez à développer votre activité en toute sérénité !"
-        ],
-        benefit: "Des tarifs préférentiels, remboursement des certifications et des formations, et accompagnement personnalisé. Contactez-nous pour avoir le détail de l'offre."
-    },
-    {
-        name: "NordVPN",
-        logo: "/logos/partners/nordvpn-surly.jpg",
-        description: "Protégez vos activités en ligne.",
-        features: [
-            "Grâce à de nombreuses technologies de pointe, NordVPN préserve vos appareils des logiciels malveillants et votre navigation des regards indiscrets",
-            "Au point qu'il faudrait des milliards d'années à l'ordinateur le plus puissant du monde pour déchiffrer vos données"
-        ],
-        benefit: "Bénéficiez de 70% de réduction pour tout abonnement à NordVPN + 3 mois offerts avec Surly."
-    },
-    {
-        name: "Ziplo",
-        logo: "/logos/partners/ziplo-surly.jpg",
-        description: "Transfert de fichiers sécurisé et preuve d'antériorité en ligne.",
-        features: [
-            "Ziplo aide à défendre votre Propriété Intellectuelle. Ziplo vous permet de créer des preuves d'antériorité pour vos écrits, vos formations, votre code informatique, vos videos, vos dessins, vos pages web…",
-            "Dépôt de fichiers avec horodatage qualifié ayant force probante",
-            "Transfert de fichiers sécurisé et souverain. Vos fichiers sont stockés exclusivement dans des datacenters Français (RGPD)"
-        ],
-        benefit: "Offre exclusive via un code promo sur l'offre Ziplo+."
-    }
-];
-
 export const PartnersGrid = () => {
+    const t = useTranslations('partnersGrid');
+    const partners = t.raw('partners') as Partner[];
+
     return (
         <section
             id="partners-grid"
@@ -105,15 +26,16 @@ export const PartnersGrid = () => {
         >
             <div className="container relative z-[1]">
                 <SectionHeader
-                    tag="Nos Partenaires"
+                    tag={t('tag')}
                     title={
                         <>
-                            Découvrez tous nos
-                            <br />
-                            <span className="text-primary">partenaires premium</span>
+                            {t.rich('title', {
+                                br: () => <br />,
+                                span: (chunks) => <span className="text-primary">{chunks}</span>
+                            })}
                         </>
                     }
-                    subtitle="Des outils et services sélectionnés pour simplifier votre quotidien professionnel"
+                    subtitle={t('subtitle')}
                     centered
                 />
 
@@ -123,6 +45,8 @@ export const PartnersGrid = () => {
                             key={partner.name}
                             partner={partner}
                             index={index}
+                            benefitLabel={t('benefitLabel')}
+                            ctaLabel={t('cta')}
                         />
                     ))}
                 </div>
@@ -134,9 +58,11 @@ export const PartnersGrid = () => {
 interface PartnerCardProps {
     partner: Partner;
     index: number;
+    benefitLabel: string;
+    ctaLabel: string;
 }
 
-const PartnerCard = ({ partner, index }: PartnerCardProps) => {
+const PartnerCard = ({ partner, index, benefitLabel, ctaLabel }: PartnerCardProps) => {
     return (
         <Reveal
             delay={index * 100}
@@ -207,7 +133,7 @@ const PartnerCard = ({ partner, index }: PartnerCardProps) => {
                         </svg>
                         <div>
                             <p className="text-xs font-semibold text-primary mb-1">
-                                Avantages Surly
+                                {benefitLabel}
                             </p>
                             <p className="text-xs text-foreground-muted leading-relaxed">
                                 {partner.benefit}
@@ -226,7 +152,7 @@ const PartnerCard = ({ partner, index }: PartnerCardProps) => {
                     size="default"
                     className="w-full"
                 >
-                    <span>Se connecter</span>
+                    <span>{ctaLabel}</span>
                     <ArrowIcon />
                 </Button>
             </div>

@@ -1,25 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { Logo } from "@/components/ui/Logo";
-
-const footerLinks = {
-  platform: [
-    { label: "Application", href: "https://app.surly.fr" },
-    { label: "Espace Talent", href: "https://app.surly.fr/postulant" },
-    { label: "Espace Recruteur", href: "#" },
-  ],
-  company: [
-    { label: "À propos", href: "#" },
-    { label: "Carrières", href: "#" },
-    { label: "Blog", href: "#" },
-  ],
-  legal: [
-    { label: "Mentions légales", href: "#" },
-    { label: "CGU", href: "#" },
-    { label: "Confidentialité", href: "#" },
-  ],
-};
+import { useTranslations } from 'next-intl';
 
 export const Footer = () => {
+  const t = useTranslations('navigation.footer');
+
   return (
     <footer className="bg-primary text-background py-16 tablet:py-20 laptop:py-2xl pb-lg">
       <div className="container">
@@ -29,64 +16,62 @@ export const Footer = () => {
             <div className="mb-md">
               <Logo className="w-[120px]" variant="white" />
             </div>
-            <p className="text-small text-background/60 leading-relaxed">
-              L&apos;écosystème Recrutement & Freelance
-              <br />
-              pour la Banque & l&apos;Assurance
-            </p>
+            <p className="text-small text-background/60 leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: t.raw('tagline') }}
+            />
           </div>
 
-          {/* Links - 4 columns: Plateforme, Entreprise, Ressources, Légal */}
+          {/* Links - 4 columns */}
           <div className="grid grid-cols-2 tablet:grid-cols-4 gap-8 tablet:gap-6 laptop:gap-8">
             {/* Plateforme */}
             <div>
               <h4 className="text-sm font-bold uppercase tracking-[0.12em] text-background mb-4 sm:mb-md pb-2 border-b border-white/10 sm:border-0">
-                Plateforme
+                {t('platform.title')}
               </h4>
               <div className="space-y-3">
-                <Link href="https://app.surly.fr" className="block text-small text-background/70 hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">Application</Link>
-                <Link href="https://app.surly.fr/postulant" className="block text-small text-background/70 hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">Espace Talent</Link>
-                <Link href="https://app.surly.fr/" className="block text-small text-background/70 hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">Espace Client</Link>
+                <Link href="https://app.surly.fr" className="block text-small text-background/70 hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">{t('platform.app')}</Link>
+                <Link href="https://app.surly.fr/postulant" className="block text-small text-background/70 hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">{t('platform.talentSpace')}</Link>
+                <Link href="https://app.surly.fr/" className="block text-small text-background/70 hover:text-background transition-colors" target="_blank" rel="noopener noreferrer">{t('platform.clientSpace')}</Link>
               </div>
             </div>
 
             {/* Entreprise */}
             <div>
               <h4 className="text-sm font-bold uppercase tracking-[0.12em] text-background mb-4 sm:mb-md pb-2 border-b border-white/10 sm:border-0">
-                Entreprise
+                {t('company.title')}
               </h4>
               <div className="space-y-3">
-                <Link href="/pourquoi-surly" className="block text-small text-background/70 hover:text-background transition-colors">Pourquoi Surly ?</Link>
-                <Link href="/rse" className="block text-small text-background/70 hover:text-background transition-colors">RSE</Link>
-                <Link href="/partenaires-avantages" className="block text-small text-background/70 hover:text-background transition-colors">Partenaires</Link>
-                <Link href="/apport-affaires" className="block text-small text-background/70 hover:text-background transition-colors">Apport d'affaires</Link>
+                <Link href="/pourquoi-surly" className="block text-small text-background/70 hover:text-background transition-colors">{t('company.whySurly')}</Link>
+                <Link href="/rse" className="block text-small text-background/70 hover:text-background transition-colors">{t('company.rse')}</Link>
+                <Link href="/partenaires-avantages" className="block text-small text-background/70 hover:text-background transition-colors">{t('company.partners')}</Link>
+                <Link href="/apport-affaires" className="block text-small text-background/70 hover:text-background transition-colors">{t('company.referral')}</Link>
               </div>
             </div>
 
             {/* Ressources */}
             <div>
               <h4 className="text-sm font-bold uppercase tracking-[0.12em] text-background mb-4 sm:mb-md pb-2 border-b border-white/10 sm:border-0">
-                Ressources
+                {t('resources.title')}
               </h4>
               <div className="space-y-3">
-                <Link href="/blog" className="block text-small text-background/70 hover:text-background transition-colors">Blog</Link>
-                <Link href="/missions-exemples" className="block text-small text-background/70 hover:text-background transition-colors">Exemples Missions</Link>
-                <Link href="/faq" className="block text-small text-background/70 hover:text-background transition-colors">FAQ</Link>
-                <Link href="/contact" className="block text-small text-background/70 hover:text-background transition-colors">Contact</Link>
+                <Link href="/blog" className="block text-small text-background/70 hover:text-background transition-colors">{t('resources.blog')}</Link>
+                <Link href="/missions-exemples" className="block text-small text-background/70 hover:text-background transition-colors">{t('resources.missions')}</Link>
+                <Link href="/faq" className="block text-small text-background/70 hover:text-background transition-colors">{t('resources.faq')}</Link>
+                <Link href="/contact" className="block text-small text-background/70 hover:text-background transition-colors">{t('resources.contact')}</Link>
               </div>
             </div>
 
             {/* Légal */}
             <div>
               <h4 className="text-sm font-bold uppercase tracking-[0.12em] text-background mb-4 sm:mb-md pb-2 border-b border-white/10 sm:border-0">
-                Légal
+                {t('legal.title')}
               </h4>
               <div className="space-y-3">
-                <Link href="/mentions-legales" className="block text-small text-background/70 hover:text-background transition-colors">Mentions légales</Link>
-                <Link href="/cgu-postulant" className="block text-small text-background/70 hover:text-background transition-colors">CGU Postulant</Link>
-                <Link href="/cgu-client" className="block text-small text-background/70 hover:text-background transition-colors">CGU Client</Link>
-                <Link href="/charte-donnees" className="block text-small text-background/70 hover:text-background transition-colors">Données personnelles</Link>
-                <a href="#tarteaucitron" className="block text-small text-background/70 hover:text-background transition-colors">Gestion des cookies</a>
+                <Link href="/mentions-legales" className="block text-small text-background/70 hover:text-background transition-colors">{t('legal.legalNotices')}</Link>
+                <Link href="/cgu-postulant" className="block text-small text-background/70 hover:text-background transition-colors">{t('legal.cguApplicant')}</Link>
+                <Link href="/cgu-client" className="block text-small text-background/70 hover:text-background transition-colors">{t('legal.cguClient')}</Link>
+                <Link href="/charte-donnees" className="block text-small text-background/70 hover:text-background transition-colors">{t('legal.personalData')}</Link>
+                <a href="#tarteaucitron" className="block text-small text-background/70 hover:text-background transition-colors">{t('legal.cookies')}</a>
               </div>
             </div>
           </div>
@@ -96,13 +81,13 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div className="flex flex-col gap-1">
             <p className="text-micro text-background/50">
-              © {new Date().getFullYear()} Onybuns®. Reproduction interdite – INPI – CNIL
+              {t('copyright', { year: new Date().getFullYear().toString() })}
             </p>
             <p className="text-micro text-background/50">
-              Surly respecte le RGPD et protège la confidentialité de vos données.
+              {t('gdpr')}
             </p>
             <p className="text-micro text-background/50 mt-1">
-              Site créé par Anthony PROFIT - <a href="https://www.kulturecom.fr" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">www.kulturecom.fr</a>
+              {t('credit')} <a href="https://www.kulturecom.fr" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">www.kulturecom.fr</a>
             </p>
           </div>
 
@@ -139,7 +124,7 @@ export const Footer = () => {
               alt="Je choisis la French Tech - Membre référencé"
               className="w-[100px] h-auto rounded-lg"
             />
-            <p className="text-xs text-background/70 font-medium">Membre référencé</p>
+            <p className="text-xs text-background/70 font-medium">{t('frenchTech')}</p>
           </div>
         </div>
       </div>

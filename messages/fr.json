@@ -1,0 +1,2358 @@
+{
+    "navigation": {
+        "links": {
+            "whySurly": "Pourquoi Surly ?",
+            "surlyAI": "Surly AI",
+            "solutions": "Nos solutions",
+            "faq": "FAQ",
+            "contact": "Contactez-nous",
+            "login": "Se connecter"
+        },
+        "announcement": {
+            "label": "Trouvez un expert :",
+            "desktop": "Sélectionné par notre IA en 2min",
+            "mobile": "Besoin urgent ? Sourcing IA"
+        },
+        "buttons": {
+            "findMissions": "Trouver des missions",
+            "findExpert": "Trouver un expert"
+        },
+        "megaMenu": {
+            "companies": {
+                "title": "Pour les entreprises",
+                "sourcing": "Sourcing d'expert",
+                "sourcingDesc": "Grands comptes & cabinets : recrutez vos experts en 48h",
+                "compliance": "Conformité & RSE",
+                "complianceDesc": "Pilotez votre politique RSE fournisseur"
+            },
+            "consultants": {
+                "title": "Pour les consultants",
+                "findMission": "Trouver une mission",
+                "findMissionDesc": "Missions freelance & postes salariés",
+                "benefits": "Avantages Membres",
+                "benefitsDesc": "Partenaires et réductions exclusifs"
+            },
+            "urgentCTA": "Besoin urgent ?",
+            "brochure": "Plaquette Présentation (PDF)"
+        },
+        "footer": {
+            "tagline": "L'écosystème Recrutement & Freelance<br></br>pour la Banque & l'Assurance",
+            "platform": {
+                "title": "Plateforme",
+                "app": "Application",
+                "talentSpace": "Espace Talent",
+                "clientSpace": "Espace Client"
+            },
+            "company": {
+                "title": "Entreprise",
+                "whySurly": "Pourquoi Surly ?",
+                "rse": "RSE",
+                "partners": "Partenaires",
+                "referral": "Apport d'affaires"
+            },
+            "resources": {
+                "title": "Ressources",
+                "blog": "Blog",
+                "missions": "Exemples Missions",
+                "faq": "FAQ",
+                "contact": "Contact"
+            },
+            "legal": {
+                "title": "Légal",
+                "legalNotices": "Mentions légales",
+                "cguApplicant": "CGU Postulant",
+                "cguClient": "CGU Client",
+                "personalData": "Données personnelles",
+                "cookies": "Gestion des cookies"
+            },
+            "copyright": "© {year} Onybuns®. Reproduction interdite – INPI – CNIL",
+            "gdpr": "Surly respecte le RGPD et protège la confidentialité de vos données.",
+            "credit": "Site créé par Anthony PROFIT -",
+            "frenchTech": "Membre référencé"
+        }
+    },
+    "home": {
+        "rotatingWords": [
+            "Bâle III",
+            "IFRS 17",
+            "Solvabilité II",
+            "Data Engineering",
+            "Cybersécurité",
+            "Risk Management",
+            "Architecture SI",
+            "Actuariat",
+            "Pricing",
+            "Conformité",
+            "Monétique",
+            "Product Management",
+            "Transformation Digitale",
+            "DevOps",
+            "Cloud Banking",
+            "KYC/AML",
+            "Pillar 3",
+            "ALM",
+            "Marketing Analytics",
+            "Gestion de Projet",
+            "Change Management",
+            "API Banking",
+            "IA & Machine Learning",
+            "Blockchain Finance",
+            "RegTech",
+            "InsurTech"
+        ],
+        "title": {
+            "line1": "L'écosystème Recrutement & Freelance",
+            "line2": "pour la Banque & l'Assurance",
+            "mobile": {
+                "line1": "L'écosystème",
+                "line2": "Recrutement & Freelance",
+                "line3": "pour la Banque & l'Assurance"
+            }
+        },
+        "subtitle": "La seule marketplace ultra-spécialisée qui réunit l'intégralité des experts et des opportunités du secteur Bancassurance.",
+        "cta": {
+            "findExpert": "Trouver un expert",
+            "findMissions": "Trouver des missions"
+        },
+        "logoCarousel": {
+            "title": "Ils nous font confiance",
+            "more": "Et plus de 50 autres entreprises du secteur bancassurance"
+        },
+        "whySurlyAbstract": {
+            "tag": "Pourquoi Surly ?",
+            "title": "Le recrutement en Banque & Assurance<br></br><span class=\"text-accent\">mérite mieux.</span>",
+            "leftCard": {
+                "title": "Des experts qui changent<br></br><span class=\"text-accent\">la donne.</span>",
+                "description": "Que vous soyez expert en quête d'opportunités ou client en quête de talents, Surly est la plateforme 100% dédiée au secteur de la bancassurance",
+                "cta": "Découvrir Surly"
+            },
+            "benefits": {
+                "experts": {
+                    "title": "3 300+ experts",
+                    "desc": "Une communauté exclusive, 100% banque & assurance. Des profils vérifiés, des opportunités qualifiées."
+                },
+                "relevance": {
+                    "title": "Pertinence immédiate",
+                    "desc": "Un matching intelligent, instantané, qui maîtrise votre environnement métier"
+                },
+                "time": {
+                    "title": "Gain de temps",
+                    "desc": "Fini le tri de centaines de profils. Des offres ciblées pour tous."
+                },
+                "transparency": {
+                    "title": "Transparence totale",
+                    "desc": "Aucun frais caché, commission fixe uniquement.",
+                    "stats": {
+                        "commission": "Com. fixe",
+                        "entryFee": "Frais d'entrée"
+                    },
+                    "footnote": "*Commission client à la contractualisation, lors de l'utilisation autonome de la plateforme"
+                }
+            }
+        },
+        "platformBenefits": {
+            "tag": "Avantages Plateforme",
+            "title": "Pourquoi Surly est le choix<br></br><primary>des décideurs avisés</primary>",
+            "expertSubtitle": "La seule marketplace ultra-spécialisée du secteur, conçue par des experts pour des experts.",
+            "items": {
+                "qualified": {
+                    "title": "Profils pré-qualifiés",
+                    "desc": "Tous nos experts justifient d'au moins une expérience significative en Banque ou Assurance.",
+                    "stat": "0 CV hors-sujet"
+                },
+                "matching": {
+                    "title": "Matching instantané",
+                    "desc": "Notre IA qualifie votre besoin 24/7 et propose les profils pertinents en quelques secondes.",
+                    "stat": "-80% temps"
+                },
+                "expertise": {
+                    "title": "Expertise sectorielle",
+                    "desc": "Surly s’adresse exclusivement à la Banque et l’Assurance. Nos talent managers comprennent vos enjeux.",
+                    "stat": "100% sectoriel"
+                },
+                "productivity": {
+                    "title": "Gain de productivité",
+                    "desc": "Concentrez-vous sur la sélection et le choix. Nous gérons l'administratif et la qualification technique.",
+                    "stat": "48h max"
+                }
+            }
+        },
+        "intermediateCTA": {
+            "client": {
+                "title": "Besoin d'un expert bancassurance ?",
+                "description": "Essayez notre IA pour un matching instantané ou contactez nos talent managers pour un accompagnement sur-mesure",
+                "button": "Découvrir nos solutions"
+            },
+            "consultant": {
+                "title": "Vous avez une expérience en Banque ou Assurance ?",
+                "description": "Quelle que soit votre expertise (IT, Finance, Risk, RH...), accédez aux meilleures missions du secteur. Inscription gratuite en 5 minutes.",
+                "button": "Découvrir les missions disponibles"
+            }
+        },
+        "expertises": {
+            "tag": "Expertise Sectorielle",
+            "title": "Toutes les spécialités, Tous les savoir-faire,<br></br><span class=\"text-accent\">Tous les enjeux</span>",
+            "description": "De la conformité réglementaire (Bâle III, IFRS 17, LCB-FT) aux transformations digitales, en passant par le marketing omnicanal ou la digitalisation des RH, notre plateforme vous connecte aux meilleurs talents du secteur. Chaque expert possède une expérience validée dans son domaine.",
+            "stats": "<strong class=\"text-white font-bold\">Plus de 3 000 experts</strong> référencés • <strong class=\"text-white font-bold\"> 100% vérifiés</strong> • Disponibles <strong class=\"text-white font-bold\">sous 48h</strong>"
+        },
+        "faqHighlights": {
+            "tag": "Questions fréquentes",
+            "title": "Tout ce que vous devez<br></br><primary>savoir sur Surly</primary>",
+            "items": {
+                "q1": {
+                    "question": "Qu'est-ce que Surly ?",
+                    "answer": "Surly, c’est le One Stop Shop du sourcing en bancassurance : une marketplace qui connecte banques & assureurs avec des experts du secteur (freelance ou CDI/CDD). Rapide, simple, efficace : vous déposez votre besoin et recevez des profils ultra-ciblés avec un modèle simple, transparent et pensé pour aller vite."
+                },
+                "q2": {
+                    "question": "Quels sont les tarifs de Surly ?",
+                    "answer": "L’accès à Surly est 100% gratuit pour les entreprises comme pour les experts : vous pouvez publier un besoin, consulter les profils et échanger sans frais. Les TJM et salaires sont affichés en toute transparence. Surly se rémunère via une commission appliquée uniquement en cas de contractualisation (mission ou recrutement)."
+                },
+                "q3": {
+                    "question": "Quelle différence avec les solutions généralistes ?",
+                    "answer": "La différence, c’est la spécialisation. Surly est conçu uniquement pour la bancassurance : profils ciblés, pré-qualification, et interlocuteurs qui comprennent vos enjeux. Vous obtenez une sélection pertinente plus vite, sans “bruit” ni profils hors sujet — pour du freelance comme pour du CDI/CDD."
+                },
+                "q4": {
+                    "question": "Je suis candidat : Comment m'inscrire sur Surly ?",
+                    "answer": "L'inscription se fait en 5 minutes. Vous remplissez vos expériences (import automatique depuis LinkedIn ou CV), vos compétences et outils maîtrisés, puis vous fixez vos critères de recherche."
+                },
+                "q5": {
+                    "question": "Quel est le délai moyen pour recevoir des profils ?",
+                    "answer": "Avec l'accès plateforme, recherchez instantanément via notre moteur de recherche boosté par algorithme de matching. Avec le cabinet, recevez une proposition détaillée avec dossiers de compétences sous 48h."
+                },
+                "q6": {
+                    "question": "Comment sont fixés mon TJM ou mon SAB ?",
+                    "answer": "Vous fixez librement votre TJM (freelance) ou votre SAB (CDI/CDD). Surly ne les impose pas : vous gardez la main et pouvez les modifier quand vous le souhaitez. Aucune exclusivité. Besoin d’un repère ? Nos talent managers peuvent vous aider à positionner votre TJM/SAB selon le type de mission ou de poste."
+                }
+            },
+            "cta": "Voir toutes les questions"
+        },
+        "keywordsCarousel": {
+            "row1": [
+                {
+                    "skill": "IFRS 17",
+                    "desc": "Actuaires & Comptables"
+                },
+                {
+                    "skill": "Bâle III",
+                    "desc": "Risk Managers"
+                },
+                {
+                    "skill": "Solvabilité II",
+                    "desc": "Experts Prudentiels"
+                },
+                {
+                    "skill": "LCB-FT",
+                    "desc": "Conformité & AML"
+                },
+                {
+                    "skill": "KYC",
+                    "desc": "Onboarding Client"
+                },
+                {
+                    "skill": "SEPA",
+                    "desc": "Paiements Européens"
+                },
+                {
+                    "skill": "ISO 20022",
+                    "desc": "Messagerie Financière"
+                },
+                {
+                    "skill": "Monétique",
+                    "desc": "Cartes & Terminaux"
+                },
+                {
+                    "skill": "ALM",
+                    "desc": "Gestion Actif-Passif"
+                },
+                {
+                    "skill": "Stress Testing",
+                    "desc": "Scénarios de Crise"
+                },
+                {
+                    "skill": "ICAAP",
+                    "desc": "Adéquation Capital"
+                },
+                {
+                    "skill": "Pillar 3",
+                    "desc": "Reporting Réglementaire"
+                }
+            ],
+            "row2": [
+                {
+                    "skill": "Actuaire",
+                    "desc": "Pricing & Tarification"
+                },
+                {
+                    "skill": "Souscription",
+                    "desc": "IARD & Vie"
+                },
+                {
+                    "skill": "Sinistres",
+                    "desc": "Gestion & Indemnisation"
+                },
+                {
+                    "skill": "Réassurance",
+                    "desc": "Traités & Facultatives"
+                },
+                {
+                    "skill": "Commercial B2B",
+                    "desc": "Développement Grands Comptes"
+                },
+                {
+                    "skill": "CRM",
+                    "desc": "Relation Client"
+                },
+                {
+                    "skill": "Marketing Digital",
+                    "desc": "Growth & Acquisition"
+                },
+                {
+                    "skill": "Data Marketing",
+                    "desc": "Segmentation & Ciblage"
+                },
+                {
+                    "skill": "Courtage",
+                    "desc": "Distribution Assurance"
+                },
+                {
+                    "skill": "Prévoyance",
+                    "desc": "Santé & Protection"
+                },
+                {
+                    "skill": "Banque Privée",
+                    "desc": "Gestion de Patrimoine"
+                },
+                {
+                    "skill": "Crédit",
+                    "desc": "Analyse & Scoring"
+                }
+            ],
+            "row3": [
+                {
+                    "skill": "Data Engineering",
+                    "desc": "Big Data & Analytics"
+                },
+                {
+                    "skill": "DevOps",
+                    "desc": "Cloud & Infrastructure"
+                },
+                {
+                    "skill": "Architecture SI",
+                    "desc": "Modernisation & API"
+                },
+                {
+                    "skill": "Product Owner",
+                    "desc": "Agile & Produit"
+                },
+                {
+                    "skill": "Business Analyst",
+                    "desc": "Core Banking & SI"
+                },
+                {
+                    "skill": "Risk Manager",
+                    "desc": "Crédit, Marché, Opérationnel"
+                },
+                {
+                    "skill": "Cybersécurité",
+                    "desc": "ISO 27001 & DORA"
+                },
+                {
+                    "skill": "Machine Learning",
+                    "desc": "IA & Prédictif"
+                },
+                {
+                    "skill": "Python",
+                    "desc": "Data Science"
+                },
+                {
+                    "skill": "PMO",
+                    "desc": "Pilotage Projet"
+                },
+                {
+                    "skill": "Scrum Master",
+                    "desc": "Agilité & Transformation"
+                },
+                {
+                    "skill": "AMOA",
+                    "desc": "Maîtrise d'Ouvrage"
+                }
+            ]
+        }
+    },
+    "heroCards": {
+        "sector": {
+            "bank": "Banque",
+            "insurance": "Assurance",
+            "both": "Banque & Assurance"
+        },
+        "seniority": {
+            "junior": "Junior",
+            "confirmed": "Confirmé",
+            "senior": "Senior"
+        },
+        "rateUnit": "/jour",
+        "experts": [
+            {
+                "name": "Thomas B.",
+                "title": "Expert IFRS 17 & Consolidation",
+                "sector": "both",
+                "seniority": "senior",
+                "tags": [
+                    "Finance",
+                    "Comptabilité"
+                ],
+                "tjm": "950",
+                "availability": "Immédiate",
+                "experience": "12 ans",
+                "company": "Grande banque française",
+                "online": true
+            },
+            {
+                "name": "Sarah M.",
+                "title": "Risk Manager Bâle III",
+                "sector": "bank",
+                "seniority": "confirmed",
+                "tags": [
+                    "Risques",
+                    "Conformité"
+                ],
+                "tjm": "750",
+                "availability": "< 1 semaine",
+                "experience": "8 ans",
+                "company": "Banque d'investissement"
+            },
+            {
+                "name": "Claire D.",
+                "title": "Architecte SI Cloud",
+                "sector": "bank",
+                "seniority": "senior",
+                "tags": [
+                    "IT",
+                    "Architecture"
+                ],
+                "tjm": "1100",
+                "availability": "< 2 semaines",
+                "experience": "15 ans",
+                "company": "Banque mutualiste",
+                "online": true
+            },
+            {
+                "name": "Marc L.",
+                "title": "Actuaire Solvabilité II",
+                "sector": "insurance",
+                "seniority": "senior",
+                "tags": [
+                    "Actuariat",
+                    "Risques"
+                ],
+                "tjm": "1050",
+                "availability": "Immédiate",
+                "experience": "10 ans",
+                "company": "Leader assurance"
+            },
+            {
+                "name": "Julie R.",
+                "title": "Responsable RH Talents",
+                "sector": "both",
+                "seniority": "confirmed",
+                "tags": [
+                    "RH",
+                    "Formation"
+                ],
+                "tjm": "720",
+                "availability": "< 1 mois",
+                "experience": "9 ans",
+                "company": "Mutuelle internationale",
+                "online": true
+            },
+            {
+                "name": "Pierre M.",
+                "title": "Chef de Projet InsurTech",
+                "sector": "insurance",
+                "seniority": "confirmed",
+                "tags": [
+                    "Digital",
+                    "Innovation"
+                ],
+                "tjm": "820",
+                "availability": "< 3 semaines",
+                "experience": "7 ans",
+                "company": "Assureur innovant"
+            },
+            {
+                "name": "Sophie L.",
+                "title": "Compliance Officer KYC/AML",
+                "sector": "bank",
+                "seniority": "senior",
+                "tags": [
+                    "Juridique",
+                    "Conformité"
+                ],
+                "tjm": "990",
+                "availability": "Immédiate",
+                "experience": "11 ans",
+                "company": "Banque internationale"
+            },
+            {
+                "name": "Alexandre V.",
+                "title": "Data Engineer Finance",
+                "sector": "bank",
+                "seniority": "junior",
+                "tags": [
+                    "IT",
+                    "Data"
+                ],
+                "tjm": "550",
+                "availability": "< 2 semaines",
+                "experience": "3 ans",
+                "company": "Fintech bancaire",
+                "online": true
+            },
+            {
+                "name": "Camille P.",
+                "title": "Directrice Marketing Digital",
+                "sector": "insurance",
+                "seniority": "senior",
+                "tags": [
+                    "Marketing",
+                    "Digital"
+                ],
+                "tjm": "1050",
+                "availability": "< 1 semaine",
+                "experience": "13 ans",
+                "company": "Assurance mutualiste"
+            },
+            {
+                "name": "Laurent S.",
+                "title": "Responsable ALM",
+                "sector": "bank",
+                "seniority": "senior",
+                "tags": [
+                    "Finance",
+                    "Risques"
+                ],
+                "tjm": "1150",
+                "availability": "Immédiate",
+                "experience": "16 ans",
+                "company": "Banque de réseau"
+            },
+            {
+                "name": "Emma T.",
+                "title": "Experte Tarification Vie",
+                "sector": "insurance",
+                "seniority": "confirmed",
+                "tags": [
+                    "Actuariat",
+                    "Pricing"
+                ],
+                "tjm": "850",
+                "availability": "< 1 semaine",
+                "experience": "9 ans",
+                "company": "Assureur vie",
+                "online": true
+            },
+            {
+                "name": "Nicolas G.",
+                "title": "Product Owner Monétique",
+                "sector": "bank",
+                "seniority": "junior",
+                "tags": [
+                    "Gestion",
+                    "Agile"
+                ],
+                "tjm": "580",
+                "availability": "< 2 semaines",
+                "experience": "4 ans",
+                "company": "Banque en ligne"
+            }
+        ]
+    },
+    "whySurly": {
+        "tag": "Pourquoi Surly ?",
+        "title": {
+            "line1": "Le recrutement en Banque & Assurance",
+            "line2": "mérite mieux."
+        },
+        "leftCard": {
+            "title": {
+                "line1": "Des experts qui changent",
+                "line2": "la donne."
+            },
+            "description": "Que vous soyez expert en quête d'opportunités ou client en quête de talents, Surly est la plateforme 100% dédiée au secteur de la bancassurance",
+            "cta": "Découvrir Surly"
+        },
+        "benefits": {
+            "experts": {
+                "title": "3 300+ experts",
+                "description": "Une communauté exclusive, 100% banque & assurance. Des profils vérifiés, des opportunités qualifiées."
+            },
+            "relevance": {
+                "title": "Pertinence immédiate",
+                "description": "Un matching intelligent, instantané, qui maîtrise votre environnement métier"
+            },
+            "timeGain": {
+                "title": "Gain de temps",
+                "description": "Fini le tri de centaines de profils. Des offres ciblées pour tous."
+            },
+            "transparency": {
+                "title": "Transparence totale",
+                "description": "Aucun frais caché, commission fixe uniquement.",
+                "stats": {
+                    "commission": {
+                        "value": "15%*",
+                        "label": "Com. fixe"
+                    },
+                    "entryFee": {
+                        "value": "0€",
+                        "label": "Frais d'entrée"
+                    }
+                },
+                "footnote": "*Commission client à la contractualisation, lors de l'utilisation autonome de la plateforme"
+            }
+        }
+    },
+    "footer": {
+        "tagline": {
+            "line1": "L'écosystème Recrutement & Freelance",
+            "line2": "pour la Banque & l'Assurance"
+        },
+        "sections": {
+            "platform": {
+                "title": "Plateforme",
+                "links": {
+                    "app": "Application",
+                    "talentSpace": "Espace Talent",
+                    "clientSpace": "Espace Client"
+                }
+            },
+            "company": {
+                "title": "Entreprise",
+                "links": {
+                    "whySurly": "Pourquoi Surly ?",
+                    "rse": "RSE",
+                    "partners": "Partenaires",
+                    "businessReferral": "Apport d'affaires"
+                }
+            },
+            "resources": {
+                "title": "Ressources",
+                "links": {
+                    "blog": "Blog",
+                    "missionExamples": "Exemples Missions",
+                    "faq": "FAQ",
+                    "contact": "Contact"
+                }
+            },
+            "legal": {
+                "title": "Légal",
+                "links": {
+                    "legalNotice": "Mentions légales",
+                    "cguConsultant": "CGU Postulant",
+                    "cguClient": "CGU Client",
+                    "dataCharter": "Données personnelles",
+                    "cookieManagement": "Gestion des cookies"
+                }
+            }
+        },
+        "bottom": {
+            "copyright": "© {year} Onybuns®. Reproduction interdite – INPI – CNIL",
+            "gdpr": "Surly respecte le RGPD et protège la confidentialité de vos données.",
+            "createdBy": "Site créé par Anthony PROFIT -",
+            "frenchTech": "Membre référencé"
+        }
+    },
+    "common": {
+        "buttons": {
+            "learnMore": "En savoir plus",
+            "getStarted": "Commencer",
+            "contactUs": "Nous contacter",
+            "discover": "Découvrir",
+            "apply": "Postuler",
+            "seeMore": "Voir plus"
+        },
+        "forms": {
+            "name": "Nom",
+            "email": "Email",
+            "phone": "Téléphone",
+            "message": "Message",
+            "company": "Entreprise",
+            "submit": "Envoyer",
+            "sending": "Envoi en cours...",
+            "success": "Message envoyé avec succès !",
+            "error": "Une erreur s'est produite. Veuillez réessayer."
+        },
+        "stats": {
+            "experts": "experts",
+            "verified": "vérifiés",
+            "available": "Disponibles",
+            "under48h": "sous 48h"
+        }
+    },
+    "seo": {
+        "defaultTitle": "Surly — L'écosystème Recrutement & Freelance Bancassurance",
+        "defaultDescription": "La marketplace ultra-spécialisée qui réunit l'intégralité des experts et opportunités du secteur Banque & Assurance. +3300 experts certifiés.",
+        "keywords": [
+            "recrutement bancaire",
+            "freelance assurance",
+            "consultant IFRS",
+            "actuaire",
+            "conformité bancaire",
+            "KYC AML",
+            "Solvabilité II",
+            "Bâle III"
+        ]
+    },
+    "contact_section": {
+        "title": "Une question ?",
+        "titleHighlight": "Parlons-en.",
+        "description": "Que vous soyez décideur en quête d’experts ou talents qualifiés en quête d’opportunités, notre équipe vous répond sous 24h.",
+        "methods": {
+            "email": {
+                "label": "EMAIL",
+                "value": "contact"
+            },
+            "ai": {
+                "label": "IA RECRUTEMENT",
+                "cta": "Essayer Surly AI"
+            }
+        },
+        "form": {
+            "type": {
+                "label": "JE SUIS",
+                "placeholder": "Sélectionnez votre profil",
+                "options": {
+                    "company": "Une entreprise qui recrute",
+                    "talent": "Un expert / consultant"
+                }
+            },
+            "name": {
+                "label": "NOM COMPLET",
+                "placeholder": "Jean Dupont"
+            },
+            "company": {
+                "label": "ENTREPRISE",
+                "placeholder": "Votre entreprise"
+            },
+            "email": {
+                "label": "EMAIL PROFESSIONNEL",
+                "placeholder": "jean@entreprise.fr"
+            },
+            "message": {
+                "label": "VOTRE BESOIN",
+                "placeholder": "Décrivez votre besoin en recrutement ou votre expertise..."
+            },
+            "submit": {
+                "idle": "Envoyer ma demande",
+                "sending": "Envoi...",
+                "success": "Envoyé ✓",
+                "error": "Erreur - Réessayer"
+            },
+            "successMessage": "Message envoyé ! Un email de confirmation vous a été transmis."
+        }
+    },
+    "dashboard_showcase": {
+        "tag": "La Solution",
+        "title": "Une plateforme pensée pour répondre",
+        "titleHighlight": "à vos enjeux métiers !",
+        "subtitle": "Tous les métiers et fonctions du secteur regroupés sur une plateforme unique...",
+        "functions": {
+            "finance": "Finance",
+            "gestion": "Gestion",
+            "it": "IT",
+            "rh": "RH",
+            "marketing": "Marketing",
+            "juridique": "Juridique",
+            "audit": "Audit"
+        },
+        "mode": {
+            "explore": "Explorez par secteur",
+            "bank": "Banque",
+            "insurance": "Assurance"
+        },
+        "sidebar": {
+            "profile": "Mon profil",
+            "findExpert": "Trouver un expert",
+            "favorites": "Profils favoris",
+            "postAd": "Poster une annonce",
+            "myAds": "Mes annonces",
+            "applications": "Candidatures reçues",
+            "missions": "Mes offres de mission",
+            "scoring": "Scoring IA",
+            "qualification": "Qualification Candidat",
+            "activity": "Activité",
+            "profileViews": "Vues profil",
+            "aiMatch": "Match IA"
+        },
+        "header": {
+            "searchExperts": "Recherche d'experts",
+            "online": "En ligne"
+        },
+        "search": {
+            "placeholder": {
+                "bank": "Essayez 'Chargé d'étude', 'Gestionnaire d'actifs', 'Conseiller banque privée'...",
+                "insurance": "Essayez 'Actuaire', 'Souscripteur', 'Gestionnaire sinistres'..."
+            }
+        },
+        "filters": {
+            "title": "Filtres spécialisés",
+            "results": "{count} résultats",
+            "labels": {
+                "bankJobs": "Métiers Banque",
+                "bankBranches": "Branches Banque",
+                "functions": "Fonctions",
+                "managementTools": "Outils Gestion",
+                "hrTools": "Outils RH",
+                "certifications": "Certifications",
+                "insuranceBranches": "Branches Assurance",
+                "insuranceJobs": "Métiers Assurance",
+                "specialties": "Spécialités",
+                "products": "Produits",
+                "actuarialTools": "Outils Actuariat",
+                "regulations": "Normes & Réglementations"
+            }
+        },
+        "cards": {
+            "exp": {
+                "senior": "Plus de 10 ans",
+                "expert": "Expert (+15 ans)",
+                "mid": "5 à 10 ans"
+            },
+            "status": {
+                "freelance": "Freelance",
+                "portage": "Portage",
+                "cdi": "CDI",
+                "available": "Dispo imméd."
+            }
+        },
+        "cta": {
+            "findMissions": "Trouver des missions",
+            "findExpert": "Trouver un expert"
+        },
+        "mock_profiles": {
+            "bank": [
+                {
+                    "title": "Responsable Crédit Corporate",
+                    "tags": [
+                        "Banque",
+                        "Crédit"
+                    ],
+                    "skills": [
+                        "Bâle III",
+                        "Crédit Scoring",
+                        "ALM"
+                    ]
+                },
+                {
+                    "title": "Expert Gestion des Risques & Bâle III",
+                    "tags": [
+                        "Banque",
+                        "Risk"
+                    ],
+                    "skills": [
+                        "ICAAP",
+                        "Stress Testing",
+                        "VaR"
+                    ]
+                },
+                {
+                    "title": "Conseiller Banque Privée & Gestion Patrimoine",
+                    "tags": [
+                        "Banque",
+                        "Patrimoine"
+                    ],
+                    "skills": [
+                        "MiFID II",
+                        "Asset Allocation",
+                        "Family Office"
+                    ]
+                }
+            ],
+            "insurance": [
+                {
+                    "title": "Actuaire Senior Vie & Modélisation",
+                    "tags": [
+                        "Assurance",
+                        "Actuariat"
+                    ],
+                    "skills": [
+                        "Prophet",
+                        "Python",
+                        "IFRS 17"
+                    ]
+                },
+                {
+                    "title": "Souscriptrice Risques d'Entreprise",
+                    "tags": [
+                        "Assurance",
+                        "Souscription"
+                    ],
+                    "skills": [
+                        "RC Pro",
+                        "Cyber",
+                        "D&O"
+                    ]
+                },
+                {
+                    "title": "Expert IFRS 17 & Solvabilité II",
+                    "tags": [
+                        "Assurance",
+                        "Conformité"
+                    ],
+                    "skills": [
+                        "QRT",
+                        "ORSA",
+                        "SCR"
+                    ]
+                }
+            ]
+        }
+    },
+    "functions_showcase": {
+        "tag": "Fonctions",
+        "title": "Des experts qualifiés.",
+        "titleHighlight": "Pour chaque expertise.",
+        "subtitle": "Trouvez rapidement les experts spécialisés dont vous avez besoin dans tous les métiers de la banque et de l'assurance.",
+        "description": "De la finance à l'audit, des profils <foreground>certifiés</foreground> et <foreground>immédiatement disponibles</foreground>.",
+        "list": {
+            "finance": {
+                "label": "Finance",
+                "desc": "Experts financiers",
+                "filters": [
+                    "SAP FI/CO",
+                    "Excel avancé",
+                    "Power BI",
+                    "Normes IFRS",
+                    "VBA/Macros",
+                    "Bloomberg Terminal"
+                ],
+                "details": {
+                    "exp": "senior",
+                    "contract": "freelance",
+                    "avail": "Immédiate"
+                }
+            },
+            "gestion": {
+                "label": "Gestion",
+                "desc": "Pilotage & performance",
+                "filters": [
+                    "Agile/Scrum",
+                    "Jira",
+                    "MS Project",
+                    "Lean Management",
+                    "Six Sigma",
+                    "Change Management"
+                ],
+                "details": {
+                    "exp": "expert10",
+                    "contract": "cdi",
+                    "avail": "< 2 semaines"
+                }
+            },
+            "it": {
+                "label": "IT",
+                "desc": "Experts techniques",
+                "filters": [
+                    "Java/Python",
+                    "Cloud AWS/Azure",
+                    "Docker/K8s",
+                    "CI/CD",
+                    "Microservices",
+                    "Monétique"
+                ],
+                "details": {
+                    "exp": "confirmed",
+                    "contract": "freelance",
+                    "avail": "Immédiate"
+                }
+            },
+            "rh": {
+                "label": "RH",
+                "desc": "Ressources humaines",
+                "filters": [
+                    "Workday",
+                    "SuccessFactors",
+                    "LinkedIn Recruiter",
+                    "Tests psychométriques",
+                    "Paie Silae",
+                    "GPEC"
+                ],
+                "details": {
+                    "exp": "senior",
+                    "contract": "cdd",
+                    "avail": "< 1 mois"
+                }
+            },
+            "marketing": {
+                "label": "Marketing",
+                "desc": "Marketing & communication",
+                "filters": [
+                    "Google Analytics",
+                    "HubSpot",
+                    "Adobe Suite",
+                    "Social Media",
+                    "SEO/SEM",
+                    "Marketing Automation"
+                ],
+                "details": {
+                    "exp": "intermediate",
+                    "contract": "freelance",
+                    "avail": "< 2 semaines"
+                }
+            },
+            "juridique": {
+                "label": "Juridique",
+                "desc": "Conformité & droit",
+                "filters": [
+                    "Droit bancaire",
+                    "MiFID II",
+                    "KYC/AML",
+                    "Contrats ISDA",
+                    "RGPD",
+                    "LCB-FT"
+                ],
+                "details": {
+                    "exp": "expert15",
+                    "contract": "cdi",
+                    "avail": "Immédiate"
+                }
+            },
+            "audit": {
+                "label": "Audit",
+                "desc": "Contrôle & risques",
+                "filters": [
+                    "SOX",
+                    "Risk Management",
+                    "ISO 27001",
+                    "Audit financier",
+                    "COSO Framework",
+                    "Internal Controls"
+                ],
+                "details": {
+                    "exp": "senior",
+                    "contract": "portage",
+                    "avail": "< 1 mois"
+                }
+            }
+        },
+        "mockup": {
+            "title": "Filtrer les profils",
+            "experience": "Niveau d'expérience",
+            "contract": "Type de contrat",
+            "experts": "experts",
+            "live": "Live",
+            "values": {
+                "senior": "Senior",
+                "expert10": "Expert (+10 ans)",
+                "expert15": "Expert (+15 ans)",
+                "confirmed": "Confirmé",
+                "intermediate": "Intermédiaire",
+                "freelance": "Freelance",
+                "cdi": "CDI",
+                "cdd": "CDD",
+                "portage": "Portage"
+            }
+        },
+        "cta": "Explorer toutes les fonctions"
+    },
+    "whySurlyPage": {
+        "metadata": {
+            "title": "Pourquoi choisir Surly ? L'Expertise Sectorielle Avant Tout",
+            "description": "Conçue par des experts pour des experts. Découvrez pourquoi les leaders de la Banque et de l'Assurance choisissent Surly pour leurs recrutements stratégiques."
+        },
+        "hero": {
+            "badge": "Experts bancassurance • Missions qualifiées • Plateforme dédiée",
+            "title": "Pourquoi <primary>Surly</primary> ?",
+            "subtitle": "Pourquoi Surly ? <strong>La bancassurance mérite une plateforme dédiée</strong>, pensée par des spécialistes pour des experts. Surly connecte les meilleurs profils aux missions et postes les plus pertinents."
+        }
+    },
+    "marketAnalysis": {
+        "tag": "Réalité & diagnostic",
+        "title": "Le recrutement en Banque & Assurance<br></br><span class=\"text-accent\">est à réinventer.</span>",
+        "intro": "Le recrutement en Banque & en Assurance est à réinventer. Pénurie d'experts, exigences techniques pointues, urgence... Le secteur accélère, les contraintes s'intensifient. Et pourtant, le marché continue avec des outils généralistes voire traditionnels, conçus pour la masse, sans prise en compte réelle des enjeux de la filière.",
+        "reality": {
+            "title": "La réalité du terrain",
+            "items": [
+                {
+                    "title": "Le marché est opaque et difficile d'accès",
+                    "description": "Les meilleurs experts (Actuaires, PMO, Architectes SI) sont en poste. Ils ne répondent plus aux annonces LinkedIn ou Indeed. <white>Ils fonctionnent par réseau.</white>"
+                },
+                {
+                    "title": "La maîtrise technique",
+                    "description": "Un mot-clé n'est pas une compétence. Confondre \"connaissance Bâle III\" et \"expérience d'implémentation\" coûte des mois de retard sur vos projets réglementaires."
+                },
+                {
+                    "title": "Le besoin de réactivité",
+                    "description": "Vos projets ont des deadlines strictes (BCE, ACPR). Chaque semaine perdue à trier des CVs inadaptés augmente le risque opérationnel."
+                }
+            ]
+        },
+        "generalist": {
+            "title": "L'approche généraliste",
+            "items": [
+                {
+                    "title": "Volume sans pertinence",
+                    "description": "Chercher un expert pointu sur un jobboard, c'est chercher une aiguille dans une botte de foin.",
+                    "stats": {
+                        "results": "10 000+",
+                        "resultsLabel": "Résultats",
+                        "qualified": "~50",
+                        "qualifiedLabel": "Qualifiés"
+                    }
+                },
+                {
+                    "title": "Approche de masse destructive",
+                    "description": "L'envoi massif de messages génériques est ignoré par les experts. Plus grave, cette méthode <white>dévalorise durablement votre marque employeur</white> auprès d'une communauté où la réputation est clé."
+                },
+                {
+                    "title": "Absence de validation",
+                    "description": "Les recruteurs généralistes ne peuvent pas valider techniquement un Actuaire ou un CISO. Ils transmettent des CVs, pas des profils qualifiées."
+                }
+            ]
+        },
+        "conclusion": {
+            "title": "Surly n'est pas une autre plateforme de sourcing.",
+            "description": "C'est la réponse d'experts du secteur qui en avaient assez de voir des projets échouer faute d'avoir les bonnes compétences. Nous avons pensé et construit la plateforme que nous aurions aimé trouvé.",
+            "badges": [
+                "Par des experts",
+                "Pour des experts",
+                "100% Bancassurance"
+            ]
+        },
+        "ctaClient": {
+            "title": "Vous recrutez ?",
+            "description": "Trouvez vos experts en 48h avec notre IA en self-service ou via notre service d'accompagnement.",
+            "button": "Découvrir nos solutions"
+        },
+        "ctaConsultant": {
+            "title": "Vous cherchez une mission ?",
+            "description": "Vous cherchez un tremplin pour accélérer votre carrière professionnelle? Accédez aux meilleures opportunités du secteur de la bancassurance",
+            "button": "Voir les missions"
+        }
+    },
+    "piliers": {
+        "tag": "Notre Approche",
+        "title": "La différence<br></br><span>Surly</span>",
+        "pilierLabel": "Pilier",
+        "cta": "Rejoindre la plateforme",
+        "items": [
+            {
+                "title": "100% Spécialisé, 0% Généraliste",
+                "description": "Fini les CVs hors-sujet. Chaque profil proposé justifie d'au moins une expérience significative dans le secteur Bancaire ou Assurantiel. On parle le même langage.",
+                "benefits": [
+                    {
+                        "title": "Pertinence immédiate",
+                        "description": "Des candidats qui comprennent votre environnement et votre culture métier dès le premier jour."
+                    },
+                    {
+                        "title": "Gain de temps",
+                        "description": "Ne perdez plus des heures à trier des profils qui ne correspondent pas."
+                    }
+                ]
+            },
+            {
+                "title": "Technologie & humain",
+                "description": "Notre plateforme élimine les tâches administratives pour permettre à nos talent managers de se concentrer sur ce qui compte vraiment : le fit humain et la compréhension fine du besoin.",
+                "features": [
+                    "Qualification 24/7 par IA",
+                    "Matching instantané",
+                    "Validation finale par un expert"
+                ]
+            },
+            {
+                "title": "Une transparence radicale",
+                "description": "Nous brisons l'opacité des cabinets / ESN traditionnels. Surly instaure un nouveau standard de confiance.",
+                "stats": [
+                    {
+                        "value": "15%*",
+                        "label": "Com. fixe",
+                        "sublabel": ""
+                    },
+                    {
+                        "value": "0€",
+                        "label": "Frais d'entrée",
+                        "sublabel": "ni abonnement caché"
+                    }
+                ],
+                "footnote": "*Commission client à la contractualisation, lors de l'utilisation autonome de la plateforme (l'expert reçoit 100% du taux/salaire négocié)",
+                "highlight": {
+                    "title": "TJM & SAB affichés",
+                    "description": "Le consultant sait ce qu'il gagne, le client sait ce qu'il paie."
+                }
+            }
+        ]
+    },
+    "consultantPage": {
+        "metadata": {
+            "title": "Missions Freelance & Emploi Banque Assurance | Rejoindre Surly",
+            "description": "Accédez aux meilleures missions freelance et postes CDI en Banque, Finance et Assurance. TJM attractifs, clients grands comptes, inscription gratuite en 2 min."
+        },
+        "hero": {
+            "badge": "Rejoignez la communauté des experts bancassurance",
+            "titleLine1": "Trouvez vos prochaines",
+            "titleLine2": "missions et postes",
+            "subtitle": "Vous avez une expérience en <strong>banque ou assurance</strong> ?",
+            "subtitleHighlight": "Accédez aux meilleures missions freelance et postes salariés du secteur bancassurance",
+            "ctaPrimary": "Je m'inscris maintenant",
+            "ctaSecondary": "En savoir plus"
+        },
+        "dualOpportunities": {
+            "tag": "Opportunités",
+            "titleLine1": "Comment obtenir",
+            "titleLine2": "des missions ?",
+            "subtitle": "Deux façons complémentaires de décrocher vos prochaines missions",
+            "active": {
+                "badge": "Mode actif",
+                "title": "Postuler aux offres",
+                "description": "Les clients postent régulièrement des missions sur la plateforme Surly",
+                "features": [
+                    "Nouvelles missions chaque semaine",
+                    "Postulez directement via votre dashboard",
+                    "Réponse sous 48h en moyenne",
+                    "Accompagnement durant le processus"
+                ]
+            },
+            "passive": {
+                "badge": "Mode passif",
+                "title": "Être repéré par les clients",
+                "description": "Votre profil est visible 24/7 dans notre moteur de recherche",
+                "features": [
+                    "Visibilité permanente auprès des grands comptes",
+                    "Les clients vous trouvent selon leurs besoins",
+                    "Contacté directement par clients intéressés",
+                    "Profil toujours visible, même sans nouvelles offres"
+                ]
+            }
+        },
+        "compensation": {
+            "tag": "Rémunération",
+            "titleLine1": "Vous décidez",
+            "titleLine2": "de tout",
+            "subtitle": "TJM freelance, salaire annuel, ou les deux ? C'est vous qui choisissez.",
+            "options": [
+                {
+                    "title": "TJM Freelance",
+                    "description": "Vous fixez votre taux journalier moyen librement selon votre profil et expertise."
+                },
+                {
+                    "title": "SAB Salariat",
+                    "description": "Vous définissez votre salaire annuel brut souhaité pour des postes en CDI ou CDD."
+                },
+                {
+                    "title": "Les deux",
+                    "description": "Recherchez simultanément des missions freelance ET des postes salariés pour maximiser vos opportunités."
+                }
+            ],
+            "reassurance": "<strong class=\"font-semibold\">Aucune exclusivité demandée.</strong><br></br>Vous gardez le contrôle total sur votre carrière et vos choix professionnels."
+        },
+        "finalCTA": {
+            "title": "Prêt à rejoindre l'élite des consultants",
+            "titleHighlight": "bancassurance ?",
+            "description": "Inscrivez-vous en 5 minutes et accédez aux meilleures missions du secteur bancassurance.",
+            "ctaPrimary": "Créer mon profil en 5 min",
+            "ctaSecondary": "En savoir plus",
+            "reassurance": [
+                "100% gratuit",
+                "Sans engagement",
+                "3 500+ consultants inscrits"
+            ]
+        },
+        "missionExamples": {
+            "title": "Découvrez des exemples de missions",
+            "description": "Conformité Bâle III, Actuariat IFRS 17, Transformation Digitale, Cybersécurité, Risques de Marché... Consultez des exemples concrets de missions disponibles sur Surly.",
+            "link": "Voir les exemples de missions"
+        }
+    },
+    "sourcingExpertPage": {
+        "metadata": {
+            "title": "Recrutez des Experts Banque & Assurance (Freelance ou CDI) | Surly",
+            "description": "Trouvez l'expert idéal pour vos projets réglementaires (Bâle III, IFRS 17), IT ou transformation. Sourcing par IA ou Cabinet de recrutement spécialisé."
+        },
+        "hero": {
+            "badge": "Sourcing de talents ultra-spécialisés",
+            "titleLine1": "Trouvez votre expert",
+            "titleLine2": "Banque & Assurance",
+            "subtitle": "<strong>Acteurs du secteur :</strong> nous agissons soit via notre plateforme autonome, soit en tant que cabinet spécialisé. Choisissez la formule qui correspond à votre organisation."
+        },
+        "expertises": {
+            "tag": "Expertise Sectorielle",
+            "title": "Toutes les spécialités, Tous les savoir-faire,<br></br><span>Tous les enjeux</span>",
+            "description": "De la conformité réglementaire (Bâle III, IFRS 17, LCB-FT) aux transformations digitales, en passant par le marketing omnicanal ou la digitalisation des RH, notre plateforme vous connecte aux meilleurs talents du secteur. Chaque expert possède une expérience validée dans son domaine.",
+            "stats": "<strong class=\"text-foreground font-semibold\">Plus de 3 000 experts</strong> référencés • <strong class=\"text-foreground font-semibold\"> 100% vérifiés</strong> • Disponibles <strong class=\"text-foreground font-semibold\">sous 48h</strong>"
+        }
+    },
+    "successStories": {
+        "tag": "Track Record",
+        "title": "Expertise prouvée<br></br><span>sur le terrain</span>",
+        "subtitle": "Des cas concrets où la spécialisation fait toute la différence.",
+        "challengeLabel": "Enjeu Critique",
+        "solutionLabel": "Réponse Surly",
+        "stories": [
+            {
+                "sector": "Banque de Financement",
+                "context": "Mise en conformité Bâle III & Stress Testing",
+                "challenge": "Déficit structurel de 3 FTEs experts en risque de crédit sur le périmètre CIB pour l'exercice EBA Stress Test. Risque de non-conformité SREP.",
+                "solution": "Staffing d'une Task Force de 3 Experts Risque Senior (min. 12 ans exp.) en 72h. Profils ex-inspection générale.",
+                "results": [
+                    {
+                        "label": "Délai de staffing",
+                        "value": "72h",
+                        "sub": "vs 4 mois habituels"
+                    },
+                    {
+                        "label": "Qualité des livrables",
+                        "value": "100%",
+                        "sub": "Validation BCE sans réserve"
+                    },
+                    {
+                        "label": "Économie réalisée",
+                        "value": "-25%",
+                        "sub": "vs Big Four"
+                    }
+                ]
+            },
+            {
+                "sector": "Compagnie d'Assurance",
+                "context": "Clôture IFRS 17 & Optimisation CSM",
+                "challenge": "Départ inopiné du Responsable Actuariat Vie en pleine période de clôture 'Dry Run'. Blocage critique sur le calcul du Best Estimate.",
+                "solution": "Identification immédiate d'un Actuaire Certifié IA (Institut des Actuaires) spécialisé IFRS 17 disponible en inter-contrat.",
+                "results": [
+                    {
+                        "label": "Continuité de service",
+                        "value": "< 5j",
+                        "sub": "Aucun retard de clôture"
+                    },
+                    {
+                        "label": "Optimisation CSM",
+                        "value": "+2.5M€",
+                        "sub": "Impact P&L direct"
+                    },
+                    {
+                        "label": "Transfert de compétences",
+                        "value": "Doc.",
+                        "sub": "Documentation complète"
+                    }
+                ]
+            },
+            {
+                "sector": "Mutuelle Santé",
+                "context": "Digitalisation & Conformité DDA",
+                "challenge": "Refonte du parcours souscription pour conformité DDA (Directive Distribution Assurance). Besoin d'un PO expert métier + réglementaire.",
+                "solution": "Détachement d'un profil hybride 'Business Analyst / Compliance Officer' ayant déjà mené 2 projets similaires.",
+                "results": [
+                    {
+                        "label": "Time-to-market",
+                        "value": "3 mois",
+                        "sub": "Lancement accéléré"
+                    },
+                    {
+                        "label": "Conformité DDA",
+                        "value": "100%",
+                        "sub": "Audit interne validé"
+                    },
+                    {
+                        "label": "Conversion",
+                        "value": "+15%",
+                        "sub": "Hausse souscriptions"
+                    }
+                ]
+            }
+        ]
+    },
+    "experts": {
+        "tag": "Experts vedettes",
+        "titleLine1": "Découvrez nos",
+        "titleLine2": "experts disponibles",
+        "ctaDesktop": "Trouvez votre expert idéal avec notre IA",
+        "ctaMobile": "Trouver un expert",
+        "profiles": [
+            {
+                "name": "Sophie Martin",
+                "role": "Expert Conformité Senior",
+                "experience": "15 ans d'expérience",
+                "skills": [
+                    "KYC/AML",
+                    "LCB-FT",
+                    "RGPD"
+                ],
+                "status": "Disponible immédiatement"
+            },
+            {
+                "name": "Thomas Dubois",
+                "role": "Actuaire IFRS 17",
+                "experience": "12 ans d'expérience",
+                "skills": [
+                    "IFRS 17",
+                    "Solvabilité II",
+                    "Modélisation"
+                ],
+                "status": "Disponible immédiatement"
+            },
+            {
+                "name": "Marie Leroy",
+                "role": "Risk Manager Senior",
+                "experience": "18 ans d'expérience",
+                "skills": [
+                    "Bâle III",
+                    "Stress Testing",
+                    "ICAAP"
+                ],
+                "status": "Disponible sous 2 semaines"
+            }
+        ]
+    },
+    "expertSourcingCTA": {
+        "title": "Prêt à trouver votre expert idéal ?",
+        "description": "Quelle que soit votre approche, Surly vous accompagne dans votre recherche de talents spécialisés Banque & Assurance.",
+        "commercial": {
+            "title": "Contact commercial",
+            "description": "Discutez de votre besoin avec nos experts",
+            "cta": "Discuter de mon besoin"
+        },
+        "urgent": {
+            "title": "Besoin urgent",
+            "description": "Qualifiez votre besoin instantanément avec notre IA",
+            "cta": "Essayer Surly AI"
+        },
+        "platform": {
+            "title": "Accès plateforme",
+            "description": "Accédez à 3 300+ experts en autonomie",
+            "cta": "S'inscrire gratuitement"
+        }
+    },
+    "faqPage": {
+        "metadata": {
+            "title": "FAQ - Questions Fréquentes | Surly - Experts Banque & Assurance",
+            "description": "Trouvez les réponses à vos questions sur Surly : recrutement d'experts bancassurance, inscription consultants, tarification, missions freelance et CDI en Banque et Assurance.",
+            "ogTitle": "FAQ - Questions Fréquentes | Surly",
+            "ogDescription": "Toutes les réponses à vos questions sur le recrutement d'experts en Banque et Assurance via Surly."
+        },
+        "badge": "Centre d'aide",
+        "titleLine1": "Foire aux",
+        "titleLine2": "questions",
+        "pills": {
+            "companies": "Entreprises",
+            "consultants": "Consultants",
+            "general": "Général"
+        },
+        "categories": {
+            "companies": "Pour les entreprises",
+            "consultants": "Pour les consultants",
+            "general": "Questions générales"
+        },
+        "cta": {
+            "title": "Vous n'avez pas trouvé votre réponse ?",
+            "description": "Notre équipe est disponible pour répondre à toutes vos questions.",
+            "contact": "Nous contacter",
+            "ai": "Essayer Surly AI"
+        },
+        "items": {
+            "clients": [
+                {
+                    "question": "Qu'est-ce que Surly ?",
+                    "answer": "Surly, c’est le One Stop Shop du sourcing en bancassurance : une marketplace qui connecte banques & assureurs avec des experts du secteur (freelance ou CDI/CDD). Rapide, simple, efficace : vous déposez votre besoin et recevez des profils ultra-ciblés avec un modèle simple, transparent et pensé pour aller vite."
+                },
+                {
+                    "question": "Sur quels métiers Banque & Assurance Surly est-elle spécialisée ?",
+                    "answer": "Nous sommes spécialisés uniquement sur la bancassurance, avec une couverture complète des métiers et des fonctions supports : conformité & réglementation, risques, actuariat, transformation, IT/data, MOA/AMOA, Finance & marchés, opérations, Commercial, Marketing, RH… Objectif : vous proposer des profils qui comprennent réellement vos enjeux sectoriels."
+                },
+                {
+                    "question": "Quelle différence avec les solutions généralistes ?",
+                    "answer": "La différence, c’est la spécialisation. Surly est conçu uniquement pour la bancassurance : profils ciblés, pré-qualification, et interlocuteurs qui comprennent vos enjeux. Vous obtenez une sélection pertinente plus vite, sans “bruit” ni profils hors sujet — pour du freelance comme pour du CDI/CDD."
+                },
+                {
+                    "question": "Comment fonctionne la plateforme Surly ?",
+                    "answer": "Vous avez deux options : 1) Cabinet de conseil : nos talent managers qualifient votre besoin et vous présentent 2-3 profils pertinents avec accompagnement complet. 2) Accès plateforme : vous accédez directement à notre base d'experts pré-qualifiés et gérez vos recrutements en autonomie."
+                },
+                {
+                    "question": "Comment utiliser l'IA Surly pour trouver un expert ?",
+                    "answer": "Notre assistant IA analyse votre besoin en temps réel et identifie les profils les plus pertinents dans notre base. Décrivez simplement votre recherche (compétences, durée, contexte de mission) et notre équipe vous recontactera dans les plus brefs délais avec une sélection de candidats qualifiés. Un moyen rapide et efficace d'initier votre recherche, disponible 24h/24."
+                },
+                {
+                    "question": "Quel est le délai moyen pour recevoir des profils ?",
+                    "answer": "Avec l'accès plateforme, vous accédez instantanément aux profils via notre moteur de recherche boosté par un algorithme de matching puissant. Avec l'accompagnement cabinet, nos talent managers vous transmettent une proposition commerciale détaillée avec les dossiers de compétences (CV) des candidats sélectionnés sous 48h maximum."
+                },
+                {
+                    "question": "Les profils sont-ils vérifiés ?",
+                    "answer": "Oui, tous nos experts sont vérifiés. Chaque consultant justifie d'au moins une expérience significative dans le secteur Banque ou Assurance, validée par notre équipe avant référencement."
+                },
+                {
+                    "question": "Quels sont les tarifs de Surly ?",
+                    "answer": "L’accès à Surly est 100% gratuit pour les entreprises comme pour les experts : vous pouvez publier un besoin, consulter les profils et échanger sans frais. Les TJM et salaires sont affichés en toute transparence. Surly se rémunère via une commission appliquée uniquement en cas de contractualisation (mission ou recrutement)."
+                },
+                {
+                    "question": "Y a-t-il des frais d'inscription ?",
+                    "answer": "Non, l'inscription et l'accès à la plateforme sont totalement gratuits pour tous (entreprises et consultants). Aucun frais caché."
+                },
+                {
+                    "question": "Quelle est la garantie en cas de problème avec un consultant ?",
+                    "answer": "Avec notre formule cabinet, vous bénéficiez d'une garantie de remplacement en cas d'imprévu. Notre équipe assure un suivi continu de la mission pour garantir votre satisfaction."
+                },
+                {
+                    "question": "Quels types de profils trouve-t-on sur Surly ?",
+                    "answer": "Notre plateforme couvre l'ensemble des métiers du secteur bancassurance : fonctions support (RH, Finance, Juridique, Marketing, Communication, etc.), métiers techniques (IT, Data, Cyber, Infrastructure, etc.), métiers réglementaires (Conformité, Risques, Audit, Contrôle interne, etc.), métiers opérationnels (Opérations, Middle Office, Back Office, etc.), et métiers de direction (Direction Générale, Direction de projet, Transformation, etc.)."
+                },
+                {
+                    "question": "Proposez-vous des profils pour des postes en CDI ?",
+                    "answer": "Oui, Surly propose aussi bien des missions freelance que des postes en CDI ou CDD. Nos consultants peuvent indiquer leur préférence et vous pouvez filtrer selon le type de contrat souhaité."
+                },
+                {
+                    "question": "Quelles sont les expertises réglementaires couvertes ?",
+                    "answer": "Nous couvrons l'ensemble des réglementations du secteur financier : Bâle, IFRS, Solvabilité, LCB-FT, RGPD, DSP, DORA, MIF, et toutes les exigences des régulateurs européens (BCE, ACPR, AMF, etc.)."
+                }
+            ],
+            "consultants": [
+                {
+                    "question": "Comment m'inscrire sur Surly ?",
+                    "answer": "L'inscription se fait en 5 minutes sur notre plateforme. Vous remplissez vos expériences (import automatique depuis LinkedIn ou CV), vos compétences et outils maîtrisés, puis vous fixez vos critères de recherche (TJM, mobilité, disponibilité)."
+                },
+                {
+                    "question": "L'inscription est-elle payante ?",
+                    "answer": "Non, l'inscription est 100% gratuite pour les consultants. Surly se rémunère uniquement via une commission auprès des entreprises clientes."
+                },
+                {
+                    "question": "Quels sont les critères pour être référencé sur Surly ?",
+                    "answer": "Avoir au moins une expérience significative en Banque ou Assurance. Tous les profils sont vérifiés par notre équipe avant validation. Vous n’êtes pas sûr d’être éligible ? Inscrivez-vous : notre équipe vous indique rapidement si votre profil correspond."
+                },
+                {
+                    "question": "Puis-je m'inscrire si je suis en CDI actuellement ?",
+                    "answer": "Oui, vous pouvez vous inscrire à tout moment, même en poste. Vous indiquez simplement votre date de disponibilité et nous vous contactons lorsque des opportunités correspondent à votre profil."
+                },
+                {
+                    "question": "Quels types de missions sont proposés ?",
+                    "answer": "Nous proposons des missions freelance (régie, forfait) et des postes salariés (CDI, CDD). Vous pouvez rechercher les deux simultanément pour maximiser vos opportunités."
+                },
+                {
+                    "question": "Comment suis-je mis en relation avec les clients ?",
+                    "answer": "Lorsqu'un client recherche votre profil, nous vous contactons pour vérifier votre disponibilité et intérêt. Si vous êtes sélectionné, nous organisons un entretien avec le client."
+                },
+                {
+                    "question": "Quelle est la durée moyenne des missions ?",
+                    "answer": "Les missions Surly durent en moyenne 6 à 12 mois, avec des possibilités de renouvellement. Certaines missions courtes (3 mois) existent également pour des renforts ponctuels."
+                },
+                {
+                    "question": "Dans quelles régions proposez-vous des missions ?",
+                    "answer": "Nous proposons des missions sur toute la France (avec une concentration en Île-de-France), ainsi qu'en Espagne et au Portugal via notre filiale locale. Nous intervenons également en Suisse, Belgique, Luxembourg, et dans d'autres pays européens selon les besoins. Le télétravail partiel ou total est souvent possible selon les missions."
+                },
+                {
+                    "question": "Comment sont fixés mon TJM ou mon SAB ?",
+                    "answer": "Vous fixez librement votre TJM (freelance) ou votre SAB (CDI/CDD). Surly ne les impose pas : vous gardez la main et pouvez les modifier quand vous le souhaitez. Aucune exclusivité. Besoin d’un repère ? Nos talent managers peuvent vous aider à positionner votre TJM/SAB selon le type de mission ou de poste."
+                },
+                {
+                    "question": "Surly demande-t-il une exclusivité ?",
+                    "answer": "Non, aucune exclusivité n'est demandée. Vous conservez le contrôle total de votre carrière et pouvez travailler avec d'autres plateformes ou cabinets simultanément."
+                },
+                {
+                    "question": "Comment suis-je payé pour mes missions ?",
+                    "answer": "Pour les missions freelance, vous facturez Surly. Nous prenons en charge la gestion administrative et le paiement : vous êtes réglé dans les délais légaux et contractuels convenus, sans démarche à effectuer auprès du client final."
+                },
+                {
+                    "question": "Pouvez-vous me proposer du portage salarial ?",
+                    "answer": "Oui, si vous ne disposez pas de structure juridique (auto-entreprise, SASU), nous pouvons vous orienter vers nos partenaires de portage salarial agréés."
+                },
+                {
+                    "question": "Qu'est-ce que le programme apport d'affaires ?",
+                    "answer": "Si vous recommandez un consultant ou un client à Surly et que cette recommandation aboutit à une mission, vous recevez une commission de 3% du chiffre d'affaires généré.",
+                    "link": {
+                        "text": "Découvrir le programme d'apport d'affaires",
+                        "url": "/apport-affaires"
+                    }
+                },
+                {
+                    "question": "Comment fonctionne la commission d'apport d'affaires ?",
+                    "answer": "Vous partagez le contact d'une mission à pourvoir chez un client via notre formulaire dédié. Si la mission est signée, vous touchez 3% du CA HT pendant toute la durée de la première mission (sous conditions)."
+                },
+                {
+                    "question": "Qui peut participer au programme ?",
+                    "answer": "Le programme est ouvert à tous : consultants inscrits, anciens consultants, contacts professionnels, partenaires. Il suffit de s'inscrire et de partager vos recommandations."
+                }
+            ],
+            "general": [
+                {
+                    "question": "Comment contacter Surly ?",
+                    "answer": "Vous pouvez nous joindre via notre formulaire de contact sur surly.fr/contact, par email (contact@surly.fr), ou par téléphone. Notre équipe répond sous 24h ouvrées."
+                },
+                {
+                    "question": "Où sont vos bureaux ?",
+                    "answer": "Surly est basé en France, avec une équipe dédiée à l'accompagnement des entreprises et consultants du secteur bancassurance. Nous disposons également d'une filiale en Espagne et au Portugal."
+                },
+                {
+                    "question": "Surly est-il conforme au RGPD ?",
+                    "answer": "Oui, Surly respecte strictement le RGPD. Vos données personnelles sont sécurisées et vous pouvez exercer vos droits d'accès, rectification et suppression à tout moment. Consultez notre Politique de confidentialité pour plus de détails."
+                },
+                {
+                    "question": "Proposez-vous des partenariats ?",
+                    "answer": "Oui. Nous construisons des partenariats avec des acteurs de l’écosystème Banque & Assurance afin d’apporter toute l’aide possible à notre communauté de Surlyers et qu’ils puissent se concentrer pleinement sur l’essentiel : leur mission !",
+                    "link": {
+                        "text": "Retrouvez les détails sur la page « Partenaires & Avantages »",
+                        "url": "/partenaires-avantages"
+                    }
+                }
+            ]
+        }
+    },
+    "serviceOptions": {
+        "tag": "Deux formules adaptées",
+        "titleLine1": "Surly s'adapte à",
+        "titleLine2": "votre organisation",
+        "intro": "Que vous ayez besoin d'un accompagnement sur-mesure ou que vous préfériez gérer vos recrutements en autonomie, Surly vous propose la solution qui correspond à vos besoins en ressources spécialisées.",
+        "cabinet": {
+            "title": "Cabinet de conseil spécialisé",
+            "badge": "🎯 Accompagnement sur-mesure",
+            "description": "Nos talent managers qualifient votre besoin, sourcent les meilleurs profils, gèrent l'administratif et assurent le suivi de mission. Vous vous concentrez sur votre projet, nous gérons le reste.",
+            "advantages": [
+                "Qualification experte de votre besoin",
+                "Présélection de 2-3 profils pertinents maximum",
+                "Gestion administrative complète (contrats, facturation, suivi)",
+                "Accompagnement dédié tout au long de la mission",
+                "Garantie de remplacement en cas d'imprévu"
+            ],
+            "ctaPrimary": "Nous contacter",
+            "ctaSecondary": "Besoin urgent ?"
+        },
+        "platform": {
+            "title": "Accès plateforme autonome",
+            "badge": "🚀 Technologie & autonomie",
+            "description": "Accédez directement à notre base de 3 300+ experts pré-qualifiés. Recherchez, filtrez, et contactez les profils qui correspondent à vos critères. Vous gardez le contrôle, nous fournissons les outils.",
+            "advantages": [
+                "Accès illimité à tous les profils vérifiés",
+                "Recherche avancée par compétences, disponibilité, TJM",
+                "Matching IA instantané 24/7",
+                "Transparence totale sur les tarifs",
+                "Commission fixe de 15% uniquement"
+            ],
+            "ctaPrimary": "S'inscrire gratuitement",
+            "ctaSecondary": "Tester Surly AI"
+        }
+    },
+    "expertRequirements": {
+        "tag": "Profils recherchés",
+        "titleLine1": "Votre profil correspond ?",
+        "titleLine2": "Vous êtes au bon endroit",
+        "subtitle": "Nos experts partagent une caractéristique commune",
+        "profileType": {
+            "title": "Le profil type de nos experts",
+            "description": "Vous avez <strong class=\"text-foreground font-semibold\">une expérience en banque ou assurance</strong> ? C'est exactement ce que recherchent nos clients. Que vous soyez en CDI, freelance, ou veniez d'un cabinet de conseil, votre connaissance du secteur bancassurance est précieuse."
+        },
+        "domainsTitle": "Domaines d'expertise acceptés",
+        "sectorBadge": "Banque & Assurance",
+        "domains": [
+            {
+                "title": "IT & Digital",
+                "skills": [
+                    "DevOps",
+                    "Data Engineering",
+                    "Architecture SI",
+                    "Product Owner",
+                    "Cloud AWS/Azure",
+                    "Cybersécurité"
+                ]
+            },
+            {
+                "title": "Finance & Actuariat",
+                "skills": [
+                    "Actuariat",
+                    "IFRS 17",
+                    "Solvabilité II",
+                    "Pillar 3",
+                    "Contrôle de gestion",
+                    "ALM"
+                ]
+            },
+            {
+                "title": "Risques & Conformité",
+                "skills": [
+                    "Risk Manager",
+                    "Bâle III",
+                    "LCB-FT",
+                    "KYC/AML",
+                    "Conformité",
+                    "Audit interne"
+                ]
+            },
+            {
+                "title": "RH & Organisation",
+                "skills": [
+                    "SIRH",
+                    "Transformation RH",
+                    "Paie",
+                    "Gestion talents",
+                    "Recrutement",
+                    "Conduite du changement"
+                ]
+            },
+            {
+                "title": "Commercial & Marketing",
+                "skills": [
+                    "Relation client",
+                    "Digital Marketing",
+                    "Distribution",
+                    "CRM",
+                    "Analytics",
+                    "Développement commercial"
+                ]
+            },
+            {
+                "title": "Opérations & Support",
+                "skills": [
+                    "Gestion des opérations",
+                    "Middle Office",
+                    "Back Office",
+                    "Qualité",
+                    "Process",
+                    "Excellence opérationnelle"
+                ]
+            }
+        ],
+        "allLevels": "Tous les niveaux sont les bienvenus",
+        "allLevelsDescription": "du Junior au Senior Expert. Ce qui compte, c'est votre expérience concrète dans le secteur bancassurance."
+    },
+    "quickRegistration": {
+        "tag": "Inscription",
+        "titleLine1": "Inscription en",
+        "titleLine2": "5 minutes chrono",
+        "subtitle": "CV parser OU LinkedIn - profil validé sous 48h",
+        "uploadCV": {
+            "title": "Upload CV",
+            "description": "Déposez votre CV (PDF/DOCX) et vos expériences sont remplies automatiquement"
+        },
+        "linkedin": {
+            "title": "Connexion LinkedIn",
+            "description": "Importez LinkedIn en un clic : expériences remplies instantanément"
+        },
+        "cta": "Commencer mon inscription",
+        "steps": [
+            {
+                "label": "Profil",
+                "description": "Création de votre compte consultant",
+                "mockupTitle": "Créez votre profil",
+                "mockupItems": [
+                    "Nom et prénom",
+                    "Email professionnel",
+                    "Téléphone",
+                    "Localisation"
+                ]
+            },
+            {
+                "label": "Expériences",
+                "description": "Renseignement du profil (CV ou LinkedIn)",
+                "mockupTitle": "Expériences",
+                "mockupItems": [
+                    "Upload CV (PDF, DOCX)",
+                    "Import LinkedIn",
+                    "Remplissage automatique"
+                ]
+            },
+            {
+                "label": "Compétences",
+                "description": "Extraction automatique des mots-clés",
+                "mockupTitle": "Analyse automatique",
+                "mockupItems": [
+                    "✓ Compétences (Python, Java, SAP...)",
+                    "✓ Méthodologies (Agile, Scrum...)",
+                    "✓ Outils (Jira, Excel, Power BI...)",
+                    "✓ Certifications (PMP, CISSP...)"
+                ]
+            },
+            {
+                "label": "Vérification",
+                "description": "Validation manuelle équipe Surly (48h)",
+                "mockupTitle": "En cours de vérification",
+                "mockupItems": [
+                    "Revue par notre équipe",
+                    "Vérification expériences",
+                    "Délai: sous 48h"
+                ],
+                "status": "En cours"
+            },
+            {
+                "label": "Activation",
+                "description": "Profil actif sur la plateforme",
+                "mockupTitle": "Profil activé",
+                "mockupItems": [
+                    "Félicitations !",
+                    "Profil 100% validé",
+                    "Visible par les clients"
+                ],
+                "status": "Actif"
+            }
+        ]
+    },
+    "rsePage": {
+        "metadata": {
+            "title": "Engagements RSE & Impact Positif | Surly Bancassurance",
+            "description": "Découvrez les engagements RSE de Surly : Numérique Responsable, label French Tech, achats inclusifs et conformité bancaire stricte. Une approche éthique et durable du recrutement."
+        },
+        "hero": {
+            "badge": "Marketplace éthique • Intermédiation transparente • Impact mesurable",
+            "title": "Nos <span>engagements</span>",
+            "subtitle": "Chez Surly, la <strong>responsabilité sociétale et environnementale (RSE)</strong> est au cœur de notre ADN. En tant que plateforme innovante spécialisée dans le secteur banque-assurance, nous nous engageons à offrir un service éthique, durable et transparent.",
+            "highlight1": "Charte Achats Responsables",
+            "highlight2": "Charte Numérique Responsable"
+        }
+    },
+    "fundamentalCommitments": {
+        "tag": "RSE",
+        "title": "Nos 4 engagements<br></br><span>fondamentaux</span>",
+        "subtitle": "En choisissant Surly, vous faites le choix d'un partenaire engagé, aligné sur vos valeurs RSE et capable de soutenir vos ambitions d'innovation responsable.",
+        "commitments": {
+            "c1": {
+                "title": "Transparence absolue",
+                "description": "Nous cultivons des relations basées sur l'intégrité et la confiance avec nos utilisateurs et partenaires. Surly garantit une communication claire, ouverte et honnête, assurant une transparence totale dans tous nos processus."
+            },
+            "c2": {
+                "title": "Responsabilité environnementale",
+                "description": "Engagés dans la Charte Numérique Responsable, nous réduisons activement notre empreinte écologique en adoptant des pratiques numériques durables et respectueuses de l'environnement."
+            },
+            "c3": {
+                "title": "Inclusion et équité",
+                "description": "Nous promouvons activement la diversité et l'inclusion, offrant un accès équitable aux opportunités professionnelles pour tous les experts indépendants et petites entreprises, sans discrimination."
+            },
+            "c4": {
+                "title": "Sécurité des données",
+                "description": "La protection des données et des systèmes fait partie intégrante de notre responsabilité. Nous mettons en œuvre des standards élevés de sécurité pour garantir la confidentialité des informations personnelles et professionnelles, la fiabilité de nos échanges et contrats, et une plateforme résiliente et conforme aux exigences RGPD.",
+                "features": [
+                    "Confidentialité des informations",
+                    "Intégrité des échanges",
+                    "Résilience face aux cybermenaces"
+                ]
+            }
+        }
+    },
+    "responsiblePractices": {
+        "purchasing": {
+            "tag": "Achats Responsables",
+            "title": "Des achats<br></br><span>responsables</span>",
+            "charterTitle": "Signataire de la charte Relations fournisseurs & Achats responsables",
+            "charterDescription": "Nous construisons des relations équitables et durables avec nos fournisseurs et freelances partenaires.",
+            "items": [
+                "<strong>Transparence totale</strong> des processus d'achat",
+                "<strong>Respect rigoureux</strong> des délais de paiement",
+                "<strong>Dialogue ouvert</strong> en cas de litige"
+            ]
+        },
+        "frenchTech": {
+            "tag": "French Tech",
+            "title": "Lauréat du programme<br></br><span>« Je choisis la French Tech »</span>",
+            "partnerTitle": "Surly, partenaire stratégique de confiance",
+            "p1": "Lauréat du programme gouvernemental « Je choisis la French Tech », Surly s'affirme comme un <strong>partenaire stratégique de confiance</strong> pour les grands acteurs bancaires et assurantiels.",
+            "p2": "Ce référencement institutionnel valide non seulement la <strong>pérennité de notre modèle</strong>, mais s'inscrit directement dans la politique d'<strong>Achats Responsables</strong> de nos clients. En collaborant avec Surly, vous soutenez l'innovation souveraine française tout en concrétisant vos engagements formels d'augmentation de la part des start-up dans vos volumes d'achats.",
+            "p3": "Nous garantissons une <strong>expertise 100% locale</strong> et une <strong>conformité stricte</strong>, alignée avec les exigences de sécurité du secteur financier."
+        },
+        "digital": {
+            "tag": "Numérique Responsable",
+            "title": "Un numérique<br></br><span>responsable</span>",
+            "charterTitle": "Engagement Charte Numérique Responsable",
+            "charterDescription": "Surly s'engage à minimiser l'empreinte écologique du numérique en optimisant ses infrastructures technologiques. Nous adoptons des pratiques de sobriété numérique pour réduire notre consommation énergétique.",
+            "charterItems": [
+                "Hébergement écoresponsable",
+                "Sensibilisation aux bonnes pratiques numériques",
+                "Promotion du télétravail et réunions virtuelles"
+            ],
+            "securityTitle": "Sécurité des données & infrastructure Cloud",
+            "securitySubtitle": "Neon database : Sécurité & protection des données",
+            "securityDescription": "Chez Surly, la sécurité n'est pas une option, c'est un engagement. Nous protégeons les données personnelles, professionnelles et contractuelles de l'ensemble de nos utilisateurs avec les plus hauts standards de sécurité numérique.",
+            "securityItems": [
+                "Confidentialité des informations",
+                "Intégrité des échanges",
+                "Résilience face aux cybermenaces"
+            ]
+        },
+        "ethics": {
+            "title": "Éthique et conformité",
+            "subtitle": "L'intégrité est notre priorité absolue",
+            "description": "L'intégrité guide chacune de nos actions. Surly respecte les plus hauts standards de sécurité grâce à son infrastructure Neon, certifiée SOC 2 Type II et ISO 27001.",
+            "items": [
+                {
+                    "title": "Audit des partenaires",
+                    "desc": "Vérification systématique et continue"
+                },
+                {
+                    "title": "Protection maximale",
+                    "desc": "Chiffrement AES-256 et surveillance 24/7"
+                },
+                {
+                    "title": "Conformité totale",
+                    "desc": "GDPR, CCPA et standards internationaux"
+                }
+            ]
+        }
+    },
+    "businessReferralPage": {
+        "metadata": {
+            "title": "Programme Apport d'Affaires | Gagnez 3% - Surly",
+            "description": "Partagez une opportunité Banque ou Assurance et gagnez 3% du montant facturé. Programme d'apport d'affaires Surly."
+        },
+        "hero": {
+            "badge": "Partagez une opportunité",
+            "title": "Programme d'apport d'affaires",
+            "highlightAmount": "Gagnez <span class=\"text-accent\">3%</span> du montant facturé*",
+            "highlightSub": "en partageant une opportunité",
+            "subtitle": "Vous connaissez un client avec un besoin en <strong>expertise Banque ou Assurance</strong> ? Partagez l'opportunité et soyez récompensé pour chaque mission conclue.",
+            "cta": "Je partage une opportunité"
+        }
+    },
+    "howItWorks": {
+        "tag": "Comment ça marche ?",
+        "title": "Un processus simple et<br></br><span>efficace en 3 étapes</span>",
+        "steps": {
+            "s1": {
+                "title": "Identifiez une opportunité client",
+                "description": "Vous êtes mis en contact avec un client ou un projet dans les secteurs banque/assurance que vous ne pouvez pas réaliser ?"
+            },
+            "s2": {
+                "title": "Soumettez l'opportunité via un formulaire simple",
+                "description": "Transmettez-nous les détails du projet. L'équipe Surly prend le relais immédiatement."
+            },
+            "s3": {
+                "title": "La mission est gagnée, vous êtes rémunéré",
+                "description": "Une fois la mission signée avec un expert de notre communauté, vous recevez 3% du montant à partir de l'encaissement de la première facture."
+            }
+        },
+        "cta": "Partager une opportunité maintenant"
+    },
+    "whyParticipate": {
+        "tag": "Pourquoi participer ?",
+        "title": "Boostez vos revenus simplement,<br></br><span>tout en renforçant votre réseau professionnel</span>",
+        "subtitle": "Devenir apporteur d'affaires Surly, c'est transformer vos recommandations en <strong>revenus concrets</strong> tout en apportant une vraie valeur ajoutée à votre réseau professionnel dans le secteur bancassurance.",
+        "benefits": {
+            "b1": {
+                "title": "Revenu complémentaire sans effort",
+                "description": "Monétisez vos recommandations avec une récompense concrète chaque fois qu'un projet est réalisé.",
+                "highlight": "3% par mission"
+            },
+            "b2": {
+                "title": "Renforcez la confiance avec vos clients",
+                "description": "En facilitant la poursuite de leurs projets, vous vous positionnez comme un partenaire fiable et stratégique.",
+                "highlight": "Partenaire de confiance"
+            },
+            "b3": {
+                "title": "Soutenez la communauté Surly",
+                "description": "Vous contribuez à la prospérité d'autres experts spécialisés en banque/assurance, tout en enrichissant notre écosystème.",
+                "highlight": "3000+ experts"
+            }
+        },
+        "stats": [
+            {
+                "number": "3%",
+                "label": "Commission garantie"
+            },
+            {
+                "number": "48h",
+                "label": "Prise en charge rapide"
+            },
+            {
+                "number": "100%",
+                "label": "Banque & Assurance"
+            }
+        ],
+        "cta": {
+            "title": "Prêt à commencer ?",
+            "description": "Rejoignez notre programme d'apport d'affaires dès aujourd'hui et commencez à générer des revenus complémentaires.",
+            "button": "Je partage une opportunité",
+            "questions": "Des questions ?",
+            "contactUs": "Contactez-nous"
+        }
+    },
+    "partnersPage": {
+        "metadata": {
+            "title": "Partenaires & Avantages Exclusifs | Surly Consultants",
+            "description": "Découvrez les partenaires premium Surly et profitez d'offres exclusives négociées pour les consultants Banque & Assurance."
+        },
+        "hero": {
+            "badge": "Pour les consultants Surly",
+            "title": "Partenaires premium &<span>avantages exclusifs</span>",
+            "subtitle": "Nos partenaires ont été sélectionnés avec soin et leurs offres négociées aux meilleurs tarifs pour faciliter votre vie professionnelle et personnelle."
+        }
+    },
+    "partnersGrid": {
+        "tag": "Offres Partenaires",
+        "title": "Des avantages concrets<br></br><span>pour votre quotidien</span>",
+        "subtitle": "Chaque partenariat a été négocié pour vous offrir des conditions préférentielles exclusives.",
+        "exclusive": "Offre exclusive",
+        "benefitLabel": "Avantages Surly",
+        "cta": "Se connecter",
+        "partners": [
+            {
+                "name": "Mammouth AI",
+                "logo": "/logos/partners/mammouth-surly.jpg",
+                "description": "Mammouth donne accès aux meilleurs modèles d'IA dans une même interface.",
+                "features": [
+                    "Mammouth mets à jour les dernières versions des modèles à leur sortie",
+                    "La fonction \"reprompting\" permet de comparer les modèles",
+                    "Les mammouths personnalisés : Créer votre propre mammouth avec vos propres instructions pour organiser vos projets",
+                    "La recherche approfondie via Perplexity",
+                    "Documents & Images: Analysez images et documents…"
+                ],
+                "benefit": "Bénéficiez de 1 mois offert sur Mammouth AI avec l'abonnement Standard."
+            },
+            {
+                "name": "Qonto",
+                "logo": "/logos/partners/qonto-surly.jpg",
+                "description": "Solution bancaire professionnelle tout-en-un pour centraliser vos finances et simplifier votre comptabilité.",
+                "features": [
+                    "Gérez facilement vos dépenses, suivez vos encaissements et automatisez vos tâches administratives"
+                ],
+                "benefit": "Bénéficiez de vos 2 premiers mois offerts sur Qonto et créez gratuitement votre société si vous le souhaitez grâce à notre partenariat."
+            },
+            {
+                "name": "Shine",
+                "logo": "/logos/partners/shine-surly.jpg",
+                "description": "Shine propose un compte pro 100 % en ligne et un véritable copilote administratif. Compte pro, factures, comptabilité, assurances…",
+                "features": [
+                    "Il simplifie l'expérience bancaire et administrative des entrepreneurs"
+                ],
+                "benefit": "En faisant partie intégrante de la communauté Surly, bénéficiez de la création d'un compte PRO Shine pour 0€ !"
+            },
+            {
+                "name": "WeWork",
+                "logo": "/logos/partners/wework-surly.jpg",
+                "description": "Réseau mondial d'espaces de coworking premium offrant des environnements de travail flexibles, professionnels et inspirants.",
+                "features": [
+                    "Accédez à des bureaux entièrement équipés, des salles de réunion high-tech et des espaces communs conçus pour favoriser la productivité et la créativité"
+                ],
+                "benefit": "Surly vous fait profiter d'une offre spéciale pour devenir membre de WeWork. Bénéficiez de 1 mois gratuit pour notre communauté."
+            },
+            {
+                "name": "Pennylane",
+                "logo": "/logos/partners/pennylane-surly.jpg",
+                "description": "Un logiciel complet, puissant et intégré à tous vos outils métiers.",
+                "features": [
+                    "Pennylane rassemble tous les outils et toutes les intégrations nécessaires pour gérer l'ensemble de vos dépenses, votre facturation, votre trésorerie ainsi que votre comptabilité"
+                ],
+                "benefit": "Bénéficiez de 200€ de bon cadeau et 1 mois offert sur l'abonnement pour les indépendants."
+            },
+            {
+                "name": "Konectiv",
+                "logo": "/logos/partners/konectiv-surly.jpg",
+                "description": "En choisissant le portage salarial avec Surly et Konectiv, vous optez pour une solution qui allie sécurité et liberté.",
+                "features": [
+                    "Profitez des avantages du salariat tout en conservant votre indépendance et votre flexibilité",
+                    "Contactez-nous dès aujourd'hui pour en savoir plus sur notre offre de portage salarial et commencez à développer votre activité en toute sérénité !"
+                ],
+                "benefit": "Des tarifs préférentiels, remboursement des certifications et des formations, et accompagnement personnalisé. Contactez-nous pour avoir le détail de l'offre."
+            },
+            {
+                "name": "NordVPN",
+                "logo": "/logos/partners/nordvpn-surly.jpg",
+                "description": "Protégez vos activités en ligne.",
+                "features": [
+                    "Grâce à de nombreuses technologies de pointe, NordVPN préserve vos appareils des logiciels malveillants et votre navigation des regards indiscrets",
+                    "Au point qu'il faudrait des milliards d'années à l'ordinateur le plus puissant du monde pour déchiffrer vos données"
+                ],
+                "benefit": "Bénéficiez de 70% de réduction pour tout abonnement à NordVPN + 3 mois offerts avec Surly."
+            },
+            {
+                "name": "Ziplo",
+                "logo": "/logos/partners/ziplo-surly.jpg",
+                "description": "Transfert de fichiers sécurisé et preuve d'antériorité en ligne.",
+                "features": [
+                    "Ziplo aide à défendre votre Propriété Intellectuelle. Ziplo vous permet de créer des preuves d'antériorité pour vos écrits, vos formations, votre code informatique, vos videos, vos dessins, vos pages web…",
+                    "Dépôt de fichiers avec horodatage qualifié ayant force probante",
+                    "Transfert de fichiers sécurisé et souverain. Vos fichiers sont stockés exclusivement dans des datacenters Français (RGPD)"
+                ],
+                "benefit": "Offre exclusive via un code promo sur l'offre Ziplo+."
+            }
+        ]
+    },
+    "missionsPage": {
+        "metadata": {
+            "title": "Exemples de Missions Banque & Assurance | Freelance & CDI - Surly",
+            "description": "Découvrez des exemples de missions disponibles sur Surly : conformité Bâle III, actuariat IFRS 17, transformation digitale, cybersécurité. TJM 650-800€/jour, salaires 55-75K€."
+        },
+        "hero": {
+            "badge": "Exemples de Missions",
+            "titleLine1": "Missions Banque &",
+            "titleLine2": "Assurance",
+            "subtitle": "Découvrez des exemples représentatifs des opportunités disponibles sur Surly"
+        },
+        "disclaimer": {
+            "title": "Missions Exemples",
+            "text": "Les missions présentées ci-dessous sont des <strong>exemples fictifs</strong> représentatifs des types d'opportunités disponibles sur Surly. Pour accéder aux <strong>missions réelles</strong> et postuler, inscrivez-vous gratuitement sur notre plateforme."
+        },
+        "stats": {
+            "missions": "Exemples de missions",
+            "categories": "Catégories métier",
+            "freelanceRate": "TJM Freelance",
+            "salary": "Salaires CDI"
+        },
+        "grid": {
+            "title": "Exemples de Missions par Catégorie",
+            "subtitle": "Conformité, IT & Data, Risques, Actuariat, Transformation, Finance Durable"
+        },
+        "cta": {
+            "title": "Prêt à voir les vraies missions ?",
+            "description": "Inscrivez-vous gratuitement pour accéder à toutes les missions disponibles et postuler en un clic.",
+            "signUp": "S'inscrire gratuitement",
+            "learnMore": "En savoir plus sur Surly"
+        },
+        "card": {
+            "perDay": "/jour",
+            "perYear": "/an",
+            "duration": "Durée : {value}"
+        }
+    },
+    "aiPage": {
+        "hero": {
+            "title": "Trouvez votre expert idéal",
+            "titleHighlight": "en quelques secondes.",
+            "subtitle": "Notre IA spécialisée <strong>Banque & Assurance</strong> qualifie votre besoin et vous met en relation avec les meilleurs profils."
+        },
+        "chat": {
+            "initialMessage": "Bonjour ! Je suis l'IA de Surly. Comment puis-je vous aider à trouver l'expert idéal en Banque ou Assurance aujourd'hui ?",
+            "placeholder": "Décrivez votre besoin en quelques mots...",
+            "sourcing": "Sourcing en cours...",
+            "errorMaxLength": "Le message ne peut pas dépasser {max} caractères.",
+            "errorRateLimit": "Trop de requêtes. Veuillez patienter quelques minutes.",
+            "errorGeneric": "Une erreur est survenue.",
+            "errorFallback": "Désolé, je rencontre une difficulté technique. Contactez-nous directement sur contact@surly.fr ou par téléphone.",
+            "disclaimer": "Surly AI peut faire des erreurs. Vérifiez les informations importantes.",
+            "learnMore": "En savoir plus",
+            "suggestedTitle": "Exemples de recherches :",
+            "triggers": {
+                "sourcing": "Je lance immédiatement une recherche",
+                "confirmation": "Recherche activée"
+            }
+        },
+        "suggestedPrompts": [
+            "Je recherche un expert IFRS 17 pour une mission de 6 mois",
+            "Besoin d'un Business Analyst pour une migration de Core Banking",
+            "Recherche un Responsable Souscription IARD expérimenté",
+            "Expert conformité LCB-FT pour un renfort d'équipe",
+            "Un PMO pour un projet de transformation digitale"
+        ],
+        "expertises": {
+            "tag": "Expertise Sectorielle",
+            "title": "Toutes les spécialités, Tous les savoir-faire,<br></br><span>Tous les enjeux</span>",
+            "description": "De la conformité réglementaire (Bâle III, IFRS 17, LCB-FT) aux transformations digitales, en passant par le marketing omnicanal ou la digitalisation des RH, notre plateforme vous connecte aux meilleurs talents du secteur. Chaque expert possède une expérience validée dans son domaine.",
+            "stats": "<strong>Plus de 3 000 experts</strong> référencés • <strong>100% vérifiés</strong> • Disponibles <strong>sous 48h</strong>"
+        },
+        "benefits": {
+            "tag": "Avantages Plateforme",
+            "title": "Pourquoi Surly est le choix<br></br><span>des meilleurs décideurs</span>",
+            "subtitle": "La seule marketplace <strong>ultra-spécialisée Banque & Assurance</strong>, conçue par des experts pour des besoins pointus.",
+            "items": [
+                {
+                    "number": "01",
+                    "title": "Profils pré-qualifiés",
+                    "desc": "Tous nos experts justifient d'au moins une expérience significative en Banque ou Assurance.",
+                    "stat": "0 CV hors-sujet"
+                },
+                {
+                    "number": "02",
+                    "title": "Matching instantané",
+                    "desc": "Notre IA qualifie votre besoin 24/7 et propose les profils pertinents en quelques secondes.",
+                    "stat": "-80% temps"
+                },
+                {
+                    "number": "03",
+                    "title": "Expertise sectorielle",
+                    "desc": "Surly s'adresse exclusivement à la Banque et l'Assurance. Nos talent managers comprennent vos enjeux.",
+                    "stat": "100% sectoriel"
+                },
+                {
+                    "number": "04",
+                    "title": "Gain de productivité",
+                    "desc": "Concentrez-vous sur la sélection et le choix. Nous gérons l'administratif et la qualification technique.",
+                    "stat": "48h max"
+                }
+            ]
+        },
+        "missions": {
+            "tag": "Types de Missions",
+            "title": "Tous vos projets stratégiques<br></br><span>couverts par nos experts</span>",
+            "subtitle": "Que vous soyez une banque de réseau, une compagnie d'assurance, une mutuelle ou un leader de la fintech, Surly couvre l'ensemble de vos besoins en expertise pointue pour vos projets de transformation et de conformité.",
+            "items": [
+                {
+                    "title": "Transformation Digitale & Modernisation SI",
+                    "desc": "Accompagnez vos projets de migration vers le Cloud, vos refontes de Core Banking System, ou vos développements d'API Banking. Nos Business Analysts, Architectes SI, et Product Owners maîtrisent les enjeux techniques et métiers de votre transformation.",
+                    "keywords": [
+                        "Cloud Migration",
+                        "Core Banking",
+                        "API First",
+                        "Microservices"
+                    ]
+                },
+                {
+                    "title": "Conformité Réglementaire & Risk Management",
+                    "desc": "Répondez aux exigences BCE, ACPR, et AMF avec des experts rompus aux réglementations Bâle III, IFRS 17, Solvabilité II, et LCB-FT. Risk Managers, Compliance Officers, et Auditeurs spécialisés à votre disposition.",
+                    "keywords": [
+                        "Bâle III",
+                        "IFRS 17",
+                        "LCB-FT",
+                        "RGPD"
+                    ]
+                },
+                {
+                    "title": "Actuariat, Pricing & Data Science",
+                    "desc": "Optimisez vos modèles de tarification, vos analyses de rentabilité, et vos prévisions actuarielles. Actuaires certifiés, Data Scientists, et spécialistes ALM pour vos enjeux de pricing et de gestion actif-passif.",
+                    "keywords": [
+                        "Prophet",
+                        "SAS",
+                        "Python",
+                        "Tarification"
+                    ]
+                },
+                {
+                    "title": "Projets IT & Data Engineering",
+                    "desc": "Structurez vos données, automatisez vos process, et sécurisez vos infrastructures. Data Engineers, DevOps, et Architectes Cloud pour accompagner votre stack technologique moderne (Databricks, AWS, Azure, GCP).",
+                    "keywords": [
+                        "Big Data",
+                        "DevOps",
+                        "Cybersécurité",
+                        "Infrastructure"
+                    ]
+                }
+            ]
+        },
+        "finalCTA": {
+            "title": "Prêt à trouver l'expert qu'il vous faut ?",
+            "description": "Utilisez notre assistant IA pour décrire votre besoin. Nous vous proposons les meilleurs profils sous 48h maximum, avec validation technique par nos talent managers spécialisés.",
+            "button": "Démarrer ma recherche"
+        }
+    },
+    "blogPage": {
+        "metadata": {
+            "title": "Blog Surly | Actualités Banque & Assurance",
+            "description": "Découvrez nos articles sur les tendances du secteur bancaire et assurantiel : réglementations, IA, recrutement, freelance et bien plus."
+        },
+        "hero": {
+            "badge": "Le Blog de Surly",
+            "titleLine1": "Actualités & Insights",
+            "titleLine2": "Banque & Assurance",
+            "description": "Restez informé des dernières tendances, réglementations et opportunités dans les secteurs de la banque et de l'assurance.",
+            "descriptionBold": "Articles d'experts pour professionnels et consultants."
+        },
+        "featured": {
+            "title": "Article à la Une"
+        },
+        "articles": {
+            "title": "Tous les articles",
+            "count": "{count} article(s) disponible(s)"
+        },
+        "empty": {
+            "title": "Plus d'articles bientôt",
+            "description": "De nouveaux articles sont en cours de préparation. Revenez bientôt pour découvrir nos insights sur la banque et l'assurance."
+        },
+        "cta": {
+            "badge": "Envie de contribuer ?",
+            "title": "Partagez votre expertise",
+            "description": "Vous êtes expert dans le secteur bancaire ou assurantiel ? Contribuez au blog et partagez vos insights avec notre communauté de professionnels.",
+            "button": "Nous contacter"
+        }
+    },
+    "businessReferralForm": {
+        "progress": {
+            "stepOf": "Étape {current} sur {total}",
+            "step0": "Introduction",
+            "step1": "Détails du projet",
+            "step2": "Vos informations"
+        },
+        "step0": {
+            "title": "Rappel du programme d'apport d'affaires de Surly",
+            "sendTitle": "Envoyez les détails du projet :",
+            "sendDesc": "Vous êtes mis en contact avec un client ou un projet dans les secteurs banque/assurance que vous ne pouvez pas réaliser ?",
+            "wonTitle": "La mission est gagnée, vous êtes rémunéré :",
+            "wonDesc": "Une fois la mission signée avec un expert de notre communauté, vous recevez 3% du montant à partir de l'encaissement de la première facture.",
+            "warningTitle": "Surly ne doit avoir aucune connaissance préalable de ce projet.",
+            "warningDesc": "Pour nous partager une opportunité, vous ne pouvez pas être le client final ni le décideur du projet."
+        },
+        "step1": {
+            "title": "Détails du projet",
+            "sectorLabel": "Secteur",
+            "sectorBanque": "Banque",
+            "sectorAssurance": "Assurance",
+            "functionLabel": "Fonction concernée",
+            "functionPlaceholder": "Sélectionnez une fonction",
+            "functions": [
+                "Finance",
+                "Gestion",
+                "IT",
+                "Marketing",
+                "RH",
+                "Juridique",
+                "Audit",
+                "Autres"
+            ],
+            "otherLabel": "Précisez la fonction",
+            "otherPlaceholder": "Ex: Data Science, DevOps...",
+            "descriptionLabel": "En dire plus sur le client / mission",
+            "descriptionPlaceholder": "Décrivez le contexte, les besoins, la durée estimée, le budget si connu..."
+        },
+        "step2": {
+            "title": "Vos informations",
+            "registeredLabel": "Êtes-vous déjà inscrit sur Surly ?",
+            "yes": "Oui",
+            "no": "Non",
+            "nameLabel": "Nom complet",
+            "namePlaceholder": "Jean Dupont",
+            "emailLabel": "Email",
+            "emailPlaceholder": "jean.dupont@exemple.fr",
+            "phoneLabel": "Téléphone",
+            "phonePlaceholder": "06 12 34 56 78"
+        },
+        "buttons": {
+            "next": "Suivant",
+            "back": "Retour",
+            "sending": "Envoi en cours...",
+            "send": "Envoyer"
+        },
+        "validation": {
+            "sectorRequired": "Veuillez sélectionner un secteur",
+            "functionRequired": "Veuillez sélectionner une fonction",
+            "otherFunctionRequired": "Veuillez préciser la fonction",
+            "descriptionRequired": "Veuillez décrire le projet",
+            "descriptionMaxLength": "La description ne peut pas dépasser {max} caractères",
+            "registeredRequired": "Veuillez indiquer si vous êtes inscrit",
+            "nameRequired": "Le nom est requis",
+            "emailRequired": "L'email est requis",
+            "emailInvalid": "Email invalide",
+            "phoneRequired": "Le téléphone est requis",
+            "submitError": "Une erreur est survenue. Veuillez réessayer."
+        },
+        "success": {
+            "title": "Merci pour votre recommandation !",
+            "message": "Votre opportunité a bien été transmise à notre équipe. Nous allons l'étudier et reviendrons vers vous rapidement.",
+            "reminderLabel": "Rappel :",
+            "reminderText": "Si la mission est conclue avec un de nos experts, vous recevrez <strong>3%</strong> du montant facturé dès l'encaissement de la première facture.",
+            "backToProgram": "Retour au programme"
+        }
+    },
+    "referralFormPage": {
+        "metadata": {
+            "title": "Formulaire Apport d'Affaires | Surly",
+            "description": "Partagez une opportunité en banque ou assurance et gagnez 3% du montant facturé."
+        },
+        "title": "Partagez une opportunité",
+        "subtitle": "Gagnez <span class=\"text-accent\">3%</span> en recommandant un projet banque/assurance à notre communauté d'experts."
+    },
+    "legal": {
+        "updatedAt": "Mis à jour le {date}",
+        "mentionsLegales": {
+            "title": "Mentions Légales"
+        },
+        "cguClient": {
+            "title": "CGU & CGV - Clients"
+        },
+        "cguPostulant": {
+            "title": "CGU - Candidats"
+        },
+        "charteDonnees": {
+            "title": "Charte de Confidentialité"
+        },
+        "politiqueCookies": {
+            "title": "Politique des Cookies"
+        }
+    },
+    "notFound": {
+        "title": "Cette page n'existe pas.",
+        "description": "L'expert ou la page que vous recherchez semble introuvable. Il est probable qu'elle ait été déplacée ou qu'elle n'ait jamais existé.",
+        "backHome": "Retour à l'accueil",
+        "contact": "Nous contacter"
+    },
+    "contactPage": {
+        "metadata": {
+            "title": "Contactez-nous | Surly",
+            "description": "Contactez Surly pour vos besoins en experts Banque & Assurance. Notre équipe est à votre écoute."
+        }
+    }
+}

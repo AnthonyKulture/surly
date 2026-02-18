@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button, ArrowIcon } from "@/components/ui/Button";
+import { useTranslations } from 'next-intl';
 
 type FunctionData = {
     id: string;
@@ -17,94 +18,44 @@ type FunctionData = {
     availability: string;
 };
 
-const FUNCTIONS: FunctionData[] = [
-    {
-        id: 'finance',
-        label: 'Finance',
-        description: 'Experts financiers',
-        filters: ['SAP FI/CO', 'Excel avancé', 'Power BI', 'Normes IFRS', 'VBA/Macros', 'Bloomberg Terminal'],
-        expertCount: 127,
-        experienceLevel: 'Senior',
-        contractType: 'Freelance',
-        availability: 'Immédiate'
-    },
-    {
-        id: 'gestion',
-        label: 'Gestion',
-        description: 'Pilotage & performance',
-        filters: ['Agile/Scrum', 'Jira', 'MS Project', 'Lean Management', 'Six Sigma', 'Change Management'],
-        expertCount: 89,
-        experienceLevel: 'Expert (+10 ans)',
-        contractType: 'CDI',
-        availability: '< 2 semaines'
-    },
-    {
-        id: 'it',
-        label: 'IT',
-        description: 'Experts techniques',
-        filters: ['Java/Python', 'Cloud AWS/Azure', 'Docker/K8s', 'CI/CD', 'Microservices', 'Monétique'],
-        expertCount: 203,
-        experienceLevel: 'Confirmé',
-        contractType: 'Freelance',
-        availability: 'Immédiate'
-    },
-    {
-        id: 'rh',
-        label: 'RH',
-        description: 'Ressources humaines',
-        filters: ['Workday', 'SuccessFactors', 'LinkedIn Recruiter', 'Tests psychométriques', 'Paie Silae', 'GPEC'],
-        expertCount: 64,
-        experienceLevel: 'Senior',
-        contractType: 'CDD',
-        availability: '< 1 mois'
-    },
-    {
-        id: 'marketing',
-        label: 'Marketing',
-        description: 'Marketing & communication',
-        filters: ['Google Analytics', 'HubSpot', 'Adobe Suite', 'Social Media', 'SEO/SEM', 'Marketing Automation'],
-        expertCount: 142,
-        experienceLevel: 'Intermédiaire',
-        contractType: 'Freelance',
-        availability: '< 2 semaines'
-    },
-    {
-        id: 'juridique',
-        label: 'Juridique',
-        description: 'Conformité & droit',
-        filters: ['Droit bancaire', 'MiFID II', 'KYC/AML', 'Contrats ISDA', 'RGPD', 'LCB-FT'],
-        expertCount: 56,
-        experienceLevel: 'Expert (+15 ans)',
-        contractType: 'CDI',
-        availability: 'Immédiate'
-    },
-    {
-        id: 'audit',
-        label: 'Audit',
-        description: 'Contrôle & risques',
-        filters: ['SOX', 'Risk Management', 'ISO 27001', 'Audit financier', 'COSO Framework', 'Internal Controls'],
-        expertCount: 78,
-        experienceLevel: 'Senior',
-        contractType: 'Portage',
-        availability: '< 1 mois'
-    }
-];
+const FUNCTION_IDS = ['finance', 'gestion', 'it', 'rh', 'marketing', 'juridique', 'audit'];
 
-
+const EXPERT_COUNTS: Record<string, number> = {
+    finance: 127,
+    gestion: 89,
+    it: 203,
+    rh: 64,
+    marketing: 142,
+    juridique: 56,
+    audit: 78
+};
 
 export const FunctionsShowcase = () => {
+    const t = useTranslations('functions_showcase');
     const [currentIndex, setCurrentIndex] = useState(0);
+
+    // Build functions data from translations
+    const functionsList: FunctionData[] = FUNCTION_IDS.map(id => ({
+        id,
+        label: t(`list.${id}.label`),
+        description: t(`list.${id}.desc`),
+        filters: t.raw(`list.${id}.filters`) as string[],
+        expertCount: EXPERT_COUNTS[id],
+        experienceLevel: t.raw(`list.${id}.details.exp`) ? t(`mockup.values.${t.raw(`list.${id}.details.exp`)}`) : '', // Map key to value
+        contractType: t.raw(`list.${id}.details.contract`) ? t(`mockup.values.${t.raw(`list.${id}.details.contract`)}`) : '',
+        availability: t.raw(`list.${id}.details.avail`) // This is direct string in JSON now
+    }));
 
     // Auto-rotate every 3 seconds
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % FUNCTIONS.length);
+            setCurrentIndex((prev) => (prev + 1) % functionsList.length);
         }, 3000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [functionsList.length]);
 
-    const currentFunction = FUNCTIONS[currentIndex];
+    const currentFunction = functionsList[currentIndex];
 
     return (
         <section id="fonctions" className="relative py-24 lg:py-28 overflow-hidden bg-white">
@@ -116,23 +67,20 @@ export const FunctionsShowcase = () => {
                     {/* LEFT COLUMN: Title & Subtitle (50% - 6 cols) */}
                     <div className="md:col-span-12 lg:col-span-7 laptop:col-span-6 flex flex-col justify-center pr-0 lg:pr-12 mb-4 md:mb-6 lg:mb-0">
                         <SectionHeader
-                            tag="Fonctions"
+                            tag={t('tag')}
                             title={
                                 <>
-                                    Des experts qualifiés.
+                                    {t('title')}
                                     <br />
-                                    <span className="text-primary">Pour chaque expertise.</span>
+                                    <span className="text-primary">{t('titleHighlight')}</span>
                                 </>
                             }
-                            subtitle="Trouvez rapidement les experts spécialisés dont vous avez besoin dans tous les métiers de la banque et de l'assurance."
+                            subtitle={t('subtitle')}
                             className="mb-4 md:mb-8"
                         />
 
                         <Reveal delay={200} duration={800}>
-                            <p className="text-sm text-foreground-muted leading-relaxed mb-4 md:mb-6 hidden md:block">
-                                De la finance à l'audit, des profils{' '}
-                                <span className="font-semibold text-foreground">certifiés</span> et{' '}
-                                <span className="font-semibold text-foreground">immédiatement disponibles</span>.
+                            <p className="text-sm text-foreground-muted leading-relaxed mb-4 md:mb-6 hidden md:block" dangerouslySetInnerHTML={{ __html: t.raw('description') }}>
                             </p>
                         </Reveal>
                     </div>
@@ -142,7 +90,7 @@ export const FunctionsShowcase = () => {
                         {/* Mobile: 4 columns to fit all on 2 lines */}
                         <div className="md:hidden">
                             <div className="grid grid-cols-4 gap-1.5">
-                                {FUNCTIONS.map((func, index) => {
+                                {functionsList.map((func, index) => {
                                     const isActive = index === currentIndex;
                                     return (
                                         <div
@@ -174,7 +122,7 @@ export const FunctionsShowcase = () => {
 
                         {/* Desktop: vertical list */}
                         <div className="hidden md:block space-y-1.5 flex-1">
-                            {FUNCTIONS.map((func, index) => {
+                            {functionsList.map((func, index) => {
                                 const isActive = index === currentIndex;
 
                                 return (
@@ -228,7 +176,7 @@ export const FunctionsShowcase = () => {
                             {/* Mini Header */}
                             <div className="flex items-center justify-between mb-3 pb-2 border-b border-gray-100">
                                 <h3 className="text-xs font-bold text-foreground tracking-tight">
-                                    Filtrer les profils
+                                    {t('mockup.title')}
                                 </h3>
                                 <div className="flex gap-1">
                                     <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
@@ -239,7 +187,7 @@ export const FunctionsShowcase = () => {
 
                             {/* Compact Filters */}
                             <div className="space-y-1.5 flex-1">
-                                {currentFunction.filters.map((filter, idx) => (
+                                {currentFunction && currentFunction.filters && currentFunction.filters.map((filter, idx) => (
                                     <div
                                         key={idx}
                                         className={cn(
@@ -265,24 +213,24 @@ export const FunctionsShowcase = () => {
                             {/* Compact Settings */}
                             <div className="mt-3 pt-3 border-t border-gray-100 space-y-1.5">
                                 <div className="flex items-center justify-between text-[10px]">
-                                    <span className="text-gray-500">Niveau d'expérience</span>
-                                    <span className="font-semibold text-foreground">{currentFunction.experienceLevel}</span>
+                                    <span className="text-gray-500">{t('mockup.experience')}</span>
+                                    <span className="font-semibold text-foreground">{currentFunction?.experienceLevel}</span>
                                 </div>
                                 <div className="flex items-center justify-between text-[10px]">
-                                    <span className="text-gray-500">Type de contrat</span>
-                                    <span className="font-semibold text-foreground">{currentFunction.contractType}</span>
+                                    <span className="text-gray-500">{t('mockup.contract')}</span>
+                                    <span className="font-semibold text-foreground">{currentFunction?.contractType}</span>
                                 </div>
                             </div>
 
                             {/* Results display */}
                             <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between">
                                 <div className="flex items-baseline gap-1.5">
-                                    <span className="text-xl font-bold text-foreground tracking-tight">{currentFunction.expertCount}</span>
-                                    <span className="text-[10px] text-gray-500 font-medium">experts</span>
+                                    <span className="text-xl font-bold text-foreground tracking-tight">{currentFunction?.expertCount}</span>
+                                    <span className="text-[10px] text-gray-500 font-medium">{t('mockup.experts')}</span>
                                 </div>
                                 <div className="flex items-center gap-1 px-2 py-0.5 bg-primary/5 rounded-full">
                                     <div className="w-1 h-1 rounded-full bg-primary animate-pulse"></div>
-                                    <span className="text-[10px] font-semibold text-primary uppercase tracking-wide">Live</span>
+                                    <span className="text-[10px] font-semibold text-primary uppercase tracking-wide">{t('mockup.live')}</span>
                                 </div>
                             </div>
                         </div>
@@ -293,7 +241,7 @@ export const FunctionsShowcase = () => {
                 <Reveal delay={300} duration={800}>
                     <div className="mt-12 text-center relative z-10">
                         <Button as="a" href="/sourcing-expert#expertises" variant="outline" className="pointer-events-auto">
-                            <span>Explorer toutes les fonctions</span>
+                            <span>{t('cta')}</span>
                             <ArrowIcon />
                         </Button>
                     </div>

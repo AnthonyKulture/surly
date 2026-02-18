@@ -3,6 +3,7 @@
 import { SampleMission } from "@/lib/sample-missions-data";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/Reveal";
+import { useTranslations } from 'next-intl';
 
 interface MissionCardProps {
     mission: SampleMission;
@@ -10,6 +11,7 @@ interface MissionCardProps {
 }
 
 export const MissionCard = ({ mission, index }: MissionCardProps) => {
+    const t = useTranslations('missionsPage.card');
     return (
         <Reveal delay={index * 50} duration={500}>
             <div className="bg-white rounded-xl border-2 border-primary/5 hover:border-primary/15 shadow-sm hover:shadow-md transition-all duration-300 p-6 h-full flex flex-col">
@@ -60,19 +62,19 @@ export const MissionCard = ({ mission, index }: MissionCardProps) => {
                         {mission.tjm && (
                             <span className="text-2xl font-bold text-primary">
                                 {mission.tjm}€
-                                <span className="text-sm font-normal text-foreground-muted">/jour</span>
+                                <span className="text-sm font-normal text-foreground-muted">{t('perDay')}</span>
                             </span>
                         )}
                         {mission.salary && (
                             <span className="text-2xl font-bold text-primary">
-                                {mission.salary.toLocaleString('fr-FR')}€
-                                <span className="text-sm font-normal text-foreground-muted">/an</span>
+                                {mission.salary.toLocaleString()}€
+                                <span className="text-sm font-normal text-foreground-muted">{t('perYear')}</span>
                             </span>
                         )}
                     </div>
                     {mission.duration && (
                         <p className="text-xs text-foreground-muted mt-1">
-                            Durée : {mission.duration}
+                            {t('duration', { value: mission.duration })}
                         </p>
                     )}
                 </div>

@@ -1,30 +1,36 @@
+"use client";
+
 import { PageHero } from "@/components/ui/PageHero";
+import { useTranslations } from 'next-intl';
 
 export const ConsultantHero = () => {
+    const t = useTranslations('consultantPage.hero');
+
     return (
         <PageHero
-            badge="Rejoignez la communauté des experts bancassurance"
+            badge={t('badge')}
             title={
                 <>
-                    Trouvez vos prochaines
-                    <span className="text-primary block mt-1">missions et postes</span>
+                    {t('titleLine1')}
+                    <span className="text-primary block mt-1">{t('titleLine2')}</span>
                 </>
             }
             subtitle={
                 <>
-                    Vous avez une expérience en <strong className="text-foreground font-semibold">banque ou assurance</strong> ?
-                    <span className="block mt-2 text-primary font-semibold">Accédez aux meilleures missions freelance et postes salariés du secteur bancassurance</span>
+                    {t.rich('subtitle', {
+                        strong: (chunks) => <strong className="text-foreground font-semibold">{chunks}</strong>
+                    })}
+                    <span className="block mt-2 text-primary font-semibold">{t('subtitleHighlight')}</span>
                 </>
             }
             cta={{
-                text: "Je m'inscris maintenant",
+                text: t('ctaPrimary'),
                 href: "https://app.surly.fr"
             }}
             secondaryCta={{
-                text: "En savoir plus",
+                text: t('ctaSecondary'),
                 href: "#inscription"
             }}
         />
     );
 };
-

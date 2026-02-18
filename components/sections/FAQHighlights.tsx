@@ -5,48 +5,19 @@ import { cn } from "@/lib/utils";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button, ArrowIcon } from "@/components/ui/Button";
+import { useTranslations } from 'next-intl';
 
-// 6 questions phares pour expliquer Surly
-const FAQ_HIGHLIGHTS = [
-    {
-        question: "Qu'est-ce que Surly ?",
-        answer: "Surly, c’est le One Stop Shop du sourcing en bancassurance : une marketplace qui connecte banques & assureurs avec des experts du secteur (freelance ou CDI/CDD). Rapide, simple, efficace : vous déposez votre besoin et recevez des profils ultra-ciblés avec un modèle simple, transparent et pensé pour aller vite.",
-        category: "client"
-    },
-    {
-        question: "Quels sont les tarifs de Surly ?",
-        answer: "L’accès à Surly est 100% gratuit pour les entreprises comme pour les experts : vous pouvez publier un besoin, consulter les profils et échanger sans frais. Les TJM et salaires sont affichés en toute transparence. Surly se rémunère via une commission appliquée uniquement en cas de contractualisation (mission ou recrutement).",
-        category: "client"
-    },
-    {
-        question: "Quelle différence avec les solutions généralistes ?",
-        answer: "La différence, c’est la spécialisation. Surly est conçu uniquement pour la bancassurance : profils ciblés, pré-qualification, et interlocuteurs qui comprennent vos enjeux. Vous obtenez une sélection pertinente plus vite, sans “bruit” ni profils hors sujet — pour du freelance comme pour du CDI/CDD.",
-        category: "client"
-    },
-    {
-        question: "Je suis candidat : Comment m'inscrire sur Surly ?",
-        answer: "L'inscription se fait en 5 minutes. Vous remplissez vos expériences (import automatique depuis LinkedIn ou CV), vos compétences et outils maîtrisés, puis vous fixez vos critères de recherche.",
-        category: "consultant"
-    },
-    {
-        question: "Quel est le délai moyen pour recevoir des profils ?",
-        answer: "Avec l'accès plateforme, recherchez instantanément via notre moteur de recherche boosté par algorithme de matching. Avec le cabinet, recevez une proposition détaillée avec dossiers de compétences sous 48h.",
-        category: "client"
-    },
-    {
-        question: "Comment sont fixés mon TJM ou mon SAB ?",
-        answer: "Vous fixez librement votre TJM (freelance) ou votre SAB (CDI/CDD). Surly ne les impose pas : vous gardez la main et pouvez les modifier quand vous le souhaitez. Aucune exclusivité. Besoin d’un repère ? Nos talent managers peuvent vous aider à positionner votre TJM/SAB selon le type de mission ou de poste.",
-        category: "consultant"
-    },
-];
+const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6'] as const;
 
 const FAQHighlightItem = ({
-    item,
+    question,
+    answer,
     isOpen,
     onToggle,
     index,
 }: {
-    item: typeof FAQ_HIGHLIGHTS[0];
+    question: string;
+    answer: string;
     isOpen: boolean;
     onToggle: () => void;
     index: number;
@@ -75,7 +46,7 @@ const FAQHighlightItem = ({
                                 isOpen ? "text-primary" : "text-foreground"
                             )}
                         >
-                            {item.question}
+                            {question}
                         </span>
                     </div>
                     <div
@@ -105,7 +76,7 @@ const FAQHighlightItem = ({
                 >
                     <div className="overflow-hidden">
                         <p className="text-foreground-muted leading-relaxed px-5 pb-5 pl-10 text-sm">
-                            {item.answer}
+                            {answer}
                         </p>
                     </div>
                 </div>
@@ -115,6 +86,7 @@ const FAQHighlightItem = ({
 };
 
 export const FAQHighlights = () => {
+    const t = useTranslations('home');
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const handleToggle = (index: number) => {
@@ -125,23 +97,20 @@ export const FAQHighlights = () => {
         <section className="relative py-20 lg:py-28 bg-[#FAFBFC] border-t border-primary/5">
             <div className="container">
                 <SectionHeader
-                    tag="Questions fréquentes"
+                    tag={t('faqHighlights.tag')}
                     title={
-                        <>
-                            Tout ce que vous devez
-                            <br />
-                            <span className="text-primary">savoir sur Surly</span>
-                        </>
+                        <span dangerouslySetInnerHTML={{ __html: t.raw('faqHighlights.title') }} />
                     }
                     centered
                 />
 
                 {/* FAQ Grid - 2 columns on desktop */}
                 <div className="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto">
-                    {FAQ_HIGHLIGHTS.map((item, index) => (
+                    {FAQ_KEYS.map((key, index) => (
                         <FAQHighlightItem
-                            key={index}
-                            item={item}
+                            key={key}
+                            question={t(`faqHighlights.items.${key}.question`)}
+                            answer={t(`faqHighlights.items.${key}.answer`)}
                             isOpen={openIndex === index}
                             onToggle={() => handleToggle(index)}
                             index={index}
@@ -158,7 +127,7 @@ export const FAQHighlights = () => {
                             variant="ghost"
                             size="large"
                         >
-                            Voir toutes les questions
+                            {t('faqHighlights.cta')}
                             <ArrowIcon />
                         </Button>
                     </div>

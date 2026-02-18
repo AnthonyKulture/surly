@@ -2,8 +2,13 @@
 
 import { Reveal } from "@/components/ui/Reveal";
 import { Button, ArrowIcon } from "@/components/ui/Button";
+import { useTranslations } from 'next-intl';
 
 export const ConsultantFinalCTA = () => {
+    const t = useTranslations('consultantPage.finalCTA');
+
+    const reassurance = [0, 1, 2] as const;
+
     return (
         <section className="relative py-16 sm:py-20 lg:py-28 bg-gradient-to-br from-primary to-primary-dark text-white overflow-hidden">
 
@@ -12,14 +17,14 @@ export const ConsultantFinalCTA = () => {
 
                     <Reveal delay={100} duration={800}>
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                            Prêt à rejoindre l'élite des consultants
-                            <span className="text-accent block mt-2">bancassurance ?</span>
+                            {t('title')}
+                            <span className="text-accent block mt-2">{t('titleHighlight')}</span>
                         </h2>
                     </Reveal>
 
                     <Reveal delay={200} duration={800}>
                         <p className="text-base sm:text-lg text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-                            Inscrivez-vous en 5 minutes et accédez aux meilleures missions du secteur bancassurance.
+                            {t('description')}
                         </p>
                     </Reveal>
 
@@ -34,7 +39,7 @@ export const ConsultantFinalCTA = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Créer mon profil en 5 min
+                                {t('ctaPrimary')}
                             </Button>
                             <Button
                                 as="a"
@@ -42,7 +47,7 @@ export const ConsultantFinalCTA = () => {
                                 size="large"
                                 variant="outline-light"
                             >
-                                <span>En savoir plus</span>
+                                <span>{t('ctaSecondary')}</span>
                                 <ArrowIcon />
                             </Button>
                         </div>
@@ -51,24 +56,14 @@ export const ConsultantFinalCTA = () => {
                     {/* Reassurance */}
                     <Reveal delay={400} duration={800}>
                         <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6 text-xs sm:text-sm text-white/80">
-                            <div className="flex items-center gap-2">
-                                <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                </svg>
-                                <span>100% gratuit</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                </svg>
-                                <span>Sans engagement</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                </svg>
-                                <span>3 500+ consultants inscrits</span>
-                            </div>
+                            {reassurance.map((i) => (
+                                <div key={i} className="flex items-center gap-2">
+                                    <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                    </svg>
+                                    <span>{t(`reassurance.${i}`)}</span>
+                                </div>
+                            ))}
                         </div>
                     </Reveal>
                 </div>

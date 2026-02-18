@@ -6,6 +6,7 @@ import { Button, SendIcon } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { ObfuscatedEmail } from "@/components/ui/ObfuscatedEmail";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 interface FormData {
   type: string;
@@ -16,6 +17,7 @@ interface FormData {
 }
 
 const ContactForm = () => {
+  const t = useTranslations('contact_section.form');
   const [formData, setFormData] = useState<FormData>({
     type: "",
     name: "",
@@ -77,7 +79,7 @@ const ContactForm = () => {
           htmlFor="type"
           className="block text-xs font-semibold uppercase tracking-widest text-primary mb-2"
         >
-          Je suis
+          {t('type.label')}
         </label>
         <select
           id="type"
@@ -87,9 +89,9 @@ const ContactForm = () => {
           required
           className="w-full py-4 px-4 bg-background border border-primary/20 rounded-lg font-sans text-base text-foreground focus:outline-none focus:border-primary transition-all"
         >
-          <option value="">Sélectionnez votre profil</option>
-          <option value="entreprise">Une entreprise qui recrute</option>
-          <option value="talent">Un expert / consultant</option>
+          <option value="">{t('type.placeholder')}</option>
+          <option value="entreprise">{t('type.options.company')}</option>
+          <option value="talent">{t('type.options.talent')}</option>
         </select>
       </div>
 
@@ -99,7 +101,7 @@ const ContactForm = () => {
             htmlFor="name"
             className="block text-xs font-semibold uppercase tracking-widest text-primary mb-2"
           >
-            Nom complet
+            {t('name.label')}
           </label>
           <input
             type="text"
@@ -107,7 +109,7 @@ const ContactForm = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Jean Dupont"
+            placeholder={t('name.placeholder')}
             required
             className="w-full py-4 px-4 bg-background border border-primary/20 rounded-lg font-sans text-base text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary transition-all"
           />
@@ -117,7 +119,7 @@ const ContactForm = () => {
             htmlFor="company"
             className="block text-xs font-semibold uppercase tracking-widest text-primary mb-2"
           >
-            Entreprise
+            {t('company.label')}
           </label>
           <input
             type="text"
@@ -125,7 +127,7 @@ const ContactForm = () => {
             name="company"
             value={formData.company}
             onChange={handleChange}
-            placeholder="Votre entreprise"
+            placeholder={t('company.placeholder')}
             className="w-full py-4 px-4 bg-background border border-primary/20 rounded-lg font-sans text-base text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary transition-all"
           />
         </div>
@@ -136,7 +138,7 @@ const ContactForm = () => {
           htmlFor="email"
           className="block text-xs font-semibold uppercase tracking-widest text-primary mb-2"
         >
-          Email professionnel
+          {t('email.label')}
         </label>
         <input
           type="email"
@@ -144,7 +146,7 @@ const ContactForm = () => {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          placeholder="jean@entreprise.fr"
+          placeholder={t('email.placeholder')}
           required
           className="w-full py-4 px-4 bg-background border border-primary/20 rounded-lg font-sans text-base text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary transition-all"
         />
@@ -155,7 +157,7 @@ const ContactForm = () => {
           htmlFor="message"
           className="block text-xs font-semibold uppercase tracking-widest text-primary mb-2"
         >
-          Votre besoin
+          {t('message.label')}
         </label>
         <textarea
           id="message"
@@ -163,7 +165,7 @@ const ContactForm = () => {
           value={formData.message}
           onChange={handleChange}
           rows={4}
-          placeholder="Décrivez votre besoin en recrutement ou votre expertise..."
+          placeholder={t('message.placeholder')}
           required
           className="w-full py-4 px-4 bg-background border border-primary/20 rounded-lg font-sans text-base text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary transition-all resize-y min-h-[120px]"
         />
@@ -181,19 +183,19 @@ const ContactForm = () => {
       >
         <span>
           {isSubmitting
-            ? "Envoi..."
+            ? t('submit.sending')
             : submitStatus === "success"
-              ? "Envoyé ✓"
+              ? t('submit.success')
               : submitStatus === "error"
-                ? "Erreur - Réessayer"
-                : "Envoyer ma demande"}
+                ? t('submit.error')
+                : t('submit.idle')}
         </span>
         {submitStatus === "idle" && !isSubmitting && <SendIcon />}
       </Button>
 
       {submitStatus === "success" && (
         <p className="text-xs text-primary font-medium text-center mt-3 animate-in fade-in slide-in-from-top-1">
-          Message envoyé ! Un email de confirmation vous a été transmis.
+          {t('successMessage')}
         </p>
       )}
     </form>
@@ -201,6 +203,7 @@ const ContactForm = () => {
 };
 
 export const Contact = () => {
+  const t = useTranslations('contact_section');
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -224,16 +227,16 @@ export const Contact = () => {
                 tag="Contact"
                 title={
                   <>
-                    Une question ?
+                    {t('title')}
                     <br />
-                    <span className="text-gradient">Parlons-en.</span>
+                    <span className="text-gradient">{t('titleHighlight')}</span>
                   </>
                 }
                 className="mb-4 tablet:mb-6"
               />
               <Reveal delay={100} duration={800}>
                 <p className="text-base text-gray-600 text-left max-w-2xl mb-10 leading-relaxed">
-                  Que vous soyez décideur en quête d’experts ou talents qualifiés en quête d’opportunités, notre équipe vous répond sous 24h.
+                  {t('description')}
                 </p>
               </Reveal>   {/* Contact Methods - Side by side on tablet */}
               <div className="grid grid-cols-1 sm:grid-cols-2 tablet:grid-cols-1 laptop:grid-cols-2 gap-3 tablet:gap-4">
@@ -245,10 +248,10 @@ export const Contact = () => {
                   </div>
                   <div>
                     <span className="block text-xs font-medium uppercase tracking-widest text-foreground/50">
-                      Email
+                      {t('methods.email.label')}
                     </span>
                     <ObfuscatedEmail
-                      user="contact"
+                      user={t('methods.email.value')}
                       domain="surly"
                       tld="fr"
                       className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors"
@@ -267,10 +270,10 @@ export const Contact = () => {
                   </div>
                   <div>
                     <span className="block text-xs font-medium uppercase tracking-widest text-foreground/50">
-                      IA Recrutement
+                      {t('methods.ai.label')}
                     </span>
                     <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-                      Essayer Surly AI
+                      {t('methods.ai.cta')}
                     </span>
                   </div>
                 </a>

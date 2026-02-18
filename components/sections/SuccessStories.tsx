@@ -2,50 +2,12 @@
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
-
 import { cn } from "@/lib/utils";
-import { Button, ArrowIcon } from "@/components/ui/Button";
-
-const stories = [
-    {
-        sector: "Banque de Financement",
-        context: "Mise en conformité Bâle III & Stress Testing",
-        challenge: "Déficit structurel de 3 FTEs experts en risque de crédit sur le périmètre CIB pour l'exercice EBA Stress Test. Risque de non-conformité SREP.",
-        solution: "Staffing d'une Task Force de 3 Experts Risque Senior (min. 12 ans exp.) en 72h. Profils ex-inspection générale.",
-        results: [
-            { label: "Délai de staffing", value: "72h", sub: "vs 4 mois habituels" },
-            { label: "Qualité des livrables", value: "100%", sub: "Validation BCE sans réserve" },
-            { label: "Économie réalisée", value: "-25%", sub: "vs Big Four" },
-        ],
-        techStack: ["SAS", "Python", "R"],
-    },
-    {
-        sector: "Compagnie d'Assurance",
-        context: "Clôture IFRS 17 & Optimisation CSM",
-        challenge: "Départ inopiné du Responsable Actuariat Vie en pleine période de clôture 'Dry Run'. Blocage critique sur le calcul du Best Estimate.",
-        solution: "Identification immédiate d'un Actuaire Certifié IA (Institut des Actuaires) spécialisé IFRS 17 disponible en inter-contrat.",
-        results: [
-            { label: "Continuité de service", value: "< 5j", sub: "Aucun retard de clôture" },
-            { label: "Optimisation CSM", value: "+2.5M€", sub: "Impact P&L direct" },
-            { label: "Transfert de compétences", value: "Doc.", sub: "Documentation complète" },
-        ],
-        techStack: ["Prophet", "ResQ", "Excel VBA"],
-    },
-    {
-        sector: "Mutuelle Santé",
-        context: "Digitalisation & Conformité DDA",
-        challenge: "Refonte du parcours souscription pour conformité DDA (Directive Distribution Assurance). Besoin d'un PO expert métier + réglementaire.",
-        solution: "Détachement d'un profil hybride 'Business Analyst / Compliance Officer' ayant déjà mené 2 projets similaires.",
-        results: [
-            { label: "Time-to-market", value: "3 mois", sub: "Lancement accéléré" },
-            { label: "Conformité DDA", value: "100%", sub: "Audit interne validé" },
-            { label: "Conversion", value: "+15%", sub: "Hausse souscriptions" },
-        ],
-        techStack: ["Jira", "Salesforce", "InsurTech"],
-    },
-];
+import { useTranslations } from 'next-intl';
 
 export const SuccessStories = () => {
+    const t = useTranslations('successStories');
+
     return (
         <section className="relative py-24 lg:py-28 bg-primary text-background border-b border-primary/10 overflow-hidden">
             {/* Ambient Background */}
@@ -53,32 +15,64 @@ export const SuccessStories = () => {
 
             <div className="container relative z-[1]">
                 <SectionHeader
-                    tag="Track Record"
+                    tag={t('tag')}
                     title={
                         <>
-                            Expertise prouvée
-                            <br />
-                            <span className="text-white">sur le terrain</span>
+                            {t.rich('title', {
+                                br: () => <br />,
+                                span: (chunks) => <span className="text-white">{chunks}</span>
+                            })}
                         </>
                     }
-                    subtitle="Des cas concrets où la spécialisation fait toute la différence."
+                    subtitle={t('subtitle')}
                     centered
                     light
                 />
 
                 <div className="grid grid-cols-1 tablet:grid-cols-3 gap-4 tablet:gap-5 laptop:gap-6 mt-12 tablet:mt-16">
-                    {stories.map((story, index) => (
-                        <StoryCard key={index} story={story} index={index} />
-                    ))}
+                    {[0, 1, 2].map((index) => {
+                        const techStack = t.raw(`stories.${index}.results`) as Array<{ label: string; value: string; sub: string }>;
+                        // For techStack, we need original data since it's not translated
+                        const techStacks = [
+                            ["SAS", "Python", "R"],
+                            ["Prophet", "ResQ", "Excel VBA"],
+                            ["Jira", "Salesforce", "InsurTech"]
+                        ];
+
+                        return (
+                            <StoryCard
+                                key={index}
+                                index={index}
+                                sector={t(`stories.${index}.sector`)}
+                                context={t(`stories.${index}.context`)}
+                                challenge={t(`stories.${index}.challenge`)}
+                                solution={t(`stories.${index}.solution`)}
+                                results={t.raw(`stories.${index}.results`) as Array<{ label: string; value: string; sub: string }>}
+                                techStack={techStacks[index]}
+                                challengeLabel={t('challengeLabel')}
+                                solutionLabel={t('solutionLabel')}
+                            />
+                        );
+                    })}
                 </div>
-
-
             </div>
         </section>
     );
 };
 
-const StoryCard = ({ story, index }: { story: typeof stories[number]; index: number }) => {
+interface StoryCardProps {
+    index: number;
+    sector: string;
+    context: string;
+    challenge: string;
+    solution: string;
+    results: Array<{ label: string; value: string; sub: string }>;
+    techStack: string[];
+    challengeLabel: string;
+    solutionLabel: string;
+}
+
+const StoryCard = ({ index, sector, context, challenge, solution, results, techStack, challengeLabel, solutionLabel }: StoryCardProps) => {
     return (
         <Reveal
             delay={index * 150}
@@ -90,10 +84,10 @@ const StoryCard = ({ story, index }: { story: typeof stories[number]; index: num
                 {/* Header Sector */}
                 <div className="flex items-center justify-between mb-4">
                     <span className="text-xs font-bold uppercase tracking-wider text-accent">
-                        {story.sector}
+                        {sector}
                     </span>
                     <div className="flex gap-1.5">
-                        {story.techStack.map((tech) => (
+                        {techStack.map((tech) => (
                             <span key={tech} className="text-[9px] font-medium px-2 py-0.5 rounded bg-white/5 text-gray-400 border border-white/10">
                                 {tech}
                             </span>
@@ -103,28 +97,28 @@ const StoryCard = ({ story, index }: { story: typeof stories[number]; index: num
 
                 {/* Title */}
                 <h3 className="text-lg font-bold text-white mb-2 leading-tight">
-                    {story.context}
+                    {context}
                 </h3>
 
                 {/* Challenge Section */}
                 <div className="mb-4">
-                    <div className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest mb-1">Enjeu Critique</div>
+                    <div className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest mb-1">{challengeLabel}</div>
                     <p className="text-sm text-gray-300 leading-relaxed font-light">
-                        {story.challenge}
+                        {challenge}
                     </p>
                 </div>
 
                 {/* Solution Section */}
                 <div className="mb-6 pb-6 border-b border-white/10 flex-grow">
-                    <div className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest mb-1">Réponse Surly</div>
+                    <div className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest mb-1">{solutionLabel}</div>
                     <p className="text-sm text-white font-medium leading-relaxed">
-                        {story.solution}
+                        {solution}
                     </p>
                 </div>
 
                 {/* Results Grid */}
                 <div className="grid grid-cols-3 gap-2 mt-auto">
-                    {story.results.map((result, idx) => (
+                    {results.map((result, idx) => (
                         <div key={idx} className="bg-white/5 rounded-lg p-2 text-center border border-white/5">
                             <div className="text-lg font-bold text-accent mb-0.5">{result.value}</div>
                             <div className="text-[9px] font-medium text-gray-400 uppercase leading-tight mb-1">{result.label}</div>

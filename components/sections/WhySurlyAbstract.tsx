@@ -4,36 +4,20 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button, ArrowIcon } from "@/components/ui/Button";
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
 
-const BENEFITS = [
-    {
-        color: "from-accent/20 to-accent/5",
-        title: "3 300+ experts",
-        desc: "Une communauté exclusive, 100% banque & assurance. Des profils vérifiés, des opportunités qualifiées."
-    },
-    {
-        color: "from-blue-400/20 to-blue-400/5",
-        title: "Pertinence immédiate",
-        desc: "Un matching intelligent, instantané, qui maîtrise votre environnement métier"
-    },
-    {
-        color: "from-purple-400/20 to-purple-400/5",
-        title: "Gain de temps",
-        desc: "Fini le tri de centaines de profils. Des offres ciblées pour tous."
-    },
-    {
-        color: "from-accent/20 to-accent/5",
-        title: "Transparence totale",
-        desc: "Aucun frais caché, commission fixe uniquement.",
-        stats: [
-            { value: "15%*", label: "Com. fixe" },
-            { value: "0€", label: "Frais d'entrée" }
-        ],
-        footnote: "*Commission client à la contractualisation, lors de l'utilisation autonome de la plateforme"
-    }
+const BENEFIT_KEYS = ['experts', 'relevance', 'time', 'transparency'] as const;
+
+const BENEFIT_COLORS = [
+    "from-accent/20 to-accent/5",
+    "from-blue-400/20 to-blue-400/5",
+    "from-purple-400/20 to-purple-400/5",
+    "from-accent/20 to-accent/5"
 ];
 
 export const WhySurlyAbstract = () => {
+    const t = useTranslations('home');
+
     return (
         <section
             id="why-surly"
@@ -44,13 +28,9 @@ export const WhySurlyAbstract = () => {
 
             <div className="container relative z-[1]">
                 <SectionHeader
-                    tag="Pourquoi Surly ?"
+                    tag={t('whySurlyAbstract.tag')}
                     title={
-                        <>
-                            Le recrutement en Banque & Assurance
-                            <br />
-                            <span className="text-accent">mérite mieux.</span>
-                        </>
+                        <span dangerouslySetInnerHTML={{ __html: t.raw('whySurlyAbstract.title') }} />
                     }
                     light
                     centered
@@ -81,13 +61,11 @@ export const WhySurlyAbstract = () => {
 
                                 {/* Content Layer */}
                                 <div className="relative z-10 p-5 sm:p-6 lg:p-8">
-                                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-tight mb-2 lg:mb-4">
-                                        Des experts qui changent
-                                        <br />
-                                        <span className="text-accent">la donne.</span>
-                                    </h3>
+                                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-tight mb-2 lg:mb-4"
+                                        dangerouslySetInnerHTML={{ __html: t.raw('whySurlyAbstract.leftCard.title') }}
+                                    />
                                     <p className="text-sm sm:text-base text-white/90 leading-relaxed max-w-md mb-4 lg:mb-6">
-                                        Que vous soyez expert en quête d'opportunités ou client en quête de talents, Surly est la plateforme 100% dédiée au secteur de la bancassurance
+                                        {t('whySurlyAbstract.leftCard.description')}
                                     </p>
 
                                     <Button
@@ -96,7 +74,7 @@ export const WhySurlyAbstract = () => {
                                         variant="white"
                                         size="default"
                                     >
-                                        <span>Découvrir Surly</span>
+                                        <span>{t('whySurlyAbstract.leftCard.cta')}</span>
                                     </Button>
                                 </div>
                             </div>
@@ -104,35 +82,37 @@ export const WhySurlyAbstract = () => {
 
                         {/* RIGHT COLUMN - 2x2 Grid of Benefits */}
                         <div className="grid grid-cols-2 gap-3 sm:gap-4 h-full">
-                            {BENEFITS.map((benefit, i) => (
-                                <Reveal key={i} delay={200 + i * 50} duration={800} className="h-full">
+                            {BENEFIT_KEYS.map((key, i) => (
+                                <Reveal key={key} delay={200 + i * 50} duration={800} className="h-full">
                                     <div className="bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-5 hover:bg-white/10 transition-all duration-300 h-full flex flex-col">
                                         {/* Modern gradient badge */}
-                                        <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mb-3 sm:mb-4 flex-shrink-0`}>
+                                        <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${BENEFIT_COLORS[i]} flex items-center justify-center mb-3 sm:mb-4 flex-shrink-0`}>
                                             <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white/80" />
                                         </div>
 
                                         <h4 className="text-base sm:text-lg font-bold text-white mb-2">
-                                            {benefit.title}
+                                            {t(`whySurlyAbstract.benefits.${key}.title`)}
                                         </h4>
 
                                         <p className="text-white/60 text-xs sm:text-sm leading-relaxed flex-grow">
-                                            {benefit.desc}
+                                            {t(`whySurlyAbstract.benefits.${key}.desc`)}
                                         </p>
 
                                         {/* Stats for Transparence card */}
-                                        {benefit.stats && (
+                                        {key === 'transparency' && (
                                             <>
                                                 <div className="grid grid-cols-2 gap-2 mt-3">
-                                                    {benefit.stats.map((stat, j) => (
-                                                        <div key={j} className="bg-white/5 rounded-lg p-2 sm:p-2.5 text-center">
-                                                            <div className="text-lg sm:text-xl font-bold text-accent">{stat.value}</div>
-                                                            <div className="text-[10px] sm:text-xs text-white/60">{stat.label}</div>
-                                                        </div>
-                                                    ))}
+                                                    <div className="bg-white/5 rounded-lg p-2 sm:p-2.5 text-center">
+                                                        <div className="text-lg sm:text-xl font-bold text-accent">15%*</div>
+                                                        <div className="text-[10px] sm:text-xs text-white/60">{t('whySurlyAbstract.benefits.transparency.stats.commission')}</div>
+                                                    </div>
+                                                    <div className="bg-white/5 rounded-lg p-2 sm:p-2.5 text-center">
+                                                        <div className="text-lg sm:text-xl font-bold text-accent">0€</div>
+                                                        <div className="text-[10px] sm:text-xs text-white/60">{t('whySurlyAbstract.benefits.transparency.stats.entryFee')}</div>
+                                                    </div>
                                                 </div>
                                                 <p className="text-[8px] sm:text-[9px] text-white/40 italic mt-2 leading-tight">
-                                                    {benefit.footnote}
+                                                    {t('whySurlyAbstract.benefits.transparency.footnote')}
                                                 </p>
                                             </>
                                         )}
@@ -146,4 +126,3 @@ export const WhySurlyAbstract = () => {
         </section>
     );
 };
-

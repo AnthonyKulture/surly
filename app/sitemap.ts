@@ -1,87 +1,57 @@
-import { MetadataRoute } from 'next';
-import { getAllPosts } from '@/lib/blog';
+import { MetadataRoute } from "next";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const baseUrl = 'https://surly.fr';
+const baseUrl = process.env.NEXT_PUBLIC_URL || "https://surly.fr";
 
-    // Static pages
-    const staticPages: MetadataRoute.Sitemap = [
-        {
-            url: baseUrl,
-            lastModified: new Date(),
-            changeFrequency: 'daily',
-            priority: 1,
-        },
-        {
-            url: `${baseUrl}/pourquoi-surly`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/devenir-consultant`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/sourcing-expert`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/ai`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/partenaires-avantages`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.6,
-        },
-        {
-            url: `${baseUrl}/apport-affaires`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.6,
-        },
-        {
-            url: `${baseUrl}/faq`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/contact`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/blog`,
-            lastModified: new Date(),
-            changeFrequency: 'daily',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/missions-exemples`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-    ];
+// Liste de toutes les routes statiques
+const routes = [
+    "",
+    "/pourquoi-surly",
+    "/sourcing-expert",
+    "/devenir-consultant",
+    "/missions-exemples",
+    "/contact",
+    "/faq",
+    "/partenaires-avantages",
+    "/mentions-legales",
+    "/politique-cookies",
+    "/cgu-client",
+    "/cgu-postulant",
+    "/charte-donnees",
+    "/rse",
+    "/apport-affaires",
+    "/formulaire-apport-affaires",
+];
 
-    // Blog posts
-    const posts = await getAllPosts();
-    const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
-        url: `${baseUrl}/blog/${post.slug}`,
-        lastModified: new Date(post.date),
-        changeFrequency: 'weekly',
-        priority: 0.7,
-    }));
+export default function sitemap(): MetadataRoute.Sitemap {
+    const sitemapEntries: MetadataRoute.Sitemap = [];
 
-    return [...staticPages, ...blogPages];
+    routes.forEach((route) => {
+        sitemapEntries.push({
+            url: `${baseUrl}/fr${route}`,
+            lastModified: new Date(),
+            changeFrequency: "weekly",
+            priority: route === "" ? 1 : 0.8,
+            alternates: {
+                languages: {
+                    fr: `${baseUrl}/fr${route}`,
+                    en: `${baseUrl}/en${route}`,
+                },
+            },
+        });
+
+        sitemapEntries.push({
+            url: `${baseUrl}/en${route}`,
+            lastModified: new Date(),
+            changeFrequency: "weekly",
+            priority: route === "" ? 1 : 0.8,
+            alternates: {
+                languages: {
+                    fr: `${baseUrl}/fr${route}`,
+                    en: `${baseUrl}/en${route}`,
+                },
+            },
+        });
+    });
+
+    return sitemapEntries;
 }

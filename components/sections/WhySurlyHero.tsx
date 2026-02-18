@@ -1,9 +1,14 @@
+"use client";
+
 import { PageHero } from "@/components/ui/PageHero";
+import { useTranslations } from 'next-intl';
 
 export const WhySurlyHero = () => {
+    const t = useTranslations('whySurlyPage.hero');
+
     return (
         <PageHero
-            badge="Experts bancassurance • Missions qualifiées • Plateforme dédiée"
+            badge={t('badge')}
             title={
                 <>
                     Pourquoi <span className="text-primary">Surly</span> ?
@@ -11,11 +16,11 @@ export const WhySurlyHero = () => {
             }
             subtitle={
                 <>
-                    Pourquoi Surly ? <strong className="text-primary font-semibold">La bancassurance mérite une plateforme dédiée</strong>, pensée par des spécialistes pour des experts.
-                    Surly connecte les meilleurs profils aux missions et postes les plus pertinents.
+                    {t.rich('subtitle', {
+                        strong: (chunks) => <strong className="text-primary font-semibold">{chunks}</strong>
+                    })}
                 </>
             }
         />
     );
 };
-

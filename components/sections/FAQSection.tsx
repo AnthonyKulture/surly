@@ -4,7 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/Reveal";
-import type { FAQItem } from "@/lib/faq-data";
+
+export interface FAQItem {
+    question: string;
+    answer: string;
+    link?: { url: string; text: string };
+}
 
 interface FAQCategoryProps {
     title: string;

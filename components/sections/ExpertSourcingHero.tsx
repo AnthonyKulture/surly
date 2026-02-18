@@ -1,21 +1,27 @@
+"use client";
+
 import { PageHero } from "@/components/ui/PageHero";
+import { useTranslations } from 'next-intl';
 
 export const ExpertSourcingHero = () => {
+    const t = useTranslations('sourcingExpertPage.hero');
+
     return (
         <PageHero
-            badge="Sourcing de talents ultra-spécialisés"
+            badge={t('badge')}
             title={
                 <>
-                    Trouvez votre expert
-                    <span className="text-primary block mt-1">Banque & Assurance</span>
+                    {t('titleLine1')}
+                    <span className="text-primary block mt-1">{t('titleLine2')}</span>
                 </>
             }
             subtitle={
                 <>
-                    <strong className="text-foreground font-semibold">Acteurs du secteur :</strong> nous agissons soit via notre plateforme autonome, soit en tant que cabinet spécialisé. Choisissez la formule qui correspond à votre organisation.
+                    {t.rich('subtitle', {
+                        strong: (chunks) => <strong className="text-foreground font-semibold">{chunks}</strong>
+                    })}
                 </>
             }
         />
     );
 };
-

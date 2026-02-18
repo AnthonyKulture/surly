@@ -4,182 +4,48 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from 'next-intl';
 
 type Expert = {
     image: string;
     name: string;
     title: string;
-    sector: "Banque" | "Assurance" | "Banque & Assurance";
+    sector: "bank" | "insurance" | "both";
     tags: string[];
     tjm: string;
     availability: string;
     experience: string;
-    seniority: "Junior" | "Confirmé" | "Senior";
+    seniority: "junior" | "confirmed" | "senior";
     company: string;
     online?: boolean;
 };
 
-const EXPERTS: Expert[] = [
-    {
-        image: "/avatars/profile_expert_4_1765802699392.png",
-        name: "Thomas B.",
-        title: "Expert IFRS 17 & Consolidation",
-        sector: "Banque & Assurance",
-        seniority: "Senior",
-        tags: ["Finance", "Comptabilité"],
-        tjm: "950",
-        availability: "Immédiate",
-        experience: "12 ans",
-        company: "Grande banque française",
-        online: true,
-    },
-    {
-        image: "/avatars/profile_expert_1_1765802590256.png",
-        name: "Sarah M.",
-        title: "Risk Manager Bâle III",
-        sector: "Banque",
-        seniority: "Confirmé",
-        tags: ["Risques", "Conformité"],
-        tjm: "750",
-        availability: "< 1 semaine",
-        experience: "8 ans",
-        company: "Banque d'investissement",
-    },
-    {
-        image: "/avatars/profile_expert_claire_new.png",
-        name: "Claire D.",
-        title: "Architecte SI Cloud",
-        sector: "Banque",
-        seniority: "Senior",
-        tags: ["IT", "Architecture"],
-        tjm: "1100",
-        availability: "< 2 semaines",
-        experience: "15 ans",
-        company: "Banque mutualiste",
-        online: true,
-    },
-    {
-        image: "/avatars/profile_expert_6_1765802756821.png",
-        name: "Marc L.",
-        title: "Actuaire Solvabilité II",
-        sector: "Assurance",
-        seniority: "Senior",
-        tags: ["Actuariat", "Risques"],
-        tjm: "1050",
-        availability: "Immédiate",
-        experience: "10 ans",
-        company: "Leader assurance",
-    },
-    {
-        image: "/avatars/profile_expert_3_1765802652999.png",
-        name: "Julie R.",
-        title: "Responsable RH Talents",
-        sector: "Banque & Assurance",
-        seniority: "Confirmé",
-        tags: ["RH", "Formation"],
-        tjm: "720",
-        availability: "< 1 mois",
-        experience: "9 ans",
-        company: "Mutuelle internationale",
-        online: true,
-    },
-    {
-        image: "/avatars/pierre_m_profile.png",
-        name: "Pierre M.",
-        title: "Chef de Projet InsurTech",
-        sector: "Assurance",
-        seniority: "Confirmé",
-        tags: ["Digital", "Innovation"],
-        tjm: "820",
-        availability: "< 3 semaines",
-        experience: "7 ans",
-        company: "Assureur innovant",
-    },
-    {
-        image: "/avatars/sophie_l_profile.png",
-        name: "Sophie L.",
-        title: "Compliance Officer KYC/AML",
-        sector: "Banque",
-        seniority: "Senior",
-        tags: ["Juridique", "Conformité"],
-        tjm: "990",
-        availability: "Immédiate",
-        experience: "11 ans",
-        company: "Banque internationale",
-    },
-    {
-        image: "/avatars/profile_expert_2_1765802613092.png",
-        name: "Alexandre V.",
-        title: "Data Engineer Finance",
-        sector: "Banque",
-        seniority: "Junior",
-        tags: ["IT", "Data"],
-        tjm: "550",
-        availability: "< 2 semaines",
-        experience: "3 ans",
-        company: "Fintech bancaire",
-        online: true,
-    },
-    {
-        image: "/avatars/profile_expert_3_1765802652999.png",
-        name: "Camille P.",
-        title: "Directrice Marketing Digital",
-        sector: "Assurance",
-        seniority: "Senior",
-        tags: ["Marketing", "Digital"],
-        tjm: "1050",
-        availability: "< 1 semaine",
-        experience: "13 ans",
-        company: "Assurance mutualiste",
-    },
-    {
-        image: "/avatars/laurent_s_profile.png",
-        name: "Laurent S.",
-        title: "Responsable ALM",
-        sector: "Banque",
-        seniority: "Senior",
-        tags: ["Finance", "Risques"],
-        tjm: "1150",
-        availability: "Immédiate",
-        experience: "16 ans",
-        company: "Banque de réseau",
-    },
-    {
-        image: "/avatars/emma_t_profile.png",
-        name: "Emma T.",
-        title: "Experte Tarification Vie",
-        sector: "Assurance",
-        seniority: "Confirmé",
-        tags: ["Actuariat", "Pricing"],
-        tjm: "850",
-        availability: "< 1 semaine",
-        experience: "9 ans",
-        company: "Assureur vie",
-        online: true,
-    },
-    {
-        image: "/avatars/testimonial_1_1765803183944.png",
-        name: "Nicolas G.",
-        title: "Product Owner Monétique",
-        sector: "Banque",
-        seniority: "Junior",
-        tags: ["Gestion", "Agile"],
-        tjm: "580",
-        availability: "< 2 semaines",
-        experience: "4 ans",
-        company: "Banque en ligne",
-    },
+const AVATARS = [
+    "/avatars/profile_expert_4_1765802699392.png",
+    "/avatars/profile_expert_1_1765802590256.png",
+    "/avatars/profile_expert_claire_new.png",
+    "/avatars/profile_expert_6_1765802756821.png",
+    "/avatars/profile_expert_3_1765802652999.png",
+    "/avatars/pierre_m_profile.png",
+    "/avatars/sophie_l_profile.png",
+    "/avatars/profile_expert_2_1765802613092.png",
+    "/avatars/profile_expert_3_1765802652999.png",
+    "/avatars/laurent_s_profile.png",
+    "/avatars/emma_t_profile.png",
+    "/avatars/testimonial_1_1765803183944.png",
 ];
 
 export const HeroCards = () => {
+    const t = useTranslations('heroCards');
+    const experts = t.raw('experts') as Expert[];
     const [indices, setIndices] = useState([0, 4, 8]);
 
     // Helper function to get next unique index
     const getNextUniqueIndex = (currentIndex: number, otherIndices: number[]): number => {
-        let nextIndex = (currentIndex + 1) % EXPERTS.length;
+        let nextIndex = (currentIndex + 1) % experts.length;
         // Keep incrementing until we find an index not used by other cards
         while (otherIndices.includes(nextIndex)) {
-            nextIndex = (nextIndex + 1) % EXPERTS.length;
+            nextIndex = (nextIndex + 1) % experts.length;
         }
         return nextIndex;
     };
@@ -226,27 +92,31 @@ export const HeroCards = () => {
         <div className="relative w-full max-w-2xl mx-auto tablet:max-w-none">
             <div className="space-y-2 tablet:space-y-3 laptop:space-y-4">
                 <div className="mx-auto tablet:ml-0 tablet:mr-12 laptop:mr-16">
-                    <ExpertCard expert={EXPERTS[indices[0]]} compact priority />
+                    <ExpertCard expert={experts[indices[0]]} image={AVATARS[indices[0]]} t={t} compact priority />
                 </div>
                 <div className="hidden tablet:block ml-12 tablet:ml-16 laptop:ml-20 mr-0">
-                    <ExpertCard expert={EXPERTS[indices[1]]} compact />
+                    <ExpertCard expert={experts[indices[1]]} image={AVATARS[indices[1]]} t={t} compact />
                 </div>
                 <div className="hidden laptop:block ml-4 tablet:ml-6 laptop:ml-8 mr-4 tablet:mr-6 laptop:mr-8">
-                    <ExpertCard expert={EXPERTS[indices[2]]} />
+                    <ExpertCard expert={experts[indices[2]]} image={AVATARS[indices[2]]} t={t} />
                 </div>
             </div>
         </div>
     );
 };
 
-const ExpertCard = ({ expert, compact = false, priority = false }: { expert: Expert; compact?: boolean; priority?: boolean }) => {
+const ExpertCard = ({ expert, image, t, compact = false, priority = false }: { expert: Expert; image: string; t: ReturnType<typeof useTranslations>; compact?: boolean; priority?: boolean }) => {
+    const sectorLabel = t(`sector.${expert.sector}`);
+    const seniorityLabel = t(`seniority.${expert.seniority}`);
+    const rateUnit = t('rateUnit');
+
     const getSectorColor = (sector: Expert["sector"]) => {
         switch (sector) {
-            case "Banque":
+            case "bank":
                 return "bg-blue-100/80 text-blue-700 border-blue-200";
-            case "Assurance":
+            case "insurance":
                 return "bg-emerald-100/80 text-emerald-700 border-emerald-200";
-            case "Banque & Assurance":
+            case "both":
                 return "bg-gradient-to-r from-blue-100/80 to-emerald-100/80 text-primary border-primary/20";
             default:
                 return "bg-gray-50 text-gray-700 border-gray-200";
@@ -255,11 +125,11 @@ const ExpertCard = ({ expert, compact = false, priority = false }: { expert: Exp
 
     const getSeniorityColor = (seniority: Expert["seniority"]) => {
         switch (seniority) {
-            case "Junior":
+            case "junior":
                 return "bg-emerald-50 text-emerald-700";
-            case "Confirmé":
+            case "confirmed":
                 return "bg-amber-50 text-amber-700";
-            case "Senior":
+            case "senior":
                 return "bg-red-50 text-red-700";
             default:
                 return "bg-gray-100 text-gray-700";
@@ -288,7 +158,7 @@ const ExpertCard = ({ expert, compact = false, priority = false }: { expert: Exp
                             )}
                         >
                             <Image
-                                src={expert.image}
+                                src={image}
                                 alt={expert.name}
                                 width={48}
                                 height={48}
@@ -331,7 +201,7 @@ const ExpertCard = ({ expert, compact = false, priority = false }: { expert: Exp
                                         "text-[9px] font-bold px-2 py-0.5 rounded uppercase tracking-wide",
                                         getSeniorityColor(expert.seniority)
                                     )}>
-                                        {expert.seniority}
+                                        {seniorityLabel}
                                     </span>
                                 </div>
                                 <p className="text-[11px] text-primary font-semibold leading-tight mb-1">
@@ -345,7 +215,7 @@ const ExpertCard = ({ expert, compact = false, priority = false }: { expert: Exp
                                         "text-[9px] font-bold px-2 py-0.5 rounded-full border leading-tight",
                                         getSectorColor(expert.sector)
                                     )}>
-                                        {expert.sector}
+                                        {sectorLabel}
                                     </span>
                                 </div>
                             </div>
@@ -369,7 +239,7 @@ const ExpertCard = ({ expert, compact = false, priority = false }: { expert: Exp
                             <div className="flex items-center gap-4 text-xs text-gray-600">
                                 <div className="flex items-center gap-1">
                                     <span className="font-semibold text-foreground">{expert.tjm}€</span>
-                                    <span className="text-gray-400">/jour</span>
+                                    <span className="text-gray-400">{rateUnit}</span>
                                 </div>
                                 <div className="flex items-center gap-1">
                                     <svg className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

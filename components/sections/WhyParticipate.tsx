@@ -4,8 +4,12 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { SurlyContactEmail } from "@/components/ui/ObfuscatedEmail";
+import { useTranslations } from 'next-intl';
 
 export const WhyParticipate = () => {
+    const t = useTranslations('whyParticipate');
+
+    // Note: benefits keys are b1, b2, b3
     const benefits = [
         {
             icon: (
@@ -13,9 +17,9 @@ export const WhyParticipate = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
             ),
-            title: "Revenu complémentaire sans effort",
-            description: "Monétisez vos recommandations avec une récompense concrète chaque fois qu'un projet est réalisé.",
-            highlight: "3% par mission"
+            title: t('benefits.b1.title'),
+            description: t('benefits.b1.description'),
+            highlight: t('benefits.b1.highlight')
         },
         {
             icon: (
@@ -23,9 +27,9 @@ export const WhyParticipate = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
             ),
-            title: "Renforcez la confiance avec vos clients",
-            description: "En facilitant la poursuite de leurs projets, vous vous positionnez comme un partenaire fiable et stratégique.",
-            highlight: "Partenaire de confiance"
+            title: t('benefits.b2.title'),
+            description: t('benefits.b2.description'),
+            highlight: t('benefits.b2.highlight')
         },
         {
             icon: (
@@ -33,22 +37,29 @@ export const WhyParticipate = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                 </svg>
             ),
-            title: "Soutenez la communauté Surly",
-            description: "Vous contribuez à la prospérité d'autres experts spécialisés en banque/assurance, tout en enrichissant notre écosystème.",
-            highlight: "3000+ experts"
+            title: t('benefits.b3.title'),
+            description: t('benefits.b3.description'),
+            highlight: t('benefits.b3.highlight')
         }
+    ];
+
+    const stats = [
+        { number: t('stats.0.number'), label: t('stats.0.label') },
+        { number: t('stats.1.number'), label: t('stats.1.label') },
+        { number: t('stats.2.number'), label: t('stats.2.label') }
     ];
 
     return (
         <section className="relative py-16 sm:py-20 lg:py-28 bg-white">
             <div className="container">
                 <SectionHeader
-                    tag="Pourquoi participer ?"
+                    tag={t('tag')}
                     title={
                         <>
-                            Boostez vos revenus simplement,
-                            <br />
-                            <span className="text-primary">tout en renforçant votre réseau professionnel</span>
+                            {t.rich('title', {
+                                span: (chunks) => <span className="text-primary">{chunks}</span>,
+                                br: () => <br />
+                            })}
                         </>
                     }
                     centered
@@ -56,9 +67,9 @@ export const WhyParticipate = () => {
 
                 <Reveal delay={100} duration={1000}>
                     <p className="text-base sm:text-lg text-foreground-muted text-center max-w-3xl mx-auto mb-12 sm:mb-16 leading-relaxed px-4 sm:px-0">
-                        Devenir apporteur d'affaires Surly, c'est transformer vos recommandations en{" "}
-                        <strong className="text-foreground">revenus concrets</strong> tout en apportant une vraie valeur ajoutée
-                        à votre réseau professionnel dans le secteur bancassurance.
+                        {t.rich('subtitle', {
+                            strong: (chunks) => <strong className="text-foreground">{chunks}</strong>
+                        })}
                     </p>
                 </Reveal>
 
@@ -93,11 +104,7 @@ export const WhyParticipate = () => {
                 {/* Additional Stats */}
                 <Reveal delay={650} duration={800}>
                     <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-12">
-                        {[
-                            { number: "3%", label: "Commission garantie" },
-                            { number: "48h", label: "Prise en charge rapide" },
-                            { number: "100%", label: "Banque & Assurance" }
-                        ].map((stat, i) => (
+                        {stats.map((stat, i) => (
                             <div key={i} className="bg-gradient-to-br from-primary to-primary-dark text-white p-6 rounded-xl text-center shadow-lg">
                                 <p className="text-3xl sm:text-4xl font-bold mb-2 text-accent">
                                     {stat.number}
@@ -114,10 +121,10 @@ export const WhyParticipate = () => {
                 <Reveal delay={750} duration={800}>
                     <div className="text-center bg-gradient-to-br from-primary/5 to-accent/5 p-8 sm:p-12 rounded-2xl border border-primary/10">
                         <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-                            Prêt à commencer ?
+                            {t('cta.title')}
                         </h3>
                         <p className="text-base sm:text-lg text-foreground-muted mb-6 max-w-2xl mx-auto">
-                            Rejoignez notre programme d'apport d'affaires dès aujourd'hui et commencez à générer des revenus complémentaires.
+                            {t('cta.description')}
                         </p>
                         <Button
                             as="a"
@@ -125,11 +132,11 @@ export const WhyParticipate = () => {
                             size="large"
                             className="shadow-lg hover:shadow-xl"
                         >
-                            Je partage une opportunité
+                            {t('cta.button')}
                         </Button>
                         <p className="text-xs text-foreground-muted mt-4">
-                            Des questions ?{" "}
-                            <SurlyContactEmail label="Contactez-nous" className="text-primary hover:underline font-medium" />
+                            {t('cta.questions')}{" "}
+                            <SurlyContactEmail label={t('cta.contactUs')} className="text-primary hover:underline font-medium" />
                         </p>
                     </div>
                 </Reveal>

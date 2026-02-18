@@ -5,81 +5,26 @@ import { cn } from "@/lib/utils";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
-
-type RegistrationStep = {
-    id: number;
-    label: string;
-    description: string;
-    mockupContent: {
-        title: string;
-        items: string[];
-        status?: string;
-    };
-};
-
-const STEPS: RegistrationStep[] = [
-    {
-        id: 1,
-        label: "Profil",
-        description: "Création de votre compte consultant",
-        mockupContent: {
-            title: "Créez votre profil",
-            items: ["Nom et prénom", "Email professionnel", "Téléphone", "Localisation"],
-        }
-    },
-    {
-        id: 2,
-        label: "Expériences",
-        description: "Renseignement du profil (CV ou LinkedIn)",
-        mockupContent: {
-            title: "Expériences",
-            items: ["Upload CV (PDF, DOCX)", "Import LinkedIn", "Remplissage automatique"],
-        }
-    },
-    {
-        id: 3,
-        label: "Compétences",
-        description: "Extraction automatique des mots-clés",
-        mockupContent: {
-            title: "Analyse automatique",
-            items: ["✓ Compétences (Python, Java, SAP...)", "✓ Méthodologies (Agile, Scrum...)", "✓ Outils (Jira, Excel, Power BI...)", "✓ Certifications (PMP, CISSP...)"],
-        }
-    },
-    {
-        id: 4,
-        label: "Vérification",
-        description: "Validation manuelle équipe Surly (48h)",
-        mockupContent: {
-            title: "En cours de vérification",
-            items: ["Revue par notre équipe", "Vérification expériences", "Délai: sous 48h"],
-            status: "En cours"
-        }
-    },
-    {
-        id: 5,
-        label: "Activation",
-        description: "Profil actif sur la plateforme",
-        mockupContent: {
-            title: "Profil activé",
-            items: ["Félicitations !", "Profil 100% validé", "Visible par les clients"],
-            status: "Actif"
-        }
-    }
-];
+import { useTranslations } from 'next-intl';
 
 export const QuickRegistration = () => {
+    const t = useTranslations('quickRegistration');
     const [currentStep, setCurrentStep] = useState(0);
+
+    const STEP_COUNT = 5;
 
     // Auto-rotate every 3 seconds
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentStep((prev) => (prev + 1) % STEPS.length);
+            setCurrentStep((prev) => (prev + 1) % STEP_COUNT);
         }, 3000);
 
         return () => clearInterval(interval);
     }, []);
 
-    const activeStep = STEPS[currentStep];
+    const mockupItems = t.raw(`steps.${currentStep}.mockupItems`) as string[];
+    const statusKey = `steps.${currentStep}.status` as const;
+    const mockupStatus = t.has(statusKey) ? (t.raw(statusKey) as string) : undefined;
 
     return (
         <section id="inscription" className="relative py-16 sm:py-20 lg:py-28 overflow-hidden bg-white">
@@ -91,15 +36,15 @@ export const QuickRegistration = () => {
                     {/* LEFT COLUMN: Title & Description (50% - 6 cols) */}
                     <div className="col-span-12 tablet:col-span-6 flex flex-col justify-center pr-0 tablet:pr-8 laptop:pr-12">
                         <SectionHeader
-                            tag="Inscription"
+                            tag={t('tag')}
                             title={
                                 <>
-                                    Inscription en
+                                    {t('titleLine1')}
                                     <br />
-                                    <span className="text-primary">5 minutes chrono</span>
+                                    <span className="text-primary">{t('titleLine2')}</span>
                                 </>
                             }
-                            subtitle="CV parser OU LinkedIn - profil validé sous 48h"
+                            subtitle={t('subtitle')}
                             className="mb-8"
                         />
 
@@ -112,9 +57,9 @@ export const QuickRegistration = () => {
                                         </svg>
                                     </div>
                                     <div>
-                                        <h3 className="font-semibold text-sm text-foreground mb-1">Upload CV</h3>
+                                        <h3 className="font-semibold text-sm text-foreground mb-1">{t('uploadCV.title')}</h3>
                                         <p className="text-xs text-foreground-muted leading-relaxed">
-                                            Déposez votre CV (PDF/DOCX) et vos expériences sont remplies automatiquement
+                                            {t('uploadCV.description')}
                                         </p>
                                     </div>
                                 </div>
@@ -126,9 +71,9 @@ export const QuickRegistration = () => {
                                         </svg>
                                     </div>
                                     <div>
-                                        <h3 className="font-semibold text-sm text-foreground mb-1">Connexion LinkedIn</h3>
+                                        <h3 className="font-semibold text-sm text-foreground mb-1">{t('linkedin.title')}</h3>
                                         <p className="text-xs text-foreground-muted leading-relaxed">
-                                            Importez LinkedIn en un clic : expériences remplies instantanément
+                                            {t('linkedin.description')}
                                         </p>
                                     </div>
                                 </div>
@@ -142,7 +87,7 @@ export const QuickRegistration = () => {
                                 size="large"
                                 className="shadow-lg hover:shadow-xl w-full tablet:w-auto justify-center"
                             >
-                                Commencer mon inscription
+                                {t('cta')}
                             </Button>
                         </Reveal>
                     </div>
@@ -150,12 +95,12 @@ export const QuickRegistration = () => {
                     {/* MIDDLE COLUMN: Vertical Steps (20% - 2 cols) - Hidden on mobile */}
                     <div className="hidden tablet:flex col-span-12 tablet:col-span-3 flex-col">
                         <div className="space-y-1.5 flex-1">
-                            {STEPS.map((step, index) => {
+                            {[0, 1, 2, 3, 4].map((index) => {
                                 const isActive = index === currentStep;
 
                                 return (
                                     <div
-                                        key={step.id}
+                                        key={index}
                                         className={cn(
                                             "relative pl-3 py-2 transition-all duration-500 cursor-default rounded-lg",
                                             isActive && "bg-white/80"
@@ -173,7 +118,7 @@ export const QuickRegistration = () => {
                                                     ? "bg-primary text-white"
                                                     : "bg-gray-200/80 text-gray-500"
                                             )}>
-                                                {step.id}
+                                                {index + 1}
                                             </div>
 
                                             <div className="flex-1 min-w-0">
@@ -181,13 +126,13 @@ export const QuickRegistration = () => {
                                                     "text-xs font-semibold transition-all duration-500 leading-tight",
                                                     isActive ? "text-foreground" : "text-gray-500"
                                                 )}>
-                                                    {step.label}
+                                                    {t(`steps.${index}.label`)}
                                                 </div>
                                                 <div className={cn(
                                                     "text-[10px] transition-all duration-500 mt-0.5 leading-tight",
                                                     isActive ? "text-gray-600" : "text-gray-400"
                                                 )}>
-                                                    {step.description}
+                                                    {t(`steps.${index}.description`)}
                                                 </div>
                                             </div>
                                         </div>
@@ -204,7 +149,7 @@ export const QuickRegistration = () => {
                             {/* Mini Header */}
                             <div className="flex items-center justify-between mb-2 pb-2 border-b border-gray-100">
                                 <h3 className="text-xs font-bold text-foreground tracking-tight">
-                                    {activeStep.mockupContent.title}
+                                    {t(`steps.${currentStep}.mockupTitle`)}
                                 </h3>
                                 <div className="flex gap-1">
                                     <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
@@ -215,7 +160,7 @@ export const QuickRegistration = () => {
 
                             {/* Content Items */}
                             <div className="space-y-1.5">
-                                {activeStep.mockupContent.items.map((item, idx) => (
+                                {mockupItems.map((item: string, idx: number) => (
                                     <div
                                         key={idx}
                                         className={cn(
@@ -236,27 +181,27 @@ export const QuickRegistration = () => {
                             </div>
 
                             {/* Status Badge */}
-                            {activeStep.mockupContent.status && (
+                            {mockupStatus && (
                                 <div className="mt-2 pt-2 border-t border-gray-100 flex items-center justify-center">
                                     <div className={cn(
                                         "flex items-center gap-1.5 px-3 py-1.5 rounded-full",
-                                        activeStep.mockupContent.status === "Actif"
+                                        mockupStatus === "Actif" || mockupStatus === "Active"
                                             ? "bg-primary/10 border border-primary/20"
                                             : "bg-gray-100 border border-gray-200"
                                     )}>
                                         <div className={cn(
                                             "w-1.5 h-1.5 rounded-full",
-                                            activeStep.mockupContent.status === "Actif"
+                                            mockupStatus === "Actif" || mockupStatus === "Active"
                                                 ? "bg-primary animate-pulse"
                                                 : "bg-gray-400 animate-pulse"
                                         )}></div>
                                         <span className={cn(
                                             "text-[10px] font-semibold uppercase tracking-wide",
-                                            activeStep.mockupContent.status === "Actif"
+                                            mockupStatus === "Actif" || mockupStatus === "Active"
                                                 ? "text-primary"
                                                 : "text-gray-600"
                                         )}>
-                                            {activeStep.mockupContent.status}
+                                            {mockupStatus}
                                         </span>
                                     </div>
                                 </div>

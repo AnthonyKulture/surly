@@ -3,8 +3,11 @@
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button, ArrowIcon } from "@/components/ui/Button";
+import { useTranslations } from 'next-intl';
 
 export const ServiceOptions = () => {
+    const t = useTranslations('serviceOptions');
+
     return (
         <section className="relative py-24 lg:py-32 bg-primary text-white overflow-hidden">
             {/* Background gradient overlay */}
@@ -12,12 +15,12 @@ export const ServiceOptions = () => {
 
             <div className="container relative z-[1]">
                 <SectionHeader
-                    tag="Deux formules adaptées"
+                    tag={t('tag')}
                     title={
                         <>
-                            Surly s'adapte à
+                            {t('titleLine1')}
                             <br />
-                            <span className="text-accent">votre organisation</span>
+                            <span className="text-accent">{t('titleLine2')}</span>
                         </>
                     }
                     centered
@@ -26,8 +29,7 @@ export const ServiceOptions = () => {
 
                 <Reveal delay={100} duration={1000}>
                     <p className="text-base sm:text-lg text-white/80 text-center max-w-3xl mx-auto mb-12 sm:mb-16 leading-relaxed px-4 sm:px-0">
-                        Que vous ayez besoin d'un accompagnement sur-mesure ou que vous préfériez gérer vos recrutements en autonomie,
-                        Surly vous propose la solution qui correspond à vos besoins en ressources spécialisées.
+                        {t('intro')}
                     </p>
                 </Reveal>
 
@@ -46,37 +48,31 @@ export const ServiceOptions = () => {
 
                             {/* Title */}
                             <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
-                                Cabinet de conseil spécialisé
+                                {t('cabinet.title')}
                             </h3>
 
                             {/* Badge */}
                             <div className="inline-flex items-center gap-2 mb-6">
                                 <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
-                                    🎯 Accompagnement sur-mesure
+                                    {t('cabinet.badge')}
                                 </span>
                             </div>
 
                             {/* Description */}
                             <p className="text-base text-foreground-muted leading-relaxed mb-6">
-                                Nos talent managers qualifient votre besoin, sourcent les meilleurs profils, gèrent l'administratif et assurent le suivi de mission. Vous vous concentrez sur votre projet, nous gérons le reste.
+                                {t('cabinet.description')}
                             </p>
 
                             {/* Advantages List */}
                             <div className="space-y-3 mb-8 flex-grow">
-                                {[
-                                    "Qualification experte de votre besoin",
-                                    "Présélection de 2-3 profils pertinents maximum",
-                                    "Gestion administrative complète (contrats, facturation, suivi)",
-                                    "Accompagnement dédié tout au long de la mission",
-                                    "Garantie de remplacement en cas d'imprévu"
-                                ].map((advantage, i) => (
+                                {[0, 1, 2, 3, 4].map((i) => (
                                     <div key={i} className="flex items-start gap-3">
                                         <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                                             <svg className="w-3 h-3 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                                             </svg>
                                         </div>
-                                        <p className="text-sm text-foreground leading-relaxed">{advantage}</p>
+                                        <p className="text-sm text-foreground leading-relaxed">{t(`cabinet.advantages.${i}`)}</p>
                                     </div>
                                 ))}
                             </div>
@@ -90,7 +86,7 @@ export const ServiceOptions = () => {
                                     size="large"
                                     className="flex-1"
                                 >
-                                    Nous contacter
+                                    {t('cabinet.ctaPrimary')}
                                 </Button>
                                 <Button
                                     as="a"
@@ -99,7 +95,7 @@ export const ServiceOptions = () => {
                                     size="large"
                                     className="flex-1"
                                 >
-                                    Besoin urgent ?
+                                    {t('cabinet.ctaSecondary')}
                                 </Button>
                             </div>
                         </div>
@@ -117,37 +113,31 @@ export const ServiceOptions = () => {
 
                             {/* Title */}
                             <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
-                                Accès plateforme autonome
+                                {t('platform.title')}
                             </h3>
 
                             {/* Badge */}
                             <div className="inline-flex items-center gap-2 mb-6">
                                 <span className="px-3 py-1 bg-accent/20 text-primary text-xs font-semibold rounded-full">
-                                    🚀 Technologie & autonomie
+                                    {t('platform.badge')}
                                 </span>
                             </div>
 
                             {/* Description */}
                             <p className="text-base text-foreground-muted leading-relaxed mb-6">
-                                Accédez directement à notre base de 3 300+ experts pré-qualifiés. Recherchez, filtrez, et contactez les profils qui correspondent à vos critères. Vous gardez le contrôle, nous fournissons les outils.
+                                {t('platform.description')}
                             </p>
 
                             {/* Advantages List */}
                             <div className="space-y-3 mb-8 flex-grow">
-                                {[
-                                    "Accès illimité à tous les profils vérifiés",
-                                    "Recherche avancée par compétences, disponibilité, TJM",
-                                    "Matching IA instantané 24/7",
-                                    "Transparence totale sur les tarifs",
-                                    "Commission fixe de 15% uniquement"
-                                ].map((advantage, i) => (
+                                {[0, 1, 2, 3, 4].map((i) => (
                                     <div key={i} className="flex items-start gap-3">
                                         <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                                             <svg className="w-3 h-3 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                                             </svg>
                                         </div>
-                                        <p className="text-sm text-foreground leading-relaxed">{advantage}</p>
+                                        <p className="text-sm text-foreground leading-relaxed">{t(`platform.advantages.${i}`)}</p>
                                     </div>
                                 ))}
                             </div>
@@ -163,7 +153,7 @@ export const ServiceOptions = () => {
                                     size="large"
                                     className="flex-1"
                                 >
-                                    S'inscrire gratuitement
+                                    {t('platform.ctaPrimary')}
                                 </Button>
                                 <Button
                                     as="a"
@@ -172,7 +162,7 @@ export const ServiceOptions = () => {
                                     size="large"
                                     className="flex-1"
                                 >
-                                    Tester Surly AI
+                                    {t('platform.ctaSecondary')}
                                 </Button>
                             </div>
                         </div>

@@ -6,18 +6,20 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 import { MegaMenu } from "@/components/layout/MegaMenu";
-
-const navLinks = [
-  // "Partenaires & Avantages" retiré du header principal (reste accessible via Mega Menu pour consultants)
-  { href: "/pourquoi-surly", label: "Pourquoi Surly ?" },
-  { href: "/ai", label: "Surly AI", isExternal: true, isSpecial: true },
-];
+import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
+import { useTranslations } from 'next-intl';
 
 interface NavigationProps {
   showAnnouncementBar?: boolean;
 }
 
 export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
+  const t = useTranslations('navigation');
+
+  const navLinks = [
+    { href: "/pourquoi-surly", label: t('links.whySurly') },
+    { href: "/ai", label: t('links.surlyAI'), isExternal: true, isSpecial: true },
+  ];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
@@ -98,7 +100,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                 </svg>
               </span>
               <span className="text-[9px] sm:text-[10px] md:text-xs font-semibold tracking-wide text-white/90">
-                Trouvez un expert :
+                {t('announcement.label')}
               </span>
             </div>
 
@@ -112,8 +114,8 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               {/* Button Content - Shorter text on very small mobile */}
               <div className="relative z-10 flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-0.5 rounded-full bg-white text-primary-900 transition-transform active:scale-95">
                 <span className="text-[9px] sm:text-[10px] md:text-xs font-bold whitespace-nowrap">
-                  <span className="hidden sm:inline">Sélectionné par notre IA en 2min</span>
-                  <span className="sm:hidden">Besoin urgent ? Sourcing IA</span>
+                  <span className="hidden sm:inline">{t('announcement.desktop')}</span>
+                  <span className="sm:hidden">{t('announcement.mobile')}</span>
                 </span>
                 <svg
                   className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-primary-800 group-hover:translate-x-0.5 transition-transform"
@@ -158,7 +160,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                 onClick={handleMegaMenuToggle}
                 className="text-sm font-semibold uppercase tracking-wide transition-all whitespace-nowrap relative group text-foreground hover:text-primary"
               >
-                Nos solutions
+                {t('links.solutions')}
                 <svg
                   className={cn(
                     "inline-block w-4 h-4 ml-1 transition-transform duration-200",
@@ -206,6 +208,9 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
 
             {/* Desktop CTA Buttons - Hidden on mobile */}
             <div className="hidden tablet:flex items-center gap-2 laptop:gap-3 flex-shrink-0">
+              <LanguageSwitcher />
+
+              <div className="hidden laptop:block w-px h-6 bg-primary/10 mx-1" />
               <Button
                 as="a"
                 href="/devenir-consultant"
@@ -213,7 +218,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                 size="default"
                 className="text-[10px] laptop:text-[11px] whitespace-nowrap py-1.5 px-2.5 laptop:py-2.5 laptop:px-5"
               >
-                Trouver des missions
+                {t('buttons.findMissions')}
               </Button>
               <Button
                 as="a"
@@ -222,7 +227,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                 size="default"
                 className="text-[10px] laptop:text-[11px] whitespace-nowrap py-1.5 px-2.5 laptop:py-2.5 laptop:px-5"
               >
-                Trouver un expert
+                {t('buttons.findExpert')}
               </Button>
 
               {/* Separator - Only on laptop+ */}
@@ -235,7 +240,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                 rel="noopener noreferrer"
                 className="hidden laptop:block text-[11px] font-medium text-foreground-muted hover:text-primary transition-colors whitespace-nowrap"
               >
-                Se connecter
+                {t('links.login')}
               </a>
             </div>
 
@@ -283,6 +288,10 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
           className="flex flex-col items-start gap-6 p-6 w-full max-w-2xl overflow-y-auto max-h-[80vh]"
           onClick={(e) => e.stopPropagation()}
         >
+          <div className="w-full flex justify-end">
+            <LanguageSwitcher />
+          </div>
+
           {/* Nos solutions - Mobile - Two column structure */}
           <div className="w-full space-y-6">
             {/* Section Entreprises */}
@@ -291,7 +300,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                 <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
-                Pour les entreprises
+                {t('megaMenu.companies.title')}
               </h3>
               <div className="flex flex-col gap-3 pl-6 border-l-2 border-primary/10">
                 <a
@@ -302,7 +311,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                   <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                  <span>Sourcing d'expert</span>
+                  <span>{t('megaMenu.companies.sourcing')}</span>
                 </a>
                 <a
                   href="/rse"
@@ -312,7 +321,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                   <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                  <span>Conformité & RSE</span>
+                  <span>{t('megaMenu.companies.compliance')}</span>
                 </a>
               </div>
             </div>
@@ -323,7 +332,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                 <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                Pour les consultants
+                {t('megaMenu.consultants.title')}
               </h3>
               <div className="flex flex-col gap-3 pl-6 border-l-2 border-accent/20">
                 <a
@@ -334,7 +343,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                   <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                  <span>Trouver une mission</span>
+                  <span>{t('megaMenu.consultants.findMission')}</span>
                 </a>
                 <a
                   href="/partenaires-avantages"
@@ -344,7 +353,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                   <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                  <span>Avantages Membres</span>
+                  <span>{t('megaMenu.consultants.benefits')}</span>
                 </a>
               </div>
             </div>
@@ -390,7 +399,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
             <svg className="w-4 h-4 text-primary/30 group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-            Contactez-nous
+            {t('links.contact')}
           </a>
 
           {/* Séparateur */}
@@ -405,7 +414,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               size="large"
               className="w-full justify-center"
             >
-              Trouver un expert
+              {t('buttons.findExpert')}
             </Button>
             <Button
               as="a"
@@ -414,7 +423,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               size="large"
               className="w-full justify-center"
             >
-              Trouver des missions
+              {t('buttons.findMissions')}
             </Button>
 
             {/* Login Link */}
@@ -424,7 +433,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               rel="noopener noreferrer"
               className="text-sm text-center font-medium text-foreground-muted hover:text-primary transition-colors mt-2"
             >
-              Se connecter
+              {t('links.login')}
             </a>
           </div>
         </div>

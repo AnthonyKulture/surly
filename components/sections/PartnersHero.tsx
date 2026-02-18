@@ -1,17 +1,22 @@
+"use client";
+
 import { PageHero } from "@/components/ui/PageHero";
+import { useTranslations } from 'next-intl';
 
 export const PartnersHero = () => {
+    const t = useTranslations('partnersPage');
+
     return (
         <PageHero
-            badge="Pour les consultants Surly"
+            badge={t('hero.badge')}
             title={
                 <>
-                    Partenaires premium &
-                    <span className="text-primary block mt-1">avantages exclusifs</span>
+                    {t.rich('hero.title', {
+                        span: (chunks) => <span className="text-primary block mt-1">{chunks}</span>
+                    })}
                 </>
             }
-            subtitle="Nos partenaires ont été sélectionnés avec soin et leurs offres négociées aux meilleurs tarifs pour faciliter votre vie professionnelle et personnelle."
+            subtitle={t('hero.subtitle')}
         />
     );
 };
-

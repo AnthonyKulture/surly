@@ -1,6 +1,9 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
+
 export const LogoCarousel = () => {
+    const t = useTranslations('home');
     // Clients avec leurs noms complets et abrégés
     const clients = [
         { name: "BNP Paribas", shortName: "BNP" },
@@ -22,7 +25,7 @@ export const LogoCarousel = () => {
                 {/* Minimal Title */}
                 <div className="text-center mb-4 sm:mb-5">
                     <p className="text-[10px] sm:text-xs font-medium text-foreground/40 uppercase tracking-[0.2em]">
-                        Ils nous font confiance
+                        {t('logoCarousel.title')}
                     </p>
                 </div>
 
@@ -56,7 +59,7 @@ export const LogoCarousel = () => {
                 </div>
 
                 <p className="text-center text-[10px] sm:text-[11px] text-foreground/30 mt-3 sm:mt-4">
-                    Et plus de 50 autres entreprises du secteur bancassurance
+                    {t('logoCarousel.more')}
                 </p>
             </div>
         </section>

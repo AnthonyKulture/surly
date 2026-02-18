@@ -1,19 +1,22 @@
 "use client";
 
 import { Reveal } from "@/components/ui/Reveal";
-import { Button } from "@/components/ui/Button";
+import { Button, ArrowIcon } from "@/components/ui/Button";
+import { useTranslations } from 'next-intl';
 
 export const ExpertSourcingCTA = () => {
+    const t = useTranslations('expertSourcingCTA');
+
     return (
         <section className="relative py-20 lg:py-28 bg-white border-t border-gray-100">
             <div className="container">
                 <Reveal delay={0} duration={800}>
                     <div className="text-center mb-12">
                         <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                            Prêt à trouver votre expert idéal ?
+                            {t('title')}
                         </h2>
                         <p className="text-lg text-foreground-muted max-w-3xl mx-auto leading-relaxed">
-                            Quelle que soit votre approche, Surly vous accompagne dans votre recherche de talents spécialisés Banque & Assurance.
+                            {t('description')}
                         </p>
                     </div>
                 </Reveal>
@@ -24,7 +27,7 @@ export const ExpertSourcingCTA = () => {
                     {/* CTA 1: Contact Commercial */}
                     <Reveal delay={100} duration={800} className="flex h-full">
                         <div className="group relative bg-gradient-to-br from-primary to-primary-dark text-white rounded-2xl p-8 hover:shadow-2xl transition-all hover:scale-105 cursor-pointer flex flex-col w-full">
-                            <a href="/contact" className="absolute inset-0 z-10" aria-label="Discuter de mon besoin"></a>
+                            <a href="/contact" className="absolute inset-0 z-10" aria-label={t('commercial.cta')}></a>
 
                             {/* Icon */}
                             <div className="w-14 h-14 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:bg-white/30 transition-all">
@@ -34,14 +37,14 @@ export const ExpertSourcingCTA = () => {
                             </div>
 
                             {/* Content */}
-                            <h3 className="text-xl font-bold mb-2">Contact commercial</h3>
+                            <h3 className="text-xl font-bold mb-2">{t('commercial.title')}</h3>
                             <p className="text-sm text-white/80 mb-4 flex-grow">
-                                Discutez de votre besoin avec nos experts
+                                {t('commercial.description')}
                             </p>
 
                             {/* Inline CTA */}
                             <div className="flex items-center gap-2 text-accent font-semibold text-sm group-hover:gap-3 transition-all mt-auto">
-                                <span>Discuter de mon besoin</span>
+                                <span>{t('commercial.cta')}</span>
                                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
@@ -52,7 +55,7 @@ export const ExpertSourcingCTA = () => {
                     {/* CTA 2: Besoin Urgent - Surly AI */}
                     <Reveal delay={200} duration={800} className="flex h-full">
                         <div className="group relative bg-gradient-to-br from-accent/80 to-accent text-primary rounded-2xl p-8 hover:shadow-2xl transition-all hover:scale-105 cursor-pointer flex flex-col w-full">
-                            <a href="/ai" className="absolute inset-0 z-10" aria-label="Essayer Surly AI"></a>
+                            <a href="/ai" className="absolute inset-0 z-10" aria-label={t('urgent.cta')}></a>
 
                             {/* Icon */}
                             <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-all">
@@ -62,14 +65,14 @@ export const ExpertSourcingCTA = () => {
                             </div>
 
                             {/* Content */}
-                            <h3 className="text-xl font-bold mb-2">Besoin urgent</h3>
+                            <h3 className="text-xl font-bold mb-2">{t('urgent.title')}</h3>
                             <p className="text-sm text-primary/80 mb-4 flex-grow">
-                                Qualifiez votre besoin instantanément avec notre IA
+                                {t('urgent.description')}
                             </p>
 
                             {/* Inline CTA */}
                             <div className="flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all mt-auto">
-                                <span>Essayer Surly AI</span>
+                                <span>{t('urgent.cta')}</span>
                                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
@@ -80,7 +83,7 @@ export const ExpertSourcingCTA = () => {
                     {/* CTA 3: S'inscrire sur la plateforme */}
                     <Reveal delay={300} duration={800} className="flex h-full">
                         <div className="group relative bg-white border-2 border-primary/20 text-foreground rounded-2xl p-8 hover:shadow-2xl hover:border-primary transition-all hover:scale-105 cursor-pointer flex flex-col w-full">
-                            <a href="https://app.surly.fr/client" target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-10" aria-label="S'inscrire gratuitement"></a>
+                            <a href="https://app.surly.fr/client" target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-10" aria-label={t('platform.cta')}></a>
 
                             {/* Icon */}
                             <div className="w-14 h-14 rounded-xl bg-primary/5 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-all">
@@ -90,14 +93,14 @@ export const ExpertSourcingCTA = () => {
                             </div>
 
                             {/* Content */}
-                            <h3 className="text-xl font-bold mb-2">Accès plateforme</h3>
+                            <h3 className="text-xl font-bold mb-2">{t('platform.title')}</h3>
                             <p className="text-sm text-foreground-muted mb-4 flex-grow">
-                                Accédez à 3 300+ experts en autonomie
+                                {t('platform.description')}
                             </p>
 
                             {/* Inline CTA */}
                             <div className="flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all mt-auto">
-                                <span>S'inscrire gratuitement</span>
+                                <span>{t('platform.cta')}</span>
                                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>

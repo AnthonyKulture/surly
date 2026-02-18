@@ -5,8 +5,11 @@ import { Reveal } from "@/components/ui/Reveal";
 import { RotatingWords } from "@/components/ui/RotatingWords";
 import { HeroBackground } from "@/components/ui/HeroBackground";
 import { HeroCards } from "@/components/ui/HeroCards";
+import { useTranslations } from 'next-intl';
 
 export const Hero = () => {
+  const t = useTranslations('home');
+  const rotatingWords = t.raw('rotatingWords') as string[];
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -39,14 +42,7 @@ export const Hero = () => {
               <div className="mb-5 md:mb-5 laptop:mb-6 w-full hidden tablet:flex tablet:justify-start">
                 <div className="flex items-center gap-2 px-3 laptop:px-4 py-1.5 laptop:py-2 rounded-full bg-white/80 backdrop-blur-sm border border-primary/10 shadow-sm hover:shadow-md transition-all max-w-full">
                   <RotatingWords
-                    words={[
-                      "Bâle III", "IFRS 17", "Solvabilité II", "Data Engineering", "Cybersécurité",
-                      "Risk Management", "Architecture SI", "Actuariat", "Pricing", "Conformité",
-                      "Monétique", "Product Management", "Transformation Digitale", "DevOps",
-                      "Cloud Banking", "KYC/AML", "Pillar 3", "ALM", "Marketing Analytics",
-                      "Gestion de Projet", "Change Management", "API Banking", "IA & Machine Learning",
-                      "Blockchain Finance", "RegTech", "InsurTech"
-                    ]}
+                    words={rotatingWords}
                     className="text-xs sm:text-sm font-medium text-foreground/80"
                   />
                 </div>
@@ -58,22 +54,21 @@ export const Hero = () => {
               <h1 className="text-[1.35rem] leading-[1.3] tablet:text-[1.35rem] laptop:text-4xl font-bold text-foreground mb-6 md:mb-4 laptop:mb-5 tracking-tight laptop:leading-[1.1] max-w-2xl">
                 {/* Mobile version - 3 lines forced */}
                 <span className="tablet:hidden block">
-                  L'écosystème<br />
-                  Recrutement & Freelance<br />
-                  pour <span className="text-primary">la Banque & l'Assurance</span>
+                  {t('title.mobile.line1')}<br />
+                  {t('title.mobile.line2')}<br />
+                  <span className="text-primary">{t('title.mobile.line3')}</span>
                 </span>
                 {/* Tablet+ version - original */}
                 <span className="hidden tablet:block">
-                  L'écosystème Recrutement & Freelance<br />
-                  pour <span className="text-primary">la Banque & l'Assurance</span>
+                  {t('title.line1')}<br />
+                  <span className="text-primary">{t('title.line2')}</span>
                 </span>
               </h1>
             </Reveal>
 
             {/* Subtitle */}
             <Reveal delay={200} duration={1000}>
-              <h2 className="text-base tablet:text-sm laptop:text-base xl:text-lg text-foreground-muted mb-7 md:mb-6 laptop:mb-8 max-w-xl font-normal leading-relaxed px-2 tablet:px-0">
-                La seule marketplace <strong className="text-foreground font-semibold">ultra-spécialisée</strong> qui réunit l&apos;intégralité des experts et des opportunités du secteur <strong className="text-foreground font-semibold">Bancassurance</strong>.
+              <h2 className="text-base tablet:text-sm laptop:text-base xl:text-lg text-foreground-muted mb-7 md:mb-6 laptop:mb-8 max-w-xl font-normal leading-relaxed px-2 tablet:px-0" dangerouslySetInnerHTML={{ __html: t.raw('subtitle') }}>
               </h2>
             </Reveal>
 
@@ -86,7 +81,7 @@ export const Hero = () => {
                   variant="primary"
                   size="default"
                 >
-                  <span>Trouver un expert</span>
+                  <span>{t('cta.findExpert')}</span>
                 </Button>
 
                 <Button
@@ -95,7 +90,7 @@ export const Hero = () => {
                   variant="primary"
                   size="default"
                 >
-                  <span>Trouver des missions</span>
+                  <span>{t('cta.findMissions')}</span>
                 </Button>
               </div>
             </Reveal>
