@@ -1,8 +1,11 @@
 "use client";
 
 import Script from "next/script";
+import { useLocale } from 'next-intl';
 
 export function ThirdPartyScripts() {
+  const locale = useLocale();
+
   return (
     <>
       {/* Tarteaucitron.js - Gestion des cookies RGPD (Dashboard) */}
@@ -12,6 +15,8 @@ export function ThirdPartyScripts() {
         onLoad={() => {
           // @ts-ignore
           if (typeof tarteaucitron !== 'undefined') {
+            // @ts-ignore
+            tarteaucitron.forceLanguage = locale;
             // @ts-ignore
             tarteaucitron.init({
               "privacyUrl": "/politique-cookies",

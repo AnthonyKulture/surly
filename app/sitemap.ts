@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { routing } from "@/i18n/routing";
+import { routing } from '@/i18n/routing';
 
 const baseUrl = process.env.NEXT_PUBLIC_URL || "https://surly.fr";
 
@@ -34,10 +34,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 changeFrequency: "weekly",
                 priority: route === "" ? 1 : 0.8,
                 alternates: {
-                    languages: routing.locales.reduce((acc, loc) => ({
-                        ...acc,
-                        [loc]: `${baseUrl}/${loc}${route}`
-                    }), {})
+                    languages: Object.fromEntries(
+                        routing.locales.map((cur) => [cur, `${baseUrl}/${cur}${route}`])
+                    ),
                 },
             });
         });

@@ -1,5 +1,11 @@
 {
     "navigation": {
+        "frenchTechPopup": {
+            "label": "Annonce officielle 2026",
+            "title": "Surly rejoint l'initiative<br></br>\"Je choisis la French Tech\" 🇫🇷",
+            "cta": "Lire l'article",
+            "close": "Fermer"
+        },
         "links": {
             "whySurly": "Pourquoi Surly ?",
             "surlyAI": "Surly AI",
