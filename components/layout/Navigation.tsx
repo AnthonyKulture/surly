@@ -285,7 +285,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
         onClick={handleCloseMenu}
       >
         <div
-          className="flex flex-col items-start gap-6 p-6 w-full max-w-2xl overflow-y-auto max-h-[80vh]"
+          className="flex flex-col items-start gap-4 p-5 sm:p-6 w-full max-w-2xl overflow-y-auto max-h-[95vh] pb-8"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="w-full flex justify-end">
@@ -293,22 +293,22 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
           </div>
 
           {/* Nos solutions - Mobile - Two column structure */}
-          <div className="w-full space-y-6">
+          <div className="w-full space-y-4">
             {/* Section Entreprises */}
             <div className="w-full">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-primary mb-3 flex items-center gap-2">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-primary mb-2 flex items-center gap-2">
                 <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
                 {t('megaMenu.companies.title')}
               </h3>
-              <div className="flex flex-col gap-3 pl-6 border-l-2 border-primary/10">
+              <div className="flex flex-col gap-2 pl-4 border-l-2 border-primary/10">
                 <a
                   href="/sourcing-expert"
                   onClick={handleCloseMenu}
-                  className="text-base font-medium text-foreground-muted hover:text-primary transition-colors flex items-start gap-2 group"
+                  className="text-sm font-medium text-foreground-muted hover:text-primary transition-colors flex items-center gap-2 group py-0.5"
                 >
-                  <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-3.5 h-3.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                   <span>{t('megaMenu.companies.sourcing')}</span>
@@ -316,7 +316,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                 <a
                   href="/rse"
                   onClick={handleCloseMenu}
-                  className="text-base font-medium text-foreground-muted hover:text-primary transition-colors flex items-start gap-2 group"
+                  className="text-sm font-medium text-foreground-muted hover:text-primary transition-colors flex items-center gap-2 group py-0.5"
                 >
                   <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -328,19 +328,19 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
 
             {/* Section Consultants */}
             <div className="w-full">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-primary mb-3 flex items-center gap-2">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-primary mb-2 flex items-center gap-2">
                 <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 {t('megaMenu.consultants.title')}
               </h3>
-              <div className="flex flex-col gap-3 pl-6 border-l-2 border-accent/20">
+              <div className="flex flex-col gap-2 pl-4 border-l-2 border-accent/20">
                 <a
                   href="/devenir-consultant"
                   onClick={handleCloseMenu}
-                  className="text-base font-medium text-foreground-muted hover:text-primary transition-colors flex items-start gap-2 group"
+                  className="text-sm font-medium text-foreground-muted hover:text-primary transition-colors flex items-center gap-2 group py-0.5"
                 >
-                  <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-3.5 h-3.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                   <span>{t('megaMenu.consultants.findMission')}</span>
@@ -348,7 +348,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                 <a
                   href="/partenaires-avantages"
                   onClick={handleCloseMenu}
-                  className="text-base font-medium text-foreground-muted hover:text-primary transition-colors flex items-start gap-2 group"
+                  className="text-sm font-medium text-foreground-muted hover:text-primary transition-colors flex items-center gap-2 group py-0.5"
                 >
                   <svg className="w-4 h-4 mt-0.5 text-primary/30 group-hover:text-accent transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -368,7 +368,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               key={link.href}
               href={link.href}
               onClick={(e) => !link.isExternal && handleSmoothScroll(e, link.href)}
-              className="text-lg font-medium text-foreground hover:text-primary transition-colors w-full flex items-center gap-2 group"
+              className="text-base font-medium text-foreground hover:text-primary transition-colors w-full flex items-center gap-2 group py-1"
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
               <svg className="w-4 h-4 text-primary/30 group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -382,7 +382,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
           <a
             href="/faq"
             onClick={handleCloseMenu}
-            className="text-lg font-medium text-foreground hover:text-primary transition-colors w-full flex items-center gap-2 group"
+            className="text-base font-medium text-foreground hover:text-primary transition-colors w-full flex items-center gap-2 group py-1"
           >
             <svg className="w-4 h-4 text-primary/30 group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -394,7 +394,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
           <a
             href="/contact"
             onClick={handleCloseMenu}
-            className="text-lg font-medium text-foreground hover:text-primary transition-colors w-full flex items-center gap-2 group"
+            className="text-base font-medium text-foreground hover:text-primary transition-colors w-full flex items-center gap-2 group py-1"
           >
             <svg className="w-4 h-4 text-primary/30 group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -406,12 +406,12 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
           <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
 
           {/* CTA Buttons */}
-          <div className="flex flex-col gap-3 w-full">
+          <div className="flex flex-col gap-2.5 w-full">
             <Button
               as="a"
               href="/sourcing-expert"
               variant="primary"
-              size="large"
+              size="default"
               className="w-full justify-center"
             >
               {t('buttons.findExpert')}
@@ -420,7 +420,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               as="a"
               href="/devenir-consultant"
               variant="outline"
-              size="large"
+              size="default"
               className="w-full justify-center"
             >
               {t('buttons.findMissions')}
