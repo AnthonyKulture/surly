@@ -138,7 +138,7 @@ const ExpertCard = ({ expert, image, t, compact = false, priority = false }: { e
 
     return (
         <div className={cn(
-            "group relative bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300",
+            "group relative bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:border-primary/20 transition-all duration-300",
             "min-h-[140px] laptop:min-h-[150px] flex items-center",
             compact ? "p-2 laptop:p-3" : "p-3"
         )}>
@@ -153,7 +153,7 @@ const ExpertCard = ({ expert, image, t, compact = false, priority = false }: { e
                             exit={{ opacity: 0, scale: 0.8 }}
                             transition={{ duration: 0.3 }}
                             className={cn(
-                                "rounded-full overflow-hidden bg-gray-100 border-2 border-white shadow-sm",
+                                "rounded-full overflow-hidden bg-gray-100 border-2 border-white shadow",
                                 compact ? "w-10 h-10 laptop:w-12 laptop:h-12" : "w-12 h-12"
                             )}
                         >

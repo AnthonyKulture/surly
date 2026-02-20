@@ -45,7 +45,7 @@ export const LogoCarousel = () => {
                                     style={{ minWidth: "100px" }}
                                 >
                                     <span
-                                        className="font-semibold text-foreground/25 group-hover:text-primary/60 transition-colors duration-300 tracking-tight select-none whitespace-nowrap"
+                                        className="font-semibold text-foreground/45 group-hover:text-primary/70 transition-colors duration-300 tracking-tight select-none whitespace-nowrap"
                                         style={{
                                             fontSize: client.shortName.length > 6 ? '0.9rem' : '1.1rem',
                                         }}

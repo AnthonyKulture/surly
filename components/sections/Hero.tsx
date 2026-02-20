@@ -87,7 +87,7 @@ export const Hero = () => {
                 <Button
                   as="a"
                   href="/devenir-consultant"
-                  variant="primary"
+                  variant="outline"
                   size="default"
                 >
                   <span>{t('cta.findMissions')}</span>
