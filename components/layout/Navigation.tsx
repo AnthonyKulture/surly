@@ -153,8 +153,8 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               <Logo className="w-[100px] laptop:w-[110px] xl:w-[120px]" variant="black" />
             </Link>
 
-            {/* Desktop Navigation Links - Hidden on mobile */}
-            <div className="hidden tablet:flex items-center gap-4 laptop:gap-6 xl:gap-8 flex-1 justify-center">
+            {/* Desktop Navigation Links - Hidden on mobile & tablet */}
+            <div className="hidden laptop:flex items-center gap-4 laptop:gap-6 xl:gap-8 flex-1 justify-center">
               {/* Nos solutions - Mega Menu Trigger */}
               <button
                 onClick={handleMegaMenuToggle}
@@ -206,8 +206,8 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               ))}
             </div>
 
-            {/* Desktop CTA Buttons - Hidden on mobile */}
-            <div className="hidden tablet:flex items-center gap-2 laptop:gap-3 flex-shrink-0">
+            {/* Desktop CTA Buttons - Hidden on mobile & tablet */}
+            <div className="hidden laptop:flex items-center gap-2 laptop:gap-3 flex-shrink-0">
               <LanguageSwitcher />
 
               <div className="hidden laptop:block w-px h-6 bg-primary/10 mx-1" />
@@ -244,9 +244,9 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               </a>
             </div>
 
-            {/* Burger Menu Toggle - Visible on mobile */}
+            {/* Burger Menu Toggle - Visible on mobile & tablet */}
             <button
-              className="tablet:hidden relative z-20 p-2 -mr-2 text-foreground"
+              className="laptop:hidden relative z-20 p-2 -mr-2 text-foreground"
               onClick={handleToggleMenu}
               aria-label="Toggle Menu"
             >
