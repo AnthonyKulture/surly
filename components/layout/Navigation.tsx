@@ -233,12 +233,12 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               {/* Separator - Only on laptop+ */}
               <div className="hidden laptop:block w-px h-6 bg-primary/10 mx-1" />
 
-              {/* Login Link - Only on laptop+ */}
+              {/* Login Link - Always bold and visible */}
               <a
                 href="https://app.surly.fr/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden laptop:block text-[11px] font-medium text-foreground-muted hover:text-primary transition-colors whitespace-nowrap"
+                className="text-[11px] font-bold text-foreground hover:text-primary transition-colors whitespace-nowrap"
               >
                 {t('links.login')}
               </a>
@@ -431,7 +431,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               href="https://app.surly.fr/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-center font-medium text-foreground-muted hover:text-primary transition-colors mt-2"
+              className="text-base text-center font-bold text-foreground hover:text-primary transition-colors mt-2"
             >
               {t('links.login')}
             </a>
