@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextResponse } from "next/server";
 import { validateMessage, sanitizeMessage } from "@/lib/input-validator";
-import { checkRateLimit } from "@/lib/rate-limiter";
+import { checkRateLimit, MAX_REQUESTS } from "@/lib/rate-limiter";
 import { extractLeadInfo } from "@/lib/lead-extractor";
 import { sendLeadNotification } from "@/lib/email-service";
 
@@ -209,7 +209,7 @@ export async function POST(req: Request) {
                     status: 429,
                     headers: {
                         'Retry-After': Math.ceil((rateLimit.resetTime - Date.now()) / 1000).toString(),
-                        'X-RateLimit-Limit': '10',
+                        'X-RateLimit-Limit': MAX_REQUESTS.toString(),
                         'X-RateLimit-Remaining': '0',
                         'X-RateLimit-Reset': resetDate.toISOString(),
                     }
@@ -276,9 +276,17 @@ export async function POST(req: Request) {
         const result = await chat.sendMessage(`[DÉBUT_USER]${sanitizedMessage}[FIN_USER]`);
         const response = result.response.text();
 
-        // Check if conversation is complete (AI sent closing message)
-        // Check if conversation is complete (AI sent closing message)
-        const isConversationComplete = /\b(je lance immédiatement une recherche|recherche activée|reviendra.*vers vous|reviendront.*vers vous)\b/i.test(response);
+        // Check if conversation is complete (AI sent closing message) based on locale
+        let isConversationComplete = false;
+        if (locale === 'en') {
+            isConversationComplete = /(launching a search immediately|search activated|get back to you)/i.test(response);
+        } else if (locale === 'es') {
+            isConversationComplete = /(lanzo inmediatamente una b[uú]squeda|b[uú]squeda activada|volver[aá]n a usted)/i.test(response);
+        } else if (locale === 'pt') {
+            isConversationComplete = /(lan[cç]o imediatamente uma pesquisa|pesquisa ativada|retornar[aã]o)/i.test(response);
+        } else {
+            isConversationComplete = /(je lance immédiatement une recherche|recherche activée|reviendra.*vers vous|reviendront.*vers vous)/i.test(response);
+        }
 
         // If conversation complete, submit lead asynchronously (don't block response)
         // If conversation complete, submit lead synchronously (to ensure execution in serverless)
@@ -306,7 +314,7 @@ export async function POST(req: Request) {
             { response },
             {
                 headers: {
-                    'X-RateLimit-Limit': '10',
+                    'X-RateLimit-Limit': MAX_REQUESTS.toString(),
                     'X-RateLimit-Remaining': rateLimit.remaining.toString(),
                     'X-RateLimit-Reset': new Date(rateLimit.resetTime).toISOString(),
                 }

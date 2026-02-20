@@ -11,8 +11,8 @@ interface RateLimitEntry {
 // Store in memory (will reset on server restart)
 const rateLimitStore = new Map<string, RateLimitEntry>();
 
-const RATE_LIMIT_WINDOW = 5 * 60 * 1000; // 5 minutes in milliseconds
-const MAX_REQUESTS = 10; // 10 requests per window
+export const RATE_LIMIT_WINDOW = 5 * 60 * 1000; // 5 minutes in milliseconds
+export const MAX_REQUESTS = 30; // 30 requests per window
 
 /**
  * Cleans up expired entries from the store
