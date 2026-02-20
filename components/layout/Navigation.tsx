@@ -153,12 +153,12 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               <Logo className="w-[100px] laptop:w-[110px] xl:w-[120px]" variant="black" />
             </Link>
 
-            {/* Desktop Navigation Links - Hidden on mobile & tablet */}
-            <div className="hidden laptop:flex items-center gap-4 laptop:gap-6 xl:gap-8 flex-1 justify-center">
+            {/* Desktop Navigation Links - Hidden on mobile */}
+            <div className="hidden tablet:flex items-center gap-2 laptop:gap-4 xl:gap-8 flex-1 justify-center">
               {/* Nos solutions - Mega Menu Trigger */}
               <button
                 onClick={handleMegaMenuToggle}
-                className="text-sm font-semibold uppercase tracking-wide transition-all whitespace-nowrap relative group text-foreground hover:text-primary"
+                className="text-[11px] laptop:text-sm font-semibold uppercase tracking-wide transition-all whitespace-nowrap relative group text-foreground hover:text-primary"
               >
                 {t('links.solutions')}
                 <svg
@@ -180,7 +180,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => !link.isExternal && handleSmoothScroll(e, link.href)}
-                  className="text-sm font-semibold uppercase tracking-wide transition-all whitespace-nowrap relative group text-foreground hover:text-primary"
+                  className="text-[11px] laptop:text-sm font-semibold uppercase tracking-wide transition-all whitespace-nowrap relative group text-foreground hover:text-primary"
                 >
                   {link.isSpecial ? (
                     <span className="relative inline-flex items-baseline">
@@ -206,8 +206,8 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
               ))}
             </div>
 
-            {/* Desktop CTA Buttons - Hidden on mobile & tablet */}
-            <div className="hidden laptop:flex items-center gap-2 laptop:gap-3 flex-shrink-0">
+            {/* Desktop CTA Buttons - Hidden on mobile */}
+            <div className="hidden tablet:flex items-center gap-1.5 laptop:gap-3 flex-shrink-0">
               <LanguageSwitcher />
 
               <div className="hidden laptop:block w-px h-6 bg-primary/10 mx-1" />
@@ -216,7 +216,7 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                 href="/devenir-consultant"
                 variant="ghost"
                 size="default"
-                className="text-[10px] laptop:text-[11px] whitespace-nowrap py-1.5 px-2.5 laptop:py-2.5 laptop:px-5"
+                className="text-[9px] laptop:text-[11px] whitespace-nowrap py-1 px-1.5 laptop:py-2.5 laptop:px-5"
               >
                 {t('buttons.findMissions')}
               </Button>
@@ -225,28 +225,28 @@ export const Navigation = ({ showAnnouncementBar = true }: NavigationProps) => {
                 href="/sourcing-expert"
                 variant="primary"
                 size="default"
-                className="text-[10px] laptop:text-[11px] whitespace-nowrap py-1.5 px-2.5 laptop:py-2.5 laptop:px-5"
+                className="text-[9px] laptop:text-[11px] whitespace-nowrap py-1 px-1.5 laptop:py-2.5 laptop:px-5"
               >
                 {t('buttons.findExpert')}
               </Button>
 
-              {/* Separator - Only on laptop+ */}
-              <div className="hidden laptop:block w-px h-6 bg-primary/10 mx-1" />
+              {/* Separator - Only on desktop */}
+              <div className="hidden tablet:block w-px h-5 laptop:h-6 bg-primary/10 mx-0.5 laptop:mx-1" />
 
               {/* Login Link - Always bold and visible */}
               <a
                 href="https://app.surly.fr/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[11px] font-bold text-foreground hover:text-primary transition-colors whitespace-nowrap"
+                className="text-[10px] laptop:text-[11px] font-bold text-foreground hover:text-primary transition-colors whitespace-nowrap"
               >
                 {t('links.login')}
               </a>
             </div>
 
-            {/* Burger Menu Toggle - Visible on mobile & tablet */}
+            {/* Burger Menu Toggle - Visible on mobile */}
             <button
-              className="laptop:hidden relative z-20 p-2 -mr-2 text-foreground"
+              className="tablet:hidden relative z-20 p-2 -mr-2 text-foreground"
               onClick={handleToggleMenu}
               aria-label="Toggle Menu"
             >
