@@ -3,7 +3,7 @@ title: "Guide Complet : Trouver une Mission Freelance en Assurance et Mutuelle e
 excerpt: "Guide étape par étape pour décrocher votre prochaine mission freelance en assurance : plateformes, profil, réseau, négociation TJM. Actuariat, Solvabilité II, IFRS 17. Conseils d'experts + FAQ complète."
 date: "2026-02-24"
 author: "Équipe Surly"
-coverImage: "/images/blog/guide-mission-freelance-assurance.png"
+coverImage: "/images/blog/guide-mission-freelance-assurance.jpg"
 coverImageAlt: "Consultant freelance en costume analysant des statistiques financières sur une tablette lumineuse dans le hall en verre d'un siège social d'assurance"
 category: "Freelance & Indépendants"
 tags: ["Mission Freelance", "Assurance", "Mutuelle", "Guide", "2026", "Consultant", "Actuaire"]

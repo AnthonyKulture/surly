@@ -3,7 +3,7 @@ title: "Conformité DORA : Sécuriser sa transition avec des consultants experts
 description: "Le règlement DORA est applicable depuis 2025. Découvrez comment externaliser la gestion des risques IT via des consultants experts banque assurance."
 date: "2026-02-24"
 author: "Équipe Surly"
-coverImage: "/images/blog/dora-cybersecurite-banque-assurance.png"
+coverImage: "/images/blog/dora-cybersecurite-banque-assurance.jpg"
 coverImageAlt: "Sablier lumineux posé sur des dossiers symbolisant l'urgence de la mise en conformité DORA pour les banques et assurances"
 category: "Conformité & Réglementation"
 tags: ["DORA", "Cybersecurite", "Banque", "Assurance", "Consultants Experts", "Risques IT"]

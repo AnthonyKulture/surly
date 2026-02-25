@@ -3,7 +3,7 @@ title: "Transition ESG et IFRS 18 : L'avantage des consultants experts banque as
 description: "Les normes IFRS 18 et CSRD transforment la finance en 2025/2026. Découvrez le ROI de l'externalisation vers des consultants experts banque assurance freelances."
 date: "2026-02-24"
 author: "Équipe Surly"
-coverImage: "/images/blog/ifrs18-csrd-consultants-banque-assurance.png"
+coverImage: "/images/blog/ifrs18-csrd-consultants-banque-assurance.jpg"
 coverImageAlt: "Boussole holographique affichant les données ESG et IFRS 18 dans un bureau financier moderne avec vue sur la ville"
 category: "Finance & ESG"
 tags: ["IFRS 18", "CSRD", "ESG", "Banque", "Assurance", "Consultants Experts", "Finance Durable"]
