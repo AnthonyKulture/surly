@@ -4,6 +4,7 @@ description: "Le règlement DORA est applicable depuis 2025. Découvrez comment 
 date: "2026-02-24"
 author: "Équipe Surly"
 coverImage: "/images/blog/dora-cybersecurite-banque-assurance.png"
+coverImageAlt: "Sablier lumineux posé sur des dossiers symbolisant l'urgence de la mise en conformité DORA pour les banques et assurances"
 category: "Conformité & Réglementation"
 tags: ["DORA", "Cybersecurite", "Banque", "Assurance", "Consultants Experts", "Risques IT"]
 ---
