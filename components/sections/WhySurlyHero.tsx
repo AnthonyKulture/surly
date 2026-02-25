@@ -11,7 +11,9 @@ export const WhySurlyHero = () => {
             badge={t('badge')}
             title={
                 <>
-                    Pourquoi <span className="text-primary">Surly</span> ?
+                    {t.rich('title', {
+                        primary: (chunks) => <span className="text-primary">{chunks}</span>
+                    })}
                 </>
             }
             subtitle={
