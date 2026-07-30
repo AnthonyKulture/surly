@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 
 
 
@@ -30,8 +30,7 @@ export interface LeadInfo {
 export async function extractLeadInfo(messages: any[]): Promise<LeadInfo | null> {
     try {
         const API_KEY = process.env.GEMINI_API_KEY || "";
-        const genAI = new GoogleGenerativeAI(API_KEY);
-        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+        const ai = new GoogleGenAI({ apiKey: API_KEY });
 
         // Format conversation for context
         const conversationText = messages
@@ -66,14 +65,15 @@ export async function extractLeadInfo(messages: any[]): Promise<LeadInfo | null>
         ${conversationText}
         `;
 
-        const result = await model.generateContent({
-            contents: [{ role: "user", parts: [{ text: prompt }] }],
-            generationConfig: {
+        const result = await ai.models.generateContent({
+            model: "gemini-2.5-flash",
+            contents: prompt,
+            config: {
                 responseMimeType: "application/json",
             }
         });
 
-        const responseText = result.response.text();
+        const responseText = result.text ?? "";
         const data = JSON.parse(responseText);
 
         if (!data.email) {

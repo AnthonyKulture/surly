@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 import { NextResponse } from "next/server";
 import { validateMessage, sanitizeMessage } from "@/lib/input-validator";
 import { checkRateLimit, MAX_REQUESTS } from "@/lib/rate-limiter";
@@ -7,7 +7,7 @@ import { sendLeadNotification } from "@/lib/email-service";
 
 const API_KEY = process.env.GEMINI_API_KEY || "";
 
-const genAI = new GoogleGenerativeAI(API_KEY);
+const ai = new GoogleGenAI({ apiKey: API_KEY });
 
 /**
  * Get client IP address from request headers
@@ -238,9 +238,6 @@ export async function POST(req: Request) {
         // Sanitize message
         const sanitizedMessage = sanitizeMessage(message);
 
-        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
-
-        // Select system prompt based on locale
         // Select system prompt based on locale
         // Default to French if locale is missing or not 'en'
         let SYSTEM_PROMPT = SYSTEM_PROMPT_FR;
@@ -255,7 +252,8 @@ export async function POST(req: Request) {
         };
         const INITIAL_RESPONSE = INITIAL_RESPONSES[locale] || INITIAL_RESPONSES['fr'];
 
-        const chat = model.startChat({
+        const chat = ai.chats.create({
+            model: "gemini-2.5-flash",
             history: [
                 {
                     role: "user",
@@ -272,9 +270,8 @@ export async function POST(req: Request) {
             ],
         });
 
-
-        const result = await chat.sendMessage(`[DÉBUT_USER]${sanitizedMessage}[FIN_USER]`);
-        const response = result.response.text();
+        const result = await chat.sendMessage({ message: `[DÉBUT_USER]${sanitizedMessage}[FIN_USER]` });
+        const response = result.text ?? "";
 
         // Check if conversation is complete (AI sent closing message) based on locale
         let isConversationComplete = false;
