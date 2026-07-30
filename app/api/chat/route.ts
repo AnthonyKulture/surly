@@ -340,7 +340,8 @@ export async function POST(req: Request) {
             } catch (err: any) {
                 console.warn(`Gemini model ${modelName} call failed:`, err?.message || err);
                 lastError = err;
-                if (err?.status === 401 || err?.status === 403 || err?.status === 429) {
+                // Only throw immediately on invalid auth (401/403). If 429 quota per model, continue to try next model!
+                if (err?.status === 401 || err?.status === 403) {
                     throw err;
                 }
             }

@@ -26,6 +26,15 @@ export interface LeadInfo {
  * Dynamically discovers active, supported models for the user's API key
  */
 export async function getAvailableModelList(ai: GoogleGenAI): Promise<string[]> {
+    const defaultPreferred = [
+        "gemini-2.5-flash",
+        "gemini-2.0-flash",
+        "gemini-1.5-flash",
+        "gemini-1.5-flash-8b",
+        "gemini-2.0-flash-lite",
+        "gemini-1.5-pro"
+    ];
+
     try {
         const response = await ai.models.list();
         const validModelNames: string[] = [];
@@ -33,16 +42,33 @@ export async function getAvailableModelList(ai: GoogleGenAI): Promise<string[]> 
         for await (const m of response) {
             const rawName = m.name || "";
             const cleanName = rawName.replace(/^models\//, "");
-            if (cleanName) {
-                validModelNames.push(cleanName);
+            
+            // Filter out low-quota/specialized preview models (omni, robotics, embedding, etc.)
+            if (!cleanName || 
+                cleanName.includes("omni") || 
+                cleanName.includes("robotics") || 
+                cleanName.includes("embedding") || 
+                cleanName.includes("imagen") || 
+                cleanName.includes("veo") || 
+                cleanName.includes("tts")) {
+                continue;
             }
+
+            validModelNames.push(cleanName);
         }
 
-        // Sort to prefer flash models
+        // Sort to place standard stable flash models first according to preferred order
         validModelNames.sort((a, b) => {
+            const idxA = defaultPreferred.indexOf(a);
+            const idxB = defaultPreferred.indexOf(b);
+
+            if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+            if (idxA !== -1) return -1;
+            if (idxB !== -1) return 1;
+
             if (a.includes("flash") && !b.includes("flash")) return -1;
             if (!a.includes("flash") && b.includes("flash")) return 1;
-            return b.localeCompare(a);
+            return a.localeCompare(b);
         });
 
         if (validModelNames.length > 0) {
@@ -52,7 +78,7 @@ export async function getAvailableModelList(ai: GoogleGenAI): Promise<string[]> 
         console.warn("Could not list models dynamically:", err);
     }
 
-    return ["gemini-2.0-flash", "gemini-1.5-flash-latest", "gemini-1.5-pro-latest"];
+    return defaultPreferred;
 }
 
 /**
