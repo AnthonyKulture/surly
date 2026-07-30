@@ -65,15 +65,24 @@ export async function extractLeadInfo(messages: any[]): Promise<LeadInfo | null>
         ${conversationText}
         `;
 
-        const result = await ai.models.generateContent({
-            model: "gemini-2.5-flash",
-            contents: prompt,
-            config: {
-                responseMimeType: "application/json",
-            }
-        });
+        const modelsToTry = ["gemini-2.0-flash", "gemini-1.5-flash-latest", "gemini-1.5-pro-latest"];
+        let responseText = "";
 
-        const responseText = result.text ?? "";
+        for (const modelName of modelsToTry) {
+            try {
+                const result = await ai.models.generateContent({
+                    model: modelName,
+                    contents: prompt,
+                    config: {
+                        responseMimeType: "application/json",
+                    }
+                });
+                responseText = result.text ?? "";
+                if (responseText) break;
+            } catch (e) {
+                console.warn(`Extraction model ${modelName} failed, trying next...`);
+            }
+        }
         const data = JSON.parse(responseText);
 
         if (!data.email) {
